@@ -1,14 +1,648 @@
 ---
-title: Homepage title
+title: Главная
 bodyClass: homepage
 ---
 extends shared/_layout
 block content
-  i.icon.icon-logo
-    
-  // iteration example
-  .socials
-    - var socials = ['email']
-      each social in socials
-        a(class="social-share" href="#" role="button")
-          +icon('ico-'+social)
+
+	// Promo :: Start
+
+	.promo
+		.promo-carousel.owl-carousel.js-promo-carousel
+			.promo-item
+				.container
+					figure.promo-item__image
+						img(src="img/img-promo-1.jpg", alt="")
+					mark.promo-item__rubric Парусный спорт
+					h2.promo-item__title Неделя до Extreme Sailing Series 2016: что нового?
+					p.promo-item__text Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг.
+					a(href="#") Узнать больше
+			.promo-item
+				.container
+					figure.promo-item__image
+						img(src="img/img-promo-2.jpg", alt="")
+					mark.promo-item__rubric Путешествия
+					h2.promo-item__title Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+					p.promo-item__text Solar Voyager, возможно, станет первым беcпилотным судном, пересекшим Атлантику, и первым судном, пересекшим океан на солнечной энергии.
+					a(href="#") Узнать больше
+			.promo-item
+				.container
+					figure.promo-item__image
+						img(src="img/img-promo-3.jpg", alt="")
+					mark.promo-item__rubric Путешествия
+					h2.promo-item__title1 «Solar Voyager отправляется в долгий путь к намеченной цели — Лиссабону»
+					a(href="#") Узнать больше
+
+	// Promo :: End
+
+
+	// Media :: Start
+
+	.media
+		.container
+
+			h2.media__heading Журнал <small>Новости и статьи из мира яхт. Ежедневное обновление.</small>
+
+			.row
+				.col-lg-3
+
+					.news
+						h3.news__heading
+							+icon('ico-bell')
+							| Новости яхтинга
+
+						ul.news__list
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Спущена на воду 55-метровая яхта Quinta Essentia
+									time.news-item__date
+										+icon('ico-xl')
+										| сегодня в 09:30
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Perini Navi показала парусную суперяхту Sybaris
+									time.news-item__date
+										+icon('ico-xl')
+										| сегодня в 09:30
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Спущена на воду самая большая яхта Heesen
+									time.news-item__date
+										+icon('ico-xl')
+										| сегодня в 09:30
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Норвежец разработал крылья для «полетов» под водой
+									time.news-item__date 23 марта в 15:39
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Порт Sochi Grand Marina признан лучшим проектом развития яхтинга в России
+									time.news-item__date 23 марта в 14:22
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Ученые раскрыли тайну Бермудского треугольника
+									time.news-item__date 22 марта в 15:13
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+									time.news-item__date 22 марта в 10:48
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+									time.news-item__date 21 марта в 16:58
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+									time.news-item__date
+										+icon('ico-xl')
+										| 22 марта в 15:13
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+									time.news-item__date 22 марта в 10:48
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+									time.news-item__date 21 марта в 16:58
+							li
+								.news-item
+									h4.news-item__title
+										a(href="#") Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+									time.news-item__date
+										+icon('ico-xl')
+										| 22 марта в 15:13
+
+				.col-lg-9
+
+					ul.media__list.js-masonry
+						li
+							a(href="#").media-article
+								figure.media-article__image
+									img(src="img/img-media-1.jpg", alt="")
+								.media-article__desc
+									mark.media-article__rubric Индустрия
+									h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+									p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+						li
+							a(href="#").media-photo
+								figure.media-photo__image
+									img(src="img/img-media-2.jpg", alt="")
+								.media-photo__desc
+									mark.media-photo__rubric Фото дня
+									h3.media-photo__title Прогулялся по небу
+						li
+							a(href="#").media-banner
+								img(src="img/img-banner-1.jpg", alt="")
+						li
+							a(href="#").media-article
+								figure.media-article__image
+									img(src="img/img-media-3.jpg", alt="")
+									span.media-article__icon
+										+icon('ico-xl')
+								.media-article__desc
+									mark.media-article__rubric парусный спорт
+									h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
+									p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+						li
+							a(href="#").media-article
+								figure.media-article__image
+									img(src="img/img-media-4.jpg", alt="")
+								.media-article__desc
+									mark.media-article__rubric Люди
+									h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+									p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+						li
+							.media-offer
+								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+								a(href="#").btn.btn-dark предложить
+						li
+							a(href="#").media-photo
+								figure.media-photo__image
+									img(src="img/img-media-5.jpg", alt="")
+								.media-photo__desc
+									mark.media-photo__rubric Фотогалерея
+									h3.media-photo__title Восточная роскошь
+						li
+							a(href="#").media-article
+								figure.media-article__image
+									img(src="img/img-media-6.jpg", alt="")
+								.media-article__desc
+									mark.media-article__rubric Люди
+									h3.media-article__title Пересечь Атлантику внутри кита
+									p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+						li
+							a(href="#").media-article
+								figure.media-article__image
+									img(src="img/img-media-7.jpg", alt="")
+								.media-article__desc
+									mark.media-article__rubric Юмор
+									h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
+									p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+
+			.media-ctrl
+				a(href="#").btn.btn-white Перейти в журнал
+
+
+	// Media :: End
+	
+
+	// Catalog :: Start
+
+	.catalog
+		.container
+			h2.catalog__heading Каталог
+			p.catalog-caption Лучший в мире инструмент для подбора новых яхт и катеров. Более ХХХХ актуальных моделей от ХХХ производителей!
+
+			.tabs
+				ul.tabs__menu
+					li
+						.tabs-item
+							figure.tabs-item__icon
+								+icon('ico-boats')
+							b.tabs-item__title Катера
+							p.tabs-item__text 1 278 моделей
+					li.is-active
+						.tabs-item
+							figure.tabs-item__icon
+								+icon('ico-motor')
+							b.tabs-item__title Моторные яхты
+							p.tabs-item__text 1499 моделей
+					li
+						.tabs-item
+							figure.tabs-item__icon
+								+icon('ico-sailing')
+							b.tabs-item__title Парусные яхты
+							p.tabs-item__text 668 модели
+				.tabs-panel
+					| Hidden
+				.tabs-panel.is-active
+
+					.models
+						h3.models__heading Новые модели
+						.models-carousel.owl-carousel.js-models-carousel
+							.models-item
+								figure.models-item__image
+									img(src="img/img-models-1.jpg", alt="")
+								h4.models-item__title <small>Beneteau</small> Antares 32
+								i.models-item__price от €146 500,–
+							.models-item
+								figure.models-item__image
+									img(src="img/img-models-2.jpg", alt="")
+								h4.models-item__title <small>Dominator</small> Dominator 680
+								i.models-item__price от €2 530 000,–
+							.models-item
+								figure.models-item__image
+									img(src="img/img-models-3.jpg", alt="")
+								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+								i.models-item__price от €942 240,–
+
+
+						.models-ctrl
+							a.btn.btn-empty Посмотреть все новые 
+
+				.tabs-panel
+					| Hidden
+
+			.row.align-items-center
+				.col-lg-5
+
+					.categories
+						h3.categories__heading Популярные категории
+						ul.categories__list
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-1.jpg", alt="")
+									h4.categories-item__title Глиссирующие яхты с флайбриджем
+									span.categories-item__count 310 моделей
+									p.categories-item__text Классический силуэт и максимальная площадь открытых палуб
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-2.jpg", alt="")
+									h4.categories-item__title Открытые круизные яхты
+									span.categories-item__count 111 моделей
+									p.categories-item__text Стремительные, спортивные лодки для тёплых морей
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-3.jpg", alt="")
+									h4.categories-item__title Морские «внедорожники»
+									span.categories-item__count 31 модель
+									p.categories-item__text Брутальные скоростные лодки, готовые к любой непогоде
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-4.jpg", alt="")
+									h4.categories-item__title Открытые круизные яхты
+									span.categories-item__count 111 моделей
+									p.categories-item__text Стремительные, спортивные лодки для тёплых морей
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-5.jpg", alt="")
+									h4.categories-item__title Яхты с хардтопом и полузакрытым салоном
+									span.categories-item__count 31 модель
+									p.categories-item__text Для любителей свежего воздуха: защита от волны сверху и кокпит...
+							li.col-lg-4
+								a(href="#").categories-item
+									figure.categories-item__image
+										img(src="img/img-categories-6.jpg", alt="")
+									h4.categories-item__title Глиссирующие яхты с флайбриджем
+									span.categories-item__count 310 моделей
+									p.categories-item__text Классический силуэт и максимальная площадь открытых палуб
+						.categories-ctrl
+							a(href="#").btn.btn-empty Все категории 
+
+
+				.col-lg-5
+
+					.brands
+						h3.brands__heading Лучшие бренды
+						ul.brands__list
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-1.jpg", alt="")
+									h4.brands-item__title Anytec
+									span.brands-item__count 5 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-2.jpg", alt="")
+									h4.brands-item__title Jetten
+									span.brands-item__count 19 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-3.jpg", alt="")
+									h4.brands-item__title Benetti
+									span.brands-item__count 16 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-4.jpg", alt="")
+									h4.brands-item__title Finnmaster
+									span.brands-item__count 5 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-5.jpg", alt="")
+									h4.brands-item__title Jetten
+									span.brands-item__count 19 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-6.jpg", alt="")
+									h4.brands-item__title Finnmaster
+									span.brands-item__count 5 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-7.jpg", alt="")
+									h4.brands-item__title Anytec
+									span.brands-item__count 5 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-8.jpg", alt="")
+									h4.brands-item__title Benetti
+									span.brands-item__count 16 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-9.jpg", alt="")
+									h4.brands-item__title Anytec
+									span.brands-item__count 5 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-10.jpg", alt="")
+									h4.brands-item__title Jetten
+									span.brands-item__count 19 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-11.jpg", alt="")
+									h4.brands-item__title Benetti
+									span.brands-item__count 16 моделей
+							li.col-lg-3
+								a(href="#").brands-item
+									figure.brands-item__image
+										img(src="img/img-brands-12.jpg", alt="")
+									h4.brands-item__title Finnmaster
+									span.brands-item__count 5 моделей
+						.brands-ctrl
+							a(href="#").btn.btn-empty Все бренды
+
+
+	// Catalog :: End
+	
+
+	// Market :: Start
+
+	.market
+		.container
+			h2.market__heading Маркет
+			em.market-caption Система онлайн-объявлений. Купить или продать. Яхту или катер. В России или по всему миру. Напрямую от владельцев или через брокеров.
+			.row
+				.col-lg-3
+					
+					// Filter
+					.filter
+						form(action="#")
+
+							h3.filter__heading
+								+icon('ico-filter')
+								| Форма поиска
+
+							select.ui-select
+								option Любого типа
+
+							.row
+								.col
+									label.ui-check
+										input(type="checkbox").ui-check__input
+										span.ui-check__checkbox
+										span.ui-check__text Новые
+								.col
+									label.ui-check
+										input(type="checkbox").ui-check__input
+										span.ui-check__checkbox
+										span.ui-check__text Б/у не старше
+								.col
+									select.ui-select
+										option 1958
+
+							select.ui-select
+								option Любое местонахождение
+
+							input.ui-input(type="text", placeholder="модель, производитель...")
+
+							.ui-range
+								.row
+									.col-4
+										input(type="text", value="").ui-input
+									.col-4
+										label.ui-range-label Длина, м
+									.col-4
+										input(type="text", value="").ui-input
+								input(type="range").ui-range-input
+
+							.ui-range
+								.row
+									.col-4
+										input(type="text", value="").ui-input
+									.col-4
+										label.ui-range-label Цена, €x1000
+									.col-4
+										input(type="text", value="").ui-input
+								input(type="range").ui-range-input
+
+							button.btn.btn-dark ПОКАЗАТЬ 1 376 лодок
+
+					
+					// Popular
+					.popular
+						h3.popular__heading
+							+icon('ico-popular')
+							| Популярное
+						ul.popular__menu
+							li
+								a(href="#").popular__link
+									span Новые парусные яхты
+									mark 10
+							li
+								a(href="#").popular__link
+									span Новые моторные яхты
+									mark 56
+							li
+								a(href="#").popular__link
+									span Новые катера
+									mark 108
+							li
+								a(href="#").popular__link
+									span Парусные яхты б/у
+									mark 82
+							li
+								a(href="#").popular__link
+									span Моторные яхты б/у
+									mark 1000
+							li
+								a(href="#").popular__link
+									span Катера б/у
+									mark 268
+							li
+								a(href="#").popular__link
+									span Недорогие катера
+									mark 266
+							li
+								a(href="#").popular__link
+									span Недорогие парусные яхты
+									mark 29
+							li
+								a(href="#").popular__link
+									span Недорогие моторные яхты
+									mark 155
+
+
+
+				.col-lg-9
+
+					ul.market__list
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-1.jpg", alt="")
+								h3.market-item__title Bavaria 42 Cruiser
+								i.market-item__price €146 500,–
+								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-2.jpg", alt="")
+								h3.market-item__title Sunseeker 47 Portofino
+								i.market-item__price €395 500,–
+								p.market-item__text 2008 г., 200 моточасов. Италия
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-3.jpg", alt="")
+								h3.market-item__title Finnmaster 60 CC
+								i.market-item__price 98 000 руб.
+								p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-4.jpg", alt="")
+								h3.market-item__title Bayliner 185 Bowrider
+								i.market-item__price 680 000 руб.
+								p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-5.jpg", alt="")
+								h3.market-item__title Sea Ray 325 Sundancer
+								i.market-item__price €15 000,–
+								p.market-item__text 1991 г., 200 моточасов. Испания, Palma
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-6.jpg", alt="")
+								h3.market-item__title Stingray 195 CS/CX
+								i.market-item__price 1 100 000 руб.
+								p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
+
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-7.jpg", alt="")
+								h3.market-item__title Bavaria 42 Cruiser
+								i.market-item__price €146 500,–
+								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-8.jpg", alt="")
+								h3.market-item__title Sunseeker 47 Portofino
+								i.market-item__price €395 500,–
+								p.market-item__text 2008 г., 200 моточасов. Италия
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-9.jpg", alt="")
+								h3.market-item__title Finnmaster 60 CC
+								i.market-item__price 98 000 руб.
+								p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-10.jpg", alt="")
+								h3.market-item__title Bayliner 185 Bowrider
+								i.market-item__price 680 000 руб.
+								p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-11.jpg", alt="")
+								h3.market-item__title Sea Ray 325 Sundancer
+								i.market-item__price €15 000,–
+								p.market-item__text 1991 г., 200 моточасов. Испания, Palma
+						li.col-lg-4
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-12.jpg", alt="")
+								h3.market-item__title Stingray 195 CS/CX
+								i.market-item__price 1 100 000 руб.
+								p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
+
+
+			.sell
+				h3.sell__heading Хотите продать Вашу яхту или катер?
+				a(href="#").btn.btn-green Вам сюда
+	 
+	// Market :: End
+
+	// Charterly :: Start
+	.charterly
+		.container
+			//- .charterly-bg
+			.charterly__logo
+				+icon('ico-charterly-logo')
+				small.charterly__logo-text Новый онлайн-сервис по аренде яхт
+			.row
+				.col-lg-6
+
+					ul.charterly__list
+						li
+							+icon('ico-charterly-1')
+							| Отдельный проект от создателей itBoat, посвященный чартеру
+						li
+							+icon('ico-charterly-2')
+							| Оператор самого большого флота суперяхт, базирующихся в водах России
+						li
+							+icon('ico-charterly-3')
+							| Москва, Петербург и Сочи: арендуйте лодки в любой из яхтенных столиц России
+						li
+							+icon('ico-charterly-4')
+							| Опыт работы на рынке с 2005 года
+						li
+							+icon('ico-charterly-5')
+							| Моментальное бронирование и оплата
+
+				.col-lg-6
+
+					.charterly-carousel.owl-carousel.js-charterly-carousel
+						a(href="#").charterly-item
+							figure.charterly-item__image
+								img(src="img/img-models-1.jpg", alt="")
+							b.charterly-item__city Москва
+							h3.charterly-item__title Моторная яхта «Новая Звезда»
+							i.charterly-item__price от €12 000/день
+
+			.charterly-ctrl
+				a.btn.btn-empty Перейти на Charterly
+	// Charterly :: End
+
+
+
+
+
+	
+
+//- .socials
+//-   - var socials = ['email']
+//-     each social in socials
+//-       a(class="social-share" href="#" role="button")
+//-         +icon('ico-'+social)

@@ -1,17 +1,34 @@
 // HEADER :: START
+a(href="#").banner
+    img(src="img/banner.jpg", alt="")
 header.header
-  .container
-    .header__wrapper
-      .header__logo
-        a.logo(href="/homepage.pug")
-          +icon('icon-viber')
-      .header__menu
-        ul.header__menu__list
-          - var list = ["Point 1", "Point 2", "Point 3"]
-            each item in list
-              li
-                a.header__menu__link(href="#")=item
-      
-      .header__cta
+    .container
+        .logo
+            a(href="/homepage.pug")
+                +icon('ico-logo')
+        nav.nav
+            button.nav__btn
+            ul.nav__menu
+                li
+                    a(href="#").nav__link ЖУРНАЛ
+                li
+                    a(href="#").nav__link КАТАЛОГ
+                li
+                    a(href="#").nav__link
+                        +icon('ico-xl')
+                li
+                    a(href="#").nav__link
+                        +icon('ico-charterly')
+        nav.auth
+            a(href="#").auth__link Вход
+            span.auth__dot
+            a(href="auth__link") Регистрация
+
+        .search
+            form(action="#")
+                input(type="search", placeholder="Поиск").search__input
+                button.search__btn
+                    +icon('ico-search')
+
         
 // HEADER :: END

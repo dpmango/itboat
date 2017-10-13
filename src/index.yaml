@@ -1,7 +1,7 @@
-ProjectTitle: Project-name
+ProjectTitle: itBoat
 
 PageList:
 - file: homepage.html
-  ready: 100
+  ready: 5
 - file: page.html
   ready: 0

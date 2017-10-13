@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+
+    $('.js-promo-carousel').owlCarousel({
+        center: true,
+        items:1,
+        loop:true,
+        margin:10
+    });
+
+
+
   //////////
   // Global variables
   //////////
