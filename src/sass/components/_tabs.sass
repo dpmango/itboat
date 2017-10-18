@@ -4,45 +4,15 @@
 	margin: 0 0 18px
 	position: relative
 
-.tabs__menu
-	margin: 0 0 24px
-	padding: 0
-	list-style: none
-	display: flex
-	justify-content: center
-	overflow: hidden
+.tabs__container
 	position: relative
-	&:after
-		content: ''
-		display: block
-		position: absolute
-		left: 0
-		bottom: 0
-		right: 0
-		height: 1px
-		background: #E0E0E0
-		z-index: 0
-	& > li
-		width: 100%
-		max-width: 240px
-		position: relative
-		z-index: 1
-		top: 1px
-		border-left: 1px solid transparent
-		border-right: 1px solid transparent
-		&.is-active
-			background: #f5f5f5
-			.tabs-item
-				color: #4c4c4c
-				box-shadow: 0 15px 30px rgba(0,0,0,0.1)
-			.tabs-item__icon, .tabs-item__title
-				color: #1EA0E4
 
 .tabs__panel
-	transition: $transitionSpeed
+	transition: .5s
 	opacity: 0
 	visibility: hidden
 	position: absolute
+	top: 0
 	left: 0
 	width: 100%
 	padding: 20px 0
@@ -51,13 +21,73 @@
 		visibility: visible
 		position: relative
 
+
+.tabs__menu
+	margin: 0 -10px 24px
+	padding: 0
+	list-style: none
+	display: flex
+	justify-content: center
+	position: relative
+	& > li
+		width: 100%
+		max-width: 240px
+		position: relative
+		&:after, &:before
+			content: ''
+			position: absolute
+			bottom: 0
+			transition: .25s
+			opacity: 0
+			visibility: hidden
+		&:after
+			left: 100%
+			@include sprite(tabs-shadow-right)
+		&:before
+			right: 100%
+			@include sprite(tabs-shadow-left)
+		&.is-active
+			background: #f5f5f5
+			&:after, &:before
+				opacity: 1
+				visibility: visible
+			.tabs-item
+				color: #4c4c4c
+				&:after, &:before
+					opacity: 1
+					visibility: visible
+			.tabs-item-in
+				&:after, &:before
+					opacity: 1
+					visibility: visible
+			.tabs-item__icon, .tabs-item__title
+				color: #1EA0E4
+				
 .tabs-item
-	transition: $transitionSpeed
+	transition: .25s
 	text-align: center
 	color: #999999
 	cursor: pointer
 	padding: 20px 15px 12px
 	width: 100%
+	position: relative
+	z-index: 10
+	&:after, &:before
+		content: ''
+		display: block
+		position: absolute
+		z-index: 10
+		bottom: 0
+		height: 1px
+		background: #E0E0E0
+		width: 100vw
+		transition: inherit
+		opacity: 0
+		visibility: hidden
+	&:after
+		left: 100%
+	&:before
+		right: 100%
 	&:hover
 		color: #4c4c4c
 	&__icon
@@ -84,3 +114,88 @@
 	span
 		+r($tablet)
 			display: none
+
+.tabs-item-in
+	&:after, &:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 1px
+		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%)
+		transition: .25s
+		opacity: 0
+		visibility: hidden
+	&:after
+		left: 0
+	&:before
+		right: 0
+
+// .tabs__menu
+// 	margin: 0 0 24px
+// 	padding: 0
+// 	list-style: none
+// 	display: flex
+// 	justify-content: center
+// 	overflow: hidden
+// 	position: relative
+// 	&:after
+// 		content: ''
+// 		display: block
+// 		position: absolute
+// 		left: 0
+// 		bottom: 0
+// 		right: 0
+// 		height: 1px
+// 		background: #E0E0E0
+// 		z-index: 0
+// 	& > li
+// 		width: 100%
+// 		max-width: 240px
+// 		position: relative
+// 		z-index: 1
+// 		top: 1px
+// 		border-left: 1px solid transparent
+// 		border-right: 1px solid transparent
+// 		&.is-active
+// 			background: #f5f5f5
+// 			.tabs-item
+// 				color: #4c4c4c
+// 				box-shadow: 0 15px 30px rgba(0,0,0,0.1)
+// 			.tabs-item__icon, .tabs-item__title
+// 				color: #1EA0E4
+
+// .tabs-item
+// 	transition: $transitionSpeed
+// 	text-align: center
+// 	color: #999999
+// 	cursor: pointer
+// 	padding: 20px 15px 12px
+// 	width: 100%
+// 	&:hover
+// 		color: #4c4c4c
+// 	&__icon
+// 		height: 40px
+// 		display: flex
+// 		justify-content: center
+// 		align-items: center
+// 		margin: 0 0 5px
+// 	&__title
+// 		margin: 0 0 3px
+// 		display: block
+// 	&__text
+// 		font-size: 12px
+// 		margin: 0
+// 	.ico-boats
+// 		font-size: 14px
+// 		top: 0px
+// 	.ico-motor
+// 		font-size: 22px
+// 		top: 7px
+// 	.ico-sailing
+// 		font-size: 40px
+// 		top: 5px
+// 	span
+// 		+r($tablet)
+// 			display: none

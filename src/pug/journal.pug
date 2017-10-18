@@ -1,0 +1,390 @@
+---
+title: Журнал
+bodyClass: page-journal
+---
+extends shared/_layout
+block content
+	
+	// Media Journal :: Start
+
+	.media
+		.container-fluid
+
+			h2.media__heading Журнал
+			em.media__caption Новости и статьи из мира яхт. Ежедневное обновление.
+			
+			.media-tabs.js-tabs
+
+				ul.media-tabs__menu.js-tabs__menu
+					li.is-active
+						.media-tabs__item
+							.media-tabs__item-in Все
+					li
+						.media-tabs__item
+							.media-tabs__item-in Новости
+					li
+						.media-tabs__item
+							.media-tabs__item-in Статьи
+					li
+						.media-tabs__item
+							.media-tabs__item-in Фото дня
+					li
+						.media-tabs__item
+							.media-tabs__item-in Фотогалереи
+
+				.media-tabs__container
+					.media-tabs__panel.js-tabs__panel.is-active
+
+						.tags
+							a(href="#").tags__btn Парусный спорт
+							a(href="#").tags__btn Обзоры и тест-драйвы
+							a(href="#").tags__btn Мегаяхты
+							a(href="#").tags__btn Дизайн
+							a(href="#").tags__btn Lifestyle
+							a(href="#").tags__btn Общество
+							a(href="#").tags__btn Яхтинг в России
+							a(href="#").tags__btn Теория и практика
+							a(href="#").tags__btn Люди
+							a(href="#").tags__btn Индустрия
+							a(href="#").tags__btn Активный отдых
+							a(href="#").tags__btn Юмор
+							a(href="#").tags__btn Происшествия
+							a(href="#").tags__btn Путешествия
+							a(href="#").tags__btn.tags__btn--more ещё...
+
+						ul.media__list.js-masonry
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-1.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric Индустрия
+										h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+										p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+							li.col-lg-4.col-xl-3
+								a(href="#").media-photo
+									figure.media-photo__image
+										img(src="img/img-media-2.jpg", alt="")
+									.media-photo__desc
+										mark.media-photo__rubric Фото дня
+										h3.media-photo__title Прогулялся по небу
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-1')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+							li.col-lg-4.col-xl-3
+
+								a(href="#").media-banner
+									img(src="img/img-banner-1.jpg", alt="")
+
+								.media-offer
+									p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+									a(href="#").btn.btn-dark предложить
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-2')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title OCEAN TV переделает советский катер в эксплорер для экспедиции по рекам России
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									span.media-news__xl
+										+icon('ico-xl')
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-3')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title Numarine спустила на воду первый корпус 
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									span.media-article__xl
+										+icon('ico-xl')
+									figure.media-article__image
+										img(src="img/img-media-3.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric парусный спорт
+										h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
+										p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+
+							
+							li.col-lg-4.col-xl-3
+								a(href="#").media-photo
+									span.media-photo__xl
+										+icon('ico-xl')
+									figure.media-photo__image
+										img(src="img/img-media-8.jpg", alt="")
+									.media-photo__desc
+										mark.media-photo__rubric Фото дня
+										h3.media-photo__title Суперяхта с улыбкой
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-9.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric парусный спорт
+										h3.media-article__title Неделя до Extreme Sailing Series 2016: что нового?
+										p.media-article__text Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-4.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric Люди
+										h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+										p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+							
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-4')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник» 
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-5')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-6.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric Люди
+										h3.media-article__title Пересечь Атлантику внутри кита
+										p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-photo
+									figure.media-photo__image
+										img(src="img/img-media-5.jpg", alt="")
+									.media-photo__desc
+										mark.media-photo__rubric Фотогалерея
+										h3.media-photo__title Восточная роскошь
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-6')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title Custom Marine Group купила американских производителей катеров Fountain, Donzi, Bajaи Pro-Line
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-7.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric Юмор
+										h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
+										p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-7')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title «Конаково Ривер Клаб» выиграла четвертый этап «Национальной парусной Лиги» в высшем дивизионе
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									span.media-news__xl
+										+icon('ico-xl')
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-8')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title Новая Зеландия выиграла Кубок «Америки»
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-article
+									figure.media-article__image
+										img(src="img/img-media-1.jpg", alt="")
+									.media-article__desc
+										mark.media-article__rubric Индустрия
+										h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+										p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+
+
+						.media-ctrl
+							a(href="#").btn.btn-more Показать ещё
+					
+					.media-tabs__panel.js-tabs__panel
+
+						.tags
+							a(href="#").tags__btn Парусный спорт
+							a(href="#").tags__btn Обзоры и тест-драйвы
+							a(href="#").tags__btn Мегаяхты
+							a(href="#").tags__btn Дизайн
+							a(href="#").tags__btn Lifestyle
+							a(href="#").tags__btn Общество
+							a(href="#").tags__btn Яхтинг в России
+							a(href="#").tags__btn Теория и практика
+							a(href="#").tags__btn Люди
+							a(href="#").tags__btn Индустрия
+							a(href="#").tags__btn Активный отдых
+							a(href="#").tags__btn Юмор
+							a(href="#").tags__btn Происшествия
+							a(href="#").tags__btn Путешествия
+							a(href="#").tags__btn.tags__btn--more ещё...
+
+						ul.media__list.js-masonry
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-1')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+							
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-2')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title OCEAN TV переделает советский катер в эксплорер для экспедиции по рекам России
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									span.media-news__xl
+										+icon('ico-xl')
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-3')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title Numarine спустила на воду первый корпус 
+
+							li.col-lg-4.col-xl-3
+
+								a(href="#").media-banner
+									img(src="img/img-banner-1.jpg", alt="")
+
+
+
+					.media-tabs__panel.js-tabs__panel
+
+						.tags-group
+							.row
+								.col-lg-3
+									ul.tags-group__menu
+										li
+											a(href="#").tags-group__btn Парусный спорт <mark>10</mark>
+										li
+											a(href="#").tags-group__btn Обзоры и тест-драйвы <mark>56</mark>
+										li
+											a(href="#").tags-group__btn Мегаяхты <mark>108</mark>
+								.col-lg-3
+									ul.tags-group__menu
+										li
+											a(href="#").tags-group__btn Дизайн <mark>1000</mark>
+										li
+											a(href="#").tags-group__btn Lifestyle <mark>268</mark>
+										li
+											a(href="#").tags-group__btn Общество <mark>268</mark>
+										li
+											a(href="#").tags-group__btn Яхтинг в России <mark>29</mark>
+								.col-lg-3
+									ul.tags-group__menu
+										li
+											a(href="#").tags-group__btn Теория и практика <mark>10</mark>
+										li
+											a(href="#").tags-group__btn Люди <mark>56</mark>
+										li
+											a(href="#").tags-group__btn Индустрия <mark>108</mark>
+										li
+											a(href="#").tags-group__btn Активный отдых <mark>82</mark>
+								.col-lg-3
+									ul.tags-group__menu
+										li
+											a(href="#").tags-group__btn Юмор <mark>1000</mark>
+										li
+											a(href="#").tags-group__btn Происшествия <mark>268</mark>
+										li
+											a(href="#").tags-group__btn Путешествия <mark>82</mark>
+	
+
+						ul.media__list.js-masonry
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date сегодня в 09:30
+									figure.media-news__image
+										+icon('ico-set-1')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+							
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-2')
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title OCEAN TV переделает советский катер в эксплорер для экспедиции по рекам России
+
+							li.col-lg-4.col-xl-3
+								a(href="#").media-news
+									span.media-news__xl
+										+icon('ico-xl')
+									time.media-news__date 23 марта в 15:39
+									figure.media-news__image
+										+icon('ico-set-3')
+
+									.media-news__desc
+										mark.media-news__rubric НОВОСТИ
+										h3.media-news__title Numarine спустила на воду первый корпус 
+										
+							li.col-lg-4.col-xl-3
+
+								a(href="#").media-banner
+									img(src="img/img-banner-1.jpg", alt="")
+
+					.media-tabs__panel.js-tabs__panel Фото дня
+					.media-tabs__panel.js-tabs__panel Фотогалерея
+
+
+			
+
+
+	// Media Journal :: End
+	
+
+	

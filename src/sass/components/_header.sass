@@ -17,14 +17,14 @@
 .header
 	position: relative
 	z-index: 100
-	background-color: #000000
+	background-color: #222
 	color: #fff
 	height: 60px
 	line-height: 60px
 	.container-fluid
 		display: flex
 		position: relative
-		max-width: none
+		// max-width: none
 	+rmin($desktop)
 		height: 50px
 		line-height: 50px
@@ -105,7 +105,7 @@
 		top: 100%
 		left: 0
 		width: 100%
-		background: #000
+		background: #222
 		padding: 10px 20px 20px
 		border-top: 1px solid rgba(255,255,255,0.5)
 		box-shadow: 0 3px 10px rgba(0,0,0,0.3)
@@ -128,12 +128,16 @@
 		padding: 0
 		list-style: none
 		font-size: 14px
+		font-weight: 700
+		text-transform: uppercase
 		& > li
 			border-bottom: 1px solid rgba(255,255,255,0.15)
 		+rmin($desktop)
 			display: flex
 			flex: 1
 			& > li
+				position: relative
+				top: 2px
 				border: none
 				margin: 0 30px 0 0
 	&__link
@@ -143,8 +147,10 @@
 			color: #999
 		.ico-xl
 			font-size: 10px
+			top: -2px
 		.ico-charterly
 			font-size: 32px
+			top: -1px
 		
 
 .auth

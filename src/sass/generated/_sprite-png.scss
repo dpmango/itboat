@@ -1,20 +1,38 @@
 $sprite: (
 	range-next: (
 		offset-x: 0px,
-		offset-y: 0px,
+		offset-y: -66px,
 		width: 14px,
 		height: 20px,
-		total-width: 38px,
-		total-height: 20px,
+		total-width: 138px,
+		total-height: 86px,
 		image: '../img/sprite.png'
 	),
 	range-prev: (
 		offset-x: -24px,
-		offset-y: 0px,
+		offset-y: -66px,
 		width: 14px,
 		height: 20px,
-		total-width: 38px,
-		total-height: 20px,
+		total-width: 138px,
+		total-height: 86px,
+		image: '../img/sprite.png'
+	),
+	tabs-shadow-left: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 64px,
+		height: 56px,
+		total-width: 138px,
+		total-height: 86px,
+		image: '../img/sprite.png'
+	),
+	tabs-shadow-right: (
+		offset-x: -74px,
+		offset-y: 0px,
+		width: 64px,
+		height: 56px,
+		total-width: 138px,
+		total-height: 86px,
 		image: '../img/sprite.png'
 	),
 );
@@ -78,4 +96,10 @@ $sprite: (
 	}
 	.icon-range-prev {
 		@include sprite(range-prev)
+	}
+	.icon-tabs-shadow-left {
+		@include sprite(tabs-shadow-left)
+	}
+	.icon-tabs-shadow-right {
+		@include sprite(tabs-shadow-right)
 	}

@@ -3,7 +3,7 @@
 .media
 	.container-fluid
 		padding-top: 63px
-		padding-bottom: 55px
+		padding-bottom: 40px
 		background: #fff
 
 .media__heading
@@ -22,22 +22,181 @@
 	display: block
 	margin: 0 0 40px
 
+
+// -----
+
+
+
+.media-tabs__container
+	position: relative
+
+.media-tabs__panel
+	transition: .5s
+	opacity: 0
+	visibility: hidden
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	padding: 20px 0
+	&.is-active
+		opacity: 1
+		visibility: visible
+		position: relative
+
+
+.media-tabs__menu
+	margin: 0 -10px 18px
+	padding: 0
+	list-style: none
+	display: flex
+	align-items: flex-end
+	justify-content: center
+	// overflow: hidden
+	position: relative
+	text-align: center
+	& > li
+		width: 100%
+		max-width: 240px
+		position: relative
+		&:after, &:before
+			content: ''
+			position: absolute
+			bottom: 0
+			transition: .25s
+			opacity: 0
+			visibility: hidden
+		&:after
+			left: 100%
+			@include sprite(tabs-shadow-right)
+		&:before
+			right: 100%
+			@include sprite(tabs-shadow-left)
+		
+		&.is-active
+			&:after, &:before
+				opacity: 1
+				visibility: visible
+			.media-tabs__item
+				color: #1ea0e4
+				&:after, &:before
+					opacity: 1
+					visibility: visible
+			.media-tabs__item-in
+				&:after, &:before
+					opacity: 1
+					visibility: visible
+	+r($mobile-s)
+		flex-wrap: wrap
+		& > li
+			width: 33.333%
+
+
+
+.media-tabs__item
+	transition: .25s
+	text-align: center
+	color: #999999
+	cursor: pointer
+	width: 100%
+	font-size: 16px
+	line-height: 20px
+	// font-weight: 400
+	font-weight: 700
+	position: relative
+	z-index: 10
+	white-space: nowrap
+	&:after, &:before
+		content: ''
+		display: block
+		position: absolute
+		z-index: 10
+		bottom: 0
+		height: 1px
+		background: #E0E0E0
+		width: 100vw
+		transition: inherit
+		opacity: 0
+		visibility: hidden
+	&:after
+		left: 100%
+	&:before
+		right: 100%
+		
+	&:hover
+		color: #222
+	+r($mobile-s)
+		font-size: 14px
+		// font-weight: 400
+
+
+.media-tabs__item-in
+	padding: 22px 10px
+	+r($mobile-s)
+		padding: 15px 10px
+	&:after, &:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 1px
+		background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,224,224,1) 100%)
+		transition: .25s
+		opacity: 0
+		visibility: hidden
+	&:after
+		left: 0
+	&:before
+		right: 0
+
+
+	// &:after, &:before
+	// 	content: ''
+	// 	position: absolute
+	// 	bottom: 0
+	// 	transition: .25s
+	// 	opacity: 0
+	// 	visibility: hidden
+	// 	z-index: -1
+	// &:after
+	// 	left: 100%
+	// 	@include sprite(tabs-shadow-right)
+	// &:before
+	// 	right: 100%
+	// 	@include sprite(tabs-shadow-left)
+
+// -----
+
+
 .media__list
-	margin: 0 -10px 40px
+	margin: 0 -10px 20px
 	padding: 0
 	list-style: none
 	position: relative
 	display: flex
 	flex-wrap: wrap
 	& > li
-		margin: 0 0 20px
+		margin: 0
+
 
 // -----
 
 .media-article
+	position: relative
 	display: block
 	text-decoration: none
 	color: #999999
+	overflow: hidden
+	margin: 0 0 20px
+	&:before
+		content: ''
+		float: left
+		padding: 133.333% 0 0
+	&:hover
+		.media-article__title
+			text-decoration: underline
+
 	&__image
 		margin: 0 0 12px
 		overflow: hidden
@@ -71,6 +230,20 @@
 		margin: 0 0 5px
 	&__text
 		margin: 0 0 5px
+	&__xl
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 5
+		background: #222222
+		height: 30px
+		padding: 0 8px
+		line-height: 30px
+		.ico
+			top: -2px
+			font-size: 12px
+			color: #fff
 
 // -----
 
@@ -80,8 +253,11 @@
 	position: relative
 	color: #fff
 	text-decoration: none
-	height: 400px
 	background: #E0E0E0
+	margin: 0 0 20px
+	&:hover
+		.media-photo__title
+			text-decoration: underline
 	&:before
 		content: ''
 		float: left
@@ -98,12 +274,13 @@
 		&:after
 			content: ''
 			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(34,34,34,1) 100%);
+			opacity: 0.5
 			position: absolute
 			top: 0
 			left: 0
 			width: 100%
 			height: 100%
-			opacity: 0.5
+
 		img
 			display: block
 			width: 100%
@@ -127,18 +304,36 @@
 	&__title
 		font-size: 22px
 		margin: 0 0 5px
+	&__xl
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 5
+		background: #222222
+		height: 30px
+		padding: 0 8px
+		line-height: 30px
+		.ico
+			top: -2px
+			font-size: 12px
+			color: #fff
 
 
 // -----
 
 .media-offer
+	position: relative
 	background: #1EA0E4 url(../img/bg-offer.png) 0 0 no-repeat
 	color: #fff
 	text-align: center
 	font: italic 18px/1.444 $fontCaption
 	padding: 50px 30px
+	margin: 0 0 20px
+
 	&__text
 		margin: 0 0 25px
+
 // -----
 
 .media-banner
@@ -147,6 +342,8 @@
 	position: relative
 	display: block
 	text-decoration: none
+	margin: 0 0 20px
+
 	&:before
 		content: ''
 		float: left
@@ -155,6 +352,79 @@
 		display: block
 		width: 100%
 
+
+// -----
+
+.media-news
+	position: relative
+	display: block
+	box-shadow: inset 0 0 0 1px #E0E0E0
+	// border: 1px solid #E0E0E0
+	// padding: 24px 10px 60px
+	text-decoration: none
+	text-align: center
+	overflow: hidden
+	margin: 0 0 20px
+	&:before
+		content: ''
+		float: left
+		padding: 133.333% 0 0
+	&:hover
+		.media-news__title
+			text-decoration: underline
+	&--bg
+		background: #F5F5F5
+		box-shadow: none
+		.media-news__image
+			background: #fff
+
+	&__image
+		margin: 0 auto 28px
+		overflow: hidden
+		position: relative
+		width: 120px
+		height: 120px
+		border-radius: 50%;
+		background: #F5F5F5
+		display: flex
+		align-items: center
+		justify-content: center
+	&__date
+		font-size: 14px
+		display: block
+		color: #999999
+		padding: 22px 0
+	&__desc
+		padding: 0 20px 25px
+	&__rubric
+		font-size: 12px
+		font-weight: 700
+		text-transform: uppercase
+		background: none
+		color: #1ea0e4
+		letter-spacing: 2px
+		margin: 0
+		display: block
+	&__title
+		font-size: 22px
+		color: #222222
+		margin: 0 0 5px
+	&__text
+		margin: 0 0 5px
+	&__xl
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 5
+		background: #222222
+		height: 30px
+		padding: 0 8px
+		line-height: 30px
+		.ico
+			top: -2px
+			font-size: 12px
+			color: #fff
 
 // -----
 

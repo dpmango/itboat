@@ -81,12 +81,12 @@ $(document).ready(function(){
     }
 
 
-    $('.item').matchHeight({
-        byRow: true,
-        property: 'min-height',
-        target: null,
-        remove: false
-    });
+    // $('.item').matchHeight({
+    //     byRow: true,
+    //     property: 'min-height',
+    //     target: null,
+    //     remove: false
+    // });
 
 
     // --------------------------------------------------------------------------
@@ -174,9 +174,9 @@ $(document).ready(function(){
     // Tabs
     // --------------------------------------------------------------------------
 
-    $('.tabs__menu').on('click', 'li:not(.active)', function() {
+    $('.js-tabs__menu').on('click', 'li:not(.active)', function() {
         $(this).addClass('is-active').siblings().removeClass('is-active')
-        .closest('.tabs').find('.tabs__panel').removeClass('is-active').eq($(this).index()).addClass('is-active');
+        .closest('.js-tabs').find('.js-tabs__panel').removeClass('is-active').eq($(this).index()).addClass('is-active');
     });
 
 
@@ -196,8 +196,39 @@ $(document).ready(function(){
     });
 
 
+    // --------------------------------------------------------------------------
+    // Random colors for icons & random bg
+    // --------------------------------------------------------------------------
 
 
+    $('[class *= "ico-set-"]').each(function(){
+        var colorsArr = ["#999999", "#212121", "#00AE6F"];
+        var colorsRand = Math.floor(Math.random() * colorsArr.length);
+        $(this).css('color',colorsArr[colorsRand])
+    });
+
+
+    $('.media-news').each(function(){
+        var bgArr = ["media-news--bg", "media-news--nobg"];
+        var bgRand = Math.floor(Math.random() * bgArr.length);
+        $(this).addClass(bgArr[bgRand]);
+    });
+
+
+    // --------------------------------------------------------------------------
+    // Tags more
+    // --------------------------------------------------------------------------
+
+    $('.tags__btn--more').on('click', function(event) {
+        event.preventDefault();
+
+        $(this).hide().closest('.tags').find('.tags__btn:hidden').each(function(i) {
+            $(this).not('.tags__btn--more').delay((i++) * 100).fadeTo(200, 1);
+        });
+
+    });
+
+    
     
 
 

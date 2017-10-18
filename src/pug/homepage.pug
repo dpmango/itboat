@@ -5,9 +5,8 @@ bodyClass: homepage
 extends shared/_layout
 block content
 	
-	// GRID
 
-	#grid lorem
+	#grid
 
 	// Promo :: Start
 
@@ -154,7 +153,7 @@ block content
 							a(href="#").media-article
 								figure.media-article__image
 									img(src="img/img-media-3.jpg", alt="")
-									span.media-article__icon
+									span.media-article__xl
 										+icon('ico-xl')
 								.media-article__desc
 									mark.media-article__rubric парусный спорт
@@ -211,144 +210,150 @@ block content
 			h2.catalog__heading Каталог
 			p.catalog__caption Лучший в мире инструмент для подбора новых яхт и катеров. Более ХХХХ актуальных моделей от ХХХ производителей!
 
-			.tabs
-				ul.tabs__menu
+			.tabs.js-tabs
+				ul.tabs__menu.js-tabs__menu
 					li
 						.tabs-item
-							figure.tabs-item__icon
-								+icon('ico-boats')
-							b.tabs-item__title Катера
-							p.tabs-item__text 1 278 <span>моделей</span>
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-boats')
+								b.tabs-item__title Катера
+								p.tabs-item__text 1 278 <span>моделей</span>
 					li.is-active
 						.tabs-item
-							figure.tabs-item__icon
-								+icon('ico-motor')
-							b.tabs-item__title Моторные <span>яхты</span>
-							p.tabs-item__text 1499 <span>моделей</span>
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-motor')
+								b.tabs-item__title Моторные <span>яхты</span>
+								p.tabs-item__text 1499 <span>моделей</span>
 					li
 						.tabs-item
-							figure.tabs-item__icon
-								+icon('ico-sailing')
-							b.tabs-item__title Парусные <span>яхты</span>
-							p.tabs-item__text 668 <span>моделей</span>
-				.tabs__panel
-					
-					.models
-						h3.models__heading Новые модели
-						.models-carousel.owl-carousel.js-carousel-models
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-sailing')
+								b.tabs-item__title Парусные <span>яхты</span>
+								p.tabs-item__text 668 <span>моделей</span>
+
+				.tabs__container
+					.tabs__panel.js-tabs__panel
+						
+						.models
+							h3.models__heading Новые модели
+							.models-carousel.owl-carousel.js-carousel-models
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
 
 
-						.models-ctrl
-							a(href="#").btn.btn-dark-empty Посмотреть все новые 
-				.tabs__panel.is-active
+							.models-ctrl
+								a(href="#").btn.btn-dark-empty Посмотреть все новые 
+								
+					.tabs__panel.js-tabs__panel.is-active
 
-					.models
-						h3.models__heading Новые модели
-						.models-carousel.owl-carousel.js-carousel-models
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
-
-
-						.models-ctrl
-							a(href="#").btn.btn-dark-empty Посмотреть все новые 
-
-				.tabs__panel
-					
-					.models
-						h3.models__heading Новые модели
-						.models-carousel.owl-carousel.js-carousel-models
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								h4.models-item__title <small>Beneteau</small> Antares 32
-								i.models-item__price от €146 500,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								h4.models-item__title <small>Dominator</small> Dominator 680
-								i.models-item__price от €2 530 000,–
-							.models-item
-								figure.models-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								h4.models-item__title <small>Marquis</small> 500 Sport Yacht
-								i.models-item__price от €942 240,–
+						.models
+							h3.models__heading Новые модели
+							.models-carousel.owl-carousel.js-carousel-models
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
 
 
-						.models-ctrl
-							a(href="#").btn.btn-dark-empty Посмотреть все новые 
+							.models-ctrl
+								a(href="#").btn.btn-dark-empty Посмотреть все новые 
+
+					.tabs__panel.js-tabs__panel
+						
+						.models
+							h3.models__heading Новые модели
+							.models-carousel.owl-carousel.js-carousel-models
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-1.jpg", alt="")
+									h4.models-item__title <small>Beneteau</small> Antares 32
+									i.models-item__price от €146 500,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-2.jpg", alt="")
+									h4.models-item__title <small>Dominator</small> Dominator 680
+									i.models-item__price от €2 530 000,–
+								.models-item
+									figure.models-item__image
+										img(src="img/img-models-3.jpg", alt="")
+									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									i.models-item__price от €942 240,–
+
+
+							.models-ctrl
+								a(href="#").btn.btn-dark-empty Посмотреть все новые 
 
 			.row.row-offset-60
 				.col-md-6
@@ -724,19 +729,19 @@ block content
 						ul.charterly-list
 							li
 								+icon('ico-charterly-1')
-								| Отдельный проект от создателей itBoat, посвященный чартеру
+								| Отдельный проект от создателей itBoat,<br> посвященный чартеру
 							li
 								+icon('ico-charterly-2')
-								| Оператор самого большого флота суперяхт, базирующихся в водах России
+								| Оператор самого большого флота<br> суперяхт, базирующихся в водах России
 							li
 								+icon('ico-charterly-3')
-								| Москва, Петербург и Сочи: арендуйте лодки в любой из яхтенных столиц России
+								| Москва, Петербург и Сочи: арендуйте лодки<br> в любой из яхтенных столиц России
 							li
 								+icon('ico-charterly-4')
 								| Опыт работы на рынке <br>с 2005 года
 							li
 								+icon('ico-charterly-5')
-								| Моментальное бронирование и оплата в реальном времени
+								| Моментальное бронирование и оплата <br>в реальном времени
 
 					.col-lg-6
 

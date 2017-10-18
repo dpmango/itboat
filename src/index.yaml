@@ -2,6 +2,6 @@ ProjectTitle: itBoat
 
 PageList:
 - file: homepage.html
-  ready: 5
-- file: page.html
-  ready: 0
+  ready: 100
+- file: journal.html
+  ready: 100
