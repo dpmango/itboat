@@ -2,33 +2,41 @@
 a(href="#").banner
     img(src="img/banner.jpg", alt="")
 header.header
-    .container
+    .container-fluid
         .logo
             a(href="/homepage.pug")
                 +icon('ico-logo')
         nav.nav
-            button.nav__btn
-            ul.nav__menu
-                li
-                    a(href="#").nav__link ЖУРНАЛ
-                li
-                    a(href="#").nav__link КАТАЛОГ
-                li
-                    a(href="#").nav__link
-                        +icon('ico-xl')
-                li
-                    a(href="#").nav__link
-                        +icon('ico-charterly')
-        nav.auth
-            a(href="#").auth__link Вход
-            span.auth__dot
-            a(href="auth__link") Регистрация
 
-        .search
-            form(action="#")
-                input(type="search", placeholder="Поиск").search__input
-                button.search__btn
-                    +icon('ico-search')
+            button.nav__btn
+                span
+
+            .nav__dropdown
+
+                ul.nav__menu
+                    li
+                        a(href="#").nav__link ЖУРНАЛ
+                    li
+                        a(href="#").nav__link КАТАЛОГ
+                    li
+                        a(href="#").nav__link
+                            +icon('ico-xl')
+                    li
+                        a(href="#").nav__link
+                            +icon('ico-charterly')
+
+                ul.auth
+                    li
+                        a(href="#").auth__link Вход
+                
+                    li
+                        a(href="#").auth__link Регистрация
+
+                .search
+                    form(action="#")
+                        input(type="search", placeholder="Поиск").search__input
+                        button.search__btn
+                            +icon('ico-search')
 
         
 // HEADER :: END

@@ -1,0 +1,200 @@
+// charterly
+
+.charterly
+	color: #fff
+	.container-fluid
+		position: relative
+		z-index: 10
+		background: #212121
+		padding: 75px 20px 100px
+
+
+.charterly-bg
+	background: #212121 url(../img/bg-charterly.jpg) 0 0 no-repeat fixed
+	background-size: cover
+	display: block
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	
+	z-index: -1
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #212121;
+		opacity: 0.5
+
+.charterly-logo
+	text-align: center
+	margin: 0 0 1px
+	.ico
+		font-size: 138px
+		max-width: 100%
+	&__text
+		display: block
+		font-size: 12px
+		line-height: 18px
+		position: relative
+		top: -30px
+		+r($tablet)
+			max-width: 130px
+			margin: 0 auto
+
+
+.charterly-content
+	max-width: 1100px
+	margin: 0 auto
+
+.charterly-list
+	margin: 0 auto 50px
+	padding: 0
+	list-style: none
+	font: italic 700 18px/26px $fontCaption
+	max-width: 530px
+	+rmin($desktop)
+		margin-left: 0
+		margin-right: 0
+
+	& > li
+		position: relative
+		padding: 0 0 0 80px
+		margin: 0 0 25px
+	.ico
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translate(0,-50%)
+		color: #FFA826
+	.ico-charterly-1
+		font-size: 46px
+		margin-left: 4px
+	.ico-charterly-2
+		font-size: 50px
+	.ico-charterly-3
+		font-size: 50px
+	.ico-charterly-4
+		font-size: 50px
+		margin-left: -4px
+	.ico-charterly-5
+		font-size: 46px
+		margin-left: -10px
+	+r($tablet)
+		text-align: center
+		& > li
+			padding: 0
+		.ico
+			position: relative
+			top: 0
+			display: block
+			margin: 0 auto 20px
+			transform: translate(0,0)
+
+
+.charterly-ctrl
+	text-align: center
+
+
+
+.charterly-carousel
+	position: relative
+	margin: 0 auto 24px
+	max-width: 540px
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		display: none
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 0 10px
+		background: #818C8F
+		&.active
+			background: #fff
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		top: 145px
+		width: 50px
+		height: 50px
+		background: #212121
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		font-size: 30px
+		&:hover
+			color: #fff
+			background: #1EA0E4
+	.owl-prev
+		left: 0
+		border-radius: 0px 4px 4px 0px;
+	.owl-next
+		right: 0
+		border-radius: 4px 0 0 4px;
+	+r($tablet)
+		padding: 40px 0 0
+		.owl-prev, .owl-next
+			height: 40px
+			width: auto
+			background: none
+			color: #fff
+			top: -10px
+			z-index: 10
+			.ico
+				font-size: 20px
+			&:hover
+				background: none
+				color: #fff
+		.owl-dots
+			display: flex
+
+
+.charterly-item
+	display: block
+	text-align: center
+	&__image
+		max-height: 340px
+		margin: 0 0 12px
+		overflow: hidden
+		position: relative
+		&:before
+			content: ''
+			float: left
+			padding: 65% 0 0
+		img
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__city
+		display: block
+		font-size: 14px
+	&__title
+		font-size: 16px
+		text-transform: uppercase
+		margin: 0 0 5px
+		letter-spacing: 2px
+	&__price
+		display: block
+		font: italic 14px/1 $fontCaption
+		margin: 0
+		color: #999999

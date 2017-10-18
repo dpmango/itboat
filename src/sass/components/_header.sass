@@ -3,37 +3,234 @@
 .banner
 	text-align: center
 	margin: 0
-	padding: 10px 15px
 	display: flex
+	align-items: center
 	justify-content: center
+	min-height: 30px
 	img
 		display: block
+	+rmin($desktop)
+		padding: 10px 15px
+
+	
 
 .header
-	background-color: #222222
+	position: relative
+	z-index: 100
+	background-color: #000000
 	color: #fff
-	height: 50px
-	line-height: 50px
-	.container
+	height: 60px
+	line-height: 60px
+	.container-fluid
 		display: flex
+		position: relative
+		max-width: none
+	+rmin($desktop)
+		height: 50px
+		line-height: 50px
+	+rmin($hd)
+		.container-fluid
+			padding-left: 40px
+			padding-right: 40px
+
+.logo
+	font-size: 24px
+	margin: 0 30px 0 0
+	.ico
+		top: -4px
 
 .nav
 	flex: 1;
+	&.is-open
+
+		.nav__btn
+			span
+				background: none
+			span:after
+				top: 0
+				transform: rotate(45deg)
+			span:before
+				top: 0
+				transform: rotate(-45deg)
+
+		.nav__dropdown
+			opacity: 1
+			visibility: visible
 	&__btn
-		display: none
+		display: block
+		position: absolute
+		top: 50%
+		right: 20px
+		width: 20px
+		height: 14px
+		border: none
+		background: none
+		margin: -7px 0 0
+		cursor: pointer
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: -5px
+			right: -5px
+			bottom: -5px
+			left: -5px
+		span
+			transition: .25s
+			position: absolute
+			top: 50%
+			left: 0
+			width: 20px
+			height: 2px
+			background: #fff
+			&:after, &:before
+				transition: .25s
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background: #fff
+			&:after
+				top: -6px
+			&:before
+				top: 6px
+		+rmin($desktop)
+			display: none
+	&__dropdown
+		display: block
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		background: #000
+		padding: 10px 20px 20px
+		border-top: 1px solid rgba(255,255,255,0.5)
+		box-shadow: 0 3px 10px rgba(0,0,0,0.3)
+		transition: .25s
+		opacity: 0
+		visibility: hidden
+		+rmin($desktop)
+			opacity: 1
+			visibility: visible
+			border: none
+			padding: 0
+			box-shadow: none
+			display: flex
+			align-items: center
+			position: relative
+			top: 0
+			background: none
 	&__menu
 		margin: 0
 		padding: 0
-		display: flex
-		li
-			padding: 0 10px
+		list-style: none
+		font-size: 14px
+		& > li
+			border-bottom: 1px solid rgba(255,255,255,0.15)
+		+rmin($desktop)
+			display: flex
+			flex: 1
+			& > li
+				border: none
+				margin: 0 30px 0 0
 	&__link
+		display: block
+		color: #fff
+		&:hover
+			color: #999
+		.ico-xl
+			font-size: 10px
+		.ico-charterly
+			font-size: 32px
 		
 
 .auth
-	margin-left: auto
+	margin: 0
+	padding: 0
+	list-style: none
+	font-size: 14px
+	display: flex
+	& > li
+		position: relative
+		padding: 0 12px 0 0
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			right: 5px
+			width: 2px
+			height: 2px
+			background: #999999
+		&:last-child
+			padding: 0
+			&:after
+				display: none
+	&__link
+		color: #999
+		&:hover
+			color: #fff
 
 .search
-	margin-left: auto
+	line-height: 1
+	position: relative
+	overflow: hidden
+	transition: .25s
+	+rmin($desktop)
+		width: 38px
+		margin: 0 0 0 30px
+		&__input
+			opacity: 0
+			visibility: hidden
+		&.is-open
+			width: 220px
+			.search__input
+				opacity: 1
+				visibility: visible
+
+	&__input
+		transition: .25s
+		width: 100%
+		border: 1px solid #4D4D4D
+		font: 400 12px/20px 'Open Sans', Helvetica, Arial, sans-serif
+		border-radius: 16px;
+		padding: 5px 20px
+		background: #000000
+		color: #fff
+		height: 32px
+		&::placeholder
+			color: #999
+		&:focus
+			background: #4D4D4D
+	&__btn
+		display: block
+		border: none
+		padding: 0
+		background: none
+		color: #fff
+		font-size: 14px
+		line-height: 1
+		position: absolute
+		top: 0
+		height: 100%
+		right: 0
+		width: 38px
+		cursor: pointer
+		text-align: center
+		display: flex
+		align-items: center
+		justify-content: center
+		.ico
+			display: block
 	
-    
+
+		
+
+
+	
+
+
+// =rmin($width)

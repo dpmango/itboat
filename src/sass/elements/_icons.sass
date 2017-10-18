@@ -13,10 +13,31 @@
 
 .icon
   display: inline-block
+  vertical-align: middle
   font-style: normal
   content: ' '
 
 // reset for empty icons
 .ico
+  display: inline-block
+  vertical-align: middle
+  position: relative
   fill: currentColor
-  transition: all $transitionSpeed $ease
+ 
+  // transition: all $transitionSpeed $ease
+
+.icon-toggle
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 50%
+	right: 0
+	width: 30px
+	height: 30px
+	border: 1px solid #E1E1E1
+	font-size: 6px
+	color: #212121
+	border-radius: 50%
+	margin: -15px 0 0
+	transition: .25s

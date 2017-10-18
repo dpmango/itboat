@@ -1,6 +1,6 @@
 // FOOTER :: START
 footer.footer
-	.container
+	.container-fluid
 
 		nav.nav-group
 			.row
@@ -8,7 +8,7 @@ footer.footer
 					.logo
 						a(href="/homepage.pug")
 							+icon('ico-logo')
-				.col-lg-2
+				.col-6.col-sm-4.col-lg-2
 					p.nav-group__title Журнал
 					ul.nav-group__menu
 						li
@@ -39,43 +39,46 @@ footer.footer
 							a(href="#").nav-group__link Юмор
 						li
 							a(href="#").nav-group__link Происшествия
-				.col-lg-2
-					p.nav-group__title Каталог
-					ul.nav-group__menu
-						li
-							a(href="#").nav-group__link Катера
-						li
-							a(href="#").nav-group__link Моторные яхты
-						li
-							a(href="#").nav-group__link Парусные яхты
+				.col-6.col-sm-8.col-lg-4
 
-				.col-lg-2
-					p.nav-group__title Маркет
-					ul.nav-group__menu
-						li
-							a(href="#").nav-group__link Ковые парусные яхты
-						li
-							a(href="#").nav-group__link Новые моторные яхты
-						li
-							a(href="#").nav-group__link Новые катера
-						li
-							a(href="#").nav-group__link Парусные яхты б/у
-						li
-							a(href="#").nav-group__link Моторные яхты б/у
-						li
-							a(href="#").nav-group__link Катера б/у
-						li
-							a(href="#").nav-group__link Недорогие катера
-						li
-							a(href="#").nav-group__link Недорогие парусные яхты
-						li
-							a(href="#").nav-group__link Недорогие моторные яхты
-						li
-							a(href="#").nav-group__link Промо предложения
-				.col-lg-2
+					.row
+						.col-sm-6.col-lg-6
+							p.nav-group__title Каталог
+							ul.nav-group__menu
+								li
+									a(href="#").nav-group__link Катера
+								li
+									a(href="#").nav-group__link Моторные яхты
+								li
+									a(href="#").nav-group__link Парусные яхты
+						.col-sm-6.col-lg-6
+							p.nav-group__title Маркет
+							ul.nav-group__menu
+								li
+									a(href="#").nav-group__link Ковые парусные яхты
+								li
+									a(href="#").nav-group__link Новые моторные яхты
+								li
+									a(href="#").nav-group__link Новые катера
+								li
+									a(href="#").nav-group__link Парусные яхты б/у
+								li
+									a(href="#").nav-group__link Моторные яхты б/у
+								li
+									a(href="#").nav-group__link Катера б/у
+								li
+									a(href="#").nav-group__link Недорогие катера
+								li
+									a(href="#").nav-group__link Недорогие парусные яхты
+								li
+									a(href="#").nav-group__link Недорогие моторные яхты
+								li
+									a(href="#").nav-group__link Промо предложения
+					
+				.col-sm-6.col-lg-2
 					p.nav-group__title
 						+icon('ico-xl')
-				.col-lg-2
+				.col-sm-6.col-lg-2
 					p.nav-group__title
 						+icon('ico-charterly')
 		hr

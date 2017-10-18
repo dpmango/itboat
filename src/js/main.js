@@ -1,13 +1,204 @@
 $(document).ready(function(){
 
 
-    $('.js-promo-carousel').owlCarousel({
-        center: true,
-        items:1,
-        loop:true,
-        margin:10
+    // --------------------------------------------------------------------------
+    // Nav Mobile
+    // --------------------------------------------------------------------------
+
+    $('.nav').on('click', '.nav__btn', function(event) {
+        event.preventDefault();
+        if ($(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.nav').removeClass('is-open');
+        }
+        else {
+            $(this).addClass('is-active').closest('.nav').addClass('is-open');
+        }
     });
 
+
+    // --------------------------------------------------------------------------
+    // Search
+    // --------------------------------------------------------------------------
+
+    $('.search').on('click', '.search__btn', function(event) {
+        if ($(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.search').removeClass('is-open');
+        }
+        else {
+            event.preventDefault();
+            $(this).addClass('is-active').closest('.search').addClass('is-open').on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+                $('.search__input').focus();
+            });
+        }
+      
+    });
+
+    $(document).on('click', function(e) {
+        if($(e.target).closest('.search').length == 0) {
+           $('.search, .search__btn').removeClass('is-open is-active');
+        }
+    });
+
+    // --------------------------------------------------------------------------
+    // Owl Carousel
+    // --------------------------------------------------------------------------
+
+    var iconPrev = '<svg class="ico ico-prev"><use xlink:href="img/sprite.svg#ico-prev"></use></svg>',
+        iconNext = '<svg class="ico ico-next"><use xlink:href="img/sprite.svg#ico-next"></use></svg>';
+
+    var duration = 5000;
+
+    $('.js-carousel').owlCarousel({
+        center: true,
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: duration,
+        nav: true,
+        dots: true,
+        margin: 0,
+        navText: [iconPrev,iconNext],
+        onInitialize: resetProgressBar,
+        onInitialized: startProgressBar,
+        onTranslate: resetProgressBar,
+        onTranslated: startProgressBar
+    });
+
+    function startProgressBar() {
+   
+        $('.js-carousel-progress').css({
+            'width': '100%',
+            'transition': 'width +' + duration + 'ms'
+        });
+
+    }
+
+    function resetProgressBar() {
+        $('.js-carousel-progress').css({
+            'width': 0,
+            'transition': 'width 0s'
+        });
+    }
+
+
+    $('.item').matchHeight({
+        byRow: true,
+        property: 'min-height',
+        target: null,
+        remove: false
+    });
+
+
+    // --------------------------------------------------------------------------
+    // Masonry
+    // --------------------------------------------------------------------------
+
+    $('.js-masonry').masonry({
+        itemSelector: 'li',
+        percentPosition: true
+    });
+
+
+    // --------------------------------------------------------------------------
+    // Owl Carousel Models
+    // --------------------------------------------------------------------------
+
+
+    $('.js-carousel-models').owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        margin: 30,
+        navText: [iconPrev,iconNext],
+        responsive: {
+            768: {
+                items: 3
+            }
+            
+        }
+    });
+
+    $('.js-carousel-charterly').owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        margin: 30,
+        navText: [iconPrev,iconNext]
+    });
+
+    // --------------------------------------------------------------------------
+    // Formstyler
+    // --------------------------------------------------------------------------
+
+    $('.ui-select').styler({
+        selectSmartPositioning: false,
+        selectSearch: false,
+        selectVisibleOptions: 0,
+        selectSearchLimit: 6
+    });
+
+    // --------------------------------------------------------------------------
+    // Range
+    // --------------------------------------------------------------------------
+
+    $('.ui-range__input').ionRangeSlider({
+        type: "double",
+        from: 0,
+        step: 1,
+        hide_min_max: true,
+        hide_from_to: true,
+        force_edges: true,
+        grid: false
+    });
+
+
+    $('.ui-range__input').on('change', function(event) {
+        event.preventDefault();
+
+        var range = $(this),
+            rangeData = range.data("ionRangeSlider"),
+            rangeDataFrom = range.data("from"),
+            rangeDataTo = range.data("to");
+
+        range.closest('.ui-range').find('.ui-from').val(rangeDataFrom)
+        range.closest('.ui-range').find('.ui-to').val(rangeDataTo)
+        // .closest('.app-range').find('.app-range-data').text(rangeDataFrom + ' - ' + rangeDataTo)
+
+    });
+
+
+
+    // --------------------------------------------------------------------------
+    // Tabs
+    // --------------------------------------------------------------------------
+
+    $('.tabs__menu').on('click', 'li:not(.active)', function() {
+        $(this).addClass('is-active').siblings().removeClass('is-active')
+        .closest('.tabs').find('.tabs__panel').removeClass('is-active').eq($(this).index()).addClass('is-active');
+    });
+
+
+
+    // --------------------------------------------------------------------------
+    // Filter & Popular Toggle Mobile
+    // --------------------------------------------------------------------------
+
+    $('.js-toggle').on('click', '.js-toggle-btn', function(event) {
+        event.preventDefault();
+        if ($(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.js-toggle').find('.js-toggle-content').slideUp('fast');
+        }
+        else {
+            $(this).addClass('is-active').closest('.js-toggle').find('.js-toggle-content').slideDown('fast');
+        }
+    });
+
+
+
+
+    
 
 
   //////////

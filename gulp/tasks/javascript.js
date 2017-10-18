@@ -15,6 +15,9 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'jquery-mask-plugin/dist/jquery.mask.min.js'),
       path.resolve('bower_components', 'owl.carousel/dist/owl.carousel.min.js'),
       path.resolve('bower_components', 'ion.rangeSlider/js/ion.rangeSlider.min.js'),
+      path.resolve('bower_components', 'masonry/dist/masonry.pkgd.min.js'),
+      path.resolve('bower_components', 'matchHeight/dist/jquery.matchHeight-min.js'),
+      // path.resolve('bower_components', 'jquery.form-styler/dist/jquery.formstyler.min.js'),
       config.src.js + '/vendor/**/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))

@@ -1,18 +1,74 @@
 // buttons
-button
-  -webkit-apperance: none
-  border: 0
-  box-shadow: none
-  &:focus
-    outline: none
+// button
+//   -webkit-apperance: none
+//   border: 0
+//   box-shadow: none
+//   &:focus
+//     outline: none
 
 .btn
-  display: inline-block
-  position: relative
-  text-align: center
-  transition: all $transitionSpeed ease-in-out
-  &:focus, &:active
-    outline: none
-  &--block
-    display: block
+    display: inline-block
+    vertical-align: middle
+    position: relative
+    text-align: center
+    font: 700 16px/22px $fontBase
+    border: 1px solid transparent
+    background: none
+    border-radius: 20px
+    padding: 7px 28px 9px
+    transition: all $transitionSpeed ease-in-out
+    cursor: pointer
+    &:focus, &:active
+        outline: none
+    &--block
+        display: block
+        width: 100%
+
+.btn-green
+    background: #00AE6F
+    color: #fff;
+    
+    &:hover
+
+.btn-dark
+    background: #212121
+    color: #fff;
+    border-radius: 4px
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-size: 12px
+    min-width: 174px
+    padding: 13px 20px
+    &:hover
+        background: #353535
+
+
+.btn-blue-empty
+    border-color: #1ea0e4
+    color: #fff
+    &:hover
+        background: #1ea0e4
+        color: #fff
+    &:active
+
+
+.btn-yellow-empty
+    border-color: #FFA826
+    color: #fff
+    &:hover
+        background: #FFA826
+        color: #212121
+    &:active
+
+.btn-dark-empty
+    border-color: #999
+    color: #212121
+    &:hover
+        background: #212121
+        color: #fff
+    &:active
+
+
+
+.btn-block
     width: 100%

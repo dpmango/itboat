@@ -20,5 +20,56 @@
 @import elements/ui
 
 @import components/header
+@import components/main
 @import components/footer
-@import components/index
+
+@import components/promo
+@import components/media
+@import components/news
+@import components/catalog
+@import components/tabs
+@import components/models
+
+@import components/brands
+@import components/categories
+
+@import components/market
+
+@import components/filter
+@import components/popular
+@import components/sell
+@import components/charterly
+
+
+#grid
+	display: block
+	position: absolute
+	top: 0
+	left: 50%
+	width: 1600px
+	height: 7150px
+	background: url(../img/grid.jpg) 0 0 no-repeat
+	z-index: 100
+	margin: 0 0 0 -800px
+	opacity: 0.4
+	display: none
+
+
+
+.row
+	margin: 0 -10px
+
+[class^="col"]
+	padding: 0 10px
+
+
+.row-offset-10
+	margin: 0 -5px
+	& > [class^="col"]
+		padding: 0 5px
+
+.row-offset-60
+	+rmin($desktop)
+		margin: 0 -30px
+		& > [class^="col"]
+			padding: 0 30px

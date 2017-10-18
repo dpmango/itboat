@@ -1,0 +1,163 @@
+// MEDIA
+
+.media
+	.container-fluid
+		padding-top: 63px
+		padding-bottom: 55px
+		background: #fff
+
+.media__heading
+	text-align: center
+	font: 400 30px/1 $fontHeading
+	text-transform: uppercase
+	margin: 0 0 18px
+	letter-spacing: 4px
+	+rmin($tablet)
+		font-size: 40px
+
+.media__caption
+	font: italic 18px/1.444 $fontCaption
+	text-align: center
+	color: #4c4c4c
+	display: block
+	margin: 0 0 40px
+
+.media__list
+	margin: 0 -10px 40px
+	padding: 0
+	list-style: none
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	& > li
+		margin: 0 0 20px
+
+// -----
+
+.media-article
+	display: block
+	text-decoration: none
+	color: #999999
+	&__image
+		margin: 0 0 12px
+		overflow: hidden
+		position: relative
+		max-height: 200px
+		background: #E0E0E0
+		&:before
+			content: ''
+			float: left
+			padding: 70% 0 0
+		img
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__rubric
+		font-size: 12px
+		font-weight: 700
+		text-transform: uppercase
+		background: none
+		color: #1ea0e4
+		letter-spacing: 2px
+		margin: 0 0 2px
+		display: block
+	&__title
+		font-size: 22px
+		color: #222222
+		margin: 0 0 5px
+	&__text
+		margin: 0 0 5px
+
+// -----
+
+.media-photo
+	display: block
+	overflow: hidden
+	position: relative
+	color: #fff
+	text-decoration: none
+	height: 400px
+	background: #E0E0E0
+	&:before
+		content: ''
+		float: left
+		padding: 133.333% 0 0
+
+	&__image
+		margin: 0
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 0
+		&:after
+			content: ''
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(34,34,34,1) 100%);
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			opacity: 0.5
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__desc
+		position: absolute
+		left: 0
+		bottom: 24px
+		right: 0
+		text-align: center
+	&__rubric
+		font-size: 12px
+		font-weight: 700
+		text-transform: uppercase
+		background: none
+		color: #1ea0e4
+		letter-spacing: 2px
+		margin: 0 0 2px
+		display: block
+	&__title
+		font-size: 22px
+		margin: 0 0 5px
+
+
+// -----
+
+.media-offer
+	background: #1EA0E4 url(../img/bg-offer.png) 0 0 no-repeat
+	color: #fff
+	text-align: center
+	font: italic 18px/1.444 $fontCaption
+	padding: 50px 30px
+	&__text
+		margin: 0 0 25px
+// -----
+
+.media-banner
+	background: #E0E0E0
+	overflow: hidden
+	position: relative
+	display: block
+	text-decoration: none
+	&:before
+		content: ''
+		float: left
+		padding: 133.333% 0 0
+	img
+		display: block
+		width: 100%
+
+
+// -----
+
+
+.media-ctrl
+	text-align: center
