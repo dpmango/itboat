@@ -1,6 +1,21 @@
 // HEADER :: START
-a(href="#").banner
-    img(src="img/banner.jpg", alt="")
+.banner
+    script(type="text/javascript").
+      
+        if (typeof(pr) == 'undefined') {
+            var pr = Math.floor(Math.random() * 4294967295) + 1;
+        }
+        if (typeof(document.referrer) != 'undefined') {
+            if (typeof(afReferrer) == 'undefined') {
+                afReferrer = encodeURIComponent(document.referrer);
+            }
+        } else {
+            afReferrer = '';
+        }
+        var addate = new Date();
+        document.write('<script type="text/javascript" src="//ads.adfox.ru/160296/prepareCode?pp=g&amp;ps=kjw&amp;p2=fmos&amp;pr=' + pr + '&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;jsrandom=' + Math.random() + '"><\/script>');
+           
+    
 
 header.header
     .container-fluid

@@ -1,0 +1,164 @@
+// Gallery
+
+.gallery
+	background: #212121
+	color: #fff
+	margin: 0 0 40px
+	font-family: $fontBase
+
+
+
+.gallery-thumbs
+	position: fixed
+	visibility: hidden
+	padding: 20px 0
+	.center .gallery-thumbs__item
+		opacity: 1
+	+rmin($tablet)
+		position: relative
+		visibility: visible
+
+.gallery-thumbs__item
+	position: relative
+	transition: .25s
+	opacity: 0.3
+	cursor: pointer
+	overflow: hidden
+	&:before
+		content: ''
+		float: left
+		padding: 72% 0 0
+	img
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&:hover
+		opacity: 0.6
+
+.gallery-slides
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		top: 15px
+		left: 0
+		right: 0
+		display: none
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 0 10px
+		background: #818181
+		&.active
+			background: #fff
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		top: 32%
+		width: 50px
+		height: 50px
+		background: #212121
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		margin: -25px 0 0
+		.ico
+			font-size: 30px
+		&:hover
+			color: #fff
+			background: #1EA0E4
+	.owl-prev
+		left: 0
+		border-radius: 0px 4px 4px 0px;
+	.owl-next
+		right: 0
+		border-radius: 4px 0 0 4px;
+	+r($tablet)
+		padding: 50px 0 0
+		.owl-prev, .owl-next
+			height: 40px
+			width: auto
+			background: none
+			color: #222222
+			top: -10px
+			z-index: 10
+			margin: 0
+			.ico
+				font-size: 20px
+			&:hover
+				background: none
+				color: #222222
+		.owl-dots
+			display: flex
+
+
+.gallery-slides__item
+	position: relative
+
+.gallery-slides__image
+	margin: 0
+	overflow: hidden
+	position: relative
+	&:before
+		content: ''
+		float: left
+		padding: 64% 0 0
+	img
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.gallery-slides__desc
+	padding: 20px 20px
+	.btn
+		margin: 0 0 25px
+		float: right
+	+rmin($desktop)
+		padding: 50px 80px
+
+
+.gallery-slides__title
+	display: block
+	padding: 7px 0
+	margin: 0 0 20px
+	font-size: 18px
+	line-height: 26px
+	+rmin($desktop)
+		font-size: 22px
+		margin: 0 0 25px
+
+.gallery-slides__count
+	font-size: 22px
+	line-height: 40px
+	font-weight: 400
+	display: block
+	white-space: nowrap
+	margin: 0 0 20px
+	+rmin($desktop)
+		text-align: center
+		margin: 0 0 25px
+
+
+.gallery-slides__text
+	margin: 0
+	font-size: 16px
+	line-height: 22px
+	+rmin($desktop)
+		font-size: 18px
+		line-height: 26px
+	
+	

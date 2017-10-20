@@ -52,7 +52,7 @@ $(document).ready(function(){
         center: true,
         items: 1,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: duration,
         nav: true,
         dots: true,
@@ -103,7 +103,6 @@ $(document).ready(function(){
     // Owl Carousel Models
     // --------------------------------------------------------------------------
 
-
     $('.js-carousel-models').owlCarousel({
         items: 1,
         loop: true,
@@ -126,6 +125,120 @@ $(document).ready(function(){
         dots: true,
         margin: 30,
         navText: [iconPrev,iconNext]
+    });
+
+
+
+    // ----- Add Captions and count
+
+    $('.js-carousel-images').each(function(){
+
+        var carouselLength = $(this).find('.images-item').length;
+        
+        $(this).find('.images-item').each(function(i){
+
+            var carouselIndex = i++;
+            var carouselCaption = $(this).find('img').attr('alt');
+
+            if(carouselLength > 1) {
+                $(this).append('<div class="images-carousel-caption"><div class="images-carousel-caption-in"><b>'+ (carouselIndex + 1) + ' / ' + carouselLength + '</b>' + carouselCaption + '</div></div>');
+            }
+            else {
+                $(this).append('<div class="images-carousel-caption"><div class="images-carousel-caption-in">' + carouselCaption + '</div></div>');
+            }
+        
+        });
+
+    
+    });
+
+    $('.js-carousel-images').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext]
+    });
+
+
+
+    // Gallery
+
+    var gallery = $('.js-gallery'),
+        gallerySlides = gallery.find('.js-gallery-slides'),
+        galleryThumbs = gallery.find('.js-gallery-thumbs'),
+
+        galleryDuration = 500;
+
+
+    $('.js-gallery-slides').each(function(){
+
+        var galleryLength = $(this).find('.gallery-slides__item').length;
+
+        $(this).find('.gallery-slides__item').each(function(i){
+            var galleryIndex = i++;
+            $(this).find('.js-gallery-count').html((galleryIndex + 1) + ' / ' + galleryLength)
+        });
+
+    });
+
+    // carousel function for main slider
+
+    gallerySlides.owlCarousel({
+        loop: false,
+        nav: true,
+        items: 1,
+        margin: 20,
+        rewind: true,
+        smartSpeed: galleryDuration,
+        fluidSpeed: galleryDuration,
+        navText: [iconPrev,iconNext]
+        }).on('changed.owl.carousel', function (e) {
+            //On change of main item to trigger thumbnail item
+            galleryThumbs.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
+        });
+
+    // carousel function for thumbnail slider
+    galleryThumbs.owlCarousel({
+        loop:false,
+        center:true, //to display the thumbnail item in center
+        nav:false,
+        rewind: true,
+        margin: 20,
+        stagePadding: 60,
+        smartSpeed: galleryDuration,
+        fluidSpeed: galleryDuration,
+        responsive:{
+            0:{
+                items: 3
+            },
+            600:{
+                items: 4
+            },
+            1000:{
+                items: 5
+            }
+        }
+    }).on('click', '.owl-item', function () {
+        // On click of thumbnail items to trigger same main item
+        gallerySlides.trigger('to.owl.carousel', [$(this).index(), galleryDuration, true]);
+
+    }).on('changed.owl.carousel', function (e) {
+        // On change of thumbnail item to trigger main item
+        gallerySlides.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
+    });
+
+
+    //These two are navigation for main items
+    $('.slider-right').click(function() {
+        slider.trigger('next.owl.carousel');
+    });
+    $('.slider-left').click(function() {
+        slider.trigger('prev.owl.carousel');
     });
 
     // --------------------------------------------------------------------------
@@ -228,7 +341,28 @@ $(document).ready(function(){
 
     });
 
-    
+
+    // --------------------------------------------------------------------------
+    // Share
+    // --------------------------------------------------------------------------
+
+    $('.share-toggle').on('click', '.share-toggle__btn', function(event) {
+        event.preventDefault();
+
+        if ($(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.share-toggle').removeClass('is-open');
+        }
+        else {
+            $(this).addClass('is-active').closest('.share-toggle').addClass('is-open');
+        }
+
+    });
+
+     $(document).on('click', function(e) {
+        if($(e.target).closest('.share-toggle').length == 0) {
+           $('.share-toggle, .share-toggle__btn').removeClass('is-open is-active');
+        }
+    });
     
 
 

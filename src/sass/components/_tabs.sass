@@ -23,12 +23,13 @@
 
 
 .tabs__menu
-	margin: 0 -10px 24px
+	margin: 0 0 24px
 	padding: 0
 	list-style: none
 	display: flex
 	justify-content: center
 	position: relative
+	overflow: hidden
 	& > li
 		width: 100%
 		max-width: 240px
@@ -47,7 +48,7 @@
 			right: 100%
 			@include sprite(tabs-shadow-left)
 		&.is-active
-			background: #f5f5f5
+			// background: #f5f5f5
 			&:after, &:before
 				opacity: 1
 				visibility: visible

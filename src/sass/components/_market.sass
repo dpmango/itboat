@@ -2,7 +2,7 @@
 
 .market
 	.container-fluid
-		padding-top: 65px
+		// padding-top: 65px
 		padding-bottom: 60px
 		background: #fff
 
@@ -35,6 +35,12 @@
 
 
 .market-item
+	display: block
+	color: #222
+	&:hover
+		color: #222
+		.market-item__title
+			text-decoration: underline
 	&__image
 		position: relative
 		margin: 0 0 5px

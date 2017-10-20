@@ -20,15 +20,17 @@
     cursor: pointer
     &:focus, &:active
         outline: none
+        text-decoration: none
     &--block
         display: block
         width: 100%
 
 .btn-green
     background: #00AE6F
-    color: #fff;
-    
+    color: #fff
     &:hover
+        background: #03db8d
+        color: #fff
 
 .btn-dark
     background: #212121
@@ -40,6 +42,7 @@
     min-width: 174px
     padding: 13px 20px
     &:hover
+        color: #fff
         background: #353535
 
 
@@ -68,6 +71,13 @@
         color: #fff
     &:active
 
+.btn-white-empty
+    border-color: #fff
+    color: #fff
+    &:hover
+        background: #fff
+        color: #212121
+    &:active
 
 .btn-more
     background: #E0E0E0
@@ -77,6 +87,7 @@
     &:hover
         background: #212121
         color: #fff
+        text-decoration: none
 
 .btn-block
     width: 100%

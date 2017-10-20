@@ -1,0 +1,581 @@
+---
+title: Журнал / Статья
+bodyClass: page-article
+---
+extends shared/_layout
+block content
+
+
+	// Article :: Start
+
+	article.article.is-firstletter
+		.container-fluid
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link Журнал
+					li
+						a(href="#").breadcrumbs__link Статьи
+					li
+						a(href="#").breadcrumbs__link Путешествия
+					li
+						a(href="#").breadcrumbs__link.is-active Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+
+			.row
+				.col-lg-9
+
+					.article-panel
+						.article-panel-align
+							figure.article-panel__image
+								img(src="img/img-1.jpg", alt="")
+							time.article-panel__date 23 марта в 15:39
+							mark.article-panel__rubric Путешествия
+							h1.article-panel__heading Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+							em.article-panel__text Solar Voyager, возможно, станет первым беcпилотным судном, пересекшим Атлантику, и первым судном, пересекшим океан на солнечной энергии.
+
+					.share
+						p.share__text Поделиться в социальных сетях
+						.row.row-offset-10
+							.col-4
+								a(href="#").share__btn.share__btn--fb
+									+icon('ico-social-fb')
+									span.share__btn-text Поделиться в facebook
+							.col-4
+								a(href="#").share__btn.share__btn--vk
+									+icon('ico-social-vk')
+									span.share__btn-text Поделиться в ВКонтакте
+							.col-4
+								a(href="#").share__btn.share__btn--tw
+									+icon('ico-social-tw')
+									span.share__btn-text Поделиться в twitter
+
+					.article-content
+
+						p В начале июня из Глостера, штат Массачусетс, вышла небольшая беспилотная лодка на солнечных батареях, <a href="#">Solar Voyager</a>. Ее цель пересечь Атлантический океан, став первым в мире беспилотным надводным судном, которому это удалось. И первым в мире судном на солнечных батареях, пересекшим какой бы то ни было океан.
+
+
+						.images-carousel.owl-carousel.js-carousel-images
+							figure.images-item
+								img(src="img/img-1.jpg", alt="img-1")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-2.jpg", alt="img-2")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-3.jpg", alt="img-3")
+								.share-toggle
+									button.share-toggle_btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-4.jpg", alt="img-4")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-5.jpg", alt="img-5")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+
+						q
+							| Solar Voyager была построена двумя друзьями в свободное от работы время.
+							nav.social
+								a(href="#").social__link.social__link--vk
+									+icon('ico-social-vk')
+								a(href="#").social__link.social__link--fb
+									+icon('ico-social-fb')
+								a(href="#").social__link.social__link--tw
+									+icon('ico-social-tw')
+
+						p На создание 18-футового роботизированного каяка у инженеров Исаака Пенни (Isaac Penny) и Кристофера Сэм Суна (Christopher Sam Soon), в обычной жизни строящих хирургических роботов, ушло четыре года. И хотя Solar Voyager еще предстоит долгий путь к намеченной цели — Лиссабону — уже можно сказать, что этот проект во многом успешен.
+
+						blockquote
+							| «Мы как бы говорим — смотрите, на что способна небольшая группа людей, если относиться к задуманному со всей страстью, — говорит Пенни. — Мы с Кристофером никакие не супер-гении. Мы даже не моряки. Я вообще вырос в Канзасе!»
+							nav.social
+								a(href="#").social__link.social__link--vk
+									+icon('ico-social-vk')
+								a(href="#").social__link.social__link--fb
+									+icon('ico-social-fb')
+								a(href="#").social__link.social__link--tw
+									+icon('ico-social-tw')
+
+						p Несмотря на это, друзьям удалось построить лодку с нуля, имея в распоряжении лишь готовые солнечные батареи и некоторые стандартные части двигателя. Лодка медленно, но упорно движется от одной точки маршрута к другой и, если все будет нормально, достигнет Португалии осенью.
+
+						figure
+							<iframe width="100%" height="530" src="https://www.youtube.com/embed/XMz70FVypB0?rel=0" frameborder="0" allowfullscreen></iframe>
+
+						
+						.images-carousel.owl-carousel.js-carousel-images
+							figure.images-item
+								img(src="img/img-2.jpg", alt="Строительство Solar Voyager")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+
+							
+
+						blockquote
+							| «Только Liquid Robotics может строить Wave Gliders, — смеется Пенни. — А то, что мы сделали, может повторить кто угодно. У нас даже нет гаража!»
+							nav.social
+								a(href="#").social__link.social__link--vk
+									+icon('ico-social-vk')
+								a(href="#").social__link.social__link--fb
+									+icon('ico-social-fb')
+								a(href="#").social__link.social__link--tw
+									+icon('ico-social-tw')
+
+						p За четыре года Solar Voyager превратилась из пластикового каяка в кастомную лодку с алюминиевым корпусом с самодельными, испытанными в домашних условиях двигателем и электроникой, 280-ваттной солнечной батареей и двумя гребными винтами, защищенными от обрастания, которые дают скорость до 5 миль в час.
+
+						.images-carousel.owl-carousel.js-carousel-images
+							figure.images-item
+								img(src="img/img-3.jpg", alt="Строительство Solar Voyager")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+
+						p Корпус Solar Voyager также защищен от ракушек специальным покрытием. Под палубой у нее находятся две 2,4 кВт/ч батареи, которые накапливают энергию для движения в ночное время.
+
+						p Изобретателям пришлось предусмотреть миллион разных мелочей, чтобы обеспечить лодке достаточную живучесть, ведь ей придется провести в океане четыре месяца.
+
+						ul
+							li За навигацию Solar Voyager отвечает бортовой компьютер, который следует  по заранее запрограммированным GPS-отметкам. 
+							li Каждые 15 минут он отправляет данные о местоположении лодки в Интернет.
+							li Трекер доступен на сайте проекта.
+							li Помимо координат, он сообщает также скорость Solar Voyager, количество генерируемой солнечной энергии, уровень заряда батарей, а также температуру за бортом.
+						
+						.images-carousel.owl-carousel.js-carousel-images
+							figure.images-item
+								img(src="img/img-3.jpg", alt="Кадр с бортовой GoPro при выходе из глостерской гавани")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+
+
+						p На лодке установлена камера GoPro, кадры с которой изобретатели надеются получить по окончанию трансатлантического перехода.
+
+						p Solar Voyager — единственный шанс для двоих друзей, ведь в отличие от Liquid Robotics, у них нет ресурсов для строительства флота или техобслуживания лодки где-нибудь на полпути в Лиссабон.
+
+						q
+							| Если двигатель или батарея выйдет из строя, или на лодку нападет акула, или еще что-то, четыре года трудов пойдут коту под хвост.
+							nav.social
+								a(href="#").social__link.social__link--vk
+									+icon('ico-social-vk')
+								a(href="#").social__link.social__link--fb
+									+icon('ico-social-fb')
+								a(href="#").social__link.social__link--tw
+									+icon('ico-social-tw')
+
+						p Когда Solar Voyager достигнет Лиссабона, она начнет нарезать круги вокруг последней GPS-точки маршрута, пока у создателей не появится возможность приехать и забрать ее. Они сейчас занимаются поиском человека с яхтой из Лиссабона, который был бы готов помочь им с транспортировкой <a href="#">Solar Voyager</a>.
+
+						.images-carousel.owl-carousel.js-carousel-images
+							figure.images-item
+								img(src="img/img-1.jpg", alt="")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-2.jpg", alt="")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-3.jpg", alt="")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-4.jpg", alt="")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+							figure.images-item
+								img(src="img/img-5.jpg", alt="")
+								.share-toggle
+									button.share-toggle__btn
+										+icon('ico-social-share')
+									.share-toggle__dropdown
+										a(href="#").share__btn.share__btn--fb
+											+icon('ico-social-fb')
+								
+										a(href="#").share__btn.share__btn--vk
+											+icon('ico-social-vk')
+								
+										a(href="#").share__btn.share__btn--tw
+											+icon('ico-social-tw')
+						
+						.article-info
+							.row.justify-content-center
+								.col-lg-4
+									p.article-info__title Авторы текста:
+									ul.article-info__list
+										li Ксения Швецова
+
+								.col-lg-4
+									p.article-info__title Авторы изображений:
+									ul.article-info__list
+										li solvar-voyager.com
+										li Isaac Penny
+
+								.col-lg-4
+									p.article-info__title Компании:
+									ul.article-info__list
+										li ООО «Solvar Voyager Россия»
+										li Christopher Sam Soon
+										li Gloucester Maritime Heritage Center
+
+
+						.row
+							.col-lg-6
+
+								ul.article-tags
+									li Тэги:
+									li
+										a(href="#").article-tags__btn Зелёные технологии
+									li
+										a(href="#").article-tags__btn Лучшее за 2016 год
+							.col-lg-6
+
+								p.article-error Нашли ошибку в тексте — выделите нужный фрагмент и нажмите ctrl+enter, либо <a href="#">нажмите здесь</a>.
+
+						
+
+				.col-lg-3
+					figure.article-banner
+						img(src="img/img-banner-1.jpg", alt="")
+
+			.row
+				.col-lg-9
+
+					.share
+						p.share__text Поделиться в социальных сетях
+						.row.row-offset-10
+							.col-4
+								a(href="#").share__btn.share__btn--fb
+									+icon('ico-social-fb')
+									span.share__btn-text Поделиться в facebook
+							.col-4
+								a(href="#").share__btn.share__btn--vk
+									+icon('ico-social-vk')
+									span.share__btn-text Поделиться в ВКонтакте
+							.col-4
+								a(href="#").share__btn.share__btn--tw
+									+icon('ico-social-tw')
+									span.share__btn-text Поделиться в twitter
+					
+					.article-comments
+						img(src="img/img-comments.png", alt="")
+
+				.col-lg-3
+
+					.article-widget
+						img(src="img/img-widget.png", alt="")
+
+
+			.media
+
+				h2.media__read Читайте также
+
+				ul.media__list.js-masonry
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-1.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Индустрия
+								h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+								p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							figure.media-photo__image
+								img(src="img/img-media-2.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фото дня
+								h3.media-photo__title Прогулялся по небу
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-1')
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+
+						a(href="#").media-banner
+							img(src="img/img-banner-1.jpg", alt="")
+
+						.media-offer
+							p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+							a(href="#").btn.btn-dark предложить
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-2')
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title OCEAN TV переделает советский катер в эксплорер для экспедиции по рекам России
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							span.media-news__xl
+								+icon('ico-xl')
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-3')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Numarine спустила на воду первый корпус 
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							span.media-article__xl
+								+icon('ico-xl')
+							figure.media-article__image
+								img(src="img/img-media-3.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric парусный спорт
+								h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
+								p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+
+					
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							span.media-photo__xl
+								+icon('ico-xl')
+							figure.media-photo__image
+								img(src="img/img-media-8.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фото дня
+								h3.media-photo__title Суперяхта с улыбкой
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-9.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric парусный спорт
+								h3.media-article__title Неделя до Extreme Sailing Series 2016: что нового?
+								p.media-article__text Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-4.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Люди
+								h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+								p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+					
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-4')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник» 
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-5')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-6.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Люди
+								h3.media-article__title Пересечь Атлантику внутри кита
+								p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							figure.media-photo__image
+								img(src="img/img-media-5.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фотогалерея
+								h3.media-photo__title Восточная роскошь
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-6')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Custom Marine Group купила американских производителей катеров Fountain, Donzi, Bajaи Pro-Line
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-7.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Юмор
+								h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
+								p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-7')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title «Конаково Ривер Клаб» выиграла четвертый этап «Национальной парусной Лиги» в высшем дивизионе
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							span.media-news__xl
+								+icon('ico-xl')
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-8')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Новая Зеландия выиграла Кубок «Америки»
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-1.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Индустрия
+								h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+								p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+
+
+				.media-ctrl
+					a(href="#").btn.btn-more Показать ещё
+
+	// Article :: End

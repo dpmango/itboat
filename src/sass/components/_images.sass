@@ -1,17 +1,10 @@
-// MODELS
+// Images
 
-.models
-	
-.models__heading
-	font: 400 20px/1 $fontHeading
-	text-transform: uppercase
-	text-align: center
-	margin: 0 0 35px
-	letter-spacing: 2px
-
-.models-carousel
+.images-carousel
 	position: relative
-	margin: 0 0 40px
+	width: auto
+	margin: 0 0 30px
+	clear: both
 	.owl-dots
 		display: flex
 		align-items: center
@@ -36,7 +29,7 @@
 		transition: .25s
 		position: absolute
 		// top: 100px
-		top: 30%
+		top: 50%
 		width: 50px
 		height: 50px
 		background: #212121
@@ -44,6 +37,7 @@
 		align-items: center
 		justify-content: center
 		color: #fff
+		margin: -25px 0 0
 		.ico
 			font-size: 30px
 		&:hover
@@ -64,6 +58,7 @@
 			color: #222222
 			top: -10px
 			z-index: 10
+			margin: 0
 			.ico
 				font-size: 20px
 			&:hover
@@ -71,50 +66,30 @@
 				color: #222222
 		.owl-dots
 			display: flex
-		
 
-.models-item
-	text-align: center
+
+.images-item
+	max-height: 700px
+	margin: 0
+	position: relative
+
+.images-item-in
+
+.images-carousel-caption
 	display: block
-	color: #222
-	&:hover
-		color: #222
-		.models-item__title span
-			text-decoration: underline
-	&__image
-		max-height: 250px
-		margin: 0 0 12px
-		background: #E0E0E0
-		position: relative
-		overflow: hidden
-		&:before
-			content: ''
-			float: left
-			padding: 65% 0 0
-		img
-			position: absolute
-			top: 0
-			left: 0
-			display: block
-			width: 100%
-			height: 100%
-			object-fit: cover;
-	&__title
-		font-size: 16px
-		display: block
-		margin: 0 0 4px
-		text-transform: uppercase
-		letter-spacing: 1px
-		small
-			font-size: 14px
-			font-weight: 400
-			display: block
-			text-transform: none
-	&__price
-		margin: 0
-		display: block
-		color: #999999
-		font-family: $fontCaption
-
-.models-ctrl
+	font: 400 14px/20px $fontBase
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
 	text-align: center
+	b
+		margin: 0 10px
+
+.images-carousel-caption-in
+	display: inline-block
+	vertical-align: top
+	padding: 15px 20px
+	background: #212121
+	color: #fff
+	border-radius: 4px 4px 0 0

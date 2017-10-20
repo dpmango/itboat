@@ -1,0 +1,46 @@
+// BREADCRUMBS
+
+.breadcrumbs
+	position: relative
+	// top: -48px
+	margin: 0 0 10px
+	font-size: 12px
+	line-height: 18px
+	padding: 15px 20px
+
+	+rmin($desktop)
+		font-size: 14px
+		padding: 0
+	
+
+.breadcrumbs__menu
+	margin: 0
+	padding: 0
+	list-style: none
+	display: flex
+	flex-wrap: wrap
+	color: #e0e0e0
+	& > li
+		position: relative
+		padding: 0 22px 0 0
+		&:after
+			content: '/'
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			text-align: center
+			width: 22px
+		&:last-child
+			padding: 0
+			&:after
+				display: none
+
+.breadcrumbs__link
+	color: #999
+	&:hover
+		color: #222
+	&.is-active
+		color: #e0e0e0
+		text-decoration: none
+		cursor: default

@@ -1,6 +1,32 @@
 // UI
 
 
+
+// UI ul
+
+.ui-ul
+    margin: 35px 0
+    padding: 0
+    list-style: none
+    font-size: 18px
+    line-height: 26px
+    & > li
+        position: relative
+        padding: 0 0 0 28px
+        margin: 0 0 10px
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 10px
+            left: 0
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background: #1EA0E4
+    +rmin($desktop)
+        margin-left: 50px
+
 // UI input
 
 .ui-input

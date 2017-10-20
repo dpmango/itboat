@@ -5,3 +5,15 @@ PageList:
   ready: 100
 - file: journal.html
   ready: 100
+- file: journal-article.html
+  ready: 100
+- file: news-article.html
+  ready: 100
+- file: photogallery.html
+  ready: 100
+- file: photogallery-list.html
+  ready: 100
+- file: legacy.html
+  ready: 10
+- file: ui.html
+  ready: 0

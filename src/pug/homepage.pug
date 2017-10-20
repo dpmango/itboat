@@ -4,9 +4,6 @@ bodyClass: homepage
 ---
 extends shared/_layout
 block content
-	
-
-	#grid
 
 	// Promo :: Start
 
@@ -58,72 +55,60 @@ block content
 
 						ul.news__list
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Спущена на воду 55-метровая яхта Quinta Essentia
+								a(href="#").news-item
+									h4.news-item__title Спущена на воду 55-метровая яхта Quinta Essentia
 									time.news-item__date
 										+icon('ico-xl')
 										| сегодня в 09:30
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Perini Navi показала парусную суперяхту Sybaris
+								a(href="#").news-item
+									h4.news-item__title Perini Navi показала парусную суперяхту Sybaris
 									time.news-item__date
 										+icon('ico-xl')
 										| сегодня в 09:30
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Спущена на воду самая большая яхта Heesen
+								a(href="#").news-item
+									h4.news-item__title Спущена на воду самая большая яхта Heesen
 									time.news-item__date
 										+icon('ico-xl')
 										| сегодня в 09:30
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Норвежец разработал крылья для «полетов» под водой
+								a(href="#").news-item
+									h4.news-item__title Норвежец разработал крылья для «полетов» под водой
 									time.news-item__date 23 марта в 15:39
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Порт Sochi Grand Marina признан лучшим проектом развития яхтинга в России
+								a(href="#").news-item
+									h4.news-item__title Порт Sochi Grand Marina признан лучшим проектом развития яхтинга в России
 									time.news-item__date 23 марта в 14:22
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Ученые раскрыли тайну Бермудского треугольника
+								a(href="#").news-item
+									h4.news-item__title Ученые раскрыли тайну Бермудского треугольника
 									time.news-item__date 22 марта в 15:13
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+								a(href="#").news-item
+									h4.news-item__title Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
 									time.news-item__date 22 марта в 10:48
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+								a(href="#").news-item
+									h4.news-item__title Сообщество Yachting_rus проведет регату на озере Гарда в Италии
 									time.news-item__date 21 марта в 16:58
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+								a(href="#").news-item
+									h4.news-item__title Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
 									time.news-item__date
 										+icon('ico-xl')
 										| 22 марта в 15:13
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+								a(href="#").news-item
+									h4.news-item__title Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
 									time.news-item__date 22 марта в 10:48
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+								a(href="#").news-item
+									h4.news-item__title Сообщество Yachting_rus проведет регату на озере Гарда в Италии
 									time.news-item__date 21 марта в 16:58
 							li
-								.news-item
-									h4.news-item__title
-										a(href="#") Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+								a(href="#").news-item
+									h4.news-item__title Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
 									time.news-item__date
 										+icon('ico-xl')
 										| 22 марта в 15:13
@@ -139,6 +124,7 @@ block content
 									mark.media-article__rubric Индустрия
 									h3.media-article__title Блеск и нищета Moscow Boat Show 2016
 									p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-photo
 								figure.media-photo__image
@@ -146,9 +132,16 @@ block content
 								.media-photo__desc
 									mark.media-photo__rubric Фото дня
 									h3.media-photo__title Прогулялся по небу
-						li.col-sm-6.col-lg-4
+
+						li.col-sm-6.col-lg-4.is-hidden-tablet
+
 							a(href="#").media-banner
 								img(src="img/img-banner-1.jpg", alt="")
+
+							.media-offer
+								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+								a(href="#").btn.btn-dark предложить
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article
 								figure.media-article__image
@@ -159,6 +152,7 @@ block content
 									mark.media-article__rubric парусный спорт
 									h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
 									p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article
 								figure.media-article__image
@@ -167,10 +161,7 @@ block content
 									mark.media-article__rubric Люди
 									h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
 									p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
-						li.col-sm-6.col-lg-4
-							.media-offer
-								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
-								a(href="#").btn.btn-dark предложить
+							
 						li.col-sm-6.col-lg-4
 							a(href="#").media-photo
 								figure.media-photo__image
@@ -178,6 +169,7 @@ block content
 								.media-photo__desc
 									mark.media-photo__rubric Фотогалерея
 									h3.media-photo__title Восточная роскошь
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article
 								figure.media-article__image
@@ -186,6 +178,7 @@ block content
 									mark.media-article__rubric Люди
 									h3.media-article__title Пересечь Атлантику внутри кита
 									p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article
 								figure.media-article__image
@@ -240,35 +233,35 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
 
 
@@ -280,35 +273,35 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
 
 
@@ -320,40 +313,42 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> Antares 32
+									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
 									i.models-item__price от €146 500,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> Dominator 680
+									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
 									i.models-item__price от €2 530 000,–
-								.models-item
+								a(href="#").models-item
 									figure.models-item__image
 										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> 500 Sport Yacht
+									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
 									i.models-item__price от €942 240,–
 
 
 							.models-ctrl
-								a(href="#").btn.btn-dark-empty Посмотреть все новые 
+								a(href="#").btn.btn-dark-empty Посмотреть все новые
+
+			hr
 
 			.row.row-offset-60
 				.col-md-6
@@ -487,9 +482,13 @@ block content
 						.brands-ctrl
 							a(href="#").btn.btn-dark-empty Все бренды
 
+			hr
+
+
 
 	// Catalog :: End
-	
+
+
 
 	// Market :: Start
 
@@ -509,7 +508,7 @@ block content
 								+icon('ico-filter')
 								| Форма поиска
 
-							button.filter-toggle-btn.js-toggle-btn Форма поиска
+							button.filter-toggle-btn.js-toggle-btn.is-active Форма поиска
 								span.icon-toggle
 									+icon('ico-arrow-down')
 
@@ -519,19 +518,19 @@ block content
 									option Любого типа
 
 								.row.row-offset-10
-									.col
+									.col-auto.col-sm
 										label.ui-check
 											input(type="checkbox").ui-check__input
 											span.ui-check__checkbox
 												+icon('ico-check')
 											span.ui-check__text Новые
-									.col
+									.col-auto.col-sm
 										label.ui-check
 											input(type="checkbox").ui-check__input
 											span.ui-check__checkbox
 												+icon('ico-check')
 											span.ui-check__text Б/у не старше
-									.col
+									.col-12.col-sm
 										select.ui-select
 											option 1958
 

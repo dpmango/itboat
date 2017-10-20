@@ -1,0 +1,100 @@
+// SHARE
+
+.share
+	margin: 0 0 30px
+	backface-visibility: hidden
+
+.share__text
+	text-align: center
+	font-size: 12px
+	font-weight: 700
+	text-transform: uppercase
+	color: #919191
+	margin: 0 0 20px
+	letter-spacing: 1px
+	+rmin($desktop)
+		display: none
+
+.share-toggle
+	position: absolute
+	top: 0
+	right: 0
+	z-index: 20
+	&.is-open
+		.share-toggle__dropdown
+			opacity: 1
+			visibility: visible
+			transform: translate(0,0)
+
+.share-toggle__btn
+	display: block
+	font-size: 12px
+	line-height: 30px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 1px
+	padding: 10px 15px
+	text-align: center
+	background: rgba(#212121,0.2)
+	color: #fff
+	border-radius: 4px
+	transition: .25s
+	min-width: 50px
+	border: none
+	cursor: pointer
+	.ico
+		font-size: 20px
+	&:hover
+		background: rgba(#212121,0.5)
+
+.share-toggle__dropdown
+	transition: .25s
+	position: absolute
+	top: 0
+	right: 100%
+	margin: 0 5px 0 0
+	display: flex
+	opacity: 0
+	visibility: hidden
+	transform: translate(-10px,0)
+	.share__btn
+		margin: 0 0 0 5px
+
+.share__btn
+	display: block
+	font-size: 12px
+	line-height: 20px
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 1px
+	padding: 15px
+	text-align: center
+	background: #E0E0E0
+	color: #fff
+	border-radius: 4px
+	transition: .25s
+	min-width: 50px
+	&:hover
+		color: #fff
+	.ico
+		top: -2px
+	&--fb
+		background: #45639E
+		.ico
+			font-size: 18px
+	&--vk
+		background: #51749C
+		.ico
+			font-size: 13px
+	&--tw
+		background: #23B9EB
+		.ico
+			font-size: 14px
+	&:hover
+		opacity: 0.85
+	
+.share__btn-text
+	display: inline-block
+	padding: 0 20px
+	+r($wide)
+		display: none

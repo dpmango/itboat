@@ -1,0 +1,299 @@
+// ARTICLE
+
+
+.is-small
+	.article-panel
+		color: #222
+		min-height: auto
+		.article-panel__date
+			position: relative
+			top: 0
+			margin: 0
+			color: #919191
+		.article-panel__rubric
+			margin: 0 0 10px
+		.article-panel__heading
+			font-size: 30px
+			margin: 0 0 15px
+		.article-panel__text
+			color: #212121
+			opacity: 1
+			font-family: $fontBase
+			font-style: normal
+			font-size: 18px
+		+rmin($desktop)
+			text-align: left
+			padding: 45px 80px
+			.article-panel__heading
+				font-size: 50px
+				line-height: 1
+
+
+.is-firstletter
+	.article-content
+		&:first-letter
+			font-size: 80px
+			line-height: 78px
+			display: block
+			float: left
+			margin: -13px 15px 0 0
+
+.article
+	.container-fluid
+		background: #fff
+		position: relative
+	.breadcrumbs
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 20
+	+rmin($desktop)
+		.container-fluid
+			padding: 60px 20px
+		.breadcrumbs
+			position: relative
+			top: -48px
+
+.article-panel
+	padding: 120px 20px 50px
+	margin: 0 -20px 20px
+	position: relative
+	z-index: 10
+	background: #222
+	color: #fff
+	text-align: center
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-end
+	background: #F5F5F5
+	+rmin($desktop)
+		padding-top: 110px
+		margin: 0 0 20px
+		
+	+rmin($wide)
+		min-height: 620px
+		
+
+.article-panel-align
+	width: 100%
+
+
+.article-panel__image
+	margin: 0
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: -1
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		// background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(34,34,34,1) 100%);
+		background-color: #212121;
+		opacity: 0.5
+	img
+		display: block
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.article-panel__date
+	display: block
+	font-size: 14px
+	margin: 0 0 30px
+	+rmin($desktop)
+		position: absolute
+		top: 55px
+		left: 0
+		right: 0
+
+.article-panel__rubric
+	font-size: 12px
+	font-weight: 700
+	text-transform: uppercase
+	background: none
+	color: #1ea0e4
+	letter-spacing: 1px
+	display: block
+	margin: 0 0 22px
+
+.article-panel__heading
+	display: block
+	font-size: 30px
+	line-height: 1.111
+	font-weight: 700
+	margin: 0 0 25px
+	+rmin($desktop)
+		font-size: 36px
+
+.article-panel__text
+	font: italic 18px/1.222 $fontCaption
+	opacity: 0.5
+	margin: 0 0 12px
+	+rmin($desktop)
+		font-size: 26px
+		line-height: 1.384
+
+
+// -----
+
+
+.article-content
+	font: 400 18px/26px $fontCaption
+	color: #4c4c4c
+	
+	& > ul
+		@extend .ui-ul
+
+	+rmin($desktop)
+		padding: 0 80px
+		& > figure, .images-carousel, .article-info, .gallery
+			margin-left: -80px
+			margin-right: -80px
+
+
+// -----
+
+.article-info
+	text-align: center
+	background: #F5F5F5
+	font: 400 14px/22px $fontBase
+	color: #4c4c4c
+	padding: 35px 20px 25px
+	margin: 0 -20px 40px
+	+rmin($desktop)
+		padding: 40px
+		margin: 0 0 40px
+	+rmin($wide)
+		padding-left: 80px
+		padding-right: 80px
+
+.article-info__title
+	display: block
+	font-size: 18px
+	color: #222222
+	margin: 0 0 4px
+
+.article-info__list
+	margin: 0 0 10px
+	padding: 0
+	list-style: none
+
+
+// -----
+
+
+.article-tags
+	margin: 0 -2.5px 40px
+	padding: 0
+	list-style: none
+	font: 400 14px/22px $fontBase
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	color: #999999
+	& > li
+		padding: 0 2.5px
+		margin: 5px 0
+
+.article-tags__btn
+	@extend .tags__btn
+	margin: 0
+
+
+
+.article-error
+	font: 400 14px/22px $fontBase
+	margin: 0 20px 40px
+	color: #4c4c4c
+	display: none
+	+rmin($desktop)
+		display: block
+
+// ------
+
+.article-comments
+	margin: 0 0 40px
+
+// -----
+
+
+.article-banner, .article-widget
+	margin: 0 0 40px
+	+r($desktop)
+		display: none
+
+
+
+// -----
+
+.article-list
+	margin: 0
+
+.article-list__item
+	font: 400 16px/22px $fontBase
+	color: #212121
+	position: relative
+	padding: 0 0 40px
+	margin: 0 0 30px
+	&:last-child
+		&:after
+			// display: none
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		height: 1px
+		background-image: linear-gradient(to right, transparent 0%, transparent 0%, #999 50%, rgba(153, 153, 153, 0.02) 99%, transparent 100%, transparent 100%);
+	+rmin($desktop)
+		font-size: 18px
+		line-height: 26px
+		padding: 0 0 35px
+		margin: 0 0 35px
+
+.article-list__title
+	display: block
+	font-size: 18px
+	line-height: 26px
+	margin: 0 0 36px
+	b
+		margin: 0 20px 0 0
+	+rmin($desktop)
+		font-size: 22px
+		margin-right: 200px
+
+.article-list__link
+	display: block
+	font-weight: 700
+	text-align: center
+	font-size: 16px
+	line-height: 26px
+	margin: 0 0 25px
+	+rmin($desktop)
+		position: absolute
+		top: 0
+		right: 0
+
+.article-list__image
+	margin: 0 0 10px
+	position: relative
+	img
+		display: block
+		width: 100%
+	+rmin($desktop)
+		margin: 0 -80px 30px
+
+
+.article-list__text
+	margin: 0
