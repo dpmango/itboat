@@ -3,6 +3,8 @@ ProjectTitle: itBoat
 PageList:
 - file: homepage.html
   ready: 100
+- file: homepage2.html
+  ready: 100
 - file: journal.html
   ready: 100
 - file: journal-article.html
