@@ -31,6 +31,9 @@
 	list-style: none
 	& > li
 		margin: 0 0 18px
+	+r($tablet)
+		& > li:nth-child(n+4)
+			display: none
 
 
 .news-item
