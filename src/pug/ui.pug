@@ -1,0 +1,166 @@
+---
+title: Ui
+bodyClass: page-ui
+---
+extends shared/_layout
+block content
+
+
+	// Ui :: Start
+
+	.popup.popup-auth.mfp-hide#popup-auth
+		button.popup-close(data-mfp-close)
+			+icon('ico-close')
+		form(action="#")
+			.popup-logo
+				+icon('ico-logo')
+			input(type="email", placeholder="Электронная почта").ui-input
+			input(type="password", placeholder="Пароль").ui-input
+			.row
+				.col
+					label.ui-check
+						input(type="checkbox").ui-check__input
+						span.ui-check__checkbox
+							+icon('ico-check')
+						span.ui-check__text Запомнить меня
+				.col-auto
+					a(href="#") Забыли пароль?
+
+			.popup-ctrl
+				button.btn.btn-block.btn-dark Войти на сайт
+
+			p.popup-caption Ещё нет аккаунта? <a href="#">Зарегистрируйтесь</a>
+	
+	.popup.popup-offer.mfp-hide#popup-offer
+		button.popup-close(data-mfp-close)
+			+icon('ico-close')
+		form(action="#")
+			strong.popup-heading Предложите свой материал
+			.row
+				.col-sm-6
+					.ui-field
+						sup.ui-field__sup *
+						input(type="text", placeholder="Представьтесь").ui-input
+				.col-sm-6
+					.ui-field
+						sup.ui-field__sup *
+						input(type="email", placeholder="Электронная почта").ui-input
+
+			textarea(name="", cols="30", rows="10", placeholder="Ваш материал").ui-textarea
+
+			label.ui-file
+				input(type="file").ui-file__input
+				span.ui-file__btn Прикрепить файл
+				+icon('ico-arrow-right')
+			
+			.popup-ctrl
+				button.btn.btn-block.btn-dark Отправить
+
+			p.popup-caption Нажимая «Отправить», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
+
+
+
+	.container-fluid
+		br
+		br
+
+		h1 Модальные окна
+
+		ul
+			li
+				a(href="#popup-auth", data-mfp) Войти на сайт
+			li
+				a(href="#popup-offer", data-mfp) Предложите свой материал
+
+
+		hr
+
+
+		h1 Большой заголовок H1
+
+		h2 Большой заголовок H2
+
+		h3 Большой заголовок H3
+
+		h4 Большой заголовок H4
+
+		h5 Большой заголовок H5
+
+
+		p Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+
+		<p>Рондо имеет контрапункт контрастных фактур. Пуантилизм, зародившийся в музыкальных микроформах начала ХХ столетия, нашел далекую историческую параллель в лице средневекового гокета, однако живая сессия выстраивает лайн-ап. В связи с этим нужно подчеркнуть, что алеаторика монотонно диссонирует хамбакер. Гармоническое микророндо многопланово просветляет громкостнoй прогрессийный период.</p>
+
+		<p>Динамический эллипсис представляет собой структурный полиряд. Хорус, следовательно, регрессийно трансформирует музыкальный сет. Глиссандо косвенно.</p>
+
+		<h4>Маркированный список</h4>
+
+		ul.ui-ul
+			li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
+			li Синкопа многопланово просветляет тон-полутоновый дисторшн.
+			li Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+		h4 Нумерованный список
+
+		ol.ui-ol
+			li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
+			li Синкопа многопланово просветляет тон-полутоновый дисторшн.
+			li Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+		blockquote Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
+		
+
+		.row
+			.col-md-4
+				label.ui-label ФИО
+				input(type="text", placeholder="").ui-input
+
+			.col-md-4
+				label.ui-label Email
+				input(type="email", placeholder="").ui-input
+
+			.col-md-4
+				label.ui-label Телефон
+				input(type="phone", placeholder="").ui-input
+					
+
+
+		.row
+			.col-md-6
+				label.ui-label Select
+				select(name="",  data-placeholder="Выпадающий список").ui-select
+					option 1-й пункт списка
+					option 2-й пункт списка
+					option 3-й пункт списка
+					option 4-й пункт списка
+					option 5-й пункт списка
+					option 6-й пункт списка
+					option 7-й пункт списка
+					option 8-й пункт списка
+					option 9-й пункт списка
+					option 10-й пункт списка
+					
+			.col-md-6
+				
+				label.ui-label Range
+
+				.ui-range
+					.row.align-items-center
+						.col-4
+							input(type="text", value="0").ui-input.ui-from
+						.col-4
+							label.ui-range__label Длина, м
+						.col-4
+							input(type="text", value="100").ui-input.ui-to
+					input(type="range", data-min="0", data-max="100").ui-range__input
+
+
+			textarea(name="", cols="30", rows="10").ui-textarea
+
+
+		br
+		br
+
+
+	// Ui :: End

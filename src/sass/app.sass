@@ -8,6 +8,7 @@
 
 @import vendor/normalize
 @import vendor/slick
+@import vendor/mfp
 
 @import layout/font
 @import layout/general
@@ -17,7 +18,8 @@
 
 @import elements/buttons
 @import elements/icons
-@import elements/modal
+// @import elements/modal
+@import elements/popups
 @import elements/ui
 
 @import components/header
@@ -47,6 +49,23 @@
 @import components/images
 @import components/social
 @import components/gallery
+@import components/photo
+@import components/other
+@import components/shipyard
+
+
+#grid
+	display: block
+	position: absolute
+	top: 0
+	left: 50%
+	background: url(../img/grid.jpg) 0 0 no-repeat
+	width: 1600px
+	height: 3520px
+	z-index: 1000
+	margin: 0 0 0 -800px
+	opacity: 0.5
+	visibility: hidden
 
 .row
 	margin: 0 -10px

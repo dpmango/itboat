@@ -1,28 +1,198 @@
 // CATALOG
 
 .catalog
+	.breadcrumbs
+		position: relative
+		padding: 0
+		top: -52px
 	.container-fluid
-		// padding-top: 63px
-		// padding-bottom: 55px
-		padding: 60px 18px
-		padding: 60px 20px
-		// border-left: 2px dashed #FFFFFF
-		// border-right: 2px dashed #FFFFFF
+		// padding: 60px 18px
+		padding: 62px 20px
 		background: #fff
 
 .catalog__heading
 	text-align: center
-	font: 400 30px/1 $fontHeading
+	font: 400 40px/1 $fontHeading
 	text-transform: uppercase
-	margin: 0 0 10px
+	margin: 0 0 14px
 	letter-spacing: 4px
-	+rmin($tablet)
-		font-size: 40px
+	+r($tablet)
+		font-size: 30px
 
 .catalog__caption
 	font: italic 18px/1.444 $fontCaption
 	text-align: center
 	color: #4c4c4c
 	display: block
-	margin: 0 auto 8px
+	margin: 0 auto 12px
 	max-width: 920px
+
+.catalog__list
+	margin: 0 -10px
+	padding: 0
+	list-style: none
+	display: flex
+	flex-wrap: wrap
+	& > li
+		margin: 0 0 20px
+	+r($desktop)
+		display: none
+
+
+.catalog-mobile
+	padding: 20px 0 0
+	margin: 0 0 30px
+	+rmin($desktop)
+		display: none
+
+.catalog-mobile__heading
+	display: block
+	font: 400 20px/1 $fontHeading
+	text-align: center
+	letter-spacing: 2px
+	margin: 0 0 30px
+
+.catalog-mobile__ctrl
+	text-align: center
+	.btn
+		width: 100%
+
+.catalog-carousel
+	position: relative
+	display: block
+	padding: 0 0 40px
+	margin: 0 0 60px
+	.owl-item
+		padding: 0 1px
+	.owl-stage, .owl-item
+		display: flex
+	.owl-dots
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+			
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 2.5px 10px
+		background: #E0E0E0
+		&.active
+			background: #000
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		// top: 100px
+		bottom: -10px
+		width: auto
+		height: 40px
+		background: none
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		z-index: 10
+		color: #222222
+		.ico
+			font-size: 20px
+		&:hover
+			color: #222222
+			background: #none
+	.owl-prev
+		left: 0
+		border-radius: 0px 4px 4px 0px;
+	.owl-next
+		right: 0
+		border-radius: 4px 0 0 4px;
+
+	
+
+
+.catalog-item
+	display: block
+	color: #222
+	border: 1px solid #e0e0e0;
+	border-radius: 6px
+	overflow: hidden
+	text-align: center
+	font-size: 14px
+	line-height: 20px
+	min-height: 100%
+	// max-width: 280px
+	margin: 0 auto
+	&:hover
+		color: #222
+		.catalog-item__title
+			text-decoration: underline
+
+.catalog-item__image
+	margin: 0 0 2px
+	position: relative
+	display: inline-block
+	min-width: 100%
+	border-radius: 6px 6px 0 0
+	max-height: 150px
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		height: 14px
+		background: url(../img/bg-catalog-item.png) 0 0 no-repeat
+		z-index: 10
+		background-size: 100% 100%
+	&:before
+		content: ''
+		float: left
+		padding: 70% 0 0
+	img
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.catalog-item__count
+	position: absolute
+	bottom: -11px
+	left: 50%
+	transform: translate(-50%,0)
+	font-size: 12px
+	line-height: 18px
+	font-weight: 700
+	color: #fff
+	background: #1EA0E4
+	border-radius: 11px
+	border: 2px solid white
+	padding: 0 5px
+	height: 22px
+	z-index: 15
+	min-width: 22px
+	text-align: center
+
+.catalog-item__desc
+	padding: 10px 20px 27px
+
+.catalog-item__title
+	display: block
+	margin: 0
+	font-size: 16px
+	line-height: 22px
+	font-weight: 700
+
+.catalog-item__text
+	margin: 0 5px
+	color: #999999
+

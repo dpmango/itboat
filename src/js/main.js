@@ -81,13 +81,6 @@ $(document).ready(function(){
     }
 
 
-    // $('.item').matchHeight({
-    //     byRow: true,
-    //     property: 'min-height',
-    //     target: null,
-    //     remove: false
-    // });
-
 
     // --------------------------------------------------------------------------
     // Masonry
@@ -224,28 +217,53 @@ $(document).ready(function(){
             }
         }
     }).on('click', '.owl-item', function () {
-        // On click of thumbnail items to trigger same main item
         gallerySlides.trigger('to.owl.carousel', [$(this).index(), galleryDuration, true]);
 
     }).on('changed.owl.carousel', function (e) {
-        // On change of thumbnail item to trigger main item
         gallerySlides.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
     });
 
 
-    //These two are navigation for main items
-    $('.slider-right').click(function() {
-        slider.trigger('next.owl.carousel');
+    $('.js-carousel-photo').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext]
     });
-    $('.slider-left').click(function() {
-        slider.trigger('prev.owl.carousel');
+
+
+    $('.js-carousel-catalog').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext],
+        // autoWidth: true,
+        // center: true,
+        responsive: {
+            568: {
+                items: 2
+            },
+            768: {
+                items: 3
+            }
+        }
     });
 
     // --------------------------------------------------------------------------
     // Formstyler
     // --------------------------------------------------------------------------
 
-    $('.ui-select').styler({
+    $('.ui-select, .ui-number').styler({
         selectSmartPositioning: false,
         selectSearch: false,
         selectVisibleOptions: 0,
@@ -364,6 +382,26 @@ $(document).ready(function(){
         }
     });
     
+
+
+
+
+    // ------
+
+
+
+    $('.other-item__compare').on('click', function(event) {
+        event.preventDefault();
+        var otherTitle = $(this).closest('.other-item').find('.other-item__title').text()
+        alert('Сравнить: ' + otherTitle)
+      
+    });
+
+
+
+
+
+
 
 
   //////////
@@ -537,6 +575,45 @@ $(document).ready(function(){
 	// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
 	// 	}
 	// });
+
+
+    $('[data-mfp]').magnificPopup({
+        type:'inline',
+        mainClass: 'mfp-with-zoom',
+        showCloseBtn: false,
+        removalDelay: 300,
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out'
+          },
+          overflowY: 'scroll',
+
+          callbacks: {
+            open: function() {
+
+                var magnificPopup = $.magnificPopup.instance;
+
+                var theme = magnificPopup.st.el.closest('.tariff-item').find('.tariff-item-title').text();
+
+                if(theme != ''){
+                    magnificPopup.content.find('[name="theme"]').val(theme)
+                }
+                console.log(theme)
+
+                
+
+            },
+            close: function() {
+                
+            }
+          }
+    });
+
+    $(document).on('click', '[data-mfp-close]', function(event) {
+        event.preventDefault();
+        $.magnificPopup.close();
+    });
 
 
   ////////////

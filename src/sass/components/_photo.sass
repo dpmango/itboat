@@ -1,0 +1,160 @@
+// PHOTO
+
+
+.photo
+	padding: 105px 0 60px
+	// margin: 0 -20px 20px
+	position: relative
+	z-index: 10
+	color: #fff
+	text-align: center
+	background: #000
+	margin: 0
+	overflow: hidden
+	.container-fluid
+		background: none
+		position: static
+	+rmin($desktop)
+		padding: 60px 0 120px
+
+
+
+.photo__desc
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	line-height: 30px
+	margin: 0
+	text-align: center
+	+rmin($tablet)
+		flex-wrap: nowrap
+	+rmin($wide)
+		line-height: 50px
+
+.photo__rubric
+	display: block
+	font-size: 14px
+	line-height: inherit
+	font-weight: 700
+	background: none
+	color: #1ea0e4
+	margin: 0
+	white-space: nowrap
+	width: 50%
+	text-align: left
+	margin: 0 0 22px
+	+rmin($tablet)
+		order: 1
+		width: auto
+		padding: 0 20px
+		text-align: center
+	+rmin($desktop)
+		font-size: 22px
+		min-width: 240px
+
+.photo__title
+	font-size: 30px
+	line-height: inherit
+	font-weight: 700
+	margin: 0 0 40px
+	+rmin($tablet)
+		order: 2
+	+rmin($wide)
+		font-size: 50px
+
+.photo__date
+	display: block
+	font-size: 14px
+	margin: 0
+	white-space: nowrap
+	width: 50%
+	text-transform: uppercase
+	text-align: right
+	margin: 0 0 22px
+	+rmin($tablet)
+		order: 3
+		width: auto
+		padding: 0 20px
+		text-align: center
+	+rmin($desktop)
+		font-size: 22px
+		min-width: 240px
+		
+
+
+.photo__image
+	margin: 0
+	padding: 0 20px
+	position: relative
+	img
+		display: block
+		width: 100%
+		max-width: 1260px
+		margin: 0 auto
+
+
+.photo-link__prev, .photo-link__next
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 50%
+	
+	width: 60px
+	height: 60px
+	color: #222
+	transition: .25s
+	transform: translate(0,-50%)
+	
+	.ico
+		font-size: 30px
+	&:hover
+		color: #222
+	+rmin($desktop)
+		background: #fff
+		box-shadow: 0 5px 10px rgba(0,0,0,0.2)
+		&:hover
+			width: 240px
+			height: 180px
+			.ico
+				opacity: 0
+			.photo-link__image
+				opacity: 1
+				visibility: visible
+
+
+.photo-link__prev
+	left: 20px
+	border-radius: 0 4px 4px 0
+	.photo-link__image
+		left: 0
+		transform-origin: 0% 50%
+	+rmin($desktop)
+		left: 0
+
+.photo-link__next
+	right: 20px
+	border-radius: 4px 0 0 4px
+	.photo-link__image
+		right: 0
+	+rmin($desktop)
+		right: 0
+
+
+.photo-link__image
+	transition: inherit
+	margin: 0
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	padding: 20px
+	border-radius: inherit
+	opacity: 0
+	visibility: hidden
+	img
+		display: block
+		width: 100%
+		height: 100%
+		object-fit: cover

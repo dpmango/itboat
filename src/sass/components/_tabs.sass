@@ -4,8 +4,20 @@
 	margin: 0 0 18px
 	position: relative
 
+
 .tabs__container
 	position: relative
+	overflow: hidden
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		height: 20px
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+
 
 .tabs__panel
 	transition: .5s
@@ -23,7 +35,7 @@
 
 
 .tabs__menu
-	margin: 0 0 24px
+	margin: 0 0 18px
 	padding: 0
 	list-style: none
 	display: flex

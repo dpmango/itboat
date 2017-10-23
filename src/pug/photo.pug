@@ -1,5 +1,5 @@
 ---
-title: Legacy
+title: Фото дня
 bodyClass: page-article
 ---
 extends shared/_layout
@@ -8,7 +8,9 @@ block content
 
 	// Article :: Start
 
-	article.article.is-small.is-firstletter
+
+	.photo
+
 		.container-fluid
 
 			.breadcrumbs
@@ -16,197 +18,41 @@ block content
 					li
 						a(href="#").breadcrumbs__link Главная
 					li
-						a(href="#").breadcrumbs__link Журнал 
+						a(href="#").breadcrumbs__link Фото дня 
 					li
-						a(href="#").breadcrumbs__link Статьи
-					li
-						a(href="#").breadcrumbs__link Путешестви
-					li
-						a(href="#").breadcrumbs__link.is-active VIII Архипелагская экспедиция
+						a(href="#").breadcrumbs__link.is-active Когда большой теннис встречается с большим яхтингом
+
+			.photo__desc
+				mark.photo__rubric ФОТО ДНЯ
+				time.photo__date 23 марта
+				h1.photo__title Когда большой теннис встречается с большим яхтингом
+				
+
+
+		figure.photo__image
+			img(src="img/img-photo-1.jpg", alt="")
+			a(href="#").photo-link__prev
+				+icon('ico-prev')
+				figure.photo-link__image
+					img(src="img/img-1.jpg", alt="")
+			a(href="#").photo-link__next
+				+icon('ico-next')
+				figure.photo-link__image
+					img(src="img/img-2.jpg", alt="")
+
+	article.article
+
+
+
+		.container-fluid
 
 			.row
 				.col-lg-9
 
-					.article-panel
-						.article-panel-align
-							figure.article-panel__image
-								img(src="img/img-min-1.jpg", alt="")
-							.article-panel__desc
-								mark.article-panel__rubric Путешествия
-								h1.article-panel__heading VIII Архипелагская экспедиция
-								p.article-panel__text Русский крейсерский клуб вновь отправился в путь
-								time.article-panel__date 23 марта в 15:39
-
-					.share
-						p.share__text Поделиться в социальных сетях
-						.row.row-offset-10
-							.col-4
-								a(href="#").share__btn.share__btn--fb
-									+icon('ico-social-fb')
-									span.share__btn-text Поделиться в facebook
-							.col-4
-								a(href="#").share__btn.share__btn--vk
-									+icon('ico-social-vk')
-									span.share__btn-text Поделиться в ВКонтакте
-							.col-4
-								a(href="#").share__btn.share__btn--tw
-									+icon('ico-social-tw')
-									span.share__btn-text Поделиться в twitter
-
 					.article-content
 
-						p Участники экспедиции поставили перед собой задачу посетить ряд исторических мест, среди них, прежде всего, крепость в итальянском городе Анкона. Также в плане заходы в Равенну, Венецию, Лагуну ди Марано, Порторож, архипелаг Бриони и Пулу.
+						p Самую большую яхту, когда-либо построенную в Голландии, сфотографировали в полном парусном вооружении. 106-метровая Black Pearl стала первым парусным проектом верфи Oceanco, специализирующейся на моторных суперяхтах. В конце марта 2017 года она была передана владельцу - россиянину Олегу Бурлакову. Black Pearl оснащена тремя поворотными мачтами (парусное вооружение DynaRig). У нее стальной корпус с волнорезным носом типа Pacman и алюминиевая надстройка. Black Pearl оборудована двумя двигателями Caterpillar, на которых она может двигаться со скоростью 17,5 узлов, но при желании двигатели можно выключить и идти на одной солнечной энергии. На борту есть каюты для 12 пассажиров, два СПА-бассейна, огромный пляжный клуб и множество мест для хранения тендеров и водных игрушек.
 
-						p Экспедиция стартовала 27 апреля и проходит в рамках историко-патриотического проекта Русского крейсерского клуба, цель которого «открытие порой незаслуженно забытых страниц истории русского флота».
-
-						figure.article-image
-							.article-image-in
-								img(src="img/img-map-1.jpg", alt="")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-								figcaption.article-image__caption
-									.article-image__caption-in Маршрут экспедиции
-
-						p Город Анкона был основан греками в 387 г. до н. э. С их легкой руки он получил имя Αγκων — «локоть», из-за «согнутости» мыса, на котором располагается. В конце 18 века, пытаясь отбить у французов крепость, русские моряки под командованием Войновича осаждали ее в течение 1,5 месяца. Именно эта часть его истории привлекла путешественников.
-
-						p Впрочем, этот этап маршрута уже пройден:
-
-						.images-carousel.is-not_offset.owl-carousel.js-carousel-images
-							figure.images-item
-								img(src="img/img-legacy-1.jpg", alt="img-1")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-							figure.images-item
-								img(src="img/img-legacy-2.jpg", alt="img-2")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-							figure.images-item
-								img(src="img/img-legacy-3.jpg", alt="img-3")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-
-
-						p А это уже ночная Венеция:
-
-						figure.article-image
-							.article-image-in
-								img(src="img/img-legacy-2.jpg", alt="")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-
-
-						p «Когда здесь нет туристов, когда город замирает после дневного гула и суеты, когда Венеция ненадолго становится сама собой». Из блога Андрея Шаркова
-
-						p Сейчас лодки «восьмой Архипелагской» пребывают в живописной Словении, а завтра с утра направятся в Хорватию, чтобы побывать на архипелаге Бриони, излюбленном месте отдыха президента социалистической Югославии Тито. Отсюда его яхта «Чайка» отправлялась с визитами по государственным делам и по личным.
-
-						.row
-							.col-lg-10.push-lg-1
-
-								.images-carousel.is-not_offset.owl-carousel.js-carousel-images
-									figure.images-item
-										img(src="img/img-1.jpg", alt="«Чайка» Тито итальянского происхождения. Начинала она как рефрижераторное судно для перевозки бананов из Африки. Вот что значит продвинуться по службе.")
-										.share-toggle
-											button.share-toggle__btn
-												+icon('ico-social-share')
-											.share-toggle__dropdown
-												a(href="#").share__btn.share__btn--fb
-													+icon('ico-social-fb')
-										
-												a(href="#").share__btn.share__btn--vk
-													+icon('ico-social-vk')
-										
-												a(href="#").share__btn.share__btn--tw
-													+icon('ico-social-tw')
-									figure.images-item
-										img(src="img/img-2.jpg", alt="«Чайка» Тито итальянского происхождения.")
-										.share-toggle
-											button.share-toggle__btn
-												+icon('ico-social-share')
-											.share-toggle__dropdown
-												a(href="#").share__btn.share__btn--fb
-													+icon('ico-social-fb')
-										
-												a(href="#").share__btn.share__btn--vk
-													+icon('ico-social-vk')
-										
-												a(href="#").share__btn.share__btn--tw
-													+icon('ico-social-tw')
-
-
-						p Еще со времен Тито, которому именитые гости любили преподносить экзотические подарки, здесь обосновались жирафы, зебры, слоны и ламы. Но не только. В здешних землях можно напасть и на след динозавра.
-
-						figure.article-image
-							.article-image-in
-								img(src="img/img-legacy-3.jpg", alt="")
-								.share-toggle
-									button.share-toggle__btn
-										+icon('ico-social-share')
-									.share-toggle__dropdown
-										a(href="#").share__btn.share__btn--fb
-											+icon('ico-social-fb')
-								
-										a(href="#").share__btn.share__btn--vk
-											+icon('ico-social-vk')
-								
-										a(href="#").share__btn.share__btn--tw
-											+icon('ico-social-tw')
-
-								figcaption.article-image__caption
-									.article-image__caption-in Из архива Андрея Шаркова
-
-
-						p Финиширует экспедиция 10 мая в Пуле.
-									
 
 						.article-info
 							.row.justify-content-center
@@ -234,11 +80,11 @@ block content
 								ul.article-tags
 									li Тэги:
 									li
-										a(href="#").article-tags__btn Архипелагская экспедицияе
+										a(href="#").article-tags__btn Кубок Кезеной-Ам
 									li
-										a(href="#").article-tags__btn Путешествия
+										a(href="#").article-tags__btn Чечня
 									li
-										a(href="#").article-tags__btn Русский крейсерский клуб
+										a(href="#").article-tags__btn Кубок Кезеной-Ам
 
 							.col-lg-6
 

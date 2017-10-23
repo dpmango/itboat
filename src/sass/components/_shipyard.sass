@@ -1,0 +1,119 @@
+// shipyard
+
+.shipyard
+	position: relative
+	margin: 20px 0 0
+	padding: 64px 0 0
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 2px
+		background: repeating-linear-gradient( to right, #fff, #fff 6px, #E0E0E0 6px, #E0E0E0 28px)
+	+r($desktop)
+		margin: 0
+
+.shipyard__heading
+	display: block
+	text-align: center
+	font: 400 30px/1 $fontHeading
+	text-transform: uppercase
+	letter-spacing: 4px
+	margin: 0 0 36px
+	+rmin($desktop)
+		font-size: 40px
+
+.shipyard-group
+	padding: 0 0 20px
+	display: flex
+	flex-wrap: wrap
+	+r($desktop)
+		padding: 0
+	&__letter
+		width: 160px
+		text-align: center
+		display: block
+		font: 400 20px/22px $fontHeading
+		text-transform: uppercase
+		margin: 0
+		display: none
+		+rmin($desktop)
+			display: block
+	&__list
+		margin: 0 -10px
+		padding: 0
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		flex: 1
+		& > li
+			margin: 0 0 21px
+			max-width: 242px
+			+r($desktop)
+				margin: 0 0 15px
+				max-width: none
+
+.shipyard-item
+	display: block
+	position: relative
+	line-height: 22px
+	color: #222
+	padding: 0 0 0 36px
+	+r($tablet)
+		padding: 0
+	&:hover
+		color: #222
+		.shipyard-item__title
+			text-decoration: underline
+	&__image
+		display: block
+		margin: 0
+		position: absolute
+		top: 0
+		left: 0
+		border: 1px solid #D9D9D9
+		width: 24px
+		height: 18px
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+		+r($tablet)
+			display: none
+	&__title
+		font-size: 16px
+		line-height: 18px
+		font-weight: 700
+		margin: 0 0 5px
+		display: block
+		+r($tablet)
+			display: inline
+	&__count
+		font-size: 12px
+		line-height: 18px
+		color: #4c4c4c
+		margin: 0
+		display: block
+		+r($tablet)
+			display: inline-block
+			justify-content: center
+			position: relative
+			font-weight: 700
+			color: #999
+			border-radius: 9px
+			background: #E0E0E0
+			min-width: 26px
+			text-align: center
+			padding: 0 4px
+			span
+				display: none
+
+
+.shipyard__ctrl
+	text-align: center
+	+r($tablet)
+		padding: 20px 0 0

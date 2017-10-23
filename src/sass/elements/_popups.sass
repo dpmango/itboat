@@ -1,0 +1,84 @@
+// --------------------------------------------------------------------------
+// Popups
+// --------------------------------------------------------------------------
+
+
+.mfp-content
+	padding: 10px
+
+// -----
+
+.popup
+	width: 100%
+	position: relative
+	overflow: hidden
+	background: #fff
+	margin: 0 auto
+	padding: 25px 20px
+	font-size: 14px
+	line-height: 18px
+	+rmin($tablet)
+		// padding: 25px 40px 30px
+	+rmin($tablet)
+		padding: 50px 80px 60px
+
+
+.popup-auth
+	max-width: 620px
+
+.popup-offer
+	max-width: 780px
+
+.popup-close
+	transition: .25s
+	padding: 0
+	border: none
+	background: none
+	color: #999
+	position: absolute
+	top: 30px
+	right: 20px
+	cursor: pointer
+	z-index: 100
+	padding: 0
+	.ico
+		font-size: 14px
+	&:hover
+		color: #000
+	
+
+.popup-logo
+	margin: 0 0 40px
+	text-align: center
+	.ico
+		font-size: 48px
+
+.popup-heading
+	display: block
+	text-align: center
+	font-size: 22px
+	line-height: 28px
+	font-weight: 700
+	margin: 5px 0 25px
+	padding: 0 10px
+	+rmin($desktop)
+		margin: 5px 0 40px
+
+.popup-caption
+	font-size: 12px
+	line-height: 18px
+	text-align: center
+	margin: 0
+	padding: 5px 0 0
+	color: #999
+	a
+		color: inherit
+		text-decoration: underline
+		&:hover
+			color: #000
+		
+
+
+
+.popup-ctrl
+	padding: 12px 0 10px

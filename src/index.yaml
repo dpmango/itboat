@@ -16,6 +16,10 @@ PageList:
 - file: photogallery-list.html
   ready: 100
 - file: legacy.html
-  ready: 10
+  ready: 100
+- file: photo.html
+  ready: 50
+- file: catalog.html
+  ready: 50
 - file: ui.html
-  ready: 0
+  ready: 50

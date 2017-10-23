@@ -1,0 +1,629 @@
+---
+title: Каталог
+bodyClass: page-catalog
+---
+extends shared/_layout
+block content
+
+	#grid
+
+	// Catalog :: Start
+
+	.catalog
+		.container-fluid
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link Журнал
+					li
+						a(href="#").breadcrumbs__link Статьи
+					li
+						a(href="#").breadcrumbs__link Путешествия
+					li
+						a(href="#").breadcrumbs__link.is-active Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+
+			h2.catalog__heading Каталог
+			p.catalog__caption 3654 актуальных моделей яхт и катеров от 471 мировых производителей. Здесь есть все!
+
+			.tabs.js-tabs
+				ul.tabs__menu.js-tabs__menu
+					li
+						.tabs-item
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-boats')
+								b.tabs-item__title Катера
+								p.tabs-item__text 1 278 <span>моделей</span>
+					li.is-active
+						.tabs-item
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-motor')
+								b.tabs-item__title Моторные <span>яхты</span>
+								p.tabs-item__text 1499 <span>моделей</span>
+					li
+						.tabs-item
+							.tabs-item-in
+								figure.tabs-item__icon
+									+icon('ico-sailing')
+								b.tabs-item__title Парусные <span>яхты</span>
+								p.tabs-item__text 668 <span>моделей</span>
+
+				.tabs__container
+					.tabs__panel.js-tabs__panel Катера
+								
+					.tabs__panel.js-tabs__panel.is-active
+
+						.row
+							.col-lg-9
+
+								ul.catalog__list
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-1.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Глиссирующие яхты с флайбриджем
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-2.jpg", alt="")
+												b.catalog-item__count 284
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-3.jpg", alt="")
+												b.catalog-item__count 701
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-4.jpg", alt="")
+												b.catalog-item__count 1 5029
+											.catalog-item__desc
+												h3.catalog-item__title Водоизмещающие яхты
+												p.catalog-item__text Тихоходные и экономичные суда с максимальным жилым объемом
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-5.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Моторные круизные катамараны
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-6.jpg", alt="")
+												b.catalog-item__count 124
+											.catalog-item__desc
+												h3.catalog-item__title Полу-водоизмещающие яхты
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-7.jpg", alt="")
+												b.catalog-item__count 181
+											.catalog-item__desc
+												h3.catalog-item__title Яхты с хардтопом полузакрытым салоном
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-8.jpg", alt="")
+												b.catalog-item__count 18
+											.catalog-item__desc
+												h3.catalog-item__title Экспедиционные яхты и траулеры
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-9.jpg", alt="")
+												b.catalog-item__count 12
+											.catalog-item__desc
+												h3.catalog-item__title Экспедиционные яхты и траулеры
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-10.jpg", alt="")
+												b.catalog-item__count 201
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-11.jpg", alt="")
+												b.catalog-item__count 644
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-12.jpg", alt="")
+												b.catalog-item__count 1 009
+											.catalog-item__desc
+												h3.catalog-item__title Водоизмещающие яхты
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-1.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Глиссирующие яхты с флайбриджем
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-2.jpg", alt="")
+												b.catalog-item__count 284
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-3.jpg", alt="")
+												b.catalog-item__count 701
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-4.jpg", alt="")
+												b.catalog-item__count 1 5029
+											.catalog-item__desc
+												h3.catalog-item__title Водоизмещающие яхты
+												p.catalog-item__text Тихоходные и экономичные суда с максимальным жилым объемом
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-5.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Моторные круизные катамараны
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-6.jpg", alt="")
+												b.catalog-item__count 124
+											.catalog-item__desc
+												h3.catalog-item__title Полу-водоизмещающие яхты
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-7.jpg", alt="")
+												b.catalog-item__count 181
+											.catalog-item__desc
+												h3.catalog-item__title Яхты с хардтопом полузакрытым салоном
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									li.col-lg-4.col-xl-3
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-8.jpg", alt="")
+												b.catalog-item__count 18
+											.catalog-item__desc
+												h3.catalog-item__title Экспедиционные яхты и траулеры
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+							.col-lg-3
+								
+								// Filter :: Start
+
+								.filter.js-toggle
+									form(action="#")
+										
+										h3.filter__heading
+											+icon('ico-filter-motor')
+											| Подобрать моторную яхту
+
+										button.filter-toggle-btn.js-toggle-btn.is-active МОТОРНЫЕ ЯХТЫ
+											span.icon-toggle
+												+icon('ico-arrow-down')
+
+										.filter-toggle-content.js-toggle-content
+
+											input.ui-input(type="text", placeholder="Верфь, бренд")
+
+											.ui-range
+												.row
+													.col-4
+														input(type="text", value="0").ui-input.ui-from
+													.col-4
+														label.ui-range__label Длина, м
+													.col-4
+														input(type="text", value="100").ui-input.ui-to
+												input(type="range", data-min="0", data-max="100").ui-range__input
+			
+											.row.row-offset-10.justify-content-start
+												.col-auto
+													label.ui-check
+														input(type="checkbox").ui-check__input
+														span.ui-check__checkbox
+															+icon('ico-check')
+														span.ui-check__text Новые
+												.col-auto
+													label.ui-check
+														input(type="checkbox").ui-check__input
+														span.ui-check__checkbox
+															+icon('ico-check')
+														span.ui-check__text Б/у не старше
+
+
+											select.ui-select
+												option Материал корпуса
+
+											select.ui-select
+												option Тип корпуса
+
+											.row
+												.col-auto.col-lg-5
+													label.ui-label Количество кают
+												.col-auto.col-lg-7
+													input.ui-number(type="number", value="0", min="0", max="100")
+
+											
+											.filter__ctrl
+												button.btn.btn-block.btn-dark ПОКАЗАТЬ 1 376 лодок
+												a(href="#").filter-advanced
+													| Расширенный поиск
+													+icon('ico-arrow-down')
+
+								// Filter :: End
+
+
+								// Catalog Carousel Mobile :: Start
+								.catalog-mobile
+									h2.catalog-mobile__heading КАТЕГОРИИ
+									.catalog-carousel.owl-carousel.js-carousel-catalog
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-1.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Глиссирующие яхты с флайбриджем
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-2.jpg", alt="")
+												b.catalog-item__count 284
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-3.jpg", alt="")
+												b.catalog-item__count 701
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-4.jpg", alt="")
+												b.catalog-item__count 1 5029
+											.catalog-item__desc
+												h3.catalog-item__title Водоизмещающие яхты
+												p.catalog-item__text Тихоходные и экономичные суда с максимальным жилым объемом
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-5.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Моторные круизные катамараны
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-6.jpg", alt="")
+												b.catalog-item__count 124
+											.catalog-item__desc
+												h3.catalog-item__title Полу-водоизмещающие яхты
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-7.jpg", alt="")
+												b.catalog-item__count 181
+											.catalog-item__desc
+												h3.catalog-item__title Яхты с хардтопом полузакрытым салоном
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-8.jpg", alt="")
+												b.catalog-item__count 18
+											.catalog-item__desc
+												h3.catalog-item__title Экспедиционные яхты и траулеры
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-9.jpg", alt="")
+												b.catalog-item__count 12
+											.catalog-item__desc
+												h3.catalog-item__title Экспедиционные яхты и траулеры
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-10.jpg", alt="")
+												b.catalog-item__count 201
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-11.jpg", alt="")
+												b.catalog-item__count 644
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-12.jpg", alt="")
+												b.catalog-item__count 1 009
+											.catalog-item__desc
+												h3.catalog-item__title Водоизмещающие яхты
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-1.jpg", alt="")
+												b.catalog-item__count 24
+											.catalog-item__desc
+												h3.catalog-item__title Глиссирующие яхты с флайбриджем
+												p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-2.jpg", alt="")
+												b.catalog-item__count 284
+											.catalog-item__desc
+												h3.catalog-item__title Закрытые круизные яхты с хардтопом
+												p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+										a(href="#").catalog-item
+											figure.catalog-item__image
+												img(src="img/img-boat-3.jpg", alt="")
+												b.catalog-item__count 701
+											.catalog-item__desc
+												h3.catalog-item__title Открытые круизные яхты
+												p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+									.catalog-mobile__ctrl
+										a(href="#").btn.btn-grey Все категории
+								
+								// Catalog Carousel Mobile :: End
+
+								// Other :: Start
+								
+								.other
+									h2.other__heading Новинки
+									ul.other__list
+										li.col-6.col-md-3.col-lg-6
+											a(href="#").other-item
+												figure.other-item__image
+													img(src="img/img-boat-1.jpg", alt="")
+												span.other-item__rubric Dominator
+												h3.other-item__title
+													| Dominator 680
+													span.other-item__compare
+														+icon('ico-compare')
+												em.other-item__price от €2 530 000,–
+												p.other-item__text Длина: 12,5 м
+										li.col-6.col-md-3.col-lg-6
+											a(href="#").other-item
+												figure.other-item__image
+													img(src="img/img-boat-2.jpg", alt="")
+												span.other-item__rubric Nordhavn
+												h3.other-item__title
+													| Nordhavn 40
+													span.other-item__compare
+														+icon('ico-compare')
+												em.other-item__price от €2 980 000,–
+												p.other-item__text Длина: 11,7 м
+										li.col-6.col-md-3.col-lg-6
+											a(href="#").other-item
+												figure.other-item__image
+													img(src="img/img-boat-3.jpg", alt="")
+												span.other-item__rubric Serious
+												h3.other-item__title
+													| Gently 36'
+													span.other-item__compare
+														+icon('ico-compare')
+												em.other-item__price от €2 530 000,–
+												p.other-item__text Длина: 14,8 м
+										li.col-6.col-md-3.col-lg-6
+											a(href="#").other-item
+												figure.other-item__image
+													img(src="img/img-boat-4.jpg", alt="")
+												span.other-item__rubric Jetten
+												h3.other-item__title
+													| 38 Cabrio
+													span.other-item__compare
+														+icon('ico-compare')
+												em.other-item__price от €2 530 000,–
+												p.other-item__text Длина: 11,2 м
+
+
+								// Other :: End
+
+
+
+					.tabs__panel.js-tabs__panel Парусные яхты
+
+				
+				.shipyard
+					h2.shipyard__heading Верфи
+					.shipyard-group
+						b.shipyard-group__letter А
+						ul.shipyard-group__list
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-1.png", alt="")
+									h3.shipyard-item__title Anytec
+									p.shipyard-item__count 15 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-2.png", alt="")
+									h3.shipyard-item__title Perini Navi
+									p.shipyard-item__count 28 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-3.png", alt="")
+									h3.shipyard-item__title Monte Carlo Yachts
+									p.shipyard-item__count 16 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-4.png", alt="")
+									h3.shipyard-item__title Aquador
+									p.shipyard-item__count 5 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-5.png", alt="")
+									h3.shipyard-item__title Monte Carlo Yachts
+									p.shipyard-item__count 11 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-6.png", alt="")
+									h3.shipyard-item__title Arcadia
+									p.shipyard-item__count 84 <span>модели</span>
+
+					.shipyard-group
+						b.shipyard-group__letter B
+						ul.shipyard-group__list
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-2.png", alt="")
+									h3.shipyard-item__title Beneteau
+									p.shipyard-item__count 28 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-3.png", alt="")
+									h3.shipyard-item__title Benetti
+									p.shipyard-item__count 16 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-1.png", alt="")
+									h3.shipyard-item__title Bavaria
+									p.shipyard-item__count 15 <span>моделей</span>
+
+					.shipyard-group
+						b.shipyard-group__letter C
+						ul.shipyard-group__list
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-1.png", alt="")
+									h3.shipyard-item__title Canados
+									p.shipyard-item__count 15 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-2.png", alt="")
+									h3.shipyard-item__title Monte Carlo Yachts
+									p.shipyard-item__count 28 <span>моделей</span>
+
+					.shipyard-group
+						b.shipyard-group__letter M
+						ul.shipyard-group__list
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-3.png", alt="")
+									h3.shipyard-item__title Mochi Craft
+									p.shipyard-item__count 16 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-1.png", alt="")
+									h3.shipyard-item__title Maiora
+									p.shipyard-item__count 15 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-4.png", alt="")
+									h3.shipyard-item__title Monte Carlo Yachts
+									p.shipyard-item__count 5 <span>моделей</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-5.png", alt="")
+									h3.shipyard-item__title Monte Carlo Yachts
+									//- p.shipyard-item__count
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-6.png", alt="")
+									h3.shipyard-item__title Mulder
+									p.shipyard-item__count 84 <span>модели</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-6.png", alt="")
+									h3.shipyard-item__title Mimbus
+									p.shipyard-item__count 84 <span>модели</span>
+							li.col-6.col-sm-4.col-lg-3
+								a(href="#").shipyard-item
+									figure.shipyard-item__image
+										img(src="img/img-country-2.png", alt="")
+									h3.shipyard-item__title Marex
+									p.shipyard-item__count 28 <span>моделей</span>
+
+					.shipyard__ctrl
+						a(href="#").btn.btn-dark-empty Посмотреть все верфи
+						
+
+
+
+	// Catalog :: End

@@ -5,28 +5,50 @@
 	.article-panel
 		color: #222
 		min-height: auto
-		.article-panel__date
-			position: relative
-			top: 0
-			margin: 0
-			color: #919191
-		.article-panel__rubric
-			margin: 0 0 10px
-		.article-panel__heading
-			font-size: 30px
-			margin: 0 0 15px
-		.article-panel__text
-			color: #212121
-			opacity: 1
-			font-family: $fontBase
-			font-style: normal
-			font-size: 18px
 		+rmin($desktop)
 			text-align: left
 			padding: 45px 80px
 			.article-panel__heading
 				font-size: 50px
 				line-height: 1
+	.article-panel__image
+		position: relative
+		text-align: center
+		margin: 0 0 20px
+		img
+			display: inline-block
+			position: relative
+			width: 100%
+			height: auto
+		
+		&:after
+			display: none
+
+		+rmin($mobile)
+			img
+				width: auto
+		+rmin($desktop)
+			max-width: 240px
+			margin: 0 28px 0 0
+			float: left
+
+	.article-panel__date
+		position: relative
+		top: 0
+		margin: 0
+		color: #919191
+	.article-panel__rubric
+		margin: 0 0 10px
+	.article-panel__heading
+		font-size: 30px
+		margin: 0 0 15px
+	.article-panel__text
+		color: #212121
+		opacity: 1
+		font-family: $fontBase
+		font-style: normal
+		font-size: 18px
+	
 
 
 .is-firstletter
@@ -36,24 +58,18 @@
 			line-height: 78px
 			display: block
 			float: left
-			margin: -13px 15px 0 0
+			margin: -13px 10px 0 0
 
 .article
 	.container-fluid
 		background: #fff
 		position: relative
-	.breadcrumbs
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		z-index: 20
 	+rmin($desktop)
 		.container-fluid
 			padding: 60px 20px
-		.breadcrumbs
-			position: relative
-			top: -48px
+		// .breadcrumbs
+		// 	position: relative
+		// 	top: -48px
 
 .article-panel
 	padding: 120px 20px 50px
@@ -78,6 +94,8 @@
 .article-panel-align
 	width: 100%
 
+.article-panel__desc
+	overflow: hidden
 
 .article-panel__image
 	margin: 0
@@ -148,13 +166,15 @@
 .article-content
 	font: 400 18px/26px $fontCaption
 	color: #4c4c4c
+	letter-spacing: -0.1px
+	padding: 20px 0 0
 	
 	& > ul
 		@extend .ui-ul
 
 	+rmin($desktop)
 		padding: 0 80px
-		& > figure, .images-carousel, .article-info, .gallery
+		& > figure, .images-carousel:not(.is-not_offset), .article-info, .gallery
 			margin-left: -80px
 			margin-right: -80px
 
@@ -297,3 +317,43 @@
 
 .article-list__text
 	margin: 0
+
+
+// -----
+
+
+.article-image
+	position: relative
+	text-align: center
+	padding: 0 20px
+	margin: 0 0 30px
+	+rmin($desktop)
+		// margin-left: -80px
+		// margin-right: -80px
+
+.article-image-in
+	display: inline-block
+	vertical-align: top
+	position: relative
+
+
+.article-image__caption
+	display: block
+	font: 400 14px/20px $fontBase
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	text-align: center
+	b
+		margin: 0 10px
+
+.article-image__caption-in
+	display: inline-block
+	vertical-align: top
+	padding: 15px 20px
+	background: #212121
+	color: #fff
+	border-radius: 4px 4px 0 0
+
+
