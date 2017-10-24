@@ -115,7 +115,16 @@ block content
 
 				.col-md-8.col-lg-9
 
-					ul.media__list.js-masonry
+					ul.media__list.media__list--index
+						li.col-sm-6.col-lg-4.is-media-column
+
+							a(href="#").media-banner
+								img(src="img/img-banner-1.jpg", alt="")
+
+							.media-offer
+								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+								a(href="#").btn.btn-dark предложить
+
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article
 								figure.media-article__image
@@ -133,14 +142,7 @@ block content
 									mark.media-photo__rubric Фото дня
 									h3.media-photo__title Прогулялся по небу
 
-						li.col-sm-6.col-lg-4.is-hidden-tablet
-
-							a(href="#").media-banner
-								img(src="img/img-banner-1.jpg", alt="")
-
-							.media-offer
-								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
-								a(href="#").btn.btn-dark предложить
+						
 
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article

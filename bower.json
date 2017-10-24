@@ -23,7 +23,8 @@
     "owl.carousel": "^2.2.1",
     "masonry": "^4.2.0",
     "jquery.form-styler": "^2.0.0",
-    "matchHeight": "matchheight#^0.7.2"
+    "matchHeight": "matchheight#^0.7.2",
+    "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
     "jquery.form-styler": "^2.0.0"

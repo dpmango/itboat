@@ -616,6 +616,22 @@ $(document).ready(function(){
     });
 
 
+
+    // Scroll Effect Fixed
+
+    var comingController = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            triggerHook: 'onLeave'
+        }
+    });
+
+    var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
+
+    var comingScene = new ScrollMagic.Scene({triggerElement: ".js-fixed-container", duration: fixedDuration, offset: -20})
+        .setPin('.js-fixed')
+        .addTo(comingController);
+
+
   ////////////
   // UI
   ////////////

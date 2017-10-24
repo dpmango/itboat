@@ -21,5 +21,7 @@ PageList:
   ready: 50
 - file: catalog.html
   ready: 50
+# - file: category.html
+  # ready: 0
 - file: ui.html
   ready: 50

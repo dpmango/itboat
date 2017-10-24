@@ -46,7 +46,7 @@ block content
 
 		.container-fluid
 
-			.row
+			.row.js-fixed-container
 				.col-lg-9
 
 					.article-content
@@ -93,7 +93,7 @@ block content
 						
 
 				.col-lg-3
-					figure.article-banner
+					figure.article-banner.js-fixed
 						img(src="img/img-banner-1.jpg", alt="")
 
 			.row
@@ -128,7 +128,16 @@ block content
 
 				h2.media__read Читайте также
 
-				ul.media__list.js-masonry
+				ul.media__list
+					li.col-12.col-sm-6.col-md-4.col-xl-3.is-media-column
+
+						a(href="#").media-banner
+							img(src="img/img-banner-1.jpg", alt="")
+
+						.media-offer
+							p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+							a(href="#").btn.btn-dark предложить
+
 					li.col-12.col-sm-6.col-md-4.col-xl-3
 						a(href="#").media-article
 							figure.media-article__image
@@ -154,14 +163,6 @@ block content
 								mark.media-news__rubric НОВОСТИ
 								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
 
-					li.col-12.col-sm-6.col-md-4.col-xl-3
-
-						a(href="#").media-banner
-							img(src="img/img-banner-1.jpg", alt="")
-
-						.media-offer
-							p.media-offer__text У Вас есть интересный материал на тему яхтинга?
-							a(href="#").btn.btn-dark предложить
 
 					li.col-12.col-sm-6.col-md-4.col-xl-3
 						a(href="#").media-news
