@@ -9,6 +9,12 @@
 	min-height: 100%
 	+rmin($tablet)
 		float: left
+	&--similar
+		float: none
+		max-width: none
+		padding: 60px 0 0
+		.brands-item__image
+			height: 120px
 
 .brands-ctrl
 	position: absolute
@@ -43,6 +49,7 @@
 .brands-item
 	display: block
 	color: #222
+	width: 100%
 	&:hover
 		color: #222
 		.brands-item__title
@@ -71,4 +78,59 @@
 
 
 
-
+.brands-carousel
+	padding: 0 40px
+	.owl-item
+		padding: 0 1px
+		img
+			width: auto
+	.owl-stage, .owl-item
+		display: flex
+	.owl-dots
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		bottom: 0
+		left: 0
+		display: none
+		right: 0
+			
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 2.5px 10px
+		background: #E0E0E0
+		&.active
+			background: #000
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		top: 44px
+		width: auto
+		height: 40px
+		background: none
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		z-index: 10
+		color: #222222
+		.ico
+			font-size: 30px
+		&:hover
+			color: #222222
+			background: none
+	.owl-prev
+		left: 0
+		border-radius: 0px 4px 4px 0px
+	.owl-next
+		right: 0
+		border-radius: 4px 0 0 4px
+	+rmin($desktop)
+		padding: 0 80px

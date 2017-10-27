@@ -1,12 +1,664 @@
 ---
-title: Legacy
-bodyClass: page-article
+title: Категория
+bodyClass: page-category
 ---
 extends shared/_layout
 block content
 
 
 	// Category :: Start
+
+
+	.category
+		.container-fluid
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link Каталог  
+					li
+						a(href="#").breadcrumbs__link.is-active Закрытые круизные яхты с хардтопом
+
+			mark.category-rubric КАТАЛОГ
+
+			h2.category-heading Закрытые круизные яхты с хардтопом
+
+			em.category-text Спортивный корпус с салоном, защищенным от непогоды
+
+			figure.category-image
+				img(src="img/img-category-1.jpg", alt="")
+
+			.category-content
+				.row.row-offset-100
+					.col-lg-8
+
+						p Хардтоп — это жесткая крыша, которая защищает салон от непогоды. Вариант полностью закрытой моторной яхты, когда сверху палубу прикрывает хардтоп, а сзади дверь, лучше всего подходит для холодных акваторий таких как север Европы, Балтика или внутренние водные пути России.
+
+						p Проще всего яхту с хардтопом описать как спортивную и стильную. В ней нет ничего лишнего — отсутствие надстроек позволяет развивать высокие скорости, причем скорость и расход топлива в этом классе яхт оптимальны. Таким яхтам отдают предпочтение молодые яхтсмены, которым хочется погонять в свое удовольствие в веселой компании. На закрытых круизерах есть каюта (или несколько), а также все удобства.
+
+						p Конечно, аналогичных размеров <a href="#">яхта с флайбриджем</a> может предложить гораздо больше пространства для отдыха на открытых палубах, но наличие флайбриджа неминуемо скажется на скоростях.
+
+					.col-lg-4
+
+						// Filter :: Start
+
+						.filter.js-toggle
+							form(action="#")
+								
+								button.filter-toggle-btn.js-toggle-btn.is-active Подобрать
+									span.icon-toggle
+										+icon('ico-arrow-down')
+
+								.filter-toggle-content.js-toggle-content
+
+									input.ui-input(type="text", placeholder="Верфь, бренд")
+
+									.ui-range
+										.row
+											.col-4
+												input(type="text", value="0").ui-input.ui-from
+											.col-4
+												label.ui-range__label Длина, м
+											.col-4
+												input(type="text", value="100").ui-input.ui-to
+										input(type="range", data-min="0", data-max="100").ui-range__input
+	
+									.row.row-offset-10.justify-content-start
+										.col-auto
+											label.ui-check
+												input(type="checkbox").ui-check__input
+												span.ui-check__checkbox
+													+icon('ico-check')
+												span.ui-check__text Новые
+										.col-auto
+											label.ui-check
+												input(type="checkbox").ui-check__input
+												span.ui-check__checkbox
+													+icon('ico-check')
+												span.ui-check__text Б/у не старше
+
+
+									select.ui-select
+										option Материал корпуса
+
+									select.ui-select
+										option Тип корпуса
+
+									.row
+										.col-auto.col-lg-5
+											label.ui-label Количество кают
+										.col-auto.col-lg-7
+											input.ui-number(type="number", value="0", min="0", max="100")
+
+									
+									.filter__ctrl
+										button.btn.btn-block.btn-dark ПОКАЗАТЬ 1 376 лодок
+										a(href="#").filter-advanced
+											| Расширенный поиск
+											+icon('ico-arrow-down')
+
+						// Filter :: End
+				
+				hr.category-line
+
+			.row.row-offset-100
+				.col-lg-7
+
+					// Other :: Start
+							
+					.other
+						h2.other__heading Популярные модели
+
+						.sorting
+							form(action="#")
+								.sorting-group
+									label.sorting-check
+										input(type="radio", name="sorting_models", checked).sorting-check__input
+										.sorting-check__text
+											| По алфавиту
+											+icon('ico-sorting')
+									label.sorting-check
+										input(type="radio", name="sorting_models").sorting-check__input
+										.sorting-check__text
+											| По длинне
+											+icon('ico-sorting')
+									label.sorting-check
+										input(type="radio", name="sorting_models").sorting-check__input
+										.sorting-check__text
+											| По цене
+											+icon('ico-sorting')
+										
+						ul.other__list
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-1.jpg", alt="")
+									span.other-item__rubric Dominator
+									h3.other-item__title
+										| Dominator 680
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-2.jpg", alt="")
+									span.other-item__rubric Nordhavn
+									h3.other-item__title
+										| Nordhavn 40
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 980 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-3.jpg", alt="")
+									span.other-item__rubric Serious
+									h3.other-item__title
+										| Gently 36'
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-4.jpg", alt="")
+									span.other-item__rubric Jetten
+									h3.other-item__title
+										| 38 Cabrio
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-1.jpg", alt="")
+									span.other-item__rubric Dominator
+									h3.other-item__title
+										| Dominator 680
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м
+
+							li.col-6.col-md-3.col-lg-4
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-2.jpg", alt="")
+									span.other-item__rubric Nordhavn
+									h3.other-item__title
+										| Nordhavn 40
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 980 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+
+							// Other :: End
+
+
+				.col-lg-5
+
+
+					// Other :: Start
+							
+					.other
+						h2.other__heading Новинки
+
+						.sorting
+							form(action="#")
+								.sorting-group
+									label.sorting-check
+										input(type="radio", name="sorting_models", checked).sorting-check__input
+										.sorting-check__text
+											| По алфавиту
+											+icon('ico-sorting')
+									label.sorting-check
+										input(type="radio", name="sorting_models").sorting-check__input
+										.sorting-check__text
+											| По длинне
+											+icon('ico-sorting')
+									label.sorting-check
+										input(type="radio", name="sorting_models").sorting-check__input
+										.sorting-check__text
+											| По цене
+											+icon('ico-sorting')
+
+						ul.other__list
+							li.col-6.col-md-3.col-lg-6
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-1.jpg", alt="")
+									span.other-item__rubric Dominator
+									h3.other-item__title
+										| Dominator 680
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-6
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-2.jpg", alt="")
+									span.other-item__rubric Nordhavn
+									h3.other-item__title
+										| Nordhavn 40
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 980 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-6
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-3.jpg", alt="")
+									span.other-item__rubric Serious
+									h3.other-item__title
+										| Gently 36'
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+							li.col-6.col-md-3.col-lg-6
+								a(href="#").other-item
+									figure.other-item__image
+										img(src="img/img-boat-4.jpg", alt="")
+									span.other-item__rubric Jetten
+									h3.other-item__title
+										| 38 Cabrio
+										span.other-item__compare
+											+icon('ico-compare')
+									em.other-item__price от €2 530 000,–
+									p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+
+							// Other :: End
+
+				
+			.shipyard
+				h2.shipyard__heading Верфи
+				.shipyard-group
+					b.shipyard-group__letter А
+					ul.shipyard-group__list
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-1.png", alt="")
+								h3.shipyard-item__title Anytec
+								p.shipyard-item__count 15 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-2.png", alt="")
+								h3.shipyard-item__title Perini Navi
+								p.shipyard-item__count 28 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-3.png", alt="")
+								h3.shipyard-item__title Monte Carlo Yachts
+								p.shipyard-item__count 16 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-4.png", alt="")
+								h3.shipyard-item__title Aquador
+								p.shipyard-item__count 5 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-5.png", alt="")
+								h3.shipyard-item__title Monte Carlo Yachts
+								p.shipyard-item__count 11 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-6.png", alt="")
+								h3.shipyard-item__title Arcadia
+								p.shipyard-item__count 84 <span>модели</span>
+
+				.shipyard-group
+					b.shipyard-group__letter B
+					ul.shipyard-group__list
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-2.png", alt="")
+								h3.shipyard-item__title Beneteau
+								p.shipyard-item__count 28 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-3.png", alt="")
+								h3.shipyard-item__title Benetti
+								p.shipyard-item__count 16 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-1.png", alt="")
+								h3.shipyard-item__title Bavaria
+								p.shipyard-item__count 15 <span>моделей</span>
+
+				.shipyard-group
+					b.shipyard-group__letter C
+					ul.shipyard-group__list
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-1.png", alt="")
+								h3.shipyard-item__title Canados
+								p.shipyard-item__count 15 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-2.png", alt="")
+								h3.shipyard-item__title Monte Carlo Yachts
+								p.shipyard-item__count 28 <span>моделей</span>
+
+				.shipyard-group
+					b.shipyard-group__letter M
+					ul.shipyard-group__list
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-3.png", alt="")
+								h3.shipyard-item__title Mochi Craft
+								p.shipyard-item__count 16 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-1.png", alt="")
+								h3.shipyard-item__title Maiora
+								p.shipyard-item__count 15 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-4.png", alt="")
+								h3.shipyard-item__title Monte Carlo Yachts
+								p.shipyard-item__count 5 <span>моделей</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-5.png", alt="")
+								h3.shipyard-item__title Monte Carlo Yachts
+								//- p.shipyard-item__count
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-6.png", alt="")
+								h3.shipyard-item__title Mulder
+								p.shipyard-item__count 84 <span>модели</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-6.png", alt="")
+								h3.shipyard-item__title Mimbus
+								p.shipyard-item__count 84 <span>модели</span>
+						li.col-6.col-sm-4.col-lg-3
+							a(href="#").shipyard-item
+								figure.shipyard-item__image
+									img(src="img/img-country-2.png", alt="")
+								h3.shipyard-item__title Marex
+								p.shipyard-item__count 28 <span>моделей</span>
+
+				.shipyard__ctrl
+					a(href="#").btn.btn-dark-empty Посмотреть все верфи
+						
+
+
+			.similar
+				h3.similar-heading Близкие и похожие категории
+				.similar-carousel.owl-carousel.js-carousel-similar
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-1.jpg", alt="")
+							b.catalog-item__count 24
+						.catalog-item__desc
+							h3.catalog-item__title Глиссирующие яхты с флайбриджем
+							p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-2.jpg", alt="")
+							b.catalog-item__count 284
+						.catalog-item__desc
+							h3.catalog-item__title Закрытые круизные яхты с хардтопом
+							p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-3.jpg", alt="")
+							b.catalog-item__count 701
+						.catalog-item__desc
+							h3.catalog-item__title Открытые круизные яхты
+							p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-4.jpg", alt="")
+							b.catalog-item__count 1 5029
+						.catalog-item__desc
+							h3.catalog-item__title Водоизмещающие яхты
+							p.catalog-item__text Тихоходные и экономичные суда с максимальным жилым объемом
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-5.jpg", alt="")
+							b.catalog-item__count 24
+						.catalog-item__desc
+							h3.catalog-item__title Моторные круизные катамараны
+							p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+					a(href="#").catalog-item
+						figure.catalog-item__image
+							img(src="img/img-boat-6.jpg", alt="")
+							b.catalog-item__count 124
+						.catalog-item__desc
+							h3.catalog-item__title Полу-водоизмещающие яхты
+							p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+
+			.media
+
+				h2.media__read Читайте также
+
+				ul.media__list
+					li.col-12.col-sm-6.col-md-4.col-xl-3.is-media-column
+
+						a(href="#").media-banner
+							img(src="img/img-banner-1.jpg", alt="")
+
+						.media-offer
+							p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+							a(href="#").btn.btn-dark предложить
+							
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-1.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Индустрия
+								h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+								p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							figure.media-photo__image
+								img(src="img/img-media-2.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фото дня
+								h3.media-photo__title Прогулялся по небу
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-1')
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+					
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-2')
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title OCEAN TV переделает советский катер в эксплорер для экспедиции по рекам России
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							span.media-news__xl
+								+icon('ico-xl')
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-3')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Numarine спустила на воду первый корпус 
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							span.media-article__xl
+								+icon('ico-xl')
+							figure.media-article__image
+								img(src="img/img-media-3.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric парусный спорт
+								h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
+								p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+
+					
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							span.media-photo__xl
+								+icon('ico-xl')
+							figure.media-photo__image
+								img(src="img/img-media-8.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фото дня
+								h3.media-photo__title Суперяхта с улыбкой
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-9.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric парусный спорт
+								h3.media-article__title Неделя до Extreme Sailing Series 2016: что нового?
+								p.media-article__text Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-4.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Люди
+								h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+								p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+					
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-4')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник» 
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-5')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title На акватории Финского залива досрочно завершился ЧР в классах «Четвертьтонник»
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-6.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Люди
+								h3.media-article__title Пересечь Атлантику внутри кита
+								p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-photo
+							figure.media-photo__image
+								img(src="img/img-media-5.jpg", alt="")
+							.media-photo__desc
+								mark.media-photo__rubric Фотогалерея
+								h3.media-photo__title Восточная роскошь
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-6')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Custom Marine Group купила американских производителей катеров Fountain, Donzi, Bajaи Pro-Line
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-7.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Юмор
+								h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
+								p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							time.media-news__date сегодня в 09:30
+							figure.media-news__image
+								+icon('ico-set-7')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title «Конаково Ривер Клаб» выиграла четвертый этап «Национальной парусной Лиги» в высшем дивизионе
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-news
+							span.media-news__xl
+								+icon('ico-xl')
+							time.media-news__date 23 марта в 15:39
+							figure.media-news__image
+								+icon('ico-set-8')
+
+							.media-news__desc
+								mark.media-news__rubric НОВОСТИ
+								h3.media-news__title Новая Зеландия выиграла Кубок «Америки»
+
+					li.col-12.col-sm-6.col-md-4.col-xl-3
+						a(href="#").media-article
+							figure.media-article__image
+								img(src="img/img-media-1.jpg", alt="")
+							.media-article__desc
+								mark.media-article__rubric Индустрия
+								h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+								p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+
+
+				.media-ctrl
+					a(href="#").btn.btn-more Показать ещё
+
 
 
 	// Category :: End

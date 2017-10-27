@@ -2,15 +2,20 @@
 
 .market
 	.container-fluid
-		// padding-top: 65px
+		padding-top: 65px
 		padding-bottom: 60px
 		background: #fff
+	.brands
+		float: none
+		max-width: none
+		padding: 20px 0 0 
+
 
 .market__heading
 	text-align: center
 	font: 400 30px/1 $fontHeading
 	text-transform: uppercase
-	margin: 0 0 10px
+	margin: 0 0 40px
 	letter-spacing: 4px
 	+rmin($tablet)
 		font-size: 40px
@@ -31,8 +36,10 @@
 	display: flex
 	flex-wrap: wrap;
 	& > li
-		margin: 0 0 18px
+		margin: 0 0 20px
 
+.market__ctrl
+	text-align: center
 
 .market-item
 	display: block
@@ -65,6 +72,19 @@
 		font-size: 18px
 		line-height: 26px
 		margin: 0
+		display: block
+		position: relative
+		padding: 0 20px 0 0
+	&__compare
+		position: absolute
+		top: 0
+		right: 0
+		line-height: 26px
+		font-size: 14px
+		color: #999
+		&:hover
+			color: #1EA0E4
+			
 	&__price
 		font-family: $fontCaption
 		font-size: 16px

@@ -2,26 +2,34 @@ ProjectTitle: itBoat
 
 PageList:
 - file: homepage.html
-  ready: 100
-- file: homepage2.html
-  ready: 100
+  ready: 10
+# - file: homepage2.html
+#   ready: 100
 - file: journal.html
-  ready: 100
+  ready: 10
 - file: journal-article.html
-  ready: 100
+  ready: 10
 - file: news-article.html
-  ready: 100
+  ready: 10
 - file: photogallery.html
-  ready: 100
+  ready: 10
 - file: photogallery-list.html
-  ready: 100
+  ready: 10
 - file: legacy.html
-  ready: 100
+  ready: 10
 - file: photo.html
-  ready: 50
+  ready: 10
 - file: catalog.html
-  ready: 50
-# - file: category.html
-  # ready: 0
+  ready: 10
+- file: category.html
+  ready: 10
+- file: shipyard.html
+  ready: 10
+- file: shipyard-mini.html
+  ready: 10
+- file: market.html
+  ready: 10
+- file: xl.html
+  ready: 10
 - file: ui.html
-  ready: 50
+  ready: 10

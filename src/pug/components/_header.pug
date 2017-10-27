@@ -31,17 +31,35 @@ header.header
 
                 ul.nav__menu
                     li
-                        a(href="#").nav__link ЖУРНАЛ
+                        a(href="#").nav__link
+                            | ЖУРНАЛ
+                            .nav__tooltip
+                                +icon('ico-nav-journal')
+                                | Новости и статьи из <br>мира яхт. Ежедневное<br>обновление
                     li
-                        a(href="#").nav__link КАТАЛОГ
+                        a(href="#").nav__link
+                            | КАТАЛОГ
+                            .nav__tooltip
+                                +icon('ico-nav-catalog')
+                                | Справочник: более 3000 серийно <br>выпускаемых моделей яхт с <br>описаниями, "фишками" и ценами
                     li
-                        a(href="#").nav__link Маркет
+                        a(href="#").nav__link
+                            | Маркет
+                            .nav__tooltip
+                                +icon('ico-nav-market')
+                                | Объявления о продаже новых и <br>подержанных яхт и катеров от <br>частных лиц и компаний
                     li
                         a(href="#").nav__link
                             +icon('ico-xl')
+                            .nav__tooltip
+                                +icon('ico-nav-xl')
+                                | Отдельный сайт о <br>мегаяхтах
                     li
                         a(href="#").nav__link
                             +icon('ico-charterly')
+                            .nav__tooltip
+                                +icon('ico-nav-charterly')
+                                | Попробуйте наш <br>новый онлайн-сервис <br>по аренде яхт
 
                 ul.auth
                     li

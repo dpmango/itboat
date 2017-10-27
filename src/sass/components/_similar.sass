@@ -1,0 +1,72 @@
+// SIMILAR
+
+.similar
+	margin: 60px -20px 0
+	padding: 60px 20px
+	background: #F5EFE6
+	.catalog-item
+		border: none
+
+.similar-heading
+	display: block
+	padding: 2px 0 0
+	font: 400 20px/1 $fontHeading
+	text-align: center
+	text-transform: uppercase
+	margin: 0 0 40px
+	letter-spacing: 2px
+
+.similar-carousel
+	position: relative
+	padding: 0 40px
+	.owl-item
+		padding: 0 1px
+	.owl-stage, .owl-item
+		display: flex
+	.owl-dots
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		bottom: 0
+		left: 0
+		display: none
+		right: 0
+			
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 2.5px 10px
+		background: #E0E0E0
+		&.active
+			background: #000
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		top: 50%
+		width: auto
+		height: 40px
+		background: none
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		z-index: 10
+		color: #222222
+		margin: -20px 0 0
+		.ico
+			font-size: 30px
+		&:hover
+			color: #222222
+			background: none
+	.owl-prev
+		left: 0
+		border-radius: 0px 4px 4px 0px
+	.owl-next
+		right: 0
+		border-radius: 4px 0 0 4px

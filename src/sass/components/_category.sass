@@ -1,0 +1,76 @@
+// CATEGORY
+
+.category
+	position: relative
+	.filter
+		margin: 10px auto 21px
+		display: block
+	.other-item__image
+		margin: 0 0 10px
+	.other-item__rubric, .other-item__title, .other-item__price
+		font-size: 16px
+		line-height: 20px
+	.other-item__price
+		margin: 0 0 5px
+	.container-fluid
+		background: #fff
+		position: relative
+		padding: 60px 20px
+	+rmin($desktop)
+		.filter
+			max-width: 300px
+
+
+
+.category-rubric
+	display: block
+	text-align: center
+	font-size: 12px
+	line-height: 1
+	font-weight: 700
+	background: none
+	color: #1ea0e4
+	letter-spacing: 2px
+	margin: 0 0 20px
+
+.category-heading
+	display: block
+	text-align: center
+	font: 400 30px/1 $fontHeading
+	margin: 0 0 14px
+	text-transform: uppercase
+	letter-spacing: 4px
+	+rmin($desktop)
+		font-size: 40px
+
+.category-text
+	display: block
+	text-align: center
+	font: italic 400 18px/26px $fontCaption
+	margin: 0 0 37px
+	letter-spacing: -0.2px
+
+.category-image
+	margin: 0 -20px 32px
+	img
+		display: block
+		width: 100%
+
+.category-content
+	font-size: 18px
+	line-height: 26px
+	color: #4c4c4c
+	// padding: 30px 0 0
+	p 
+		margin: 0 0 26px
+	& > ul
+		@extend .ui-ul
+
+	+rmin($desktop)
+		padding: 0 80px
+
+
+.category-line
+	margin: 35px 0
+	+rmin($desktop)
+		margin: 35px -80px 28px

@@ -21,9 +21,26 @@
 		float: right
 	.ui-input
 		padding: 10px
+	.ui-select
+		.jq-selectbox__select
+			padding-right: 30px
 	+rmin($desktop)
 		padding: 40px 20px
-
+	&--panel
+		padding: 40px 20px 20px
+		margin: 0 0 40px
+		.ui-input, .ui-check
+			margin: 0 0 20px
+		.ui-range, .ui-select
+			margin: 0 0 20px
+			.ui-input
+				margin: 0
+		.ui-range__label
+			margin: 0
+		
+		.btn-dark
+			padding: 8px 20px
+			margin: 0 0 20px
 
 .filter__heading
 	text-align: center

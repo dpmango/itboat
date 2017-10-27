@@ -59,6 +59,20 @@ block content
 			p.popup-caption Нажимая «Отправить», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
 
 
+	.popup.popup-gallery.mfp-hide#popup-gallery
+		button.popup-close(data-mfp-close)
+			+icon('ico-close')
+		.gallery
+			.container-fluid
+				.row
+					.col-lg-9
+						h2.gallery__heading MYS московского разлива
+					.col-lg-3
+						.banner-300
+							img(src="img/banner-300.jpg", alt="")
+		
+
+
 
 	.container-fluid
 		br
@@ -71,6 +85,8 @@ block content
 				a(href="#popup-auth", data-mfp) Войти на сайт
 			li
 				a(href="#popup-offer", data-mfp) Предложите свой материал
+			li
+				a(href="#popup-gallery", data-mfp-gallery) Галлерея
 
 
 		hr

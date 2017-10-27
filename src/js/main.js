@@ -259,6 +259,70 @@ $(document).ready(function(){
         }
     });
 
+
+    $('.js-carousel-similar').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext],
+        // autoWidth: true,
+        // center: true,
+        responsive: {
+            768: {
+                items: 3
+            },
+            992: {
+                items: 5
+            }
+        }
+    });
+
+
+    $('.js-carousel-brands').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext],
+        // autoWidth: true,
+        // center: true,
+        responsive: {
+            768: {
+                items: 3
+            },
+            992: {
+                items: 6
+            }
+        }
+    });
+
+
+   // $('.js-carousel-photo').find('img').each(function() {
+   //      var el = $(this);
+   //      var elWidth = el.width();
+
+   //      el.parent().width(elWidth)
+   //  });
+
+    $('.js-carousel-picture').owlCarousel({
+        items: 3,
+        loop: true,
+        nav: true,
+        lazyLoad: true,
+        navText: [iconPrev,iconNext],
+        autoWidth: true
+       
+    });
+
     // --------------------------------------------------------------------------
     // Formstyler
     // --------------------------------------------------------------------------
@@ -394,6 +458,13 @@ $(document).ready(function(){
         event.preventDefault();
         var otherTitle = $(this).closest('.other-item').find('.other-item__title').text()
         alert('Сравнить: ' + otherTitle)
+      
+    });
+
+    $('.market-item__compare, .market-item__compare').on('click', function(event) {
+        event.preventDefault();
+        var marketTitle = $(this).closest('.market-item').find('.market-item__title').text()
+        alert('Сравнить: ' + marketTitle)
       
     });
 
@@ -610,11 +681,37 @@ $(document).ready(function(){
           }
     });
 
-    $(document).on('click', '[data-mfp-close]', function(event) {
+   
+
+
+    $('[data-mfp-gallery]').magnificPopup({
+        type:'inline',
+        mainClass: 'mfp-gallery',
+        showCloseBtn: false,
+        removalDelay: 300,
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out'
+          },
+          overflowY: 'scroll',
+
+          callbacks: {
+            open: function() {
+
+
+            },
+            close: function() {
+                
+            }
+          }
+    });
+
+
+     $(document).on('click', '[data-mfp-close]', function(event) {
         event.preventDefault();
         $.magnificPopup.close();
     });
-
 
 
     // Scroll Effect Fixed

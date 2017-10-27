@@ -1,0 +1,346 @@
+---
+title: Мегаяхты
+bodyClass: page-xl
+---
+extends shared/_layout
+block content
+	
+
+	// xl :: Start
+
+	.xl
+		.container-fluid
+
+			h1.xl__heading
+				+icon('ico-xl')
+				| МЕГАЯХТЫ
+
+			.xl__content
+				
+				.media
+					.row
+						.col-md-4.col-lg-3
+
+							.news
+								h3.news__heading
+									+icon('ico-bell')
+									| Новости яхтинга
+
+								ul.news__list
+									li
+										a(href="#").news-item
+											h4.news-item__title Спущена на воду 55-метровая яхта Quinta Essentia
+											time.news-item__date
+												+icon('ico-xl')
+												| сегодня в 09:30
+									li
+										a(href="#").news-item
+											h4.news-item__title Perini Navi показала парусную суперяхту Sybaris
+											time.news-item__date
+												+icon('ico-xl')
+												| сегодня в 09:30
+									li
+										a(href="#").news-item
+											h4.news-item__title Спущена на воду самая большая яхта Heesen
+											time.news-item__date
+												+icon('ico-xl')
+												| сегодня в 09:30
+									li
+										a(href="#").news-item
+											h4.news-item__title Норвежец разработал крылья для «полетов» под водой
+											time.news-item__date 23 марта в 15:39
+									li
+										a(href="#").news-item
+											h4.news-item__title Порт Sochi Grand Marina признан лучшим проектом развития яхтинга в России
+											time.news-item__date 23 марта в 14:22
+									li
+										a(href="#").news-item
+											h4.news-item__title Ученые раскрыли тайну Бермудского треугольника
+											time.news-item__date 22 марта в 15:13
+									li
+										a(href="#").news-item
+											h4.news-item__title Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+											time.news-item__date 22 марта в 10:48
+									li
+										a(href="#").news-item
+											h4.news-item__title Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+											time.news-item__date 21 марта в 16:58
+									li
+										a(href="#").news-item
+											h4.news-item__title Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+											time.news-item__date
+												+icon('ico-xl')
+												| 22 марта в 15:13
+									li
+										a(href="#").news-item
+											h4.news-item__title Владельцу сгоревшей суперяхты Barbie выплатили $20 млн
+											time.news-item__date 22 марта в 10:48
+									li
+										a(href="#").news-item
+											h4.news-item__title Сообщество Yachting_rus проведет регату на озере Гарда в Италии
+											time.news-item__date 21 марта в 16:58
+									li
+										a(href="#").news-item
+											h4.news-item__title Представлен проект 94-метровой суперяхты с «революционной» верхней палубой
+											time.news-item__date
+												+icon('ico-xl')
+												| 22 марта в 15:13
+
+						.col-md-8.col-lg-9
+
+							ul.media__list.media__list--index
+								li.col-sm-6.col-lg-4.is-media-column
+
+									a(href="#").media-banner
+										img(src="img/img-banner-1.jpg", alt="")
+
+									.media-offer
+										p.media-offer__text У Вас есть интересный материал на тему яхтинга?
+										a(href="#").btn.btn-dark предложить
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-article
+										figure.media-article__image
+											img(src="img/img-media-1.jpg", alt="")
+										.media-article__desc
+											mark.media-article__rubric Индустрия
+											h3.media-article__title Блеск и нищета Moscow Boat Show 2016
+											p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-photo
+										figure.media-photo__image
+											img(src="img/img-media-2.jpg", alt="")
+										.media-photo__desc
+											mark.media-photo__rubric Фото дня
+											h3.media-photo__title Прогулялся по небу
+
+								
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-article
+										figure.media-article__image
+											img(src="img/img-media-3.jpg", alt="")
+											span.media-article__xl
+												+icon('ico-xl')
+										.media-article__desc
+											mark.media-article__rubric парусный спорт
+											h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
+											p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-article
+										figure.media-article__image
+											img(src="img/img-media-4.jpg", alt="")
+										.media-article__desc
+											mark.media-article__rubric Люди
+											h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+											p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+									
+								li.col-sm-6.col-lg-4
+									a(href="#").media-photo
+										figure.media-photo__image
+											img(src="img/img-media-5.jpg", alt="")
+										.media-photo__desc
+											mark.media-photo__rubric Фотогалерея
+											h3.media-photo__title Восточная роскошь
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-article
+										figure.media-article__image
+											img(src="img/img-media-6.jpg", alt="")
+										.media-article__desc
+											mark.media-article__rubric Люди
+											h3.media-article__title Пересечь Атлантику внутри кита
+											p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+
+								li.col-sm-6.col-lg-4
+									a(href="#").media-article
+										figure.media-article__image
+											img(src="img/img-media-7.jpg", alt="")
+										.media-article__desc
+											mark.media-article__rubric Юмор
+											h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
+											p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+
+					.media-ctrl
+						a(href="#").btn.btn-dark-empty Перейти в журнал
+				
+				.market
+					h2.market__heading ФЛОТ
+					ul.market__list
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-1.jpg", alt="")
+								h3.market-item__title
+									| Bavaria 42 Cruiser
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price €146 500,–
+								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-2.jpg", alt="")
+								h3.market-item__title 
+									| Sunseeker 47 Portofino
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price €395 500,–
+								p.market-item__text 2008 г., 200 моточасов. Италия
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-3.jpg", alt="")
+								h3.market-item__title 
+									| Finnmaster 60 CC
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price 98 000 руб.
+								p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-4.jpg", alt="")
+								h3.market-item__title 
+									| Bayliner 185 Bowrider
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price 680 000 руб.
+								p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-5.jpg", alt="")
+								h3.market-item__title 
+									| Sea Ray 325 Sundancer
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price €15 000,–
+								p.market-item__text 1991 г., 200 моточасов. Испания, Palma
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-6.jpg", alt="")
+								h3.market-item__title 
+									| Stingray 195 CS/CX
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price 1 100 000 руб.
+								p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
+
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-7.jpg", alt="")
+								h3.market-item__title 
+									| Bavaria 42 Cruiser
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price €146 500,–
+								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+						li.col-sm-6.col-md-4.col-xl-3
+							a(href="#").market-item
+								figure.market-item__image
+									img(src="img/img-market-8.jpg", alt="")
+								h3.market-item__title 
+									| Sunseeker 47 Portofino
+									span.market-item__compare
+										+icon('ico-compare')
+								i.market-item__price €395 500,–
+								p.market-item__text 2008 г., 200 моточасов. Италия
+
+					.market__ctrl
+						a(href="#").btn.btn-dark-empty Посмотреть все новые 
+
+				.brands.brands--similar
+					h3.brands__heading Лучшие ВЕРФИ
+					ul.brands__list
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-1.jpg", alt="")
+								h4.brands-item__title Anytec
+								span.brands-item__count 5 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-2.jpg", alt="")
+								h4.brands-item__title Jetten
+								span.brands-item__count 19 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-3.jpg", alt="")
+								h4.brands-item__title Benetti
+								span.brands-item__count 16 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-4.jpg", alt="")
+								h4.brands-item__title Finnmaster
+								span.brands-item__count 5 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-5.jpg", alt="")
+								h4.brands-item__title Jetten
+								span.brands-item__count 19 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-6.jpg", alt="")
+								h4.brands-item__title Finnmaster
+								span.brands-item__count 5 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-7.jpg", alt="")
+								h4.brands-item__title Anytec
+								span.brands-item__count 5 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-8.jpg", alt="")
+								h4.brands-item__title Benetti
+								span.brands-item__count 16 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-9.jpg", alt="")
+								h4.brands-item__title Anytec
+								span.brands-item__count 5 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-10.jpg", alt="")
+								h4.brands-item__title Jetten
+								span.brands-item__count 19 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-11.jpg", alt="")
+								h4.brands-item__title Benetti
+								span.brands-item__count 16 моделей
+						
+						li.col-6.col-md-4.col-lg-3.col-xl-2
+							a(href="#").brands-item
+								figure.brands-item__image
+									img(src="img/img-brands-12.jpg", alt="")
+								h4.brands-item__title Finnmaster
+								span.brands-item__count 5 моделей
+
+
+
+	// xl :: End

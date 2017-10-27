@@ -5,6 +5,20 @@
 		position: relative
 		padding: 0
 		top: -52px
+	.shipyard
+		margin: 14px 0 0
+		padding-top: 62px
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			height: 2px
+			background: repeating-linear-gradient( to right, #fff, #fff 6px, #E0E0E0 6px, #E0E0E0 28px)
+		+r($desktop)
+			margin: 0
 	.container-fluid
 		// padding: 60px 18px
 		padding: 62px 20px
@@ -128,6 +142,7 @@
 	min-height: 100%
 	// max-width: 280px
 	margin: 0 auto
+	background: #FFFFFF
 	&:hover
 		color: #222
 		.catalog-item__title

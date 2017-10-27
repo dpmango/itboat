@@ -1,0 +1,45 @@
+// SORTING
+
+.sorting
+	margin: 0 0 40px
+
+.sorting-group
+	display: flex
+	justify-content: center
+
+.sorting-check
+	display: block
+	position: relative
+	font-size: 16px
+	line-height: 20px
+	font-weight: 700
+	color: #1ea0e4
+	white-space: nowrap
+	margin: 0 30px 0 10px
+	cursor: pointer
+	transition: .25s
+	backface-visibility: hidden
+	letter-spacing: 0.1px
+	&:hover
+		color: #5bc7ff
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		visibility: hidden
+		&:checked ~ .sorting-check__text
+			color: #212121
+			.ico
+				opacity: 1
+				display: inline-block
+	.ico
+		display: inline-block
+		transition: .25s
+		font-size: 12px
+		color: #999999
+		opacity: 0;
+		backface-visibility: hidden
+		display: none
+		margin: 0 0 0 5px
+		
+	

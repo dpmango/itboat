@@ -52,7 +52,16 @@
 @import components/photo
 @import components/other
 @import components/shipyard
+@import components/category
+@import components/sorting
+@import components/similar
 
+@import components/request
+@import components/official
+@import components/banner
+@import components/series
+@import components/details
+@import components/xl
 
 #grid
 	display: block
@@ -80,7 +89,29 @@
 		padding: 0 5px
 
 .row-offset-60
-	+rmin($desktop)
+	+rmin($wide)
 		margin: 0 -30px
 		& > [class^="col"]
 			padding: 0 30px
+
+.row-offset-90
+	+rmin($wide)
+		margin: 0 -45px
+		& > [class^="col"]
+			padding: 0 45px
+
+.row-offset-100
+	+rmin($wide)
+		margin: 0 -50px
+		& > [class^="col"]
+			padding: 0 50px
+
+.col-xl-20
+	+rmin($wide)
+		flex: 0 0 20%
+    	max-width: 20%
+
+
+.homepage
+	.market .container-fluid
+		padding-top: 0

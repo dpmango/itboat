@@ -3,6 +3,10 @@
 .tabs
 	margin: 0 0 18px
 	position: relative
+	.sorting
+		margin: -8px 0 28px
+	.market__list
+		padding: 0 0 4px
 
 
 .tabs__container
@@ -41,7 +45,9 @@
 	display: flex
 	justify-content: center
 	position: relative
-	overflow: hidden
+	// overflow: hidden
+	+rmin($desktop)
+		overflow: hidden
 	& > li
 		width: 100%
 		max-width: 240px
@@ -65,7 +71,8 @@
 				opacity: 1
 				visibility: visible
 			.tabs-item
-				color: #4c4c4c
+				// color: #4c4c4c
+				color: #1ea0e4
 				&:after, &:before
 					opacity: 1
 					visibility: visible
@@ -81,10 +88,33 @@
 	text-align: center
 	color: #999999
 	cursor: pointer
-	padding: 20px 15px 12px
+	// padding: 20px 15px 12px
 	width: 100%
 	position: relative
 	z-index: 10
+	font-size: 16px
+	line-height: 20px
+	font-weight: 700
+	height: 100%
+	mark
+		display: inline-block
+		vertical-align: middle
+		margin: 0 0 0 4px
+		font-size: 12px
+		line-height: 18px
+		font-weight: 700
+		color: #fff
+		background: #1EA0E4
+		border-radius: 9px
+		padding: 0 4px
+		text-align: center
+		min-width: 26px
+	+r($mobile-s)
+		font-size: 14px
+		mark
+			position: absolute
+			top: 0
+			right: -8px
 	&:after, &:before
 		content: ''
 		display: block
@@ -115,6 +145,8 @@
 	&__text
 		font-size: 12px
 		margin: 0
+		font-weight: 400
+		color: #4c4c4c
 	.ico-boats
 		font-size: 14px
 		top: 0px
@@ -129,6 +161,9 @@
 			display: none
 
 .tabs-item-in
+	padding: 22px 10px
+	+r($mobile-s)
+		padding: 15px 10px
 	&:after, &:before
 		content: ''
 		display: block
