@@ -25,7 +25,8 @@
     "jquery.form-styler": "^2.0.0",
     "matchHeight": "matchheight#^0.7.2",
     "scrollmagic": "^2.0.5",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "ion.rangeSlider": "ionrangeslider#^2.2.0"
   },
   "devDependencies": {
     "jquery.form-styler": "^2.0.0"

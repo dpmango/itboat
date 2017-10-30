@@ -394,7 +394,7 @@ $(document).ready(function(){
         loop: false,
         nav: true,
         items: 1,
-        margin: 100,
+        margin: 102,
         rewind: true,
         // animateOut: 'fadeOut',
         smartSpeed: galleryFullDuration,
@@ -402,7 +402,7 @@ $(document).ready(function(){
         navText: [iconPrev,iconNext],
         dotsContainer: galleryFullThumbs,
         dots: true,
-        dotsData: false
+        // dotsData: false
         }).on('changed.owl.carousel', function (e) {
             //On change of main item to trigger thumbnail item
             // galleryThumbs.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
@@ -417,6 +417,12 @@ $(document).ready(function(){
             else {
                 $(this).addClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').addClass('is-open');
             }
+        });
+
+
+
+        galleryFullThumbs.on('click', '.gallery-full-thumbs__item', function(event) {
+            $('.gallery-full-thumbs, .gallery-full-thumbs__btn').removeClass('is-active is-open');
         });
 
         $('.js-readmore').readmore({
