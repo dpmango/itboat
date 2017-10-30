@@ -1,0 +1,58 @@
+// States
+
+.row
+	margin: 0 -10px
+
+[class^="col"]
+	padding: 0 10px
+
+
+.row-offset-10
+	margin: 0 -5px
+	& > [class^="col"]
+		padding: 0 5px
+
+.row-offset-60
+	+rmin($wide)
+		margin: 0 -30px
+		& > [class^="col"]
+			padding: 0 30px
+
+.row-offset-90
+	+rmin($wide)
+		margin: 0 -45px
+		& > [class^="col"]
+			padding: 0 45px
+
+.row-offset-100
+	+rmin($wide)
+		margin: 0 -50px
+		& > [class^="col"]
+			padding: 0 50px
+
+.col-xl-20
+	+rmin($wide)
+		flex: 0 0 20%
+    	max-width: 20%
+
+.row-offset-50
+	margin: 0 -25px
+	& > [class^="col"]
+		padding: 0 25px
+
+
+.homepage
+	.market .container-fluid
+		padding-top: 0
+
+
+
+[data-animation]
+	opacity: 0
+	will-change: transform, opacity
+	&.animated
+		opacity: 1
+
+
+.touch-device [data-animation]
+	opacity: 1

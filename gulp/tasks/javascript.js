@@ -18,6 +18,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'masonry/dist/masonry.pkgd.min.js'),
       path.resolve('bower_components', 'matchHeight/dist/jquery.matchHeight-min.js'),
       path.resolve('bower_components', 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js'),
+      path.resolve('bower_components', 'waypoints/lib/jquery.waypoints.min.js'),
       // path.resolve('bower_components', 'jquery.form-styler/dist/jquery.formstyler.min.js'),
       config.src.js + '/vendor/**/*.js'
      ])

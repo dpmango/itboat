@@ -6,7 +6,7 @@
 
 .media
 	.container-fluid
-		padding-top: 63px
+		padding-top: 62px
 		padding-bottom: 40px
 		background: #fff
 
@@ -249,9 +249,11 @@
 		margin: 0 0 2px
 		display: block
 	&__title
-		font-size: 22px
+		font-size: 18px
 		color: #222222
 		margin: 0 0 5px
+		+rmin($desktop)
+			font-size: 22px
 	&__text
 		margin: 0 0 5px
 	&__xl
@@ -435,9 +437,11 @@
 		margin: 0
 		display: block
 	&__title
-		font-size: 22px
+		font-size: 18px
 		color: #222222
 		margin: 0 0 5px
+		+rmin($desktop)
+			font-size: 22px
 	&__text
 		margin: 0 0 5px
 	&__xl
@@ -468,7 +472,7 @@
 	position: relative
 	z-index: 100
 	text-align: center
-	margin: 0 -20px 40px
+	margin: -62px -20px 40px
 	font: 400 30px/36px $fontHeading
 	text-transform: uppercase
 	color: #fff
@@ -489,4 +493,4 @@
 	+rmin($desktop)
 		font-size: 40px
 		line-height: 1
-		margin: 0 -20px 40px
+		margin: -62px -20px 40px

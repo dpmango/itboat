@@ -5,10 +5,12 @@
 
 @import utilities/variables
 @import utilities/mixins
+@import utilities/states
 
 @import vendor/normalize
 @import vendor/slick
 @import vendor/mfp
+@import vendor/animate
 
 @import layout/font
 @import layout/general
@@ -63,55 +65,4 @@
 @import components/details
 @import components/xl
 
-#grid
-	display: block
-	position: absolute
-	top: 0
-	left: 50%
-	background: url(../img/grid.jpg) 0 0 no-repeat
-	width: 1600px
-	height: 3520px
-	z-index: 1000
-	margin: 0 0 0 -800px
-	opacity: 0.5
-	visibility: hidden
 
-.row
-	margin: 0 -10px
-
-[class^="col"]
-	padding: 0 10px
-
-
-.row-offset-10
-	margin: 0 -5px
-	& > [class^="col"]
-		padding: 0 5px
-
-.row-offset-60
-	+rmin($wide)
-		margin: 0 -30px
-		& > [class^="col"]
-			padding: 0 30px
-
-.row-offset-90
-	+rmin($wide)
-		margin: 0 -45px
-		& > [class^="col"]
-			padding: 0 45px
-
-.row-offset-100
-	+rmin($wide)
-		margin: 0 -50px
-		& > [class^="col"]
-			padding: 0 50px
-
-.col-xl-20
-	+rmin($wide)
-		flex: 0 0 20%
-    	max-width: 20%
-
-
-.homepage
-	.market .container-fluid
-		padding-top: 0

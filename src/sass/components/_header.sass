@@ -240,6 +240,16 @@
 		color: #999
 		&:hover
 			color: #fff
+	+r($desktop)
+		flex-wrap: wrap
+		line-height: 1
+		padding: 0 0 15px
+		& > li
+			width: 100%
+			padding: 0
+			margin: 10px 0
+			&:after
+				display: none
 
 .search
 	line-height: 1

@@ -224,17 +224,69 @@ $(document).ready(function(){
     });
 
 
+    // $('.js-carousel-photo').owlCarousel({
+    //     items: 1,
+    //     loop: false,
+    //     nav: true,
+    //     dots: true,
+    //     margin: 20,
+    //     autoHeight: true,
+    //     rewind: true,
+    //     lazyLoad: false,
+    //     navText: [iconPrev,iconNext]
+    // });
+
     $('.js-carousel-photo').owlCarousel({
         items: 1,
         loop: false,
-        nav: true,
+        nav: false,
         dots: true,
         margin: 20,
         autoHeight: true,
         rewind: true,
         lazyLoad: false,
-        navText: [iconPrev,iconNext]
+        navText: [iconPrev,iconNext],
+        onChanged: callback,
+        onInitialized: callback
     });
+
+    $('.js-photo-prev').click(function() {
+        $('.js-carousel-photo').trigger('prev.owl.carousel');
+    })
+    // Go to the previous item
+    $('.js-photo-next').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        $('.js-carousel-photo').trigger('next.owl.carousel');
+    })
+
+    function callback(event) {
+        var element   = event.target;         // DOM element, in this example .owl-carousel
+        var name      = event.type;           // Name of the event, in this example dragged
+        var namespace = event.namespace;      // Namespace of the event, in this example owl.carousel
+        var items     = event.item.count;     // Number of items
+        var item      = event.item.index;     // Position of the current item
+        // Provided by the navigation plugin
+        var pages     = event.page.count;     // Number of pages
+        var page      = event.page.index;     // Position of the current page
+        var size      = event.page.size;      // Number of items per page
+
+       
+        var slides         = event.target,
+            slidesItems    = $(slides).find('.owl-item'),
+            slidesCurrent  = event.item.index;
+
+        var imgPrev = slidesItems.eq(slidesCurrent - 1).find('img').attr('src');
+        var imgNext = slidesItems.eq(slidesCurrent + 1).find('img').attr('src');
+
+        if(imgPrev == undefined) var imgPrev = slidesItems.eq(1).find('img').attr('src')
+        if(imgNext == undefined) var imgNext = slidesItems.eq(0).find('img').attr('src')
+
+        $('.js-photo-prev').find('.photo-btn__image').empty().append('<img src="' + imgPrev + '">');
+        $('.js-photo-next').find('.photo-btn__image').empty().append('<img src="' + imgNext + '">');
+
+        console.log(items)
+    }
 
 
     $('.js-carousel-catalog').owlCarousel({
@@ -306,13 +358,6 @@ $(document).ready(function(){
     });
 
 
-   // $('.js-carousel-photo').find('img').each(function() {
-   //      var el = $(this);
-   //      var elWidth = el.width();
-
-   //      el.parent().width(elWidth)
-   //  });
-
     $('.js-carousel-picture').owlCarousel({
         items: 3,
         loop: true,
@@ -320,8 +365,88 @@ $(document).ready(function(){
         lazyLoad: true,
         navText: [iconPrev,iconNext],
         autoWidth: true
-       
     });
+
+
+    // Gallery Full
+
+    var galleryFull = $('.js-gallery-full'),
+        galleryFullSlides = galleryFull.find('.js-gallery-full-slides'),
+        galleryFullThumbs = galleryFull.find('.js-gallery-full-thumbs'),
+
+        galleryFullDuration = 500;
+
+
+    $('.js-gallery-full-slides').each(function(){
+
+        var galleryLength = $(this).find('.gallery-full__item').length;
+
+        $(this).find('.gallery-full__item').each(function(i){
+            var galleryIndex = i++;
+            $(this).find('.js-gallery-full-count').html((galleryIndex + 1) + ' / ' + galleryLength)
+        });
+
+    });
+
+    // carousel function for main slider
+
+    galleryFullSlides.owlCarousel({
+        loop: false,
+        nav: true,
+        items: 1,
+        margin: 100,
+        rewind: true,
+        // animateOut: 'fadeOut',
+        smartSpeed: galleryFullDuration,
+        fluidSpeed: galleryFullDuration,
+        navText: [iconPrev,iconNext],
+        dotsContainer: galleryFullThumbs,
+        dots: true,
+        dotsData: false
+        }).on('changed.owl.carousel', function (e) {
+            //On change of main item to trigger thumbnail item
+            // galleryThumbs.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
+        });
+
+
+        $('.js-gallery-full').on('click', '.gallery-full-thumbs__btn', function(event) {
+            event.preventDefault();
+            if ($(this).is('.is-active')) {
+                $(this).removeClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').removeClass('is-open');
+            }
+            else {
+                $(this).addClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').addClass('is-open');
+            }
+        });
+
+        $('.js-readmore').readmore({
+            maxHeight: 44,
+            moreLink: '<a href="#">Читать далее</a>',
+            lessLink: '<a href="#">Скрыть</a>',
+            beforeToggle: function(trigger, element, more) {
+                if(! more) {
+                    $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
+                }
+                else {
+                    $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
+                }
+                // $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
+
+            },
+            afterToggle: function(trigger, element, more) {
+                // $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
+              
+            }
+        });
+
+        
+        // $('.fade').slick({
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     fade: true,
+        //     cssEase: 'linear'
+        // });
 
     // --------------------------------------------------------------------------
     // Formstyler
@@ -468,6 +593,58 @@ $(document).ready(function(){
       
     });
 
+
+
+    // --------------------------------------------------------------------------
+    // Detect Touch
+    // --------------------------------------------------------------------------
+
+    function detectTouch() {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $('html').addClass('touch-device');
+        }
+        else {
+            $('html').addClass('no-touch-device');
+        }
+    }
+
+    detectTouch();
+
+    // --------------------------------------------------------------------------
+    // Scroll Animated
+    // --------------------------------------------------------------------------
+
+
+    scrollAnimation( $('[data-animation]') );
+
+
+    function scrollAnimation(items) {
+
+        items.each( function() {
+            var el = $(this),
+                animationClass = el.data('animation'),
+                animationDelay = el.data('delay');
+
+                el.css({
+                    '-webkit-animation-delay':   animationDelay,
+                    'animation-delay':           animationDelay
+                });
+
+                el.waypoint(function(direction) {
+
+                    if( direction === 'down' ) {
+
+                        el.addClass(animationClass);
+
+                    }
+
+                },{
+                    triggerOnce: true,
+                    offset: '70%'
+                });
+        });
+
+    }
 
 
 
@@ -686,7 +863,7 @@ $(document).ready(function(){
 
     $('[data-mfp-gallery]').magnificPopup({
         type:'inline',
-        mainClass: 'mfp-gallery',
+        mainClass: 'mfp-with-zoom mfp-gallery',
         showCloseBtn: false,
         removalDelay: 300,
         zoom: {
@@ -694,7 +871,7 @@ $(document).ready(function(){
             duration: 300,
             easing: 'ease-in-out'
           },
-          overflowY: 'scroll',
+          overflowY: 'auto',
 
           callbacks: {
             open: function() {

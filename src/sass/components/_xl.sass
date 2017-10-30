@@ -38,11 +38,15 @@
 	color: #fff
 	margin: 0 0 40px
 	font-size: 30px
-	font: 400 70px/1 $fontHeading
+	font: 400 40px/1 $fontHeading
 	.ico
-		font-size: 52px
-		margin: 0 20px 0 0
+		font-size: 32px
+		margin: 0 20px
 		vertical-align: baseline
+	+rmin($desktop)
+		font-size: 70px
+		.ico
+			font-size: 52px
 
 .xl__content
 	background: #fff
