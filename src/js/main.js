@@ -328,7 +328,7 @@ $(document).ready(function(){
             768: {
                 items: 3
             },
-            992: {
+            1200: {
                 items: 5
             }
         }
@@ -373,6 +373,7 @@ $(document).ready(function(){
     var galleryFull = $('.js-gallery-full'),
         galleryFullSlides = galleryFull.find('.js-gallery-full-slides'),
         galleryFullThumbs = galleryFull.find('.js-gallery-full-thumbs'),
+        galleryFullDots = galleryFull.find('.js-gallery-full-dots'),
 
         galleryFullDuration = 500;
 
@@ -390,6 +391,13 @@ $(document).ready(function(){
 
     // carousel function for main slider
 
+
+    galleryFullSlides.on('changed.owl.carousel', function (event) {
+
+        galleryFullDots.children().removeClass('active').eq(event.item.index).addClass('active')
+
+    });
+
     galleryFullSlides.owlCarousel({
         loop: false,
         nav: true,
@@ -403,9 +411,6 @@ $(document).ready(function(){
         dotsContainer: galleryFullThumbs,
         dots: true,
         // dotsData: false
-        }).on('changed.owl.carousel', function (e) {
-            //On change of main item to trigger thumbnail item
-            // galleryThumbs.trigger('to.owl.carousel', [e.item.index, galleryDuration, true]);
         });
 
 
@@ -621,7 +626,7 @@ $(document).ready(function(){
     // --------------------------------------------------------------------------
 
 
-    scrollAnimation( $('[data-animation]') );
+    scrollAnimation( $('.no-touch-device [data-animation]') );
 
 
     function scrollAnimation(items) {
@@ -899,18 +904,30 @@ $(document).ready(function(){
 
     // Scroll Effect Fixed
 
-    var comingController = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 'onLeave'
-        }
-    });
 
-    var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
+        controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: 'onLeave'
+            }
+        });
 
-    var comingScene = new ScrollMagic.Scene({triggerElement: ".js-fixed-container", duration: fixedDuration, offset: -20})
-        .setPin('.js-fixed')
-        .addTo(comingController);
+        var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
 
+        var comingScene = new ScrollMagic.Scene({triggerElement: ".js-fixed-container", duration: fixedDuration, offset: -20})
+            .setPin('.js-fixed')
+            .addTo(controller);
+
+
+
+        $(window).on("resize", function() {
+
+            var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
+            comingScene.duration(fixedDuration);
+
+
+        });
+
+   
 
   ////////////
   // UI

@@ -7,8 +7,15 @@
 		background: #fff
 	.brands
 		float: none
-		max-width: none
-		padding: 20px 0 0 
+		// max-width: none
+		padding: 20px 0 0
+		+rmin($desktop)
+			max-width: none
+	.brands__list
+		margin-left: -12px
+		margin-right: -12px
+		& > li
+			padding: 0 12px
 
 
 .market__heading

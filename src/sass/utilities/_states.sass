@@ -6,6 +6,29 @@
 [class^="col"]
 	padding: 0 10px
 
+.col-lg-20
+	+rmin($desktop)
+		flex: 0 0 20%
+    	max-width: 20%
+
+.col-lg-60
+	+rmin($desktop)
+		flex: 0 0 60%
+    	max-width: 60%
+
+.col-lg-40
+	+rmin($desktop)
+		flex: 0 0 40%
+    	max-width: 40%
+
+
+
+.col-xl-20
+	+rmin($wide)
+		flex: 0 0 20%
+    	max-width: 20%
+
+// -----
 
 .row-offset-10
 	margin: 0 -5px
@@ -25,15 +48,19 @@
 			padding: 0 45px
 
 .row-offset-100
-	+rmin($desktop)
+	+rmin($wide)
 		margin: 0 -50px
 		& > [class^="col"]
 			padding: 0 50px
 
-.col-xl-20
+.row-brands
+	margin: 0 -25px
+	& > [class^="col"]
+		padding: 0 25px
 	+rmin($wide)
-		flex: 0 0 20%
-    	max-width: 20%
+		margin: 0 -50px
+		& > [class^="col"]
+			padding: 0 50px
 
 .row-offset-50
 	margin: 0 -25px
@@ -47,12 +74,19 @@
 
 
 
-[data-animation]
+.no-touch-device [data-animation]
 	opacity: 0
 	will-change: transform, opacity
 	&.animated
 		opacity: 1
 
 
-.touch-device [data-animation]
-	opacity: 1
+// .touch-device [data-animation]
+// 	opacity: 1
+// 	animation: none
+
+
+.scrollmagic-pin-spacer
+	+r($desktop)
+		position: fixed !important
+		visibility: hidden
