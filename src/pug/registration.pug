@@ -1,0 +1,70 @@
+---
+title: Регистрация
+bodyClass: page-reg
+---
+extends shared/_layout
+block content
+
+
+	// Registration :: Start
+	
+	.reg
+		form(action="#")
+			.container-fluid
+
+				.breadcrumbs
+					ul.breadcrumbs__menu
+						li
+							a(href="#").breadcrumbs__link Главная
+						li
+							a(href="#").breadcrumbs__link.is-active Регистрация
+
+				h1.reg__heading Регистрация
+				em.reg__caption Добро пожаловать на борт!
+				
+				.reg__content
+					.reg__group
+						label.ui-label Фамилия
+						input(type="text", name="last_name").ui-input
+					.reg__group
+						label.ui-label Имя
+						input(type="text", name="first_name").ui-input
+					.reg__group
+						label.ui-label Отчество
+						input(type="text", name="middle_name").ui-input
+					.reg__group
+						label.ui-label Электронная почта
+						input(type="email", name="email").ui-input
+					.reg__group
+						label.ui-label Пароль
+						input(type="password", name="password").ui-input#password
+					.reg__group
+						label.ui-label Подтвердите пароль
+						input(type="password", name="password_confirm").ui-input
+					.reg__group
+						label.ui-label Фотография
+						.ui-photo
+							figure.ui-photo__image
+							.ui-photo__caption
+								p.ui-photo__text Размер не менее 100х100 пикселей
+								label.ui-photo__btn
+									input(type="file", name="").ui-photo__input
+									| Загрузить
+					.reg__group
+						label.ui-label Ваш статус
+						select.ui-select
+							option Яхтсмен, владелец лодки
+							option Яхтсмен, владелец лодки 2
+							option Яхтсмен, владелец лодки 3
+						p.ui-caption Данная информация будет доступна только администрации itBoat и ни при каких условиях не попадет третьим лицам
+					.reg__group
+						label.ui-label Марка и модель лодки
+						input(type="text", name="model").ui-input
+					.reg__ctrl
+						button.btn.btn-dark Зарегистрироваться
+						p.ui-caption Нажимая «Зарегистрироваться», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
+
+
+						
+
+	// Registration :: End

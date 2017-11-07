@@ -2,6 +2,33 @@ $(document).ready(function(){
 
 
     // --------------------------------------------------------------------------
+    // File photo
+    // --------------------------------------------------------------------------
+
+    function readURL(input) {
+
+        var url = input.value;
+        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+
+        if (input.files && input.files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) {
+            var reader = new FileReader();
+
+            reader.onload = function (event) {
+                $('.ui-photo__image').html('<img src="'+ event.target.result + '">');
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        else{
+            $('.ui-photo__image').html('');
+        }
+    }
+
+    $('.ui-photo').on('change', '.ui-photo__input', function(event) {
+        readURL(this);
+    });
+
+    // --------------------------------------------------------------------------
     // Nav Mobile
     // --------------------------------------------------------------------------
 
@@ -86,10 +113,10 @@ $(document).ready(function(){
     // Masonry
     // --------------------------------------------------------------------------
 
-    $('.js-masonry').masonry({
-        itemSelector: 'li',
-        percentPosition: true
-    });
+    // $('.js-masonry').masonry({
+    //     itemSelector: 'li',
+    //     percentPosition: true
+    // });
 
 
     // --------------------------------------------------------------------------
@@ -362,7 +389,8 @@ $(document).ready(function(){
         items: 3,
         loop: true,
         nav: true,
-        lazyLoad: true,
+        lazyLoad: false,
+        margin: 0,
         navText: [iconPrev,iconNext],
         autoWidth: true
     });
@@ -447,6 +475,33 @@ $(document).ready(function(){
             afterToggle: function(trigger, element, more) {
                 // $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
               
+            }
+        });
+
+
+
+        $('.js-carousel-offer').owlCarousel({
+            items: 1,
+            loop: false,
+            nav: true,
+            dots: true,
+            margin: 20,
+            autoHeight: true,
+            rewind: true,
+            lazyLoad: false,
+            navText: [iconPrev,iconNext],
+            // autoWidth: true,
+            // center: true,
+            responsive: {
+                480: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
             }
         });
 

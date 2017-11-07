@@ -1,0 +1,93 @@
+// OFFER
+
+.offer
+	position: relative
+	padding: 64px 0 0
+	margin: 0 0 -40px
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 2px
+		background: repeating-linear-gradient( to right, #fff, #fff 6px, #E0E0E0 6px, #E0E0E0 28px)
+
+.offer-heading
+	text-align: center
+	font: 400 30px/1 $fontHeading
+	text-transform: uppercase
+	text-align: center
+	margin: 0 0 35px
+	letter-spacing: 4px
+	+rmin($desktop)
+		font-size: 40px
+
+.offer-carousel
+	position: relative
+	margin: 0 0 40px
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 0 40px
+		height: 20px
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		display: none
+	.owl-dot
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%;
+		margin: 0 10px
+		background: #E0E0E0
+		&.active
+			background: #000
+	.owl-prev, .owl-next
+		transition: .25s
+		position: absolute
+		// top: 100px
+		top: 30%
+		width: 50px
+		height: 50px
+		background: #212121
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff
+		.ico
+			font-size: 30px
+		&:hover
+			color: #fff
+			background: #1EA0E4
+	.owl-prev
+		left: -20px
+		border-radius: 0px 4px 4px 0px;
+	.owl-next
+		right: -20px
+		border-radius: 4px 0 0 4px;
+	+r($tablet)
+		padding: 40px 0 0
+		.owl-prev, .owl-next
+			height: 40px
+			width: auto
+			background: none
+			color: #222222
+			top: -10px
+			z-index: 10
+			.ico
+				font-size: 20px
+			&:hover
+				background: none
+				color: #222222
+		.owl-prev
+			left: 0
+		.owl-next
+			right: 0
+		.owl-dots
+			display: flex
+

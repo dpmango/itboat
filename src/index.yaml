@@ -31,5 +31,11 @@ PageList:
   ready: 100
 - file: xl.html
   ready: 100
+- file: registration.html
+  ready: 50
+- file: shipyard-model-1.html
+  ready: 50
+- file: shipyard-model-2.html
+  ready: 50
 - file: ui.html
   ready: 100

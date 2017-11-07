@@ -21,7 +21,7 @@
 	& > ul
 		@extend .ui-ul
 
-	+rmin($desktop)
+	+rmin($wide)
 		padding: 0 80px
 
 
@@ -29,10 +29,10 @@
 .shipyard-main
 	margin: 0
 	overflow: hidden
-	display: flex
-	align-items: center
 	+rmin($desktop)
-		margin: 0 80px -25px
+		display: flex
+		align-items: center
+		margin: -5px 80px -30px
 	&__image
 		width: 165px
 		height: 120px
@@ -60,7 +60,7 @@
 		line-height: 1
 		font-weight: 700
 		display: block
-		margin: 0 0 10px
+		margin: 0 0 12px
 	&__country
 		position: relative
 		display: block
@@ -78,6 +78,38 @@
 			position: absolute
 			top: 0
 			left: 0
+	&__info
+		margin: 0 0 20px
+		padding: 0
+		list-style: none
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		font-size: 14px
+		line-height: 20px
+		color: #4c4c4c
+		& > li
+			white-space: nowrap
+			margin: 0 20px 5px 0
+			&:last-child
+				margin-right: 0
+		.ico
+			font-size: 14px
+			color: #1EA0E4
+			margin: 0 10px 0 0
+			position: relative
+			top: -2px
+	&__details
+		margin-left: auto
+		font-size: 14px
+		line-height: 20px
+		color: #999999
+		position: relative
+		top: -2px
+		letter-spacing: 0.2px
+		+rmin($desktop)
+			text-align: right
+
 
 
 // ------
@@ -270,3 +302,318 @@
 	text-align: center
 	+r($tablet)
 		padding: 20px 0 0
+
+
+// -----
+
+.shipyard-panel
+	display: flex
+	position: relative
+	background: #EDEDED
+	margin: 30px 0 0
+
+	.container-fluid
+		width: 100%
+		padding: 10px 20px
+		background: inherit
+		+rmin($desktop)
+			display: flex
+			align-items: center
+		+rmin($wide)
+			padding: 10px 100px
+	&__menu
+		margin: 0
+		padding: 10px 0
+		list-style: none
+		display: flex
+		align-items: center
+		font-size: 16px
+		line-height: 20px
+		& > li
+			margin: 0 20px 0 0
+
+	&__link
+		transition: .25s
+		color: #222
+		border-bottom: 1px solid transparent
+		&:hover
+			color: rgba(0,0,0,0.6)
+			border-color: rgba(0,0,0,0.6)
+	&__social
+		color: #222
+		.ico
+			transition: .25s
+		.ico-social-fb
+			font-size: 18px
+		.ico-social-vk
+			font-size: 13px
+		.ico-social-tw
+			font-size: 14px
+		&:hover
+			.ico-social-fb
+				color: $facebook
+			.ico-social-vk
+				color: $vk
+			.ico-social-tw
+				color: $twitter
+
+
+	&__ctrl
+		margin: 0 0 0 auto
+		padding: 10px 0
+		display: flex
+		align-items: center
+		.btn
+			padding: 10px
+			max-width: 300px
+		+rmin($desktop)
+			
+			.btn
+				min-width: 300px
+
+
+
+.shipyard-model
+	display: inline-block
+	vertical-align: top
+	width: 100%
+
+	&__content
+		width: 100%
+		overflow: hidden
+		font-size: 18px
+		line-height: 26px
+		color: #4c4c4c
+		+rmin($desktop)
+			float: left
+			padding: 0 400px 0 0
+
+	&__sidebar
+		background: #222222
+		color: #fff
+		text-align: center
+		padding: 54px 40px 30px
+		position: relative
+		margin: 0 0 40px
+		font-size: 14px
+		line-height: 20px
+		+rmin($desktop)
+			float: left
+			width: 300px
+			margin: 18px 0 10px -300px
+		&:after, &:before
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			height: 10px
+		&:after
+			background: url(../img/bg-dots-top.png) center 0 repeat-x
+			bottom: 100%
+		&:before
+			background: url(../img/bg-dots-bottom.png) center 0 repeat-x
+			top: 100%
+		.btn
+			margin: 0 0 14px
+		&-heading
+			display: block
+			font: 400 20px/1 $fontHeading
+			text-transform: uppercase
+			margin: 0 0 35px
+			letter-spacing: 2px
+		&-price
+			margin: 0 0 42px
+			color: #999999
+			b
+				display: block
+				color: #fff
+				font-size: 18px
+				margin: 0 0 4px
+		&-text
+			margin: 0 0 16px
+		&-item
+			margin: 0 0 40px
+			&-image
+				height: 160px
+				padding: 10px
+				background: #fff
+				border-radius: 4px
+				display: flex
+				align-items: center
+				justify-content: center
+				margin: 0 auto 18px
+				max-width: 220px
+				img
+					display: block
+					max-width: 100%
+					max-height: 100%
+			&-title
+				font-size: 18px
+				line-height: 20px
+				font-weight: 700
+				display: block
+				margin: 0 0 5px
+			&-text
+				margin: 0 0 2px
+				color: #999
+		
+		&-phone
+			padding: 0 0 28px
+		&-phone-list
+			margin: 0
+			padding: 0 0 12px
+			list-style: none
+			font-size: 14px
+			line-height: 18px
+			display: inline-block
+			vertical-align: top
+			& > li
+				margin: 0 0 12px
+		&-phone-number
+			display: block
+			position: relative
+			padding: 0 0 0 45px
+			text-align: left
+			color: #fff
+			&:hover
+				color: #fff
+			img
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 34px
+				height: 18px
+				object-fit: cover
+		&-phone-more
+			display: block
+			// color: #1ea0e4
+			
+		
+	
+	&__heading
+		font-size: 30px
+		line-height: 1
+		font-weight: 700
+		color: #212121
+		margin: 0 0 25px
+	&__progress
+		margin: 0 -50px 20px
+		padding: 10px 0 0
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		& > li
+			padding: 0 50px
+
+	&__info
+		font-size: 12px
+		line-height: 18px
+		text-align: center
+		margin: 0 -10px -18px
+		padding: 0
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		& > li
+			padding: 0 10px
+			margin: 0 0 18px
+		&-icon
+			display: flex
+			align-items: center
+			justify-content: center
+			margin: 0 0 10px
+			color: #BDBDBD
+			height: 58px
+			.ico-info-people
+				font-size: 45px
+			.ico-info-rooms
+				font-size: 42px
+			.ico-info-beds
+				font-size: 29px
+			.ico-info-team
+				font-size: 35px
+			.ico-info-material
+				font-size: 35px
+			.ico-info-class-c
+				font-size: 34px
+			.ico-info-design
+				font-size: 15px
+			.ico-info-new
+				font-size: 43px
+			.ico-info-water
+				font-size: 24px
+			.ico-info-fbv
+				font-size: 41px
+			.ico-info-bathrooms
+				font-size: 45px
+		&-title
+			display: block
+			margin: 0
+			color: #1a1a1a
+			font-weight: 700
+		&-text
+			margin: 0
+			color: #999999
+
+	// -----
+	
+	&__line
+		margin: 30px 0
+
+	// -----
+
+	&__motor
+		position: relative
+		margin: 0 -10px -28px
+		padding: 0
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		& > li
+			padding: 0 10px
+			margin: 0 0 28px
+		&-item
+			font-size: 12px
+			line-height: 18px
+			color: #999999
+			position: relative
+			padding: 0 0 0 90px
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+		&-icon
+			position: absolute
+			top: 50%
+			left: 0
+			width: 90px
+			color: #BDBDBD
+			text-align: center
+			transform: translate(0,-50%)
+			.ico-motor-1
+				font-size: 50px
+			.ico-motor-2
+				font-size: 22px
+			.ico-motor-3
+				font-size: 44px
+		&-title
+			color: #1a1a1a
+			width: 100%
+		&-text
+			width: 100%
+			margin: 0
+
+	&__desc
+		padding: 35px 0
+		ul
+			margin: 0 0 25px
+			padding: 0
+			list-style: none
+
+
+
+.shipyard-sale
+	background: #222
+	color: #fff
+	padding: 20px
+	text-align: center

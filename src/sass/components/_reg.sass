@@ -1,0 +1,68 @@
+// Registration
+
+.reg
+	.container-fluid
+		padding: 62px 20px
+		background: #fff
+	
+.reg__heading
+	text-align: center
+	font: 400 30px/1 $fontHeading
+	text-transform: uppercase
+	margin: 0 0 10px
+	letter-spacing: 4px
+	+rmin($tablet)
+		font-size: 40px
+
+.reg__caption
+	font: italic 18px/26px $fontCaption
+	text-align: center
+	color: #4c4c4c
+	display: block
+	margin: 0 auto 40px
+	max-width: 940px
+
+.reg__content
+	max-width: 920px
+	margin: 0 auto 25px
+	+r($tablet)
+		max-width: 460px
+
+.reg__group
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	.ui-label
+		flex: 0 0 25%
+		padding: 0 20px
+		text-align: right
+	.ui-caption
+		flex: 0 0 25%
+		padding: 0 20px
+		height: 18px
+		letter-spacing: -0.1px
+	.ui-input
+		padding: 10px
+	.ui-input, .ui-select
+		flex: 0 0 50%
+	+r($tablet)
+		.ui-label, .ui-caption
+			flex: 0 0 100%
+			padding: 0
+			text-align: left
+			height: auto
+		.ui-input, .ui-select
+			flex: 0 0 100%
+	
+
+.reg__ctrl
+	width: 50%
+	margin: 0 auto
+	text-align: center
+	padding: 10px 0 0
+	.btn
+		width: 100%
+		margin: 0 0 20px
+	+r($tablet)
+		width: 100%
+
