@@ -116,18 +116,6 @@ $(document).ready(function(){
         });
     }
 
-
-
-    // --------------------------------------------------------------------------
-    // Masonry
-    // --------------------------------------------------------------------------
-
-    // $('.js-masonry').masonry({
-    //     itemSelector: 'li',
-    //     percentPosition: true
-    // });
-
-
     // --------------------------------------------------------------------------
     // Owl Carousel Models
     // --------------------------------------------------------------------------
@@ -271,18 +259,6 @@ $(document).ready(function(){
     });
 
 
-    // $('.js-carousel-photo').owlCarousel({
-    //     items: 1,
-    //     loop: false,
-    //     nav: true,
-    //     dots: true,
-    //     margin: 20,
-    //     autoHeight: true,
-    //     rewind: true,
-    //     lazyLoad: false,
-    //     navText: [iconPrev,iconNext]
-    // });
-
     $('.js-carousel-photo').owlCarousel({
         items: 1,
         loop: true,
@@ -300,10 +276,8 @@ $(document).ready(function(){
     $('.js-photo-prev').click(function() {
         $('.js-carousel-photo').trigger('prev.owl.carousel');
     })
-    // Go to the previous item
+
     $('.js-photo-next').click(function() {
-        // With optional speed parameter
-        // Parameters has to be in square bracket '[]'
         $('.js-carousel-photo').trigger('next.owl.carousel');
     })
 
@@ -416,9 +390,58 @@ $(document).ready(function(){
     });
 
 
-    // Gallery Full
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Galllery Full In Popup - Zoom
+
+
+
+    // Gallery Full In Popup
+
+    var galleryFull = $('.js-gallery-full'),
+        galleryFullSlides = galleryFull.find('.js-gallery-full-slides'),
+        galleryFullThumbs = galleryFull.find('.js-gallery-full-thumbs'),
+        galleryFullDots = galleryFull.find('.js-gallery-full-dots'),
+
+        galleryFullDuration = 500;
+
+
+    // Galllery Full In Popup - Zoom
+
+    // $(document).on('click', '.gallery-full__zoom', function(event){
+    //     event.preventDefault();
+
+    //     var pswpElement = $('.pswp')[0];
+
+    //     var item = [{
+    //         src: $(this).attr('href'),
+    //         w: $(this).data('width'),
+    //         h: $(this).data('height')
+    //       }];
+
+    //     var options = {
+    //         index: 1,
+    //         bgOpacity:1,
+    //         showHideOpacity: true
+    //       };
+
+    //     var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, item, options);
+
+    //     gallery.init();
+    // });
 
 
     var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -714,15 +737,9 @@ $(document).ready(function(){
     initPhotoSwipeFromDOM('.gallery-full__image');
 
 
-    var galleryFull = $('.js-gallery-full'),
-        galleryFullSlides = galleryFull.find('.js-gallery-full-slides'),
-        galleryFullThumbs = galleryFull.find('.js-gallery-full-thumbs'),
-        galleryFullDots = galleryFull.find('.js-gallery-full-dots'),
+    // Gallery Full In Popup - COUNTER (x/x)
 
-        galleryFullDuration = 500;
-
-
-    $('.js-gallery-full-slides').each(function(){
+    galleryFullSlides.each(function(){
 
         var galleryLength = $(this).find('.gallery-full__item').length;
 
@@ -733,13 +750,29 @@ $(document).ready(function(){
 
     });
 
-    // Carousel function for main slider
 
-    galleryFullSlides.on('changed.owl.carousel', function (event) {
+    // Gallery Full In Popup - Thumbs & Dots
 
-        galleryFullDots.children().removeClass('active').eq(event.item.index).addClass('active')
+
+     galleryFullSlides.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+
+        galleryFullDots.children().removeClass('active').eq(event.page.index).addClass('active')
+        galleryFullThumbs.children().removeClass('active').eq(event.page.index).addClass('active');
 
     });
+
+
+    galleryFullThumbs.on('click', '.gallery-full-thumbs__item', function(event) {
+        $('.gallery-full-thumbs, .gallery-full-thumbs__btn').removeClass('is-active is-open');
+
+        var thumbIndex = $(this).index();
+
+        galleryFullSlides.trigger('to.owl.carousel', [thumbIndex, 0, true]);
+
+    });
+
+
+    // Gallery Full In Popup - Slides
 
     galleryFullSlides.owlCarousel({
         loop: true,
@@ -747,77 +780,101 @@ $(document).ready(function(){
         items: 1,
         margin: 102,
         rewind: false,
-        // animateOut: 'fadeOut',
         smartSpeed: galleryFullDuration,
         fluidSpeed: galleryFullDuration,
         navText: [iconPrev,iconNext],
-        dotsContainer: galleryFullThumbs,
-        dots: true,
-        // dotsData: false
-        });
+        // dotsContainer: galleryFullThumbs
+    });
 
 
-        $('.js-gallery-full').on('click', '.gallery-full-thumbs__btn', function(event) {
-            event.preventDefault();
-            if ($(this).is('.is-active')) {
-                $(this).removeClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').removeClass('is-open');
-            }
-            else {
-                $(this).addClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').addClass('is-open');
-            }
-        });
+    galleryFull.on('click', '.gallery-full-thumbs__btn', function(event) {
+        event.preventDefault();
+        if ($(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').removeClass('is-open');
+        }
+        else {
+            $(this).addClass('is-active').closest('.js-gallery-full').find('.gallery-full-thumbs').addClass('is-open');
+        }
+    });
 
 
-        galleryFullThumbs.on('click', '.gallery-full-thumbs__item', function(event) {
-            $('.gallery-full-thumbs, .gallery-full-thumbs__btn').removeClass('is-active is-open');
-        });
+    // Galllery Full In Popup - POPUP
 
-        $('.js-readmore').readmore({
-            maxHeight: 44,
-            moreLink: '<a href="#">Читать далее</a>',
-            lessLink: '<a href="#">Скрыть</a>',
-            beforeToggle: function(trigger, element, more) {
-                if(! more) {
-                    $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
-                }
-                else {
-                    $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
-                }
-                // $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
+    $('[data-mfp-gallery]').magnificPopup({
+        type:'inline',
+        mainClass: 'mfp-with-zoom mfp-gallery',
+        showCloseBtn: false,
+        removalDelay: 300,
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out'
+          },
+          overflowY: 'auto',
+
+          callbacks: {
+            open: function() {
+
+                $('.js-readmore').readmore({
+                    maxHeight: 44,
+                    moreLink: '<a href="#">Читать далее</a>',
+                    lessLink: '<a href="#">Скрыть</a>',
+                    speed: 240,
+                    beforeToggle: function(trigger, element, more) {
+                        if(! more) {
+                            $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
+                        }
+                        else {
+                            $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
+                        }
+
+
+                    },
+                    afterToggle: function(trigger, element, more) {
+                      
+                    }
+                });
+
 
             },
-            afterToggle: function(trigger, element, more) {
-                // $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
-              
+            close: function() {
+                
             }
-        });
+          }
+    });
+
+
+    
 
 
 
-        $('.js-carousel-offer').owlCarousel({
-            items: 1,
-            loop: false,
-            nav: true,
-            dots: true,
-            margin: 20,
-            autoHeight: true,
-            rewind: true,
-            lazyLoad: false,
-            navText: [iconPrev,iconNext],
-            // autoWidth: true,
-            // center: true,
-            responsive: {
-                480: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                },
-                1200: {
-                    items: 4
-                }
+
+
+
+    $('.js-carousel-offer').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        margin: 20,
+        autoHeight: true,
+        rewind: true,
+        lazyLoad: false,
+        navText: [iconPrev,iconNext],
+        // autoWidth: true,
+        // center: true,
+        responsive: {
+            480: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1200: {
+                items: 4
             }
-        });
+        }
+    });
 
 
     // --------------------------------------------------------------------------
@@ -1233,28 +1290,7 @@ $(document).ready(function(){
    
 
 
-    $('[data-mfp-gallery]').magnificPopup({
-        type:'inline',
-        mainClass: 'mfp-with-zoom mfp-gallery',
-        showCloseBtn: false,
-        removalDelay: 300,
-        zoom: {
-            enabled: true,
-            duration: 300,
-            easing: 'ease-in-out'
-          },
-          overflowY: 'auto',
 
-          callbacks: {
-            open: function() {
-
-
-            },
-            close: function() {
-                
-            }
-          }
-    });
 
 
      $(document).on('click', '[data-mfp-close]', function(event) {

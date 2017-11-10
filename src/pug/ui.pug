@@ -60,7 +60,7 @@ block content
 						sup.ui-field__sup *
 						input(type="email", placeholder="Электронная почта").ui-input
 
-			textarea(name="", cols="30", rows="10", placeholder="Пропустили важную новость? Не заметили что-то интересное? \nНапишите нам!").ui-textarea
+			textarea(name="", cols="30", rows="10", placeholder="itBoat пропустил важную новость?").ui-textarea
 
 			label.ui-file
 				input(type="file").ui-file__input
@@ -73,6 +73,48 @@ block content
 			p.popup-caption Нажимая «Отправить», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
 
 
+
+
+
+	.pswp(tabindex='-1', role='dialog', aria-hidden='true')
+
+		.pswp__bg
+
+		.pswp__scroll-wrap
+
+			.pswp__container
+				.pswp__item
+				.pswp__item
+				.pswp__item
+
+	
+			.pswp__ui.pswp__ui--hidden
+				.pswp__top-bar
+			
+					.pswp__counter
+
+					button.pswp__button.pswp__button--close(title='Close (Esc)')
+						+icon('ico-close')
+					button.pswp__button.pswp__button--share(title='Share')
+					button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+					button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+			
+					.pswp__preloader
+						.pswp__preloader__icn
+							.pswp__preloader__cut
+								.pswp__preloader__donut
+				.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+					.pswp__share-tooltip
+				button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+					+icon('ico-prev')
+				button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+					+icon('ico-next')
+				.pswp__caption
+					.pswp__caption__center
+
+
+
+
 	.popup.popup-gallery.mfp-hide#popup-gallery
 
 		button.popup-close(data-mfp-close)
@@ -80,19 +122,17 @@ block content
 			
 		.gallery-full.js-gallery-full
 			.container-fluid
-				.row.row-offset-100
-					.col-lg-9
-						
 
-						button.gallery-full-thumbs__btn
-							span
-							span
+				.gallery-full__container
 
-							
-						strong.gallery-full__heading MYS московского разлива
-				.row.row-offset-100
-					.col-lg-9
+					button.gallery-full-thumbs__btn
+						span
+						span
 						
+					strong.gallery-full__heading MYS московского разлива
+
+				.gallery-full__container
+					.gallery-full__content
 
 						.gallery-full-thumbs.js-gallery-full-thumbs
 							.gallery-full-thumbs__item
@@ -118,22 +158,22 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-1.jpg", alt="")
+									a(href="img/zoom.jpg", data-size="2048x1365", data-width="2048", data-height="1365", data-caption="teste").gallery-full__zoom
+										img(src="img/zoom.jpg", alt="")
+
+								.gallery-full-social
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
+										+icon('ico-social-fb')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
+										+icon('ico-social-vk')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
+										+icon('ico-social-tw')
 
 								.gallery-full__desc
 									.gallery-full__desc-in
 
-									
 										.row
-											.col-6.col-lg-12
-												.gallery-full-social
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
-														+icon('ico-social-fb')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
-														+icon('ico-social-vk')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
-														+icon('ico-social-tw')
-											.col-6.col-lg-2
+											.col-lg-2
 												b.gallery-full__count.js-gallery-full-count 1 / 7
 											.col-12.col-lg-10
 												h3.gallery-full__title Премиальный финский катер AXOPAR 37 АС в максимальной комплектации
@@ -146,22 +186,21 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-2.jpg", alt="")
+									a(href="img/img-gallery-2.jpg", data-size="940x600", data-width="2048", data-height="1365", data-caption="teste").gallery-full__zoom
+										img(src="img/img-gallery-2.jpg", alt="")
+
+								.gallery-full-social
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
+										+icon('ico-social-fb')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
+										+icon('ico-social-vk')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
+										+icon('ico-social-tw')
 
 								.gallery-full__desc
 									.gallery-full__desc-in
-
-									
 										.row
-											.col-6.col-lg-12
-												.gallery-full-social
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
-														+icon('ico-social-fb')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
-														+icon('ico-social-vk')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
-														+icon('ico-social-tw')
-											.col-6.col-lg-2
+											.col-lg-2
 												b.gallery-full__count.js-gallery-full-count 1 / 7
 											.col-12.col-lg-10
 												h3.gallery-full__title Премиальный финский катер AXOPAR 37 АС в максимальной комплектации
@@ -174,20 +213,19 @@ block content
 								figure.gallery-full__image
 									img(src="img/img-gallery-3.jpg", alt="")
 
+								.gallery-full-social
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
+										+icon('ico-social-fb')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
+										+icon('ico-social-vk')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
+										+icon('ico-social-tw')
+
 								.gallery-full__desc
 									.gallery-full__desc-in
-
 									
 										.row
-											.col-6.col-lg-12
-												.gallery-full-social
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
-														+icon('ico-social-fb')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
-														+icon('ico-social-vk')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
-														+icon('ico-social-tw')
-											.col-6.col-lg-2
+											.col-lg-2
 												b.gallery-full__count.js-gallery-full-count 1 / 7
 											.col-12.col-lg-10
 												h3.gallery-full__title Премиальный финский катер AXOPAR 37
@@ -200,20 +238,19 @@ block content
 								figure.gallery-full__image
 									img(src="img/img-gallery-4.jpg", alt="")
 
+								.gallery-full-social
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
+										+icon('ico-social-fb')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
+										+icon('ico-social-vk')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
+										+icon('ico-social-tw')
+
 								.gallery-full__desc
 									.gallery-full__desc-in
 
-									
 										.row
-											.col-6.col-lg-12
-												.gallery-full-social
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
-														+icon('ico-social-fb')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
-														+icon('ico-social-vk')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
-														+icon('ico-social-tw')
-											.col-6.col-lg-2
+											.col-lg-2
 												b.gallery-full__count.js-gallery-full-count 1 / 7
 											.col-12.col-lg-10
 												h3.gallery-full__title Премиальный финский катер AXOPAR 37 АС в максимальной комплектации
@@ -226,20 +263,20 @@ block content
 								figure.gallery-full__image
 									img(src="img/img-gallery-5.jpg", alt="")
 
+								.gallery-full-social
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
+										+icon('ico-social-fb')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
+										+icon('ico-social-vk')
+									a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
+										+icon('ico-social-tw')
+
 								.gallery-full__desc
 									.gallery-full__desc-in
 
 									
 										.row
-											.col-6.col-lg-12
-												.gallery-full-social
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
-														+icon('ico-social-fb')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--vk
-														+icon('ico-social-vk')
-													a(href="#").gallery-full-social__btn.gallery-full-social__btn--tw
-														+icon('ico-social-tw')
-											.col-6.col-lg-2
+											.col-lg-2
 												b.gallery-full__count.js-gallery-full-count 1 / 7
 											.col-12.col-lg-10
 												h3.gallery-full__title Премиальный финский катер AXOPAR 37 АС в максимальной комплектации
@@ -247,12 +284,12 @@ block content
 												.gallery-full__more
 													p.gallery-full__text.js-readmore Просторная рубка-салон оснащена большими раздвижными дверьми с обоих бортов. Полноразмерная тентовая крыша позволит наслаждаться солнцем и небом в ветреную погоду, и позволит превращать обеденную зону на шестерых человек в зону под открытым небом. На борту расположены две каюты: носовая и кормовая с двуспальными кроватями. Планировка катера предусматривает просторный лежак для загара поверх кормовой каюты и просторный диван в носовой части палубы. Данный катер выполнен в эксклюзивной спортивной комплектации «R» c серым корпусом, черными релингами и обивкой сидений рулевого и штурмана материалом типа «Алькантара».
 
+					.gallery-full__sidebar
 
-					.col-lg-3
-
-						.popup-banner
+						.banner-300
 							img(src="img/banner-300.jpg", alt="")
-		
+
+
 
 
 
