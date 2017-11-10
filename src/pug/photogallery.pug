@@ -4,7 +4,25 @@ bodyClass: page-article
 ---
 extends shared/_layout
 block content
-	
+
+
+	.pswp(tabindex="-1", role="dialog", aria-hidden="true")
+		.pswp__bg
+		.pswp__scroll-wrap
+			.pswp__container
+				.pswp__item
+				.pswp__item
+				.pswp__item
+			.pswp__ui.pswp__ui--hidden
+				.pswp__top-bar
+					.pswp__counter
+					button.pswp__button.pswp__button--close
+						+icon('ico-close')
+					.pswp__preloader
+						.pswp__preloader__icn
+							.pswp__preloader__cut
+								.pswp__preloader__donut
+
 
 	// Popup :: Start
 
@@ -14,24 +32,23 @@ block content
 			+icon('ico-close')
 			
 		.gallery-full.js-gallery-full
+
 			.container-fluid
 				.row.row-offset-100
 					.col-lg-9
-						
 
 						button.gallery-full-thumbs__btn
 							span
 							span
-
 							
 						strong.gallery-full__heading MYS московского разлива
+
 				.row.row-offset-100
 					.col-lg-9
 						
-
 						.gallery-full-thumbs.js-gallery-full-thumbs
 							.gallery-full-thumbs__item
-								img(src="img/img-gallery-1.jpg", alt="")
+								img(src="img/zoom.jpg", alt="")
 							.gallery-full-thumbs__item
 								img(src="img/img-gallery-2.jpg", alt="")
 							.gallery-full-thumbs__item
@@ -48,17 +65,17 @@ block content
 							.gallery-full-dots__item
 							.gallery-full-dots__item
 
-						.gallery-full-slides.owl-carousel.js-gallery-full-slides
+						.gallery-full-slides.owl-carousel.js-gallery-full-slides#gallery
 
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-1.jpg", alt="")
+									a(href="img/zoom.jpg", data-size="2048x1365").gallery-full__zoom
+										img(src="img/zoom.jpg", alt="")
 
 								.gallery-full__desc
 									.gallery-full__desc-in
 
-									
 										.row
 											.col-6.col-lg-12
 												.gallery-full-social
@@ -81,7 +98,8 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-2.jpg", alt="")
+									a(href="img/img-gallery-2.jpg", data-size="940x600").gallery-full__zoom
+										img(src="img/img-gallery-2.jpg", alt="")
 
 								.gallery-full__desc
 									.gallery-full__desc-in
@@ -233,24 +251,25 @@ block content
 
 					.article-content
 
-						p 22-24  июня в Royal Yacht Club прошла первая выставка яхт на воде Moscow Yacht Show, организованная журналом Motor Boat & Yachting Russia. Всего у причалов и на берегу было представлено 30 яхт и катеров брендов Princess, Azimut, Galeon, XO, Axopar, Finnmaster, Merry Fisher и Linssen, а также мототехника от Yamaha, BRP, BMW и автомобили Lamborghini и BMW M-серии. Казанская верфь Velvette Marine привезла флагман своего флота, модель Velvette 41 Evolution. Несмотря на дождливую и ветреную погоду, выставку посетило 1100 чел.
+						.article-text
+							p 22-24  июня в Royal Yacht Club прошла первая выставка яхт на воде Moscow Yacht Show, организованная журналом Motor Boat & Yachting Russia. Всего у причалов и на берегу было представлено 30 яхт и катеров брендов Princess, Azimut, Galeon, XO, Axopar, Finnmaster, Merry Fisher и Linssen, а также мототехника от Yamaha, BRP, BMW и автомобили Lamborghini и BMW M-серии. Казанская верфь Velvette Marine привезла флагман своего флота, модель Velvette 41 Evolution. Несмотря на дождливую и ветреную погоду, выставку посетило 1100 чел.
 
 						
 						.gallery.js-gallery(data-animation="animated fadeInUp")
 							.gallery-thumbs.owl-carousel.js-gallery-thumbs
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="1")
 									img(src="img/img-gallery-1.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="2")
 									img(src="img/img-gallery-2.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="3")
 									img(src="img/img-gallery-3.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="4")
 									img(src="img/img-gallery-4.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="5")
 									img(src="img/img-gallery-5.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="6")
 									img(src="img/img-gallery-6.jpg", alt="")
-								.gallery-thumbs__item
+								.gallery-thumbs__item(data-gallery-index="7")
 									img(src="img/img-gallery-7.jpg", alt="")
 
 							.gallery-slides.owl-carousel.js-gallery-slides
@@ -267,14 +286,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-1.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title Премиальный финский катер AXOPAR 37 АС в максимальной комплектации
 
@@ -293,14 +312,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-2.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title Премиальный финский катер AXOPAR 37 АС
 
@@ -319,14 +338,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-3.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title AXOPAR 37 АС
 
@@ -345,14 +364,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-4.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title Princess 40M
 
@@ -371,14 +390,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-5.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title XO 270
 
@@ -397,14 +416,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-6.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title Linssen Grand Sturdy 43.9 AC
 
@@ -423,14 +442,14 @@ block content
 									
 											a(href="#").share__btn.share__btn--tw
 												+icon('ico-social-tw')
-									.gallery-slides__image
+									a(href="#popup-gallery", data-mfp-gallery).gallery-slides__image
 										img(src="img/img-gallery-7.jpg", alt="")
 									.gallery-slides__desc
 										.row
 											.col-4.col-md-2.push-md-7
 												b.gallery-slides__count.js-gallery-count 1 / 7
 											.col-8.col-md-3.push-md-7
-												a(href="#popup-gallery", data-mfp-gallery).btn.btn-white-empty Показать все
+												a(href="photogallery-list.html").btn.btn-white-empty Показать все
 											.col-12.col-md-7.pull-md-5
 												h3.gallery-slides__title XO 270, Baja 35 Outlaw и Axopar 37
 

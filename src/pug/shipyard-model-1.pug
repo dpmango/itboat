@@ -5,7 +5,6 @@ bodyClass: page-shipyard
 extends shared/_layout
 block content
 	
-	#grid
 
 	// Snipyard :: Start
 
@@ -25,11 +24,11 @@ block content
 					li
 						a(href="#").breadcrumbs__link.is-active Arcadia
 
-			.shipyard-main
-				.shipyard-main__desc
-					mark.shipyard-main__rubric Маркет
-					h1.shipyard-main__title Bavaria 42 Cruiser
-					ul.shipyard-main__info
+			.shipyard-head
+				.shipyard-head__desc
+					mark.shipyard-head__rubric Маркет
+					h1.shipyard-head__title Bavaria 42 Cruiser
+					ul.shipyard-head__info
 						li
 							+icon('ico-calendar')
 							| 2006 год
@@ -42,23 +41,23 @@ block content
 						li
 							+icon('ico-id')
 							| 3846
-				.shipyard-main__details
+				.shipyard-head__details
 					| Опубликовано: 25 апреля 2015, 20:08<br>
 					| Подтверждено: 25 апреля 2015, 20:08<br>
 					| Количество просмотров: 9366
 		
-		.shipyard-picture.owl-carousel.js-carousel-picture
-			.shipyard-picture-item
+		.shipyard-gallery.owl-carousel.js-carousel-gallery
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-4.jpg", width="354", alt="")
-			.shipyard-picture-item
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-5.jpg", width="628", alt="")
-			.shipyard-picture-item
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-6.jpg", width="471", alt="")
-			.shipyard-picture-item
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-1.jpg", width="664", alt="")
-			.shipyard-picture-item
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-2.jpg", width="450", alt="")
-			.shipyard-picture-item
+			.shipyard-gallery-item
 				img(src="img/img-snipyard-3.jpg", width="487", alt="")
 			
 		.shipyard-panel
@@ -88,350 +87,354 @@ block content
 						+icon('ico-compare')
 						| ДОБАВИТЬ В СРАВНЕНИЕ
 
-
-		.container-fluid
-			
-			.shipyard-content
+		.shipyard-body
+			.container-fluid
 				
-				.shipyard-model
+				.shipyard-1100
+					
+					.shipyard-model
 
-					.shipyard-model__content
-						
-						h2.shipyard-model__heading Характеристики
+						.shipyard-model__content
+							
+							h2.shipyard-model__heading Характеристики
 
-						ul.shipyard-model__progress
-							li.col-sm-6
+							ul.shipyard-model__progress
+								li.col-sm-6
 
-								.ui-progress
-									.ui-progress__label Длина
-									.ui-progress__count 47 метров
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 20%")
-							li.col-sm-6
+									.ui-progress
+										.ui-progress__label Длина
+										.ui-progress__count 47 метров
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 20%")
+								li.col-sm-6
 
-								.ui-progress
-									.ui-progress__label Вес
-									.ui-progress__count 10 тонн
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 20%")
-							li.col-sm-6
+									.ui-progress
+										.ui-progress__label Вес
+										.ui-progress__count 10 тонн
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 20%")
+								li.col-sm-6
+									
+									.ui-progress
+										.ui-progress__label Ширина
+										.ui-progress__count 5 метров
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 40%")
 								
-								.ui-progress
-									.ui-progress__label Ширина
-									.ui-progress__count 5 метров
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 40%")
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Водоизмещение
+										.ui-progress__count 40 тонн
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 40%")
+
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Осадка
+										.ui-progress__count 2 метра
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 50%")
+								
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Топлива
+										.ui-progress__count 300 литров
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 50%")
+								
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Пресная вода
+										.ui-progress__count 500 литров
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 20%")
+								
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Максимальная
+										.ui-progress__count 27 узлов
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 20%")
+								li.col-sm-6
+
+									.ui-progress
+										.ui-progress__label Крейсерская
+										.ui-progress__count 15 узлов
+										.ui-progress__bar
+											.ui-progress__bar-line(style="width: 70%")
+
+							ul.shipyard-model__info
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-people')
+									b.shipyard-model__info-title 8 человек
+									p.shipyard-model__info-text
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-people')
+									b.shipyard-model__info-title 8 человек
+									p.shipyard-model__info-text Максимально пассажиров
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-rooms')
+									b.shipyard-model__info-title 2
+									p.shipyard-model__info-text Кол-во кают
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-beds')
+									b.shipyard-model__info-title 2 человека
+									p.shipyard-model__info-text Кол-во спальных мест для гостей
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-team')
+									b.shipyard-model__info-title 2 человека
+									p.shipyard-model__info-text Экипаж
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-beds')
+									b.shipyard-model__info-title 1
+									p.shipyard-model__info-text Кол-во спальных мест для экапажа
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-rooms')
+									b.shipyard-model__info-title  1
+									p.shipyard-model__info-text Кол-во кают для экипажа
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-material')
+									b.shipyard-model__info-title Углепластик
+									p.shipyard-model__info-text Материал корпуса
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-class-c')
+									b.shipyard-model__info-title СЕ
+									p.shipyard-model__info-text Класс мореходности
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-design')
+									b.shipyard-model__info-title Модерн
+									p.shipyard-model__info-text Дизайн
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-new')
+									b.shipyard-model__info-title Новая модель
+									p.shipyard-model__info-text
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-water')
+									b.shipyard-model__info-title Водоизмещение
+									p.shipyard-model__info-text Тип корпуса
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-fbv')
+									b.shipyard-model__info-title ФБВ
+									p.shipyard-model__info-text 
+								li.col-4.col-sm-3.col-lg-2
+									figure.shipyard-model__info-icon
+										+icon('ico-info-bathrooms')
+									b.shipyard-model__info-title 99
+									p.shipyard-model__info-text Кол-во санузлов
+
+							ul.shipyard-model__engine
+								li.col-12.col-sm-6
+									.shipyard-model__engine-item
+										figure.shipyard-model__engine-icon
+											+icon('ico-engine-1')
+										b.shipyard-model__engine-title Подвесной 
+										p.shipyard-model__engine-text 2х370 л.с. Volvo Penta ВП-370
+
+								li.col-12.col-sm-6
+									.shipyard-model__engine-item
+										figure.shipyard-model__engine-icon
+											+icon('ico-engine-2')
+										b.shipyard-model__engine-title Подвесной 
+										p.shipyard-model__engine-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
+								li.col-12.col-sm-6
+									.shipyard-model__engine-item
+										figure.shipyard-model__engine-icon
+											+icon('ico-engine-3')
+										b.shipyard-model__engine-title Подвесной 
+										p.shipyard-model__engine-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
+
 							
-							li.col-sm-6
-
-								.ui-progress
-									.ui-progress__label Водоизмещение
-									.ui-progress__count 40 тонн
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 40%")
-
-							li.col-sm-6
-
-								.ui-progress
-									.ui-progress__label Осадка
-									.ui-progress__count 2 метра
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 50%")
+							.shipyard-model__more
+								button.btn.btn-block.btn-grey
+									| Все характеристики
+									+icon('ico-more')
 							
-							li.col-sm-6
-
-								.ui-progress
-									.ui-progress__label Топлива
-									.ui-progress__count 300 литров
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 50%")
 							
-							li.col-sm-6
+						.shipyard-model__sidebar
+							h3.shipyard-model__sidebar-heading Цена
+							p.shipyard-model__sidebar-price
+								b €160 000,–
+								| Растоможена в РФ или странах ТС
+							h3.shipyard-model__sidebar-heading Продавец
+							.shipyard-model__sidebar-item
+								figure.shipyard-model__sidebar-item-image
+									img(src="img/img-shipyard-sale-1.png", alt="")
+								h4.shipyard-model__sidebar-item-title Царский брокер в Австрии
+								p.shipyard-model__sidebar-item-text Австрия, Вена
+								a(href="#").shipyard-model__sidebar-item-link Ещё 128 предложений
+							h3.shipyard-model__sidebar-heading Информация
 
-								.ui-progress
-									.ui-progress__label Пресная вода
-									.ui-progress__count 500 литров
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 20%")
-							
-							li.col-sm-6
+							a(href="#").btn.btn-block.btn-green Обратный звонок
 
-								.ui-progress
-									.ui-progress__label Максимальная
-									.ui-progress__count 27 узлов
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 20%")
-							li.col-sm-6
+							p.shipyard-model__sidebar-text Оставьте номер телефона и продавец свяжется с Вами
 
-								.ui-progress
-									.ui-progress__label Крейсерская
-									.ui-progress__count 15 узлов
-									.ui-progress__bar
-										.ui-progress__bar-line(style="width: 70%")
+							a(href="#").btn.btn-block.btn-green-empty Запрос информации
 
-						ul.shipyard-model__info
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-people')
-								b.shipyard-model__info-title 8 человек
-								p.shipyard-model__info-text
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-people')
-								b.shipyard-model__info-title 8 человек
-								p.shipyard-model__info-text Максимально пассажиров
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-rooms')
-								b.shipyard-model__info-title 2
-								p.shipyard-model__info-text Кол-во кают
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-beds')
-								b.shipyard-model__info-title 2 человека
-								p.shipyard-model__info-text Кол-во спальных мест для гостей
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-team')
-								b.shipyard-model__info-title 2 человека
-								p.shipyard-model__info-text Экипаж
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-beds')
-								b.shipyard-model__info-title 1
-								p.shipyard-model__info-text Кол-во спальных мест для экапажа
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-rooms')
-								b.shipyard-model__info-title  1
-								p.shipyard-model__info-text Кол-во кают для экипажа
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-material')
-								b.shipyard-model__info-title Углепластик
-								p.shipyard-model__info-text Материал корпуса
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-class-c')
-								b.shipyard-model__info-title СЕ
-								p.shipyard-model__info-text Класс мореходности
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-design')
-								b.shipyard-model__info-title Модерн
-								p.shipyard-model__info-text Дизайн
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-new')
-								b.shipyard-model__info-title Новая модель
-								p.shipyard-model__info-text
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-water')
-								b.shipyard-model__info-title Водоизмещение
-								p.shipyard-model__info-text Тип корпуса
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-fbv')
-								b.shipyard-model__info-title ФБВ
-								p.shipyard-model__info-text 
-							li.col-4.col-sm-3.col-md-2
-								figure.shipyard-model__info-icon
-									+icon('ico-info-bathrooms')
-								b.shipyard-model__info-title 99
-								p.shipyard-model__info-text Кол-во санузлов
+							p.shipyard-model__sidebar-text Напишите письмо продавцу и он Вам ответит
 
-						hr.shipyard-model__line
+					.shipyard-content
 
-						ul.shipyard-model__motor
-							li.col-12.col-sm-6
-								.shipyard-model__motor-item
-									figure.shipyard-model__motor-icon
-										+icon('ico-motor-1')
-									b.shipyard-model__motor-title Подвесной 
-									p.shipyard-model__motor-text 2х370 л.с. Volvo Penta ВП-370
+						h2 Описание
 
-							li.col-12.col-sm-6
-								.shipyard-model__motor-item
-									figure.shipyard-model__motor-icon
-										+icon('ico-motor-2')
-									b.shipyard-model__motor-title Подвесной 
-									p.shipyard-model__motor-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
-							li.col-12.col-sm-6
-								.shipyard-model__motor-item
-									figure.shipyard-model__motor-icon
-										+icon('ico-motor-3')
-									b.shipyard-model__motor-title Подвесной 
-									p.shipyard-model__motor-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
-						
-						.shipyard-model__desc
+						p Идеальная модель в качестве первой собственной парусной яхты. Очень ухоженная лодка, много дополнительного оборудования и опций. Никогда не сдавалась в чартер, использовалась только для семейного отдыха владельца. Лодка должна быть продана, открыта к любым предложениям. <br>Растаможена на РФ.
 
-							h2.shipyard-model__heading Описание
+						p Установленное дополнительное оборудование:
 
-							p Идеальная модель в качестве первой собственной парусной яхты. Очень ухоженная лодка, много дополнительного оборудования и опций. Никогда не сдавалась в чартер, использовалась только для семейного отдыха владельца. Лодка должна быть продана, открыта к любым предложениям. <br>Растаможена на РФ.
+						ul
+							li — Спинакер
+							li — Спинакер гик 
+							li — Шкоты 
+							li — Генакер 125м 
+							li — Чулки для подъёма и спуска генакера и спинакера 
+							li — Навигация Raymarine 
+							li — CD/FM/AM/LW/DVD радио с двумя динамиками 
+							li — Navtex 
+							li — АВТОПИЛОТ Raymarine ST 6001 
+							li — Радар Raymarine 
+							li — Чартплоттер Raymarine Raymarine С70 с GPS 
 
-							p Установленное дополнительное оборудование:
+						p Стандартное оборудование: 
 
-							ul
-								li — Спинакер
-								li — Спинакер гик 
-								li — Шкоты 
-								li — Генакер 125м 
-								li — Чулки для подъёма и спуска генакера и спинакера 
-								li — Навигация Raymarine 
-								li — CD/FM/AM/LW/DVD радио с двумя динамиками 
-								li — Navtex 
-								li — АВТОПИЛОТ Raymarine ST 6001 
-								li — Радар Raymarine 
-								li — Чартплоттер Raymarine Raymarine С70 с GPS 
+						p ПАЛУБА 
 
-							p Стандартное оборудование: 
+						ul
+							li — Отформованный нескользкий рисунок на палубе 
+							li — Тиковое покрытие на банках и полу кокпита 
+							li — Носовые, кормовые релинги, леерное ограждение из нержавеющей стали 
+							li — Носовая оковка с кронштейном для крепления якоря с роликом 
+							li — 4 алюминиевые швартовые утки, по две - на носу и на корме 
+							li — 2 утапливаемые алюминиевые утки на миделе 
+							li — 2 фаловые лебедки с самозахватом 
+							li — 2 шкотовые двухскоростные лебедки с самозахватом, 2 ручки лебедки 
+							li — Проводка фалов и настроечных снастей в кокпит, комингс для установки тента sprayhood 
+							li — Самоотливной цепной ящик, якорная электролебедка 
+							li — Два рундука под банками кокпита, карман для хранения фалов 
+							li — Самоотливной рундук для газового баллона в кокпите 
+							li — Душ и лестница на кормовой площадке 
+							li — Вентилятор салона 
+							li — Столик в кокпите из стеклопластика с раскладываемой столешницей из тика 
+							li — Электрическая и ручная трюмные помпы 
+							li — Навигационные огни и фонарь освещения бака 
 
-							p ПАЛУБА 
+						p ПАРУСА 
 
-							ul
-								li — Отформованный нескользкий рисунок на палубе 
-								li — Тиковое покрытие на банках и полу кокпита 
-								li — Носовые, кормовые релинги, леерное ограждение из нержавеющей стали 
-								li — Носовая оковка с кронштейном для крепления якоря с роликом 
-								li — 4 алюминиевые швартовые утки, по две - на носу и на корме 
-								li — 2 утапливаемые алюминиевые утки на миделе 
-								li — 2 фаловые лебедки с самозахватом 
-								li — 2 шкотовые двухскоростные лебедки с самозахватом, 2 ручки лебедки 
-								li — Проводка фалов и настроечных снастей в кокпит, комингс для установки тента sprayhood 
-								li — Самоотливной цепной ящик, якорная электролебедка 
-								li — Два рундука под банками кокпита, карман для хранения фалов 
-								li — Самоотливной рундук для газового баллона в кокпите 
-								li — Душ и лестница на кормовой площадке 
-								li — Вентилятор салона 
-								li — Столик в кокпите из стеклопластика с раскладываемой столешницей из тика 
-								li — Электрическая и ручная трюмные помпы 
-								li — Навигационные огни и фонарь освещения бака 
-
-							p ПАРУСА 
-
-							ul
-								li — Грот с короткими лапами для стандартного рангоута 
-								li — Закручиваемая генуя
+						ul
+							li — Грот с короткими лапами для стандартного рангоута 
+							li — Закручиваемая генуя
 
 
-							h2.shipyard-model__heading О моделе
+						h2 О моделе
 
-							p С 1977 года семейная голландская верфь De Alm Yachtbouwers строит стальные водоизмещающие прогулочные суда под девизом «Довольно мечтать, сделай это!». Эти слова в полной мере относятся к флагману линейки траулерных яхт Delfino. Четырехпалубную 28-метровую лодку по праву можно считать «карманной» суперяхтой, поскольку она обладает всеми ключевыми атрибутами серьезного океанского корабля.
+						p С 1977 года семейная голландская верфь De Alm Yachtbouwers строит стальные водоизмещающие прогулочные суда под девизом «Довольно мечтать, сделай это!». Эти слова в полной мере относятся к флагману линейки траулерных яхт Delfino. Четырехпалубную 28-метровую лодку по праву можно считать «карманной» суперяхтой, поскольку она обладает всеми ключевыми атрибутами серьезного океанского корабля.
 
-							p Сочетая в себе отменную мореходность и высокую надежность, Delfino 90 похожа на плавучий дом, в котором комфортно проводить дни, недели и месяцы. Массивное 130-тонное судно может похвастаться экономичностью и внушительным запасом топлива — это обеспечивает большую автономность на относительно высокой для подобных «тихоходов» крейсерской скорости 11 узлов. Но разве можно вообразить суперяхту без роскошной отделки, дизайн которой определяет сам владелец?! 
+						p Сочетая в себе отменную мореходность и высокую надежность, Delfino 90 похожа на плавучий дом, в котором комфортно проводить дни, недели и месяцы. Массивное 130-тонное судно может похвастаться экономичностью и внушительным запасом топлива — это обеспечивает большую автономность на относительно высокой для подобных «тихоходов» крейсерской скорости 11 узлов. Но разве можно вообразить суперяхту без роскошной отделки, дизайн которой определяет сам владелец?! 
 
-							p Четыре просторные двухместные каюты и огромный салон Delfino 90 дают возможность реализовать любые фантазии, однако верфь будет ненавязчиво <br>намекать заказчику, что особый шарм судам этот типа придают никогда не устаревающие классические морские интерьеры c обилием натуральной <br>древесины.
+						p Четыре просторные двухместные каюты и огромный салон Delfino 90 дают возможность реализовать любые фантазии, однако верфь будет ненавязчиво <br>намекать заказчику, что особый шарм судам этот типа придают никогда не устаревающие классические морские интерьеры c обилием натуральной <br>древесины.
 
-					.shipyard-model__sidebar
-						h3.shipyard-model__sidebar-heading Цена
-						p.shipyard-model__sidebar-price
-							b €160 000,–
-							| Растоможена в РФ или странах ТС
-						h3.shipyard-model__sidebar-heading Продавец
-						.shipyard-model__sidebar-item
-							figure.shipyard-model__sidebar-item-image
-								img(src="img/img-shipyard-sale-1.png", alt="")
-							h4.shipyard-model__sidebar-item-title Царский брокер в Австрии
-							p.shipyard-model__sidebar-item-text Австрия, Вена
-							a(href="#").shipyard-model__sidebar-item-link Ещё 128 предложений
-						h3.shipyard-model__sidebar-heading Информация
+				
+				.offer
 
-						a(href="#").btn.btn-block.btn-green Обратный звонок
+					h3.offer-heading ПОХОЖИЕ предложения
 
-						p.shipyard-model__sidebar-text Оставьте номер телефона и продавец свяжется с Вами
+					.offer-carousel.owl-carousel.js-carousel-offer
 
-						a(href="#").btn.btn-block.btn-green-empty Запрос информации
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-1.jpg", alt="")
+							h3.market-item__title
+								| Bavaria 42 Cruiser
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price €146 500,–
+							p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-2.jpg", alt="")
+							h3.market-item__title 
+								| Sunseeker 47 Portofino
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price €395 500,–
+							p.market-item__text 2008 г., 200 моточасов. Италия
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-3.jpg", alt="")
+							h3.market-item__title 
+								| Finnmaster 60 CC
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price 98 000 руб.
+							p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-4.jpg", alt="")
+							h3.market-item__title 
+								| Bayliner 185 Bowrider
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price 680 000 руб.
+							p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
 
-						p.shipyard-model__sidebar-text Напишите письмо продавцу и он Вам ответит
-
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-1.jpg", alt="")
+							h3.market-item__title
+								| Bavaria 42 Cruiser
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price €146 500,–
+							p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-2.jpg", alt="")
+							h3.market-item__title 
+								| Sunseeker 47 Portofino
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price €395 500,–
+							p.market-item__text 2008 г., 200 моточасов. Италия
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-3.jpg", alt="")
+							h3.market-item__title 
+								| Finnmaster 60 CC
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price 98 000 руб.
+							p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+					
+						a(href="#").market-item
+							figure.market-item__image
+								img(src="img/img-market-4.jpg", alt="")
+							h3.market-item__title 
+								| Bayliner 185 Bowrider
+								span.market-item__compare
+									+icon('ico-compare')
+							i.market-item__price 680 000 руб.
+							p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
 
 			
-			.offer
-
-				h3.offer-heading ПОХОЖИЕ предложения
-
-				.offer-carousel.owl-carousel.js-carousel-offer
-
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-1.jpg", alt="")
-						h3.market-item__title
-							| Bavaria 42 Cruiser
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price €146 500,–
-						p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-2.jpg", alt="")
-						h3.market-item__title 
-							| Sunseeker 47 Portofino
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price €395 500,–
-						p.market-item__text 2008 г., 200 моточасов. Италия
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-3.jpg", alt="")
-						h3.market-item__title 
-							| Finnmaster 60 CC
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price 98 000 руб.
-						p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-4.jpg", alt="")
-						h3.market-item__title 
-							| Bayliner 185 Bowrider
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price 680 000 руб.
-						p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
-
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-1.jpg", alt="")
-						h3.market-item__title
-							| Bavaria 42 Cruiser
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price €146 500,–
-						p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-2.jpg", alt="")
-						h3.market-item__title 
-							| Sunseeker 47 Portofino
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price €395 500,–
-						p.market-item__text 2008 г., 200 моточасов. Италия
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-3.jpg", alt="")
-						h3.market-item__title 
-							| Finnmaster 60 CC
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price 98 000 руб.
-						p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
-				
-					a(href="#").market-item
-						figure.market-item__image
-							img(src="img/img-market-4.jpg", alt="")
-						h3.market-item__title 
-							| Bayliner 185 Bowrider
-							span.market-item__compare
-								+icon('ico-compare')
-						i.market-item__price 680 000 руб.
-						p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
-
-		
 	// Snipyard :: End

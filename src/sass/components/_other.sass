@@ -22,6 +22,10 @@
 	& > li
 		margin: 0 0 16px
 
+.other__ctrl
+	text-align: center
+	padding: 20px 0 0
+
 .other-item
 	display: block
 	color: #222
@@ -35,9 +39,12 @@
 		overflow: hidden
 		position: relative
 		max-height: 140px
+		height: 90px
 		background: #e0e0e0
 		border-radius: 4px
 		backface-visibility: hidden
+		+rmin($mobile)
+			height: 140px
 		&:before
 			content: ''
 			float: left

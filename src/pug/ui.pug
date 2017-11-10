@@ -8,6 +8,20 @@ block content
 
 	// Ui :: Start
 
+
+	.popup.popup-auth.mfp-hide#popup-error
+		button.popup-close(data-mfp-close)
+			+icon('ico-close')
+		form(action="#")
+			b.popup-heading Нашли ошибку в материале?
+				
+			input(type="email", placeholder="Электронная почта").ui-input
+			textarea(name="", cols="30", rows="10", placeholder="Опишите ошибку").ui-textarea
+
+			.popup-ctrl
+				button.btn.btn-block.btn-dark Исправить
+
+
 	.popup.popup-auth.mfp-hide#popup-auth
 		button.popup-close(data-mfp-close)
 			+icon('ico-close')
@@ -40,17 +54,17 @@ block content
 				.col-sm-6
 					.ui-field
 						sup.ui-field__sup *
-						input(type="text", placeholder="Представьтесь").ui-input
+						input(type="text", placeholder="Представьтесь, пожалуйста").ui-input
 				.col-sm-6
 					.ui-field
 						sup.ui-field__sup *
 						input(type="email", placeholder="Электронная почта").ui-input
 
-			textarea(name="", cols="30", rows="10", placeholder="Ваш материал").ui-textarea
+			textarea(name="", cols="30", rows="10", placeholder="Пропустили важную новость? Не заметили что-то интересное? \nНапишите нам!").ui-textarea
 
 			label.ui-file
 				input(type="file").ui-file__input
-				span.ui-file__btn Прикрепить файл
+				span.ui-file__btn Тут можно прикрепить файл
 				+icon('ico-arrow-right')
 			
 			.popup-ctrl
@@ -255,6 +269,9 @@ block content
 				a(href="#popup-offer", data-mfp) Предложите свой материал
 			li
 				a(href="#popup-gallery", data-mfp-gallery) Галлерея
+
+			li
+				a(href="#popup-error", data-mfp) Нашли ошибку в материале?
 
 
 		hr

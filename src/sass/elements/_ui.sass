@@ -185,9 +185,13 @@
     padding: 15px 10px
     margin: 0 0 10px
     &::placeholder
-        color: #999999
+        // color: #999999
+        color: #000
+        transition: opacity .25s
     &:focus
         border-color: rgba(#212121,0.5)
+        &::placeholder
+            opacity: 0.5
 
 .ui-textarea
     @extend .ui-input
@@ -214,7 +218,8 @@
         @extend .ui-input
         display: block
         margin: 0
-        color: #999999
+        // color: #999999
+        color: #000
     .ico
         font-size: 10px
         position: absolute

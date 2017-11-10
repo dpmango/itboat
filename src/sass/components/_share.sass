@@ -1,8 +1,14 @@
 // SHARE
 
 .share
-	margin: 0 0 30px
+	margin: 0 0 31px
 	backface-visibility: hidden
+	+r($desktop)
+		margin: 0 0 11px
+		.row-offset-10
+			margin: 0 -2.5px
+			& > [class^="col"]
+				padding: 0 2.5px
 
 .share__text
 	text-align: center
@@ -10,7 +16,7 @@
 	font-weight: 700
 	text-transform: uppercase
 	color: #919191
-	margin: 0 0 20px
+	margin: 0 0 10px
 	letter-spacing: 1px
 	+rmin($desktop)
 		display: none
@@ -20,7 +26,7 @@
 	top: 0
 	right: 0
 	z-index: 20
-	&.is-open
+	&.is-open, &:hover
 		.share-toggle__dropdown
 			opacity: 1
 			visibility: visible

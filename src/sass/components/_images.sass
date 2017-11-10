@@ -4,7 +4,14 @@
 	position: relative
 	width: auto
 	margin: 0 0 30px
+	padding: 9px 0 0
 	clear: both
+	.images-carousel-caption
+		transition: 0.5s 0.2s
+		opacity: 0
+	.active .images-carousel-caption
+		opacity: 1
+
 	.owl-dots
 		display: flex
 		align-items: center
@@ -51,6 +58,8 @@
 		border-radius: 4px 0 0 4px;
 	+r($tablet)
 		padding: 40px 0 0
+		&.is-oneObj
+			padding: 0
 		.owl-prev, .owl-next
 			height: 40px
 			width: auto

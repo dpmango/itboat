@@ -56,13 +56,14 @@
 
 
 .is-firstletter
-	.article-content
-		&:first-letter
-			font-size: 80px
-			line-height: 78px
-			display: block
-			float: left
-			margin: -13px 10px 0 0
+	+rmin($desktop)
+		.article-content
+			&:first-letter
+				font-size: 80px
+				line-height: 78px
+				display: block
+				float: left
+				margin: 0 10px 0 -4px
 
 .article
 	.container-fluid
@@ -80,7 +81,7 @@
 
 .article-panel
 	padding: 120px 20px 50px
-	margin: 0 -20px 20px
+	margin: 0 -20px 15px
 	position: relative
 	z-index: 10
 	background: #222
@@ -175,7 +176,7 @@
 	color: #4c4c4c
 	letter-spacing: -0.1px
 	padding: 20px 0 0
-	
+	-webkit-font-smoothing: auto
 	& > ul
 		@extend .ui-ul
 
@@ -185,6 +186,11 @@
 			margin-left: -80px
 			margin-right: -80px
 
+.article-text
+	font-size: 22px
+	line-height: 30px
+	color: #4c4c4c
+	padding: 0 0 15px
 
 // -----
 
@@ -201,6 +207,14 @@
 	+rmin($wide)
 		padding-left: 80px
 		padding-right: 80px
+	a
+		transition: .25s
+		color: #4c4c4c
+		text-decoration: none
+		border-bottom: 1px solid transparent
+		&:hover
+			color: #000
+			border-color: #000
 
 .article-info__title
 	display: block
@@ -275,8 +289,9 @@
 	padding: 0 0 40px
 	margin: 0 0 30px
 	&:last-child
+		margin: 0
 		&:after
-			// display: none
+			display: none
 	&:after
 		content: ''
 		display: block
@@ -343,7 +358,7 @@
 .article-image
 	position: relative
 	text-align: center
-	padding: 0 20px
+	padding: 0
 	margin: 0 0 30px
 	+rmin($desktop)
 		// margin-left: -80px

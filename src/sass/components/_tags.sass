@@ -57,13 +57,23 @@
 
 
 .tags-group__menu
-	margin: 0 0 -10px
+	margin: 0 -25px
 	padding: 0
 	list-style: none
 	text-align: center
 	line-height: 1
+	display: flex
+	flex-wrap: wrap
+	// justify-content: center
 	& > li
 		margin: 0 0 10px
+		padding: 0 25px
+		+rmin($mobile)
+			width: 50%
+		+rmin($tablet)
+			width: 33.333%
+		+rmin($desktop)
+			width: 25%
 
 .tags-group__btn
 	font-size: 12px
@@ -74,6 +84,8 @@
 	letter-spacing: 1px
 	white-space: nowrap
 	transition: .25s
+	display: inline-block
+	position: relative
 	mark
 		min-width: 20px
 		height: 20px
@@ -87,5 +99,8 @@
 		padding: 0 5px
 		text-decoration: none
 		margin: 0 0 0 5px
+		position: absolute
+		left: 100%
+		top: 0
 	&:hover
 		color: #1ea0e4
