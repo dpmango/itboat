@@ -1,0 +1,46 @@
+// Error 404
+
+.error
+	background: #000 url(../img/bg-error-mobile.jpg) center 0 no-repeat
+	background-size: cover
+	text-align: center
+	color: #fff
+	overflow: hidden
+	padding: 125px 0
+	font-size: 16px
+	line-height: 22px
+
+	.container-fluid
+		max-width: 980px
+	a
+		color: inherit
+		text-decoration: underline
+		transition: .25s
+		&:hover
+			opacity: 0.6
+	&__number
+		text-transform: uppercase
+		display: block
+		font-size: 14px
+		line-height: 1
+		margin: 0 0 26px
+		letter-spacing: 2px
+	&__slogan
+		display: block
+		font-size: 30px
+		line-height: 36px
+		font-weight: 700
+		margin: 0 0 10px
+	&__text
+		margin: 0
+	+rmin($tablet)
+		font-size: 18px
+		line-height: 26px
+		padding: 280px 0 315px
+		background-image: url(../img/bg-error.jpg)
+		&__number
+			font-size: 22px
+		&__slogan
+			font-size: 50px
+			line-height: 1
+			margin: 0 40px 10px

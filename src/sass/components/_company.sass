@@ -1,0 +1,87 @@
+// company
+
+.company
+	background: #F5F5F5
+	border-radius: 8px
+	text-align: center
+	max-width: 620px
+	margin: 0 auto 20px
+	padding: 35px 20px 25px
+	font-size: 14px
+	line-height: 20px
+	color: #212121
+	&.is-disabled
+		.company__title
+			color: #999
+	& > *:last-child
+		margin: 0
+	.btn
+		margin: 0 0 15px
+	.btn-green
+		padding-left: 20px
+		padding-right: 20px
+		.ico
+			margin-left: 0
+	
+	&__title
+		display: block
+		font-size: 16px
+		line-height: 20px
+		font-weight: 700
+		text-transform: uppercase
+		color: #00ae6f
+		letter-spacing: 1px
+		margin: 0 0 15px
+	&__text
+		color: #999
+		margin: 0 0 15px
+	&__item
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		padding: 20px 0
+		margin: 0 0 20px
+		font-size: 14px
+		line-height: 22pxs
+		
+		&-image
+			margin: 0 auto 10px
+			border: 1px solid #e0e0e0;
+			background: #fff
+			
+			padding: 10px
+			display: flex
+			align-items: center
+			justify-content: center
+			border-radius: 4px
+
+			width: 110px
+			height: 80px
+		&-desc
+			min-width: 220px
+			width: 100%
+		&-title
+			display: block
+			font-size: 18px
+			line-height: 26px
+			font-weight: 700
+			margin: 0 0 10px
+		&-info
+			margin: 0
+			padding: 0
+			list-style: none
+	+rmin($desktop)
+		&__title
+			margin: 0 0 20px
+		&__item
+			flex-wrap: nowrap
+			text-align: left
+			&-image
+				width: 220px
+				height: 160px
+				margin: 0 20px 0 0
+			&-desc
+				width: auto
+		.btn-green
+			min-width: 300px

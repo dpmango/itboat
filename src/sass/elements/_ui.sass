@@ -192,12 +192,190 @@
         border-color: rgba(#212121,0.5)
         &::placeholder
             opacity: 0.5
+    &:disabled
+        background: #F5F5F5
+        border-color: #E0E0E0
+        color: #999999
 
 .ui-textarea
     @extend .ui-input
-    min-height: 150px
-    height: 150px
+    min-height: 120px
+    // height: 150px
     max-width: 100%
+
+
+.ui-ctrl
+    width: 50%
+    margin: 0 auto
+    text-align: center
+    font-size: 14px
+    .btn
+        width: 100%
+        margin: 0 0 20px
+    +r($tablet)
+        width: 100%
+
+.ui-group
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    min-height: 40px
+    .ui-label
+        flex: 0 0 25%
+        padding: 0 20px
+        text-align: right
+    .ui-caption
+        flex: 0 0 25%
+        padding: 0 0 0 20px
+        height: 18px
+        letter-spacing: -0.1px
+        word-spacing: -0.8px
+        &__auto
+            height: auto
+    .ui-input
+        padding: 10px
+    .ui-input, .ui-select, .ui-group-in, .ui-upload
+        flex: 0 0 50%
+    +r($tablet)
+
+        .ui-label, .ui-caption, .ui-group-in, .ui-upload
+            flex: 0 0 100%
+            padding: 0
+            text-align: left
+            height: auto
+        .ui-input, .ui-select
+            flex: 0 0 100%
+        .ui-caption
+            text-align: center
+            padding: 0 0 10px
+
+// -----
+
+.ui-group-caption
+    margin: 0
+    font-size: 12px
+    color: #999999
+
+.ui-group-text
+    margin: 0
+    font-size: 14px
+
+.ui-group-in
+    margin: 0 0 10px
+    .row
+        align-items: center
+    .ui-input, .ui-select, .ui-check
+        margin: 0
+
+// -----
+
+.ui-upload
+    display: flex
+    flex-wrap: wrap
+
+.ui-upload-file
+    
+    position: relative
+    
+    margin: 0
+    width: 100%
+    color: #1EA0E4
+    cursor: pointer
+    transition: .25s
+    &:before
+        content: ''
+        float: left
+        padding: 63.4% 0 0
+    span
+        display: block
+        overflow: hidden
+        border: 1px solid #E0E0E0
+        border-radius: 4px
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100%
+        
+    .ico
+        font-size: 32px
+    &:hover span
+        border-color: #1EA0E4
+
+.ui-upload-input
+    position: absolute
+    top: 0
+    left: 0
+    visibility: hidden
+
+.ui-upload-image
+
+.ui-upload-image-in
+    margin: 0
+    background: #F5F5F5
+    border-radius: 4px
+    position: relative
+    overflow: hidden
+    width: 100%
+    &:before
+        content: ''
+        float: left
+        padding: 63.4% 0 0
+    img
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.ui-upload-delete
+    position: absolute
+    top: 10px
+    right: 10px
+    z-index: 10
+    padding: 0
+    border: none
+    background: none
+    color: #999
+    transition: .25s
+    cursor: pointer
+    .ico
+        font-size: 14px
+    &:hover
+        color: #000
+
+.ui-upload
+    margin: 0 -5px
+
+.ui-upload-file, .ui-upload-image
+    width: 33.333%
+    padding: 0 5px
+    margin: 0 0 10px
+    // // max-width: 142px
+    // margin: 0 1.5% 3%
+
+// -----
+
+.ui-list-horizontal
+    margin: 0 0 10px
+    padding: 0
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    & > li
+        margin: 0 20px 0 0
+    .ui-check
+        margin: 0
+
+.ui-list-vertical
+    margin: 0 0 10px
+    padding: 0
+    list-style: none
+    & > li
+      margin: 0 0 10px
+    .ui-check
+        margin: 0
 
 // UI File
 
@@ -264,6 +442,12 @@
             transform: rotate(180deg)
         .jq-selectbox__select
             border-color: rgba(#212121,0.5)
+    &.disabled
+        cursor: default
+        .jq-selectbox__select
+            background: #F5F5F5
+            border-color: #E0E0E0
+            color: #999999
 
     .placeholder
         color: #999999
@@ -405,6 +589,22 @@
 
 // THIS IS REGULAR CLASS MODIFIER FOR THE INPUT IT
 
+.ui-display
+    display: flex
+    align-items: center
+
+.ui-display-btn
+    display: block
+    border: none
+    padding: 5px
+    background: none
+    color: #999999
+    cursor: pointer
+    transition: .25s
+    &:hover
+        color: #212121
+    &.is-active
+        color: #1EA0E4
 
 // -----
 
@@ -413,16 +613,23 @@
     position: relative
     font-size: 14px
     line-height: 20px
+    min-height: 20px
     color: #4c4c4c
     padding: 0 0 0 25px
     margin: 0 0 10px
     cursor: pointer
+    &__rtl
+        padding: 0 25px 0 0
+        .ui-check__checkbox
+            left: auto
+            right: 0
     &__input
         position: absolute
         top: 0
         left: 0
         visibility: hidden
-        &:checked ~ .ui-check__checkbox .ico
+        &:checked ~ .ui-check__checkbox .ico,
+        &:checked ~ .ui-check__radio:after
             opacity: 1
     &__checkbox
         transition: .25s
@@ -443,8 +650,34 @@
             font-size: 10px
             color: #1EA0E4
             opacity: 0
+    &__radio
+        transition: .25s
+        width: 20px
+        height: 20px
+        background: #fff
+        border: 1px solid #e0e0e0;
+        border-radius: 50%
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 8px
+            height: 8px
+            border-radius: 50%;
+            background: #1EA0E4
+            opacity: 0
+            margin: -4px 0 0 -4px
     &:hover
-        .ui-check__checkbox
+        .ui-check__checkbox, .ui-check__radio
             border-color: rgba(#212121,0.5)
 
 // -----

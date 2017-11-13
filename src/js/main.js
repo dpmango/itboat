@@ -2,6 +2,34 @@ $(document).ready(function(){
 
 
     // --------------------------------------------------------------------------
+    // ui-displa
+    // --------------------------------------------------------------------------
+
+     $('.ads__filter-group').on('change', '.ui-check__input', function(event) {
+        event.preventDefault();
+        if($(this).is(':checked')) {
+            $(this).prop({ checked: true }).closest('.ads__filter-group').addClass('is-active').find('.ui-select').prop("disabled", false).trigger('refresh');
+        }
+        else {
+            $(this).prop({ checked: false }).closest('.ads__filter-group').removeClass('is-active').find('.ui-select').prop("disabled", true).trigger('refresh');
+        }
+    });
+
+    // --------------------------------------------------------------------------
+    // ui-display
+    // --------------------------------------------------------------------------
+
+    $('.ui-display').on('click', '.ui-display-btn', function(event) {
+        event.preventDefault();
+        var displayType = $(this).data('display');
+
+        $('.ui-display-btn').removeClass('is-active');
+        $(this).addClass('is-active');
+    
+        $('.ads__group').removeClass('is-display-block is-display-compact').addClass('is-display-' + displayType)
+    });
+
+    // --------------------------------------------------------------------------
     // File photo
     // --------------------------------------------------------------------------
 
@@ -465,6 +493,8 @@ $(document).ready(function(){
                       continue;
                     }
 
+                    console.log(el)
+
                     childElements = el.children;
 
                     size = el.getAttribute('data-size').split('x');
@@ -487,16 +517,16 @@ $(document).ready(function(){
                     }
 
 
-                    var mediumSrc = el.getAttribute('data-med');
-                    if(mediumSrc) {
-                        size = el.getAttribute('data-med-size').split('x');
-                        // "medium-sized" image
-                        item.m = {
-                            src: mediumSrc,
-                            w: parseInt(size[0], 10),
-                            h: parseInt(size[1], 10)
-                        };
-                    }
+                    // var mediumSrc = el.getAttribute('data-med');
+                    // if(mediumSrc) {
+                    //     size = el.getAttribute('data-med-size').split('x');
+                    //     // "medium-sized" image
+                    //     item.m = {
+                    //         src: mediumSrc,
+                    //         w: parseInt(size[0], 10),
+                    //         h: parseInt(size[1], 10)
+                    //     };
+                    // }
                     // original image
                     item.o = {
                         src: item.src,

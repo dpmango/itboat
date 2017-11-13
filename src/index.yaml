@@ -32,10 +32,22 @@ PageList:
 - file: xl.html
   ready: 100
 - file: registration.html
-  ready: 50
+  ready: 100
 - file: shipyard-model-1.html
-  ready: 50
+  ready: 100
 - file: shipyard-model-2.html
-  ready: 50
+  ready: 100
+- file: 404.html
+  ready: 100
+- file: lk.html
+  ready: 100
+- file: add-1.html
+  ready: 100
+- file: add-2.html
+  ready: 100
+- file: xl-model.html
+  ready: 1
+- file: compare.html
+  ready: 0
 - file: ui.html
   ready: 100

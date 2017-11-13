@@ -1,0 +1,310 @@
+---
+title: Личный кабинет
+bodyClass: page-lk
+---
+extends shared/_layout
+block content
+	
+	// Lk :: Start
+
+	
+	.lk
+		.container-fluid
+
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link.is-active Личный кабинет
+
+			.lk-container
+				form(action="#")
+					.lk-user
+						figure.lk-user__photo
+							label.lk-user__file
+								input(type="file").lk-user__file-input
+								| Изменить
+
+						b.lk-user__name Дмитрий Новиков
+						p.lk-user__info Зарегистрирован: 23 апреля 2016 в 15:12<br>Просмотров профиля: 9 473
+
+					.tabs.js-tabs
+						ul.tabs__menu.js-tabs__menu
+							li.is-active
+								.tabs-item
+									.tabs-item-in Профиль
+										
+							li
+								.tabs-item
+									.tabs-item-in Объявления
+							li
+								.tabs-item
+									.tabs-item-in Компании
+
+						.tabs__container
+							.tabs__panel.js-tabs__panel.is-active
+
+
+								.ui-group
+									label.ui-label Фамилия
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label Имя
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label Отчество
+									input(type="text", name="").ui-input
+								
+								.ui-group
+									label.ui-label Страна
+									select.ui-select
+										option Страна
+										option Страна 2
+										option Страна 3
+
+								.ui-group
+									label.ui-label Город
+									select.ui-select
+										option Город
+										option Город 2
+										option Город 3
+
+								.ui-group
+									label.ui-label День рождения
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label Пол
+									select.ui-select
+										option Пол
+										option Пол 2
+										option Пол 3
+
+								.ui-group
+									label.ui-label Ваш статус
+									select.ui-select
+										option Яхтсмен, владелец лодки
+										option Яхтсмен, владелец лодки 2
+										option Яхтсмен, владелец лодки 3
+									p.ui-caption Данная информация будет доступна только администрации itBoat и ни при каких условиях не попадет третьим лицам
+
+								.ui-group
+									label.ui-label Марка и модель лодки
+									input(type="text", name="", value="Крейсер Аврора").ui-input
+
+								hr
+
+								.ui-group
+									label.ui-label Телефон
+									input(type="tel", name="").ui-input
+
+								.ui-group
+									label.ui-label Электронная почта
+									input(type="email", name="").ui-input
+
+								.ui-group
+									label.ui-label Skype
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label Twitter
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label Facebook
+									input(type="text", name="").ui-input
+
+								.ui-group
+									label.ui-label ВКонтакте
+									input(type="text", name="").ui-input
+
+								hr
+
+								.ui-group
+									label.ui-label Показывать мои контакты
+									select.ui-select
+										option Всем
+										option Всем 2
+										option Всем 3
+
+								.ui-group
+									label.ui-label Получать на email
+									label.ui-check
+										input(type="checkbox", checked).ui-check__input
+										span.ui-check__checkbox
+											+icon('ico-check')
+										| Дайжест itBoat
+
+								.ui-group
+									label.ui-label Текущий пароль
+									input(type="password", name="").ui-input
+
+								.ui-group
+									label.ui-label Новый пароль
+									input(type="password", name="").ui-input
+
+								.ui-group
+									label.ui-label Повторите новый пароль
+									input(type="password", name="").ui-input
+
+								hr
+
+								.ui-ctrl
+								
+									button.btn.btn-dark Сохранить изменения
+
+									p.ui-caption Нажимая «Сохранить изменения», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
+
+
+
+							.tabs__panel.js-tabs__panel
+
+								.ads
+									
+
+									.ads__filter
+
+										.ads__add-mobile
+											a(href="#").btn.btn-block.btn-add.btn-green Добавить объявление
+
+										.ads__toggle.js-toggle
+											button.ads__toggle-btn.js-toggle-btn.is-active
+												| Фильтр
+												span.icon-toggle
+													+icon('ico-arrow-down')
+
+											.ads__toggle-content.js-toggle-content
+												.ads__filter-group
+
+													label.ui-check
+														input(type="checkbox").ui-check__input
+														span.ui-check__checkbox
+															+icon('ico-check')
+
+													select.ui-select(disabled)
+														option Групповые действия
+														option Групповые действия 2
+														option Групповые действия 3
+
+												select.ui-select
+													option Дата добавления (возр.)
+													option Дата добавления (возр.) 2
+													option Дата добавления (возр.) 3
+
+												.ads__filter-ctrl
+					
+													.ui-display
+														button.ui-display-btn.is-active(data-display="block")
+															+icon('ico-display-block')
+														button.ui-display-btn(data-display="compact")
+															+icon('ico-display-compact')
+
+													label.ui-check.ui-check__rtl
+														input(type="checkbox").ui-check__input
+														span.ui-check__checkbox
+															+icon('ico-check')
+														| Выбрать
+
+													a(href="#").btn.btn-green Добавить объявление
+
+									.ads__group
+										b.ads__heading Не опубликованные
+										ul.ads__list
+											li
+												.ads__item
+													figure.ads__item-image
+														img(src="img/img-boat-1.jpg", alt="")
+													.ads__item-desc
+														label.ui-check
+															input(type="checkbox", checked).ui-check__input
+															span.ui-check__checkbox
+																+icon('ico-check')
+														b.ads__item-title Bavaria 42 Cruiser
+														em.ads__item-price €146 500,–
+														p.ads__item-text 2006 г., 100 моточасов. Черногория, Бар
+													.ads__item-ctrl
+														a(href="#").btn.btn-dark-empty.btn-edit
+															+icon('ico-edit')
+															span Редактировать
+														a(href="#").btn.btn-dark-empty.btn-check
+															+icon('ico-check')
+													.ads__item-info Просмотров: 4<br>Размещено: 23.10.201<br>Актуально до: 23.04.201<br><a href="#">Подтвердить актуальность</a>
+
+									.ads__group
+										b.ads__heading Активные
+										ul.ads__list
+											li
+												.ads__item
+													figure.ads__item-image
+														img(src="img/img-boat-2.jpg", alt="")
+													.ads__item-desc
+														label.ui-check
+															input(type="checkbox", checked).ui-check__input
+															span.ui-check__checkbox
+																+icon('ico-check')
+														b.ads__item-title Sea Ray 325 Sundancer
+														em.ads__item-price €15 000,–
+														p.ads__item-text 1991 г., 200 моточасов. Испания, Palma
+													.ads__item-ctrl
+														a(href="#").btn.btn-dark-empty.btn-edit
+															+icon('ico-edit')
+															span Редактировать
+														a(href="#").btn.btn-dark-empty.btn-check
+															+icon('ico-check')
+													.ads__item-info Просмотров: 4<br>Размещено: 23.10.201<br>Актуально до: 23.04.201<br><a href="#">Подтвердить актуальность</a>
+											li
+												.ads__item
+													figure.ads__item-image
+														img(src="img/img-boat-3.jpg", alt="")
+													.ads__item-desc
+														label.ui-check
+															input(type="checkbox", checked).ui-check__input
+															span.ui-check__checkbox
+																+icon('ico-check')
+														b.ads__item-title Finnmaster 60 CC
+														em.ads__item-price 98 000 руб.
+														p.ads__item-text 2015 г., новая (0 м/ч). Россия, кингисепп
+													.ads__item-ctrl
+														a(href="#").btn.btn-dark-empty.btn-edit
+															+icon('ico-edit')
+															span Редактировать
+														a(href="#").btn.btn-dark-empty.btn-check
+															+icon('ico-check')
+													.ads__item-info Просмотров: 4<br>Размещено: 23.10.201<br>Актуально до: 23.04.201<br><a href="#">Подтвердить актуальность</a>
+
+							.tabs__panel.js-tabs__panel
+
+								.company.is-disabled
+									b.company__title Профиль не привязан ни к какой компании
+									p.company__text Чтобы изменить это:
+									a(href="#").btn.btn-dark-empty Напишите нам
+
+								.company
+									b.company__title Профиль привязан к компании
+									.company__item
+										figure.company__item-image
+											img(src="img/img-itboat-butique.png", alt="")
+										.company__item-desc
+											b.company__item-title itBoat Boutique <br> Монако, Монте-Карло
+											ul.company__item-info
+												li
+													a(href="tel:+74957711700") +7 495 77-11-700
+												li
+													a(href="mailto:sales@itboat.com") sales@itboat.com
+									a(href="#").btn.btn-green
+										+icon('ico-add')
+										| Добавить объявление
+									p.company__text Добавить объявление от лица компании
+									
+
+
+			
+
+	// Lk :: End
+	
+
+	

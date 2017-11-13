@@ -1,0 +1,110 @@
+// LK
+
+.lk
+	position: relative
+	.container-fluid
+		background: #fff
+		padding: 60px 20px
+	hr
+		margin: 30px 0 40px
+
+.lk-container
+	max-width: 940px
+	margin: 0 auto
+
+
+.lk-user
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin: 0 0 40px
+	position: relative
+	min-height: 60px
+	&__photo
+		margin: 0
+		width: 60px
+		height: 60px
+		background: #EDEDED url(../img/bg-photo-mobile.png) center bottom no-repeat
+		overflow: hidden
+		border-radius: 50%
+		position: absolute
+		top: 0
+		right: 0
+		&:hover
+			.lk-user__file
+				opacity: 1
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__file
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		text-align: center
+		font-size: 12px
+		line-height: 60px
+		color: #1ea0e4
+		cursor: pointer
+		background: rgba(0,0,0,0.7)
+		transition: .25s
+		opacity: 0
+		&-input
+			position: absolute
+			top: 0
+			left: 0
+			visibility: hidden
+	&__name
+		display: flex
+		width: 100%
+		align-items: center
+		min-height: 60px
+		font-size: 30px
+		line-height: 36px
+		margin: 0 70px 10px 0
+		color: #212121
+	&__info
+		display: block
+		padding: 0
+		margin: 0
+		font-size: 14px
+		line-height: 20px
+		color: #999999
+
+	+rmin($tablet)
+		flex-wrap: nowrap
+		&__photo
+			min-width: 60px
+			margin: 0 20px 0 0
+			position: relative
+		&__file
+			font-size: 14px
+			line-height: 100px
+		&__name
+			margin: 0
+		&__info
+			text-align: right
+			margin: 0 0 0 auto
+			padding: 0 0 0 10px
+			white-space: nowrap
+
+	+rmin($desktop)
+		&__photo
+			min-width: 100px
+			width: 100px
+			height: 100px
+			background-image: url(../img/bg-photo.png)
+		&__file
+			font-size: 14px
+			line-height: 100px
+		&__name
+			font-size: 50px
+			line-height: 1
+

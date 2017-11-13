@@ -231,7 +231,7 @@ $pswp__include-minimal-style: true !default;
   color: #fff;
   position: absolute;
   top: 30px;
-  right: 20px;
+  right: 37px;
   cursor: pointer;
   z-index: 1000;
   padding: 0;
@@ -242,4 +242,13 @@ $pswp__include-minimal-style: true !default;
     color: #fff
   }
 }
-  
+
+
+
+
+
+
+
+.pswp__counter, .pswp__button--share, .pswp__button--fs, .pswp__button--zoom, .pswp__button--arrow--right, .pswp__button--arrow--left {
+  display: none;
+}

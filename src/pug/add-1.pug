@@ -1,0 +1,362 @@
+---
+title: Добавить лодку - Частное лицо
+bodyClass: page-add
+---
+extends shared/_layout
+block content
+	
+	// Add :: Start
+
+	
+	.add
+		.container-fluid
+
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link.is-active Добавить лодку
+
+			.add__container
+				form(action="#")
+
+					h1.add__heading Добавить лодку
+					p.add__caption Заполните описание максимально подробно — это позволит потенциальным покупателям по достоинству оценить Ваше предложение:
+
+					.ui-group
+						label.ui-label Марка
+						select.ui-select
+							option Марка
+							option Марка 2
+							option Марка 3
+						p.ui-caption Можно разместить лодки только от известных и зарекомендованных верфей, если в списке нет нужной вам верфи или модели — <a href="#">напишите нам</a>.
+
+					.ui-group
+						label.ui-label Модель
+						select.ui-select(disabled)
+							option Модель
+							option Модель 2
+							option Модель 3
+
+					.ui-group
+						label.ui-label Год постройки
+						.ui-group-in
+							.row
+								.col-6
+									select.ui-select
+										option Не указан
+										option Не указан 2
+										option Не указан 3
+								.col-6
+									p.ui-group-caption Год постройки по Builder’s Certificate
+
+					.ui-group
+						label.ui-label Наработка двигателя(ей), м/ч
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="").ui-input
+								.col-6
+									label.ui-check
+										input(type="checkbox", checked).ui-check__input
+										span.ui-check__checkbox
+											+icon('ico-check')
+										| Не эксплуатировалась
+
+					.ui-group
+						label.ui-label Страна местонахождения
+						select.ui-select
+							option Страна местонахождения
+							option Страна местонахождения 2
+							option Страна местонахождения 3
+
+					.ui-group
+						label.ui-label Город
+						select.ui-select(disabled)
+							option Город
+							option Город 2
+							option Город 3
+
+					.ui-group
+						label.ui-label Цена
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="").ui-input
+								.col-6
+									select.ui-select
+										option USD
+										option USD 2
+										option USD 3
+
+					.ui-group
+						label.ui-label Растаможена в РФ или ТС
+
+						ul.ui-list-horizontal
+							li
+								label.ui-check
+									input(type="radio", name="checklistOne", checked).ui-check__input
+									span.ui-check__radio
+									| Да
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistOne", checked).ui-check__input
+									span.ui-check__radio
+									| Нет
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistOne", checked).ui-check__input
+									span.ui-check__radio
+									| Не указано
+
+					.ui-group
+						label.ui-label Европейский НДС уплачен
+						ul.ui-list-horizontal
+							li
+								label.ui-check
+									input(type="radio", name="checklistSecond", checked).ui-check__input
+									span.ui-check__radio
+									| Да
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistSecond", checked).ui-check__input
+									span.ui-check__radio
+									| Нет
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistSecond", checked).ui-check__input
+									span.ui-check__radio
+									| Не указано
+
+
+					hr
+
+
+					.ui-group
+						label.ui-label Фотографии лодки
+						.ui-upload
+
+							label.ui-upload-file
+								input(type="file").ui-upload-input
+								span
+									+icon('ico-upload')
+
+							.ui-upload-image
+								.ui-upload-image-in
+									button.ui-upload-delete
+										+icon('ico-delete')
+									img(src="img/img-boat-4.jpg", alt="")
+
+							.ui-upload-image
+								.ui-upload-image-in
+									button.ui-upload-delete
+										+icon('ico-delete')
+									img(src="img/img-boat-4.jpg", alt="")
+
+						p.ui-caption.ui-caption__auto Не допускаются: рекламные изображения, с водяными знаками или откровенно низкого качества. Меняйте порядок — перетаскивая мышкой.
+
+					hr
+
+					.ui-group
+						label.ui-label Длина, м
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="12.25").ui-input
+								.col-6
+									p.ui-group-text ~ 40.2 футов
+						p.ui-caption Основные характеристики предзаполнены на основании выбранной модели — проверьте и скорректируйте при необходимости.
+
+					.ui-group
+						label.ui-label Ширина, м
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="4.05").ui-input
+								.col-6
+									p.ui-group-text ~ 13.3 футов
+
+					.ui-group
+						label.ui-label Осадка, м
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="1.0").ui-input
+								.col-6
+									p.ui-group-text ~ 40.2 футов
+
+					.ui-group
+						label.ui-label Водоизмещение, т
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="13.0").ui-input
+								.col-6
+									p.ui-group-text ~ 40.2 футов
+
+					.ui-group
+						label.ui-label.align-self-center Двигатели
+						textarea.ui-textarea Volvo Penta D3 – 110 л.с.
+						p.ui-caption.ui-caption__auto У разных лодок одной и той же модели двигатели могут отличаться — оставьте только фактически установленый на лодке.
+
+					.ui-group
+						label.ui-label Макс. скорость, узлов
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+								.col-6
+									p.ui-group-text ~ XX км/ч
+
+					.ui-group
+						label.ui-label Крейсерская скорость, узлов
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+								.col-6
+									p.ui-group-text ~ XX км/ч
+
+					.ui-group
+						label.ui-label Запас пресной воды, л
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="600").ui-input
+
+					.ui-group
+						label.ui-label Запас топлива, л
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="600").ui-input
+
+					.ui-group
+						label.ui-label Каюты для гостей
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+
+					.ui-group
+						label.ui-label Спальные места
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+
+					.ui-group
+						label.ui-label Санузлы
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+
+					.ui-group
+						label.ui-label Пассажировместимость
+						.ui-group-in
+							.row
+								.col-6
+									input(type="text", name="", value="").ui-input
+
+					.ui-group
+						label.ui-label Класс мореходности CE
+						ul.ui-list-horizontal
+							li
+								label.ui-check
+									input(type="radio", name="checklistClass").ui-check__input
+									span.ui-check__radio
+									| A
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistClass").ui-check__input
+									span.ui-check__radio
+									| B
+							li
+								label.ui-check
+									input(type="radio", name="checklistClass").ui-check__input
+									span.ui-check__radio
+									| C
+							li
+								label.ui-check
+									input(type="radio", name="checklistClass").ui-check__input
+									span.ui-check__radio
+									| D
+
+							li
+								label.ui-check
+									input(type="radio", name="checklistClass", checked).ui-check__input
+									span.ui-check__radio
+									| Не указано
+
+					.ui-group
+						label.ui-label.align-self-center Описание и комплектация
+						textarea(rows="12").ui-textarea 
+						p.ui-caption.ui-caption__auto Описание в свободной форме. Для парусных яхт укажите конфигурацию такелажа, а также комплектность и состояние парусов.
+
+					hr
+
+					.ui-group
+						label.ui-label Имя
+						input(type="text", name="", value="Аркадий").ui-input
+
+					.ui-group
+						label.ui-label Фамилия
+						input(type="text", name="", value="Константинопольский").ui-input
+
+					.ui-group
+						label.ui-label Страна
+						select.ui-select
+							option Австрия
+							option Австрия 2
+							option Австрия 3
+
+					.ui-group
+						label.ui-label Город
+						select.ui-select
+							option Alicante
+							option Alicante 2
+							option Alicante 3
+
+					.ui-group
+						label.ui-label Телефон
+						input(type="tel", name="", value="").ui-input
+
+					.ui-group
+						label.ui-label Электронная почта
+						input(type="email", name="", value="user@mail.com").ui-input
+
+					.ui-group
+						label.ui-label Я являюсь
+						select.ui-select
+							option Владельцем лодки
+							option Владельцем лодки 2
+							option Владельцем лодки 3
+
+					hr
+
+					.ui-ctrl
+					
+						button.btn.btn-dark опубликовать
+
+						a(href="#") Предварительный просмотр
+
+
+
+
+					
+
+				
+			
+
+	// Add :: End
+	
+
+	

@@ -1,0 +1,250 @@
+// ADS
+
+.ads
+	&__filter
+		// display: flex
+		// align-items: center
+		// white-space: nowrap
+		position: relative
+		// padding: 0 0 0 40px
+		margin: 0 0 40px
+		&-group
+			display: none
+
+		&-ctrl
+			margin-left: auto
+			display: flex
+			align-items: center
+			.ui-check
+				margin: 0 0 0 auto
+			.btn
+				display: none
+		.ui-input
+			padding-top: 10px
+			padding-bottom: 10px
+		.ui-check
+			// margin: 0
+			// position: absolute
+			// top: 10px
+			// left: 0
+		.ui-select
+			// width: 220px
+			margin: 0 0 10px
+		.ui-display
+			margin: 0 -5px
+			
+		+rmin($desktop)
+			&-group
+				white-space: nowrap
+				position: relative
+				padding: 0 0 0 40px
+				display: block
+				.ui-check
+					position: absolute
+					top: 10px
+					left: 0
+			&-ctrl
+				.ui-check
+					display: none
+				.btn
+					display: block
+			.ui-display
+				padding: 0 15px
+				margin: 0
+			.ui-select
+				width: 220px
+				margin: 0 20px 0 0
+
+	&__add-mobile
+		+rmin($desktop)
+			display: none
+	&__toggle
+		background: #F5F5F5
+		border-radius: 8px
+		padding: 0 20px
+		width: 100%
+		margin: 0 0 21px
+		+rmin($desktop)
+			padding: 0
+			background: none
+		&-btn
+			display: block
+			width: 100%
+			font: 700 16px/30px $fontBase
+			color: #00ae6f
+			text-transform: uppercase
+			text-align: left
+			position: relative
+			border: none
+			background: none
+			cursor: pointer
+			padding: 30px 0
+			
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				bottom: 0
+				left: -20px
+				right: -20px
+				display: none
+			&.is-active
+				.icon-toggle
+					transform: rotate(180deg)
+			+rmin($desktop)
+				display: none
+
+
+		&-content
+			position: relative
+			padding: 0 0 35px
+			+rmin($desktop)
+				display: flex !important
+				padding: 0
+	&__group
+		padding: 0 0 40px
+	&__heading
+		margin: 0 0 40px
+		font-size: 22px
+		line-height: 1
+		color: #212121
+		display: block
+	&__list
+		margin: 0 -10px -25px
+		padding: 0
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		& > li
+			padding: 0 10px
+			margin: 0 0 25px
+			width: 100%
+			+rmin($mobile)
+				width: 50%
+			+rmin($tablet)
+				width: 33.333%
+
+
+.ads__item
+	display: block
+	font-size: 14px
+	line-height: 20px
+	color: #4c4c4c
+	position: relative
+	&-image
+		margin: 0 0 10px
+		background: #F5F5F5
+		border-radius: 4px
+		overflow: hidden
+		position: relative
+		width: 100%
+		&:before
+			content: ''
+			float: left
+			padding: 63.333% 0 0
+		img
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			object-fit: cover
+	&-desc
+		position: relative
+		margin: 0 0 10px
+	&-ctrl
+		margin: 0 -5px 10px
+		white-space: nowrap
+		.btn
+			margin: 0 5px
+	&-info
+		color: #999999
+		margin: 0 0 10px
+
+	&-title
+		display: block
+		font-size: 18px
+		line-height: 22px
+		font-weight: 400
+		color: #222222
+	&-price
+		margin: 0
+		font: italic 400 16px/22px $fontCaption
+		color: #999999
+	&-text
+		margin: 0
+	.ui-check
+		position: absolute
+		top: 0
+		right: -5px
+
+
+// ------
+
+
+.is-display-compact
+	.ads__list > li
+		width: 100%
+		+rmin($mobile)
+			width: 50%
+		+rmin($tablet)
+			width: 100%
+	.ads__item
+		display: flex
+		align-items: flex-start
+		padding: 0 0 0 40px
+		&-image
+			min-width: 75px
+			max-width: 150px
+			margin: 0 20px 0 0
+			order: 1
+		&-desc
+			position: static
+			order: 2
+		&-info
+			padding: 0 20px
+			order: 3
+		&-ctrl
+			order: 4
+			margin-left: auto
+		.ui-check
+			right: auto
+			left: 0
+		+r($desktop)
+			&-info
+				display: none
+		+r($tablet)
+			flex-wrap: wrap
+			padding: 0 40px 0 85px
+			&-image
+				margin-right: 10px
+				max-width: 75px
+				position: absolute
+				top: 0
+				left: 0
+			&-ctrl
+				margin: 0 -5px
+				min-width: 100%
+			.btn-edit
+				width: 40px
+				padding-left: 10px
+				padding-right: 10px
+				span
+					display: none
+				.ico
+					display: inline-block
+					margin: 0
+			.ui-check
+				left: auto
+				right: -5px
+			
+	
+			
+			
+			
+			
+			
+				
+

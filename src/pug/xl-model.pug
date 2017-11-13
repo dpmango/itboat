@@ -1,0 +1,560 @@
+---
+title: Мегаяхты
+bodyClass: page-xl
+---
+extends shared/_layout
+block content
+	
+
+	// xl :: Start
+
+	.xl
+		.container-fluid
+
+			.xl__content
+
+				// Snipyard :: Start
+
+				.shipyard
+					.container-fluid
+
+						.breadcrumbs
+							ul.breadcrumbs__menu
+								li
+									a(href="#").breadcrumbs__link Главная
+								li
+									a(href="#").breadcrumbs__link Каталог  
+								li
+									a(href="#").breadcrumbs__link Верфи  
+								li
+									a(href="#").breadcrumbs__link Обычные
+								li
+									a(href="#").breadcrumbs__link.is-active Arcadia
+
+						.shipyard-head
+							figure.shipyard-head__image
+								img(src="img/logo-1.png", alt="")
+							.shipyard-head__desc
+								mark.shipyard-head__rubric Каталог
+								h1.shipyard-head__title Apreamare 28 midcabin
+								ul.shipyard-head__tags
+									li
+										a(href="#").shipyard-head__tags-link Открытые круизные яхты <mark>128</mark>
+									li
+										a(href="#").shipyard-head__tags-link Лобстер-боты и «гоццо» <mark>78</mark>
+						
+						.shipyard-gallery.owl-carousel.js-carousel-gallery
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-4.jpg", width="354", alt="")
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-5.jpg", width="628", alt="")
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-6.jpg", width="471", alt="")
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-1.jpg", width="664", alt="")
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-2.jpg", width="450", alt="")
+							.shipyard-gallery-item
+								img(src="img/img-snipyard-3.jpg", width="487", alt="")
+							
+						.shipyard-panel
+							.container-fluid
+						
+								ul.shipyard-panel__menu
+									li
+										a(href="#").shipyard-panel__link Галерея
+									li
+										a(href="#").shipyard-panel__link Характеристики
+									li
+										a(href="#").shipyard-panel__link Описание
+					
+								.shipyard-panel__ctrl
+									ul.shipyard-panel__menu
+										li
+											a(href="#").shipyard-panel__social
+												+icon('ico-social-fb')
+										li
+											a(href="#").shipyard-panel__social
+												+icon('ico-social-vk')
+										li
+											a(href="#").shipyard-panel__social
+												+icon('ico-social-tw')
+
+									a(href="#").btn.btn-block.btn-dark
+										+icon('ico-compare')
+										| ДОБАВИТЬ В СРАВНЕНИЕ
+
+						
+						.shipyard-body
+							.container-fluid
+
+								.shipyard-1100
+							
+									.shipyard-model
+
+										.shipyard-model__content
+											
+											h2.shipyard-model__heading Характеристики
+
+											ul.shipyard-model__progress
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Длина
+														.ui-progress__count 47 метров
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 20%")
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Вес
+														.ui-progress__count 10 тонн
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 20%")
+												li.col-sm-6
+													
+													.ui-progress
+														.ui-progress__label Ширина
+														.ui-progress__count 5 метров
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 40%")
+												
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Водоизмещение
+														.ui-progress__count 40 тонн
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 40%")
+
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Осадка
+														.ui-progress__count 2 метра
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 50%")
+												
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Топлива
+														.ui-progress__count 300 литров
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 50%")
+												
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Пресная вода
+														.ui-progress__count 500 литров
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 20%")
+												
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Максимальная
+														.ui-progress__count 27 узлов
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 20%")
+												li.col-sm-6
+
+													.ui-progress
+														.ui-progress__label Крейсерская
+														.ui-progress__count 15 узлов
+														.ui-progress__bar
+															.ui-progress__bar-line(style="width: 70%")
+
+											ul.shipyard-model__info
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-people')
+													b.shipyard-model__info-title 8 человек
+													p.shipyard-model__info-text
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-people')
+													b.shipyard-model__info-title 8 человек
+													p.shipyard-model__info-text Максимально пассажиров
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-rooms')
+													b.shipyard-model__info-title 2
+													p.shipyard-model__info-text Кол-во кают
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-beds')
+													b.shipyard-model__info-title 2 человека
+													p.shipyard-model__info-text Кол-во спальных мест для гостей
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-team')
+													b.shipyard-model__info-title 2 человека
+													p.shipyard-model__info-text Экипаж
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-beds')
+													b.shipyard-model__info-title 1
+													p.shipyard-model__info-text Кол-во спальных мест для экапажа
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-rooms')
+													b.shipyard-model__info-title  1
+													p.shipyard-model__info-text Кол-во кают для экипажа
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-material')
+													b.shipyard-model__info-title Углепластик
+													p.shipyard-model__info-text Материал корпуса
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-class-c')
+													b.shipyard-model__info-title СЕ
+													p.shipyard-model__info-text Класс мореходности
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-design')
+													b.shipyard-model__info-title Модерн
+													p.shipyard-model__info-text Дизайн
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-new')
+													b.shipyard-model__info-title Новая модель
+													p.shipyard-model__info-text
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-water')
+													b.shipyard-model__info-title Водоизмещение
+													p.shipyard-model__info-text Тип корпуса
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-fbv')
+													b.shipyard-model__info-title ФБВ
+													p.shipyard-model__info-text 
+												li.col-4.col-sm-3.col-md-2
+													figure.shipyard-model__info-icon
+														+icon('ico-info-bathrooms')
+													b.shipyard-model__info-title 99
+													p.shipyard-model__info-text Кол-во санузлов
+
+											ul.shipyard-model__engine
+												li.col-12.col-sm-6
+													.shipyard-model__engine-item
+														figure.shipyard-model__engine-icon
+															+icon('ico-engine-1')
+														b.shipyard-model__engine-title Подвесной 
+														p.shipyard-model__engine-text 2х370 л.с. Volvo Penta ВП-370
+
+												li.col-12.col-sm-6
+													.shipyard-model__engine-item
+														figure.shipyard-model__engine-icon
+															+icon('ico-engine-2')
+														b.shipyard-model__engine-title Подвесной 
+														p.shipyard-model__engine-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
+												li.col-12.col-sm-6
+													.shipyard-model__engine-item
+														figure.shipyard-model__engine-icon
+															+icon('ico-engine-3')
+														b.shipyard-model__engine-title Подвесной 
+														p.shipyard-model__engine-text Aliquam varius eros vitae ultricies tincidunt. Quisque vel congue neque.
+											
+											.shipyard-model__more
+												button.btn.btn-block.btn-grey
+													| Все характеристики
+													+icon('ico-more')
+
+
+
+										.shipyard-model__sidebar
+											h3.shipyard-model__sidebar-heading Цена
+											p.shipyard-model__sidebar-price
+												b €160 000,–
+												| Ex Works, в базовой комплектации
+											h3.shipyard-model__sidebar-heading Где купить
+											.shipyard-model__sidebar-item
+												figure.shipyard-model__sidebar-item-image
+													img(src="img/img-shipyard-sale-2.png", alt="")
+												h4.shipyard-model__sidebar-item-title itBoat Boutique
+												p.shipyard-model__sidebar-item-text Ведущий европейский яхтенный интернет-брокер нового поколения
+											
+											.shipyard-model__sidebar-phone
+												ul.shipyard-model__sidebar-phone-list
+													li
+														a(href="tel:74957711700").shipyard-model__sidebar-phone-number
+															img(src="img/img-phone-1.png", alt="")
+															| +7 (495) 77-11-700
+													li
+														a(href="tel:380989771111").shipyard-model__sidebar-phone-number
+															img(src="img/img-phone-2.png", alt="")
+															| +380 (98) 977 11 11
+													li
+														a(href="tel:77772220702").shipyard-model__sidebar-phone-number
+															img(src="img/img-phone-3.png", alt="")
+															| +7 777 222 07 02
+													li
+														a(href="tel:994502505522").shipyard-model__sidebar-phone-number
+															img(src="img/img-phone-4.png", alt="")
+															| +994 50 250 55 22
+													
+												a(href="#").shipyard-model__sidebar-phone-more Показать все контакты
+
+											h3.shipyard-model__sidebar-heading Информация
+
+											a(href="#").btn.btn-block.btn-green Запрос звонка
+
+											p.shipyard-model__sidebar-text Оставьте номер телефона и продавец свяжется с Вами
+									
+									.shipyard-content
+
+										h2 Описание
+
+										p С 1977 года семейная голландская верфь De Alm Yachtbouwers строит стальные водоизмещающие прогулочные суда под девизом «Довольно мечтать, сделай это!». Эти слова в полной мере относятся к флагману линейки траулерных яхт Delfino. Четырехпалубную 28-метровую лодку по праву можно считать «карманной» суперяхтой, поскольку она обладает всеми ключевыми атрибутами серьезного океанского корабля.
+
+										p Сочетая в себе отменную мореходность и высокую надежность, Delfino 90 похожа на плавучий дом, в котором комфортно проводить дни, недели и месяцы. Массивное 130-тонное судно может похвастаться экономичностью и внушительным запасом топлива — это обеспечивает большую автономность на относительно высокой для подобных «тихоходов» крейсерской скорости 11 узлов. Но разве можно вообразить суперяхту без роскошной отделки, дизайн которой определяет сам владелец?! 
+
+										p Четыре просторные двухместные каюты и огромный салон Delfino 90 дают возможность реализовать любые фантазии, однако верфь будет ненавязчиво <br>намекать заказчику, что особый шарм судам этот типа придают никогда не устаревающие классические морские интерьеры c обилием натуральной <br>древесины.
+
+										a(href="#").link-grey
+											+icon('ico-attention')
+											| Дополнить описание или сообщить об ошибке
+
+
+								.offer
+
+									h3.offer-heading в продаже
+
+									.offer-carousel.owl-carousel.js-carousel-offer
+
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-1.jpg", alt="")
+											h3.market-item__title
+												| Bavaria 42 Cruiser
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price €146 500,–
+											p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-2.jpg", alt="")
+											h3.market-item__title 
+												| Sunseeker 47 Portofino
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price €395 500,–
+											p.market-item__text 2008 г., 200 моточасов. Италия
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-3.jpg", alt="")
+											h3.market-item__title 
+												| Finnmaster 60 CC
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price 98 000 руб.
+											p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-4.jpg", alt="")
+											h3.market-item__title 
+												| Bayliner 185 Bowrider
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price 680 000 руб.
+											p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-1.jpg", alt="")
+											h3.market-item__title
+												| Bavaria 42 Cruiser
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price €146 500,–
+											p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-2.jpg", alt="")
+											h3.market-item__title 
+												| Sunseeker 47 Portofino
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price €395 500,–
+											p.market-item__text 2008 г., 200 моточасов. Италия
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-3.jpg", alt="")
+											h3.market-item__title 
+												| Finnmaster 60 CC
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price 98 000 руб.
+											p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+									
+										a(href="#").market-item
+											figure.market-item__image
+												img(src="img/img-market-4.jpg", alt="")
+											h3.market-item__title 
+												| Bayliner 185 Bowrider
+												span.market-item__compare
+													+icon('ico-compare')
+											i.market-item__price 680 000 руб.
+											p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+								
+								.shipyard-other
+
+									.row.row-offset-100
+										.col-lg-60
+
+											// Other :: Start
+													
+											.other
+												h2.other__heading ПопулярныАналоги у других верфей
+
+												ul.other__list
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-1.jpg", alt="")
+															span.other-item__rubric Dominator
+															h3.other-item__title
+																| Dominator 680
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-2.jpg", alt="")
+															span.other-item__rubric Nordhavn
+															h3.other-item__title
+																| Nordhavn 40
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 980 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-3.jpg", alt="")
+															span.other-item__rubric Serious
+															h3.other-item__title
+																| Gently 36'
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-4.jpg", alt="")
+															span.other-item__rubric Jetten
+															h3.other-item__title
+																| 38 Cabrio
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-1.jpg", alt="")
+															span.other-item__rubric Dominator
+															h3.other-item__title
+																| Dominator 680
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м
+
+													li.col-6.col-sm-4.col-md-3.col-lg-4
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-2.jpg", alt="")
+															span.other-item__rubric Nordhavn
+															h3.other-item__title
+																| Nordhavn 40
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 980 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+
+													// Other :: End
+												
+												.other__ctrl
+													a(href="#").btn.btn-dark-empty Все предложения
+
+										.col-lg-40
+
+
+											// Other :: Start
+													
+											.other
+												h2.other__heading ещё от Apreamare
+
+												ul.other__list
+													li.col-6.col-sm-4.col-md-3.col-lg-6
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-1.jpg", alt="")
+															span.other-item__rubric Dominator
+															h3.other-item__title
+																| Dominator 680
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-6
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-2.jpg", alt="")
+															span.other-item__rubric Nordhavn
+															h3.other-item__title
+																| Nordhavn 40
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 980 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-6
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-3.jpg", alt="")
+															span.other-item__rubric Serious
+															h3.other-item__title
+																| Gently 36'
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+													li.col-6.col-sm-4.col-md-3.col-lg-6
+														a(href="#").other-item
+															figure.other-item__image
+																img(src="img/img-boat-4.jpg", alt="")
+															span.other-item__rubric Jetten
+															h3.other-item__title
+																| 38 Cabrio
+																span.other-item__compare
+																	+icon('ico-compare')
+															em.other-item__price от €2 530 000,–
+															p.other-item__text Длина: 12,5 м<br>Ширина: 4,16 м<br>Осадка: 0,8 м
+
+
+													// Other :: End
+
+												.other__ctrl
+													a(href="#").btn.btn-dark-empty Все предложения
+						
+					// Snipyard :: End
+							
+							
+
+
+	// xl :: End
