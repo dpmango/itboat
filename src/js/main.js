@@ -2,7 +2,128 @@ $(document).ready(function(){
 
 
     // --------------------------------------------------------------------------
-    // ui-displa
+    // ui-multiple
+    // --------------------------------------------------------------------------
+
+    $('.ui-multiple').on('click', '.ui-multiple-trigger', function(event) {
+        event.preventDefault();
+        if( $(this).is('.is-active')) {
+            $(this).removeClass('is-active').closest('.ui-multiple').removeClass('is-open');
+        }
+        else {
+            $(this).addClass('is-active').closest('.ui-multiple').addClass('is-open');
+        }
+    });
+
+    $('.ui-multiple').each(function () {
+
+        var multiple            = $(this),
+            multiplePlaceholder = multiple.data('placeholder'),
+            multipleIcon        = multiple.find('.ui-multiple-trigger-icon'),
+            multipleText        = multiple.find('.ui-multiple-trigger-text'),
+            multipleLength      = multiple.find('.ui-multiple-input:checked').length;
+
+        multipleText.html(multiplePlaceholder);
+
+
+
+    });
+
+
+    $('.ui-multiple').on('change', '.ui-multiple-input', function(event) {
+        var multiple            = $(this).closest('.ui-multiple'),
+            multiplePlaceholder = multiple.data('placeholder'),
+            multipleIcon        = multiple.find('.ui-multiple-trigger-icon'),
+            multipleText        = multiple.find('.ui-multiple-trigger-text'),
+            multipleLength      = multiple.find('.ui-multiple-input:checked').length,
+
+            multipleCheck       = multiple.find('.ui-multiple-input:checked'),
+            multipleCheckText   = multipleCheck.parent().find('.ui-multiple-text').html(),
+            multipleCheckIcon   = multipleCheck.parent().find('.ui-multiple-icon').html(),
+
+            multipleOne = multiple.find('.ui-multiple-input:checked');
+
+
+        if (multipleLength == 0) {
+
+            multipleText.html(multiplePlaceholder);
+            multiple.removeClass('is-change is-one');
+
+        }
+
+        else if( multipleLength == 1 ) {
+
+            multipleIcon.html(multipleCheckIcon);
+            multipleText.html(multipleCheckText);
+            multiple.addClass('is-change is-one');
+
+        }
+
+        else {
+            multipleText.html(multipleLength + ' выбрано');
+            multiple.removeClass('is-one');
+        }
+        
+        console.log(multipleOne)
+
+        // if( multipleLength > 1 ) {
+        //     multipleText.html(multipleLength + ' выбрано');
+        //     multiple.addClass('is-change');
+        // }
+        // // else if ( multipleLength > 1 )
+        // else {
+        //     multipleText.html(multipleCheckText);
+        //     multipleIcon.html(multipleCheckIcon);
+        //     multiple.removeClass('is-change');
+        // }
+
+    });
+
+
+
+    $('body').on( 'click', function(event) {
+
+        if($(event.target).closest('.ui-multiple').length==0) {
+            $('.ui-multiple, .ui-multiple-trigger').removeClass('is-open is-active');
+        }
+
+    });
+
+
+    $('.ui-multiple-search').on('keyup', function(event) {
+        var valThis = this.value.toLowerCase(),
+            lenght  = this.value.length;
+
+
+        $('.ui-multiple-text').each(function () {
+            var text  = $(this).text(),
+                textL = text.toLowerCase(),
+                htmlR = '<b>' + text.substr(0, lenght) + '</b>' + text.substr(lenght);
+
+                if (textL.indexOf(valThis) == 0) {
+                    $(this).html(htmlR).closest('li').show();
+                }
+                else {
+                    $(this).closest('li').hide();
+                }
+
+                elLength = $('.ui-multiple-text').length,
+                elLengthVisible = $('.ui-multiple-text:visible').length;
+
+                if (elLengthVisible == 0) $(this).closest('.ui-multiple').addClass('is-empty');
+                else $(this).closest('.ui-multiple').removeClass('is-empty');
+                console.log(elLengthVisible)
+
+                // if ( $('.ui-multiple-text') )
+
+           // (textL.indexOf(valThis) == 0) ? $(this).html(htmlR).closest('li').show() : $(this).closest('li').hide();
+            
+
+        });
+    });
+
+    // --------------------------------------------------------------------------
+    // ui-display
     // --------------------------------------------------------------------------
 
      $('.ads__filter-group').on('change', '.ui-check__input', function(event) {
@@ -422,22 +543,11 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    // Galllery Full In Popup - Zoom
-
-
-
     // Gallery Full In Popup
+
+
+
+    // Gallery Full In Popup - Slides
 
     var galleryFull = $('.js-gallery-full'),
         galleryFullSlides = galleryFull.find('.js-gallery-full-slides'),
@@ -449,324 +559,32 @@ $(document).ready(function(){
 
     // Galllery Full In Popup - Zoom
 
-    // $(document).on('click', '.gallery-full__zoom', function(event){
-    //     event.preventDefault();
-
-    //     var pswpElement = $('.pswp')[0];
-
-    //     var item = [{
-    //         src: $(this).attr('href'),
-    //         w: $(this).data('width'),
-    //         h: $(this).data('height')
-    //       }];
-
-    //     var options = {
-    //         index: 1,
-    //         bgOpacity:1,
-    //         showHideOpacity: true
-    //       };
-
-    //     var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, item, options);
-
-    //     gallery.init();
-    // });
-
-
-    var initPhotoSwipeFromDOM = function(gallerySelector) {
-
-            var parseThumbnailElements = function(el) {
-
-                var thumbElements = el.childNodes,
-                    numNodes = thumbElements.length,
-                    items = [],
-                    el,
-                    childElements,
-                    thumbnailEl,
-                    size,
-                    item;
-
-                for(var i = 0; i < numNodes; i++) {
-                    el = thumbElements[i];
-
-                    // include only element nodes 
-                    if(el.nodeType !== 1) {
-                      continue;
-                    }
-
-                    console.log(el)
-
-                    childElements = el.children;
-
-                    size = el.getAttribute('data-size').split('x');
-
-                    // create slide object
-                    item = {
-                        src: el.getAttribute('href'),
-                        w: parseInt(size[0], 10),
-                        h: parseInt(size[1], 10),
-                        author: el.getAttribute('data-author')
-                    };
-
-                    item.el = el; // save link to element for getThumbBoundsFn
-
-                    if(childElements.length > 0) {
-                      item.msrc = childElements[0].getAttribute('src'); // thumbnail url
-                      if(childElements.length > 1) {
-                          item.title = childElements[1].innerHTML; // caption (contents of figure)
-                      }
-                    }
-
-
-                    // var mediumSrc = el.getAttribute('data-med');
-                    // if(mediumSrc) {
-                    //     size = el.getAttribute('data-med-size').split('x');
-                    //     // "medium-sized" image
-                    //     item.m = {
-                    //         src: mediumSrc,
-                    //         w: parseInt(size[0], 10),
-                    //         h: parseInt(size[1], 10)
-                    //     };
-                    // }
-                    // original image
-                    item.o = {
-                        src: item.src,
-                        w: item.w,
-                        h: item.h
-                    };
-
-                    items.push(item);
-                }
-
-                return items;
-            };
-
-            // find nearest parent element
-            var closest = function closest(el, fn) {
-                return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-            };
-
-            var onThumbnailsClick = function(e) {
-                e = e || window.event;
-                e.preventDefault ? e.preventDefault() : e.returnValue = false;
-
-                var eTarget = e.target || e.srcElement;
-
-                var clickedListItem = closest(eTarget, function(el) {
-                    return el.tagName === 'A';
-                });
-
-                if(!clickedListItem) {
-                    return;
-                }
-
-                var clickedGallery = clickedListItem.parentNode;
-
-                var childNodes = clickedListItem.parentNode.childNodes,
-                    numChildNodes = childNodes.length,
-                    nodeIndex = 0,
-                    index;
-
-                for (var i = 0; i < numChildNodes; i++) {
-                    if(childNodes[i].nodeType !== 1) { 
-                        continue; 
-                    }
-
-                    if(childNodes[i] === clickedListItem) {
-                        index = nodeIndex;
-                        break;
-                    }
-                    nodeIndex++;
-                }
-
-                if(index >= 0) {
-                    openPhotoSwipe( index, clickedGallery );
-                }
-                return false;
-            };
-
-            var photoswipeParseHash = function() {
-                var hash = window.location.hash.substring(1),
-                params = {};
-
-                if(hash.length < 5) { // pid=1
-                    return params;
-                }
-
-                var vars = hash.split('&');
-                for (var i = 0; i < vars.length; i++) {
-                    if(!vars[i]) {
-                        continue;
-                    }
-                    var pair = vars[i].split('=');  
-                    if(pair.length < 2) {
-                        continue;
-                    }           
-                    params[pair[0]] = pair[1];
-                }
-
-                if(params.gid) {
-                    params.gid = parseInt(params.gid, 10);
-                }
-
-                return params;
-            };
-
-            var openPhotoSwipe = function(index, galleryElement) {
-                var pswpElement = document.querySelectorAll('.pswp')[0],
-                    gallery,
-                    options,
-                    items;
-
-                items = parseThumbnailElements(galleryElement);
-
-                // define options (if needed)
-                options = {
-
-                    galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-                    getThumbBoundsFn: function(index) {
-                        // See Options->getThumbBoundsFn section of docs for more info
-                        var thumbnail = items[index].el.children[0],
-                            pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                            rect = thumbnail.getBoundingClientRect(); 
-
-                        return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-                    },
-
-                    // addCaptionHTMLFn: function(item, captionEl, isFake) {
-                    //     if(!item.title) {
-                    //         captionEl.children[0].innerText = '';
-                    //         return false;
-                    //     }
-                    //     captionEl.children[0].innerHTML = item.title +  '<br/><small>Photo: ' + item.author + '</small>';
-                    //     return true;
-                    // },
-                    
-                };
-
-
-                // if(fromURL) {
-                //     if(options.galleryPIDs) {
-                //         // parse real index when custom PIDs are used 
-                //         // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                //         for(var j = 0; j < items.length; j++) {
-                //             if(items[j].pid == index) {
-                //                 options.index = j;
-                //                 break;
-                //             }
-                //         }
-                //     } else {
-                //         options.index = parseInt(index, 10) - 1;
-                //     }
-                // } else {
-                //     options.index = parseInt(index, 10);
-                // }
-
-                // // exit if index not found
-                // if( isNaN(options.index) ) {
-                //     return;
-                // }
-
-
-
-                // var radios = document.getElementsByName('gallery-style');
-
-                // for (var i = 0, length = radios.length; i < length; i++) {
-                //     if (radios[i].checked) {
-                //         if(radios[i].id == 'radio-all-controls') {
-
-                //         } else if(radios[i].id == 'radio-minimal-black') {
-                //             options.mainClass = 'pswp--minimal--dark';
-                //             options.barsSize = {top:0,bottom:0};
-                //             options.captionEl = false;
-                //             options.fullscreenEl = false;
-                //             options.shareEl = false;
-                //             options.bgOpacity = 0.85;
-                //             options.tapToClose = true;
-                //             options.tapToToggleControls = false;
-                //         }
-                //         break;
-                //     }
-                // }
-
-                // if(disableAnimation) {
-                //     options.showAnimationDuration = 0;
-                // }
-
-                // Pass data to PhotoSwipe and initialize it
-                gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-
-                // see: http://photoswipe.com/documentation/responsive-images.html
-                // var realViewportWidth,
-                //     useLargeImages = false,
-                //     firstResize = true,
-                //     imageSrcWillChange;
-
-                // gallery.listen('beforeResize', function() {
-
-                //     var dpiRatio = window.devicePixelRatio ? window.devicePixelRatio : 1;
-                //     dpiRatio = Math.min(dpiRatio, 2.5);
-                //     realViewportWidth = gallery.viewportSize.x * dpiRatio;
-
-
-                //     if(realViewportWidth >= 1200 || (!gallery.likelyTouchDevice && realViewportWidth > 800) || screen.width > 1200 ) {
-                //         if(!useLargeImages) {
-                //             useLargeImages = true;
-                //             imageSrcWillChange = true;
-                //         }
-                        
-                //     } else {
-                //         if(useLargeImages) {
-                //             useLargeImages = false;
-                //             imageSrcWillChange = true;
-                //         }
-                //     }
-
-                //     if(imageSrcWillChange && !firstResize) {
-                //         gallery.invalidateCurrItems();
-                //     }
-
-                //     if(firstResize) {
-                //         firstResize = false;
-                //     }
-
-                //     imageSrcWillChange = false;
-
-                // });
-
-                // gallery.listen('gettingData', function(index, item) {
-                //     if( useLargeImages ) {
-                //         item.src = item.o.src;
-                //         item.w = item.o.w;
-                //         item.h = item.o.h;
-                //     } else {
-                //         item.src = item.m.src;
-                //         item.w = item.m.w;
-                //         item.h = item.m.h;
-                //     }
-                // });
-
-                gallery.init();
-            };
-
-            // select all gallery elements
-            var galleryElements = document.querySelectorAll( gallerySelector );
-            for(var i = 0, l = galleryElements.length; i < l; i++) {
-                galleryElements[i].setAttribute('data-pswp-uid', i+1);
-                galleryElements[i].onclick = onThumbnailsClick;
-            }
-
-            // Parse URL and open gallery if it contains #&pid=3&gid=1
-            var hashData = photoswipeParseHash();
-            if(hashData.pid && hashData.gid) {
-                openPhotoSwipe( hashData.pid,  galleryElements[ hashData.gid - 1 ], true, true );
-            }
-        };
-
-
-    initPhotoSwipeFromDOM('.gallery-full__image');
-
-
+    $('[data-fancybox="gallery"]').fancybox({
+        loop : true,
+        buttons : [
+            'close'
+        ],
+        transitionEffect: 'slide',
+        btnTpl : {
+            close : '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+                        '<svg class="ico ico-close"><use xlink:href="img/sprite.svg#ico-close"></use></svg>' +
+                    '</button>',
+            arrowLeft : '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+                        '<svg class="ico ico-prev"><use xlink:href="img/sprite.svg#ico-prev"></use></svg>' +
+                      '</button>',
+
+            arrowRight : '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+                      '<svg class="ico ico-next"><use xlink:href="img/sprite.svg#ico-next"></use></svg>' +
+                    '</button>'
+        },
+      
+        beforeClose : function ( current ) {
+            // galleryFullSlides.trigger('to.owl.carousel', [current.id - 1, 100, false]);
+            // console.log(current.id)
+        }
+
+    });
+    
     // Gallery Full In Popup - COUNTER (x/x)
 
     galleryFullSlides.each(function(){
@@ -782,7 +600,6 @@ $(document).ready(function(){
 
 
     // Gallery Full In Popup - Thumbs & Dots
-
 
      galleryFullSlides.on('initialized.owl.carousel changed.owl.carousel', function (event) {
 
@@ -907,15 +724,79 @@ $(document).ready(function(){
     });
 
 
+    // ------
+
+
+    $('.js-carousel-compare').each(function(){
+
+        var compareLength = $(this).find('.compare-item').length;
+
+        $('.js-compare-count').html('Выбрано ' + compareLength + ' лодок');
+
+        $(this).find('.compare-item').each(function(i){
+            var compareIndex = i++;
+            $(this).attr({'data-index': compareIndex});
+        });
+
+    });
+
+    $('.js-carousel-compare').owlCarousel({
+        items: 2,
+        loop: false,
+        nav: true,
+        dots: false,
+        margin: 20,
+        rewind: true,
+        navText: [iconPrev,iconNext],
+        responsive: {
+            768: {
+                items: 3
+            },
+            992: {
+                items: 3,
+                stagePadding: 20
+            },
+            1200: {
+                items: 4,
+                stagePadding: 20
+            }
+            
+        }
+    });
+
+    $('.js-carousel-compare').on('click', '.compare-item__delete', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+
+        var indexLength = $('.js-carousel-compare').find('.compare-item').length;
+        var indexDelete = $(this).closest('.compare-item').data('index');
+
+        $('.js-carousel-compare').trigger('remove.owl.carousel', indexDelete).trigger('refresh.owl.carousel');
+
+        if(indexLength <= 1) {
+            $('.compare-wrapper').addClass('is-empty');
+        }
+
+
+     
+    });
+
+    // $('.js-carousel-compare').trigger('remove.owl.carousel', 2).trigger('refresh.owl.carousel');
+
+
     // --------------------------------------------------------------------------
     // Formstyler
     // --------------------------------------------------------------------------
 
     $('.ui-select, .ui-number').styler({
         selectSmartPositioning: false,
-        selectSearch: false,
+        selectSearch: true,
         selectVisibleOptions: 0,
-        selectSearchLimit: 6
+        selectSearchLimit: 10,
+        onSelectOpened: function() {
+            $(this).find('.jq-selectbox__search input').focus()
+        }
     });
 
     // --------------------------------------------------------------------------
@@ -1317,46 +1198,19 @@ $(document).ready(function(){
           }
     });
 
-   
 
 
-
-
-
-     $(document).on('click', '[data-mfp-close]', function(event) {
+    $(document).on('click', '[data-mfp-close]', function(event) {
         event.preventDefault();
         $.magnificPopup.close();
     });
 
 
+    // Fixed
 
-
-
-
-    // Scroll Effect Fixed
-
-
-        controller = new ScrollMagic.Controller({
-            globalSceneOptions: {
-                triggerHook: 'onLeave'
-            }
-        });
-
-        var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
-
-        var comingScene = new ScrollMagic.Scene({triggerElement: ".js-fixed-container", duration: fixedDuration, offset: -20})
-            .setPin('.js-fixed')
-            .addTo(controller);
-
-
-
-        $(window).on("resize", function() {
-
-            var fixedDuration = $('.js-fixed-container').innerHeight() - $('.js-fixed').innerHeight();
-            comingScene.duration(fixedDuration);
-
-
-        });
+    $('.js-fixed').stick_in_parent({
+        offset_top: 20
+    });
 
    
 

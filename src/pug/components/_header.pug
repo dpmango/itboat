@@ -65,11 +65,22 @@ header.header
                             +icon('ico-compare')
                             | СРАВНЕНИЕ (9)
 
-                //- .auth-user
-                //-     a(href="#").auth-user__link
-                //-         span.auth-user__name Новиков Д.
-                //-         figure.auth-user__photo
-                //-     a(href="#").auth-user__exit Выход
+                .auth
+
+                    .auth-user
+                        a(href="#").auth-user__link
+                            span.auth-user__name Новиков Д.
+                            figure.auth-user__photo
+                           
+                        ul.auth-user__menu
+                            li
+                                a(href="#").auth-user__menu-link Профиль
+                            li
+                                a(href="#").auth-user__menu-link Объявления
+                            li
+                                a(href="#").auth-user__menu-link Компании
+                   
+                    a(href="#").auth__link Выход
 
                 ul.auth
                     li

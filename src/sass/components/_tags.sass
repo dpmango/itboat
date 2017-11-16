@@ -4,9 +4,16 @@
 	max-width: 940px
 	margin: 0 auto 38px
 	display: flex
+	align-items: center
 	flex-wrap: wrap
 	justify-content: center
 
+.tags__text
+	margin: 0
+	font-size: 16px
+	font-weight: 700
+	display: block
+	margin: 0 2.5px 5px
 
 .tags__btn
 	transition: .25s
@@ -58,7 +65,7 @@
 
 .tags-group__menu
 	margin: 0 -25px
-	padding: 0
+	padding: 0 25px 0 0
 	list-style: none
 	text-align: center
 	line-height: 1
@@ -69,7 +76,7 @@
 		margin: 0 0 10px
 		padding: 0 25px
 		+rmin($mobile)
-			width: 50%
+			// width: 50%
 		+rmin($tablet)
 			width: 33.333%
 		+rmin($desktop)

@@ -6,8 +6,8 @@
 		padding: 0
 		top: -52px
 	.shipyard
-		margin: 14px 0 0
-		padding-top: 62px
+		margin: 19px 0 0
+		padding-top: 67px
 		&:after
 			content: ''
 			display: block
@@ -91,16 +91,24 @@
 		bottom: 0
 		left: 0
 		right: 0
+		+r($desktop)
+			flex-wrap: nowrap
 			
 	.owl-dot
 		display: block
 		width: 8px
 		height: 8px
-		border-radius: 50%;
+		border-radius: 50%
 		margin: 2.5px 10px
 		background: #E0E0E0
+		overflow: hidden
 		&.active
 			background: #000
+		+r($desktop)
+			margin: 2.5px
+			width: 4px
+			height: 4px
+			min-width: 4px
 	.owl-prev, .owl-next
 		transition: .25s
 		position: absolute
@@ -133,7 +141,7 @@
 .catalog-item
 	display: block
 	color: #222
-	border: 1px solid #e0e0e0;
+	border: 1px solid #e0e0e0
 	border-radius: 6px
 	overflow: hidden
 	text-align: center
@@ -143,10 +151,13 @@
 	// max-width: 280px
 	margin: 0 auto
 	background: #FFFFFF
+	transition: .25s
 	&:hover
-		color: #222
+		color: #1ea0e4
+		border-color: #999
+		box-shadow: 0 5px 30px rgba(1, 23, 47, 0.3);
 		.catalog-item__title
-			text-decoration: underline
+			// text-decoration: underline
 
 .catalog-item__image
 	margin: 0 0 2px
@@ -202,7 +213,7 @@
 
 .catalog-item__title
 	display: block
-	margin: 0
+	margin: 0 0 2px
 	font-size: 16px
 	line-height: 22px
 	font-weight: 700

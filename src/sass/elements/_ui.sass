@@ -1,5 +1,14 @@
 // UI
 
+.ui-error
+    font-size: 12px
+    line-height: 1
+    display: block
+    color: #ffa826
+    margin: 0 0 10px
+    position: relative
+    top: -5px
+
 
 .ui-progress
     position: relative
@@ -182,12 +191,13 @@
     border: 1px solid #e0e0e0
     background: #fff
     border-radius: 4px
-    padding: 15px 10px
+    padding: 10px 10px
     margin: 0 0 10px
     &::placeholder
-        // color: #999999
-        color: #000
+        color: #999999
         transition: opacity .25s
+    &:hover
+        border-color: #999
     &:focus
         border-color: rgba(#212121,0.5)
         &::placeholder
@@ -414,8 +424,8 @@
 .ui-select
     width: 100%
     margin: 0 0 10px
-    display: inline-block;
-    position: relative;
+    display: inline-block
+    position: relative
     z-index: 10;
     cursor: pointer
     select
@@ -442,6 +452,9 @@
             transform: rotate(180deg)
         .jq-selectbox__select
             border-color: rgba(#212121,0.5)
+        .jq-selectbox__select
+            border-radius: 4px 4px 0 0
+
     &.disabled
         cursor: default
         .jq-selectbox__select
@@ -456,6 +469,9 @@
         @extend .ui-input
         margin: 0
         padding-right: 30px
+        &:hover
+            .jq-selectbox__trigger-arrow
+                color: #212121
 
     .jq-selectbox__select-text
         overflow: hidden
@@ -474,24 +490,27 @@
         align-items: center
         justify-content: center
         transition: .25s
+        z-index: 10
 
     .jq-selectbox__trigger-arrow
         font-size: 6px
         color: #999999
+        transition: .25s
 
     .jq-selectbox__dropdown
         position: absolute
         top: 100%
         left: 0
         right: 0
-        border: 1px solid #e0e0e0
+        border: 1px solid #999999
         background: #fff
-        border-radius: 4px
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15)
-        margin: 10px 0 0
-        overflow: hidden
+        border-radius: 0 0 4px 4px
+        // box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15)
+        margin: -1px 0 0
+        padding: 5px 0
+        // overflow: hidden
         font-size: 14px
-        line-height: 18px
+        line-height: 20px
 
         ul
             position: relative
@@ -501,19 +520,204 @@
             -webkit-overflow-scrolling: touch
             // max-height: 252px !important
         li
-            padding: 10px
+            transition: .25s
+            padding: 5px 10px
             color: #4c4c4c
             cursor: pointer
             &:hover
-                background: #f3faff
+                background: #999999
+                color: #fff
 
     .jq-selectbox__search
+        position: absolute
+        top: -35px
+        left: 0
+        width: 100%
+        height: 30px
         input
+            width: 100%
+            height: 100%
+            border: none
+            padding: 5px 10px
             -webkit-appearance: textfield
+            font-size: 14px
+            line-height: 20px
+            height: 30px
             &::-webkit-search-cancel-button, &::-webkit-search-decoration
                 -webkit-appearance: none
 
+    .jq-selectbox__not-found
+        text-align: center
+        padding: 10px
+        font-size: 14px
+        line-height: 20px
+        color: #999
 
+    .ui-select__bold
+        font-weight: 700
+
+    &.ui-select__bold .jq-selectbox__select
+        font-weight: 700
+
+
+// -----
+
+.ui-multiple
+    position: relative
+    &:hover
+        .ui-multiple-trigger-arrow
+            color: #212121
+
+    &.is-one
+        .ui-multiple-trigger-icon
+            display: block
+
+    &.is-change
+        .ui-multiple-trigger
+            color: #222
+            font-weight: 700
+
+    &.is-open
+        .ui-multiple-trigger
+            border-color: #999
+            border-radius: 4px 4px 0 0
+        .ui-multiple-trigger-arrow
+            transform: rotate(180deg)
+        .ui-multiple-dropdown
+            opacity: 1
+            visibility: visible
+
+    .ico-info-people
+        font-size: (45px / 2.2)
+    .ico-info-rooms
+        font-size: (42px / 2.2)
+    .ico-info-beds
+        font-size: (29px / 2.2)
+    .ico-info-team
+        font-size: (35px / 2.2)
+    .ico-info-material
+        font-size: (35px / 2.2)
+    .ico-info-class-c
+        font-size: (34px / 2.2)
+    .ico-info-design
+        font-size: (15px / 2.2)
+    .ico-info-new
+        font-size: (43px / 2.2)
+    .ico-info-water
+        font-size: (24px / 2.2)
+    .ico-info-fbv
+        font-size: (41px / 2.2)
+    .ico-info-bathrooms
+        font-size: (45px / 2.2)
+
+    .ico-engine-1
+        font-size: (50px / 2.2)
+    .ico-engine-2
+        font-size: (22px / 2.2)
+    .ico-engine-3
+        font-size: (44px / 2.2)
+
+.ui-multiple-trigger
+    @extend .ui-input
+    height: 40px
+    text-align: left
+    position: relative
+    padding-right: 30px
+    color: #999
+    cursor: pointer
+    display: flex
+    align-items: center
+    &-icon
+        display: none
+        margin: 0 10px 0 0
+        
+    &-text
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    &-arrow
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 6px
+        color: #999
+        position: absolute
+        top: 0
+        right: 0
+        height: 100%
+        width: 30px
+        transition: .25s
+
+.ui-multiple-dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    margin: -1px 0 0
+    background: #fff
+    z-index: 100
+    border: 1px solid #999
+    border-radius: 0 0 4px 4px
+    padding: 10px 0
+    opacity: 0
+    visibility: hidden
+    
+
+.ui-multiple-list
+    margin: 0
+    padding: 0
+    list-style: none
+
+.ui-multiple-check
+    position: relative
+    display: flex
+    font-size: 14px
+    line-height: 20px
+    padding: 5px 10px
+    color: #212121
+    transition: .25s
+    cursor: pointer
+    
+    &:hover
+        background: #999
+        color: #fff
+        .ui-multiple-icon
+            color: inherit
+
+.ui-multiple-input
+    position: absolute
+    top: 0
+    left: 0
+    visibility: hidden
+    &:checked ~ .ui-multiple-checkbox .ico
+        opacity: 1
+
+.ui-multiple-checkbox
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 20px
+    height: 20px
+    border-radius: 4px
+    border: 1px solid #e0e0e0
+    background: #fff
+    font-size: 10px
+    color: #1ea0e4
+    margin: 0 10px 0 0
+    .ico
+        opacity: 0
+        transition: .25s
+
+.ui-multiple-icon
+    width: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 10px 0 0
+    color: #4D4D4D
+
+// -----
 
 
 .ui-number

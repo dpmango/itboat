@@ -1,0 +1,543 @@
+---
+title: Сравнение
+bodyClass: page-compare
+---
+extends shared/_layout
+block content
+	
+	// Compare :: Start
+
+	.compare
+		.container-fluid
+
+			.breadcrumbs
+				ul.breadcrumbs__menu
+					li
+						a(href="#").breadcrumbs__link Главная
+					li
+						a(href="#").breadcrumbs__link.is-active Сравнение
+
+			h2.compare-heading Сравнение
+			em.compare-caption Lorem ipsum dolor sit amet, consectetur adipisicing elit
+
+			.compare-wrapper
+
+				p.compare-empty Вы удалили все из сравнения
+
+				.compare-labels
+
+					span.compare-labels__obj
+					
+					ul.compare-labels__progress
+						li Длина, м
+						li Ширина, м
+						li Осадка, м
+						li Вес, т
+						li Возоизмещение, т
+						li Запас топлива, л
+						li Запас воды, л
+						li Максимально, уз
+						li Крейсерская, уз
+
+					ul.compare-labels__info
+						li Макс. пассажиров
+						li Гостевые каюты
+						li Гостевые места
+						li Экипаж 
+						li Каюты экипажа
+						li Санузлы
+						li Материал корпуса
+						li Класс CE
+						li Тип корпуса
+						li Дизайн
+						li 
+							p.compare-labels__engine Привод
+
+					p.compare-labels__price Цена
+				
+				.compare-carousel-counter.js-compare-count Выбрано X лодок
+
+				.compare-carousel.owl-carousel.js-carousel-compare
+
+					.compare-item
+						
+						a(href="#").compare-item__obj
+							figure.compare-item__image
+								img(src="img/img-boat-1.jpg", alt="")
+							.compare-item__desc
+								button.compare-item__delete
+									+icon('ico-delete')
+								h2.compare-item__title Bavaria 42 cruiser
+								p.compare-item__country
+									img(src="img/img-country-1.png", alt="")
+									| Австрия 
+
+						ul.compare-item__progress
+							li
+								.ui-progress
+									.ui-progress__label Длина, м
+									.ui-progress__count 47
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 47%")
+							li
+								.ui-progress
+									.ui-progress__label Ширина, м
+									.ui-progress__count 5
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 55%")
+
+							li
+								.ui-progress
+									.ui-progress__label Осадка, м
+									.ui-progress__count 2
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 80%")
+
+							li
+								.ui-progress
+									.ui-progress__label Вес, т
+									.ui-progress__count 10
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 30%")
+
+							li
+								.ui-progress
+									.ui-progress__label Возоизмещение, т
+									.ui-progress__count 40
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас топлива, л
+									.ui-progress__count 300
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 10%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас воды, л
+									.ui-progress__count 200
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 25%")
+
+							li
+								.ui-progress
+									.ui-progress__label Максимально, уз
+									.ui-progress__count 27
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 85%")
+
+							li
+								.ui-progress
+									.ui-progress__label Крейсерская, уз
+									.ui-progress__count 20
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+						ul.compare-item__info
+							li(data-label="Макс. пассажиров") 8
+							li(data-label="Гостевые каюты") 2
+							li(data-label="Гостевые места") 2
+							li(data-label="Экипаж") 2
+							li(data-label="Каюты экипажа") 1
+							li(data-label="Санузлы") 1
+							li(data-label="Материал корпуса") Углепластик
+							li(data-label="Класс CE") A
+							li(data-label="Тип корпуса") Водоизмещающий
+							li(data-label="Дизайн") Модерн
+							li(data-label="Привод")
+								p.compare-item__engine Подвесной мотор: 2х370 л.с. Volvo Penta DG-370
+
+						p.compare-item__price(data-label="Цена") €150 000,–
+					
+					.compare-item
+						
+						a(href="#").compare-item__obj
+							figure.compare-item__image
+								img(src="img/img-boat-2.jpg", alt="")
+							.compare-item__desc
+								button.compare-item__delete
+									+icon('ico-delete')
+								h2.compare-item__title Greenline 34
+								p.compare-item__country
+									img(src="img/img-country-2.png", alt="")
+									| Андора
+
+						ul.compare-item__progress
+							li
+								.ui-progress
+									.ui-progress__label Длина, м
+									.ui-progress__count 47
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 47%")
+							li
+								.ui-progress
+									.ui-progress__label Ширина, м
+									.ui-progress__count 5
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 55%")
+
+							li
+								.ui-progress
+									.ui-progress__label Осадка, м
+									.ui-progress__count 2
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 80%")
+
+							li
+								.ui-progress
+									.ui-progress__label Вес, т
+									.ui-progress__count 10
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 30%")
+
+							li
+								.ui-progress
+									.ui-progress__label Возоизмещение, т
+									.ui-progress__count 40
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас топлива, л
+									.ui-progress__count 300
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 10%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас воды, л
+									.ui-progress__count 200
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 25%")
+
+							li
+								.ui-progress
+									.ui-progress__label Максимально, уз
+									.ui-progress__count 27
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 85%")
+
+							li
+								.ui-progress
+									.ui-progress__label Крейсерская, уз
+									.ui-progress__count 20
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+						ul.compare-item__info
+							li(data-label="Макс. пассажиров") 8
+							li(data-label="Гостевые каюты") 2
+							li(data-label="Гостевые места") 2
+							li(data-label="Экипаж") 2
+							li(data-label="Каюты экипажа") 1
+							li(data-label="Санузлы") 1
+							li(data-label="Материал корпуса") Углепластик
+							li(data-label="Класс CE") A
+							li(data-label="Тип корпуса") Водоизмещающий
+							li(data-label="Дизайн") Модерн
+							li(data-label="Привод")
+								p.compare-item__engine Подвесной мотор: 2х370 л.с. Volvo Penta DG-370
+
+						p.compare-item__price(data-label="Цена") €150 000,–
+			
+					.compare-item
+
+						a(href="#").compare-item__obj
+							figure.compare-item__image
+								img(src="img/img-boat-3.jpg", alt="")
+							.compare-item__desc
+								button.compare-item__delete
+									+icon('ico-delete')
+								h2.compare-item__title Bavaria 42 cruiser
+								p.compare-item__country
+									img(src="img/img-country-3.png", alt="")
+									| Боливия
+
+						ul.compare-item__progress
+							li
+								.ui-progress
+									.ui-progress__label Длина, м
+									.ui-progress__count 47
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 47%")
+							li
+								.ui-progress
+									.ui-progress__label Ширина, м
+									.ui-progress__count 5
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 55%")
+
+							li
+								.ui-progress
+									.ui-progress__label Осадка, м
+									.ui-progress__count 2
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 80%")
+
+							li
+								.ui-progress
+									.ui-progress__label Вес, т
+									.ui-progress__count 10
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 30%")
+
+							li
+								.ui-progress
+									.ui-progress__label Возоизмещение, т
+									.ui-progress__count 40
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас топлива, л
+									.ui-progress__count 300
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 10%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас воды, л
+									.ui-progress__count 200
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 25%")
+
+							li
+								.ui-progress
+									.ui-progress__label Максимально, уз
+									.ui-progress__count 27
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 85%")
+
+							li
+								.ui-progress
+									.ui-progress__label Крейсерская, уз
+									.ui-progress__count 20
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+						ul.compare-item__info
+							li(data-label="Макс. пассажиров") 8
+							li(data-label="Гостевые каюты") 2
+							li(data-label="Гостевые места") 2
+							li(data-label="Экипаж") 2
+							li(data-label="Каюты экипажа") 1
+							li(data-label="Санузлы") 1
+							li(data-label="Материал корпуса") Углепластик
+							li(data-label="Класс CE") A
+							li(data-label="Тип корпуса") Водоизмещающий
+							li(data-label="Дизайн") Модерн
+							li(data-label="Привод")
+								p.compare-item__engine Подвесной мотор: 2х370 л.с. Volvo Penta DG-370
+
+						p.compare-item__price(data-label="Цена") €150 000,–
+					
+					.compare-item
+
+						a(href="#").compare-item__obj
+							figure.compare-item__image
+								img(src="img/img-boat-4.jpg", alt="")
+							.compare-item__desc
+								button.compare-item__delete
+									+icon('ico-delete')
+								h2.compare-item__title Bavaria 42 cruiser
+								p.compare-item__country
+									img(src="img/img-country-4.png", alt="")
+									| Австрия 
+
+						ul.compare-item__progress
+							li
+								.ui-progress
+									.ui-progress__label Длина, м
+									.ui-progress__count 47
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 47%")
+							li
+								.ui-progress
+									.ui-progress__label Ширина, м
+									.ui-progress__count 5
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 55%")
+
+							li
+								.ui-progress
+									.ui-progress__label Осадка, м
+									.ui-progress__count 2
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 80%")
+
+							li
+								.ui-progress
+									.ui-progress__label Вес, т
+									.ui-progress__count 10
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 30%")
+
+							li
+								.ui-progress
+									.ui-progress__label Возоизмещение, т
+									.ui-progress__count 40
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас топлива, л
+									.ui-progress__count 300
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 10%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас воды, л
+									.ui-progress__count 200
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 25%")
+
+							li
+								.ui-progress
+									.ui-progress__label Максимально, уз
+									.ui-progress__count 27
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 85%")
+
+							li
+								.ui-progress
+									.ui-progress__label Крейсерская, уз
+									.ui-progress__count 20
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+						ul.compare-item__info
+							li(data-label="Макс. пассажиров") 8
+							li(data-label="Гостевые каюты") 2
+							li(data-label="Гостевые места") 2
+							li(data-label="Экипаж") 2
+							li(data-label="Каюты экипажа") 1
+							li(data-label="Санузлы") 1
+							li(data-label="Материал корпуса") Углепластик
+							li(data-label="Класс CE") A
+							li(data-label="Тип корпуса") Водоизмещающий
+							li(data-label="Дизайн") Модерн
+							li(data-label="Привод")
+								p.compare-item__engine Подвесной мотор: 2х370 л.с. Volvo Penta DG-370
+
+						p.compare-item__price(data-label="Цена") €150 000,–
+			
+					.compare-item
+						
+						a(href="#").compare-item__obj
+							figure.compare-item__image
+								img(src="img/img-boat-5.jpg", alt="")
+							.compare-item__desc
+								button.compare-item__delete
+									+icon('ico-delete')
+								h2.compare-item__title Greenline 34
+								p.compare-item__country
+									img(src="img/img-country-5.png", alt="")
+									| Австрия 
+
+						ul.compare-item__progress
+							li
+								.ui-progress
+									.ui-progress__label Длина, м
+									.ui-progress__count 47
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 47%")
+							li
+								.ui-progress
+									.ui-progress__label Ширина, м
+									.ui-progress__count 5
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 55%")
+
+							li
+								.ui-progress
+									.ui-progress__label Осадка, м
+									.ui-progress__count 2
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 80%")
+
+							li
+								.ui-progress
+									.ui-progress__label Вес, т
+									.ui-progress__count 10
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 30%")
+
+							li
+								.ui-progress
+									.ui-progress__label Возоизмещение, т
+									.ui-progress__count 40
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас топлива, л
+									.ui-progress__count 300
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 10%")
+
+							li
+								.ui-progress
+									.ui-progress__label Запас воды, л
+									.ui-progress__count 200
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 25%")
+
+							li
+								.ui-progress
+									.ui-progress__label Максимально, уз
+									.ui-progress__count 27
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 85%")
+
+							li
+								.ui-progress
+									.ui-progress__label Крейсерская, уз
+									.ui-progress__count 20
+									.ui-progress__bar
+										.ui-progress__bar-line(style="width: 60%")
+
+						ul.compare-item__info
+							li(data-label="Макс. пассажиров") 8
+							li(data-label="Гостевые каюты") 2
+							li(data-label="Гостевые места") 2
+							li(data-label="Экипаж") 2
+							li(data-label="Каюты экипажа") 1
+							li(data-label="Санузлы") 1
+							li(data-label="Материал корпуса") Углепластик
+							li(data-label="Класс CE") A
+							li(data-label="Тип корпуса") Водоизмещающий
+							li(data-label="Дизайн") Модерн
+							li(data-label="Привод")
+								p.compare-item__engine Подвесной мотор: 2х370 л.с. Volvo Penta DG-370
+
+						p.compare-item__price(data-label="Цена") €150 000,–
+
+			.request.request--dark
+				form(action="#")
+					h2.request-heading Получите консультацию по выбранным яхтам
+					p.request-text Наши эксперты отвечают очень быстро
+					.row.row-offset-10
+						.col-md-4.col-xl-3
+							input(type="text", placeholder="Имя").ui-input
+						.col-md-4.col-xl-3
+							input(type="email", placeholder="Email").ui-input
+						.col-md-4.col-xl-3
+							input(type="phone", placeholder="Телефон").ui-input
+						.col-xl-3
+							button.btn.btn-green.btn-block Отправить запрос
+							
+
+					small.request-caption Нажимая «Отправить запрос», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, <br>а также даете согласие на обработку персональных данных.
+
+
+	// Compare :: End
+	
+
+	

@@ -46,8 +46,10 @@ PageList:
 - file: add-2.html
   ready: 100
 - file: xl-model.html
-  ready: 1
+  ready: 100
 - file: compare.html
-  ready: 0
+  ready: 100
+- file: tags.html
+  ready: 100
 - file: ui.html
   ready: 100

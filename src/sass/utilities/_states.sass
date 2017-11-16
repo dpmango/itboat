@@ -1,5 +1,12 @@
 // States
 
+
+.is-error
+	border-color: #FFA826 !important
+	color: #FFA826 !important
+	&::placeholder
+		color: #FFA826 !important
+
 .row
 	margin: 0 -10px
 
@@ -91,11 +98,12 @@
 
 
 // .touch-device [data-animation]
-// 	opacity: 1
+// 	opacity: 1.scrollmagic-pin-spacer
+// 	+r($desktop)
+// 		position: fixed !important
+// 		visibility: hidden
+// 		padding-top: 0 !important
 // 	animation: none
 
 
-.scrollmagic-pin-spacer
-	+r($desktop)
-		position: fixed !important
-		visibility: hidden
+// 

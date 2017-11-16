@@ -139,6 +139,7 @@
 		line-height: 40px
 		font-weight: 700
 		text-transform: uppercase
+		white-space: nowrap
 		& > li
 			
 		+rmin($desktop)
@@ -149,6 +150,9 @@
 				position: relative
 				top: 2px
 				border: none
+				margin: 0 15px 0 0
+		+rmin($wide)
+			& > li
 				margin: 0 30px 0 0
 	&__link
 		display: block
@@ -217,13 +221,162 @@
 			visibility: visible
 
 
+.auth-entry
+	margin: 0 0 0 auto
+	font-size: 14px
+	color: #999
+	display: flex
+	align-items: center
+	white-space: nowrap
+	position: relative
+	+r($desktop)
+		display: block
+		padding: 20px 0 0
+		margin: 0
+
+.auth-user
+	position: relative
+	display: inline-block
+	vertical-align: top
+	&:hover
+		.auth-user__menu
+			opacity: 1
+			visibility: visible
+	&__link
+		display: flex
+		align-items: center
+		color: #999
+		transition: 0.25s
+		margin: 0 12px 0 0
+		position: relative
+		&:hover
+			color: #fff
+	&__name
+	&__photo
+		margin: 0
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		overflow: hidden
+		margin: 0 0 0 5px
+		position: relative
+		background: #fff url(../img/bg-photo-mobile.png) center bottom no-repeat
+		background-size: auto 80%
+		position: relative
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__menu
+		margin: 0
+		padding: 0
+		list-style: none
+		
+		position: absolute
+		top: 100%
+		left: 50%
+		font-size: 12px
+		line-height: 16px
+		font-weight: 400
+		text-transform: none
+		color: #222
+		background: #fff
+		border-radius: 5px
+		padding: 18px 20px
+		box-shadow: 0 0 4px 1px rgba(0,0,0,0.3)
+		transition: .15s
+		z-index: 100
+		margin: 20px 0 0
+		transform: translate(-50%,0)
+		white-space: nowrap
+		opacity: 0
+		visibility: hidden
+		& > li
+			margin: 0 0 5px
+			&:last-child
+				margin: 0
+		&:after
+			content: '▲'
+			display: block
+			position: absolute
+			top: -10px
+			left: 50%
+			text-align: center
+			font-size: 15px
+			color: #fff
+			margin: 0 0 0  -5px
+			text-shadow: 0 -3px 3px rgba(0,0,0,0.3)
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: -30px
+			height: 30px
+			left: 0
+			right: 0
+		&-link
+			transition: .25s
+			color: #222
+			border-bottom: 1px solid transparent
+			&:hover
+				color: #222
+				border-color: #222
+
+	+r($desktop)
+		display: block
+		padding: 10px 0 0
+		&__link
+			margin: 0
+		
+		&__name
+			display: none
+		&__photo
+			display: block
+			width: 60px
+			height: 60px
+			margin: 0 auto 10px
+		&__menu
+			opacity: 1
+			visibility: visible
+			position: relative
+			left: 0
+			top: 0
+			transform: none
+			background: none
+			box-shadow: none
+			font-size: 14px
+			line-height: 20px
+			padding: 0 0 10px
+			margin: 0
+			& > li
+				margin: 0 0 10px
+			
+			&:after, &:before
+				display: none
+
+			&-link
+				color: #999999
+				border: none
+				&:hover
+					color: #fff
+				
+
 .auth
-	margin: 0
+	margin: 0 0 0 20px
 	padding: 0
 	list-style: none
 	font-size: 14px
 	display: flex
 	justify-content: center
+	position: relative
+	white-space: nowrap
+	+r($desktop)
+		margin: 0
+		display: block
 	
 	& > li
 		position: relative
@@ -280,15 +433,22 @@
 		width: 100%
 		border: 1px solid #4D4D4D
 		font: 400 12px/20px 'Open Sans', Helvetica, Arial, sans-serif
-		border-radius: 16px;
+		border-radius: 16px
 		padding: 5px 20px
 		background: none
-		color: #fff
+		// color: #fff
+		// color: #4d4d4d
 		height: 32px
 		&::placeholder
 			color: #999
 		&:focus
-			background: #4D4D4D
+			background: #FFF
+			border-color: #fff
+			color: #4d4d4d
+			& ~ .search__btn
+				color: #999999
+				&:hover
+					color: #000
 	&__btn
 		display: block
 		border: none
@@ -307,6 +467,9 @@
 		display: flex
 		align-items: center
 		justify-content: center
+		transition: .25s
+		&:hover
+			color: #999
 		.ico
 			display: block
 

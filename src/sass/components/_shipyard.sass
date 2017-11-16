@@ -18,6 +18,8 @@
 	color: #4c4c4c
 	letter-spacing: 0.1px
 	padding: 0
+	.container-fluid
+		padding: 40px 20px
 	.banner-300
 		margin-top: 10px
 	
@@ -166,6 +168,181 @@
 				letter-spacing: 0px
 
 
+// -----
+
+
+.shipyard-xl
+	margin: 0 0 -30px
+	overflow: hidden
+	text-align: center
+	+rmin($desktop)
+		display: flex
+		align-items: center
+		margin: -5px 80px -30px
+	&__image
+		min-width: 165px
+		width: 165px
+		height: 120px
+		// margin: 0 40px 0 0
+		border: 1px solid #e0e0e0
+		border-radius: 4px
+		padding: 10px
+		display: flex
+		align-items: center
+		justify-content: center
+		margin: 0 auto 20px
+		+rmin($desktop)
+			margin: 0 40px 0 0
+	&__desc
+		padding: 0 0 5px
+		flex: 1
+	&__rubric
+		display: block
+		font-size: 12px
+		line-height: 18px
+		font-weight: 700
+		color: #1ea0e4
+		text-transform: uppercase
+		background: none
+		letter-spacing: 2px
+		margin: 0 0 5px
+	&__title
+		font-size: 30px
+		line-height: 1
+		font-weight: 700
+		display: block
+		margin: 0 0 12px
+		+rmin($tablet)
+			font-size: 40px
+		+rmin($wide)
+			font-size: 50px
+	&__country
+		position: relative
+		display: block
+		margin: 0
+		padding: 0 0 0 30px
+		font-size: 12px
+		line-height: 18px
+		color: #4c4c4c
+		img
+			border: 1px solid #d9d9d9;
+			display: block
+			width: 24px
+			height: 18px
+			object-fit: cover
+			position: absolute
+			top: 0
+			left: 0
+	&__info
+		margin: 0 -15px
+		padding: 0
+		list-style: none
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-wrap: wrap
+		font-size: 14px
+		line-height: 26px
+		color: #999999
+		overflow: hidden
+		& > li
+			padding: 0 15px
+			margin: 0 0 5px
+			position: relative
+			width: 50%
+			&:nth-child(1)
+				order: 1
+			&:nth-child(2)
+				order: 3
+				width: 100%
+			&:nth-child(3)
+				order: 2
+				
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				right: 0
+				width: 1px
+				height: 40px
+				margin: -20px 0 0
+				background: #E0E0E0
+			&:last-child
+				margin-right: 0
+				&:after
+					display: none
+		b
+			display: block
+			font-size: 18px
+			color: #222
+		.ico
+			font-size: 14px
+			color: #1EA0E4
+			margin: 0 10px 0 0
+			position: relative
+			top: -2px
+		+rmin($tablet)
+			margin: 0 -50px
+			& > li
+				width: auto
+				padding: 0 50px
+				&:nth-child(1), &:nth-child(2), &:nth-child(3)
+					order: inherit
+					width: auto
+			// justify-content: flex-start
+	&__details
+		margin-left: auto
+		font-size: 14px
+		line-height: 20px
+		color: #999999
+		position: relative
+		top: -2px
+		letter-spacing: 0.2px
+		white-space: nowrap
+		padding: 10px 0
+
+		+rmin($desktop)
+			text-align: right
+			padding-left: 10px
+
+	&__tags
+		margin: 0 -10px
+		padding: 0
+		list-style: none
+		font-size: 12px
+		line-height: 20px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 2px
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		+rmin($desktop)
+			justify-content: flex-start
+		& > li
+			padding: 5px 10px
+		&-link
+			color: #4c4c4c
+			&:hover
+				color: #999
+			mark
+				background: #E0E0E0
+				color: #999
+				display: inline-block
+				vertical-align: middle
+				position: relative
+				top: -1px
+				padding: 0 5px
+				border-radius: 10px
+				font-weight: 400
+				min-width: 22px
+				// margin: 0 5px
+				letter-spacing: 0px
+
+
+
+
 
 // ------
 
@@ -173,6 +350,7 @@
 	position: relative
 	overflow: hidden
 	margin: 0 0 -30px
+	background: #3D4961 url(../img/bg-shipyard-gallery.png) 0 0
 		
 	.owl-stage, .owl-item
 		display: flex
@@ -294,19 +472,22 @@
 		flex: 1
 		& > li
 			margin: 0 0 21px
-			max-width: 242px
+			// max-width: 242px
 			+r($desktop)
 				margin: 0 0 15px
-				max-width: none
+				// max-width: none
 
 .shipyard-item
-	display: block
+	display: inline-block
 	position: relative
 	line-height: 22px
 	color: #222
 	padding: 0 0 0 36px
 	+r($tablet)
-		padding: 0
+		padding: 0 32px 0 0
+		display: block
+		float: left
+		max-width: 100%
 	&:hover
 		color: #222
 		.shipyard-item__title
@@ -335,6 +516,10 @@
 		display: block
 		+r($tablet)
 			display: inline
+			display: block
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
 	&__count
 		font-size: 12px
 		line-height: 18px
@@ -349,9 +534,13 @@
 			color: #999
 			border-radius: 9px
 			background: #E0E0E0
-			min-width: 26px
+			width: 26px
 			text-align: center
 			padding: 0 4px
+
+			position: absolute
+			top: 2px
+			right: 0
 			span
 				display: none
 
@@ -473,32 +662,36 @@
 			padding: 0 400px 0 0
 
 	&__sidebar
-		background: #222
-		color: #fff
-		text-align: center
-		padding: 54px 40px 30px
 		position: relative
 		margin: 0 0 40px
 		font-size: 14px
 		line-height: 20px
+		.banner-300
+			margin: 0 0 40px
+		&-decor
+			background: #222
+			color: #fff
+			text-align: center
+			padding: 54px 40px 30px
+			&:after, &:before
+				content: ''
+				position: absolute
+				left: 15px
+				right: 15px
+				height: 10px
+			&:after
+				background: url(../img/bg-dots-top.png) center 0 repeat-x
+				background-size: 100% 10px
+				top: 0
+			&:before
+				background: url(../img/bg-dots-bottom.png) center 0 repeat-x
+				bottom: 0
+				background-size: 100% 10px
 		+rmin($tablet)
 			float: left
 			width: 300px
 			margin: 18px 0 10px -300px
-		&:after, &:before
-			content: ''
-			position: absolute
-			left: 15px
-			right: 15px
-			height: 10px
-		&:after
-			background: url(../img/bg-dots-top.png) center 0 repeat-x
-			background-size: 100% 10px
-			top: 0
-		&:before
-			background: url(../img/bg-dots-bottom.png) center 0 repeat-x
-			bottom: 0
-			background-size: 100% 10px
+		
 		.btn
 			margin: 0 0 14px
 		&-heading
@@ -702,6 +895,7 @@
 
 .shipyard-content
 	padding: 0 0 35px
+
 	h1, h2, h3, h4, h5
 		line-height: 1
 		font-weight: 700
@@ -716,8 +910,10 @@
 		margin: 0 0 25px
 		padding: 0
 		list-style: none
+
+.shipyard-content-in
 	+rmin($desktop)
-		// padding-right: 400px
+		padding-right: 400px
 
 .shipyard-1100
 	max-width: 1100px

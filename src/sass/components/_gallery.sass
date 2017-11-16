@@ -523,6 +523,8 @@
 		margin: 0 5px 0 0
 
 
+.active .gallery-full__desc
+	opacity: 1
 
 .gallery-full__desc
 	position: absolute
@@ -535,8 +537,12 @@
 	// align-items: flex-end
 	font-size: 16px
 	line-height: 22px
-	&.is-collapsed .gallery-full__desc-in
-		background: rgba(0,0,0,0.8)
+	transition: opacity 0.4s 0.4s
+	opacity: 0
+	&.is-collapsed 
+		.gallery-full__desc-in
+			background: rgba(0,0,0,0.8)
+
 	+r($desktop)
 		position: relative
 		

@@ -136,7 +136,7 @@ block content
 
 						.gallery-full-thumbs.js-gallery-full-thumbs
 							.gallery-full-thumbs__item
-								img(src="img/img-gallery-1.jpg", alt="")
+								img(src="img/zoom.jpg", alt="")
 							.gallery-full-thumbs__item
 								img(src="img/img-gallery-2.jpg", alt="")
 							.gallery-full-thumbs__item
@@ -158,7 +158,7 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									a(href="img/zoom.jpg", data-size="2048x1365", data-width="2048", data-height="1365", data-caption="teste").gallery-full__zoom
+									a(href="img/zoom.jpg", data-fancybox="gallery").gallery-full__zoom
 										img(src="img/zoom.jpg", alt="")
 
 								.gallery-full-social
@@ -184,7 +184,7 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									a(href="img/img-gallery-2.jpg", data-size="940x600", data-width="2048", data-height="1365", data-caption="teste").gallery-full__zoom
+									a(href="img/img-gallery-2.jpg", data-fancybox="gallery").gallery-full__zoom
 										img(src="img/img-gallery-2.jpg", alt="")
 
 								.gallery-full-social
@@ -209,7 +209,8 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-3.jpg", alt="")
+									a(href="img/img-gallery-3.jpg", data-fancybox="gallery").gallery-full__zoom
+										img(src="img/img-gallery-3.jpg", alt="")
 
 								.gallery-full-social
 									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
@@ -234,7 +235,8 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-4.jpg", alt="")
+									a(href="img/img-gallery-4.jpg", data-fancybox="gallery").gallery-full__zoom
+										img(src="img/img-gallery-4.jpg", alt="")
 
 								.gallery-full-social
 									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
@@ -259,7 +261,8 @@ block content
 							.gallery-full__item
 
 								figure.gallery-full__image
-									img(src="img/img-gallery-5.jpg", alt="")
+									a(href="img/img-gallery-5.jpg", data-fancybox="gallery").gallery-full__zoom
+										img(src="img/img-gallery-5.jpg", alt="")
 
 								.gallery-full-social
 									a(href="#").gallery-full-social__btn.gallery-full-social__btn--fb
@@ -292,111 +295,247 @@ block content
 
 
 	.container-fluid
-		br
-		br
-
-		h1 Модальные окна
-
-		ul
-			li
-				a(href="#popup-auth", data-mfp) Войти на сайт
-			li
-				a(href="#popup-offer", data-mfp) Предложите свой материал
-			li
-				a(href="#popup-gallery", data-mfp-gallery) Галлерея
-
-			li
-				a(href="#popup-error", data-mfp) Нашли ошибку в материале?
-
-
-		hr
-
-
-		h1 Большой заголовок H1
-
-		h2 Большой заголовок H2
-
-		h3 Большой заголовок H3
-
-		h4 Большой заголовок H4
-
-		h5 Большой заголовок H5
-
-
-		p Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
-
-
-		<p>Рондо имеет контрапункт контрастных фактур. Пуантилизм, зародившийся в музыкальных микроформах начала ХХ столетия, нашел далекую историческую параллель в лице средневекового гокета, однако живая сессия выстраивает лайн-ап. В связи с этим нужно подчеркнуть, что алеаторика монотонно диссонирует хамбакер. Гармоническое микророндо многопланово просветляет громкостнoй прогрессийный период.</p>
-
-		<p>Динамический эллипсис представляет собой структурный полиряд. Хорус, следовательно, регрессийно трансформирует музыкальный сет. Глиссандо косвенно.</p>
-
-		<h4>Маркированный список</h4>
-
-		ul.ui-ul
-			li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
-			li Синкопа многопланово просветляет тон-полутоновый дисторшн.
-			li Живая сессия имеет разнокомпонентный доминантсептаккорд.
-
-		h4 Нумерованный список
-
-		ol.ui-ol
-			li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
-			li Синкопа многопланово просветляет тон-полутоновый дисторшн.
-			li Живая сессия имеет разнокомпонентный доминантсептаккорд.
-
-		blockquote Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
-		
-
 		.row
-			.col-md-4
-				label.ui-label ФИО
-				input(type="text", placeholder="").ui-input
+			.col-lg-8.push-lg-2
 
-			.col-md-4
-				label.ui-label Email
-				input(type="email", placeholder="").ui-input
+				br
+				br
 
-			.col-md-4
-				label.ui-label Телефон
-				input(type="phone", placeholder="").ui-input
-					
+				h1 Модальные окна
+
+				ul
+					li
+						a(href="#popup-auth", data-mfp) Войти на сайт
+					li
+						a(href="#popup-offer", data-mfp) Предложите свой материал
+					li
+						a(href="#popup-gallery", data-mfp-gallery) Галлерея
+
+					li
+						a(href="#popup-error", data-mfp) Нашли ошибку в материале?
 
 
-		.row
-			.col-md-6
-				label.ui-label Select
-				select(name="",  data-placeholder="Выпадающий список").ui-select
-					option 1-й пункт списка
-					option 2-й пункт списка
-					option 3-й пункт списка
-					option 4-й пункт списка
-					option 5-й пункт списка
-					option 6-й пункт списка
-					option 7-й пункт списка
-					option 8-й пункт списка
-					option 9-й пункт списка
-					option 10-й пункт списка
-					
-			.col-md-6
+				hr
+
+
+				h1 Заголовок 50/50
+
+				h2 Заголовок 36/40
+
+				h3 Заголовок 30/36
+
+				h4 Заголовок 22/26
+
+				h5 Заголовок 18/28 (100)
+
+				h6 Заголовок 16/24 (100)
+
+
+				p Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+
+				<p>Рондо имеет контрапункт контрастных фактур. Пуантилизм, зародившийся в музыкальных микроформах начала ХХ столетия, нашел далекую историческую параллель в лице средневекового гокета, однако живая сессия выстраивает лайн-ап. В связи с этим нужно подчеркнуть, что алеаторика монотонно диссонирует хамбакер. Гармоническое микророндо многопланово просветляет громкостнoй прогрессийный период.</p>
+
+				<p>Динамический эллипсис представляет собой структурный полиряд. Хорус, следовательно, регрессийно трансформирует музыкальный сет. Глиссандо косвенно.</p>
+
+				<h4>Маркированный список</h4>
+
+				ul.ui-ul
+					li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
+					li Синкопа многопланово просветляет тон-полутоновый дисторшн.
+					li Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+				h4 Нумерованный список
+
+				ol.ui-ol
+					li Хорус традиционен. Кластерное вибрато, по определению, самостоятельно.
+					li Синкопа многопланово просветляет тон-полутоновый дисторшн.
+					li Живая сессия имеет разнокомпонентный доминантсептаккорд.
+
+				blockquote Хорус традиционен. Кластерное вибрато, по определению, самостоятельно. Синкопа многопланово просветляет тон-полутоновый дисторшн. Живая сессия имеет разнокомпонентный доминантсептаккорд.
 				
-				label.ui-label Range
 
-				.ui-range
-					.row.align-items-center
-						.col-4
-							input(type="text", value="0").ui-input.ui-from
-						.col-4
-							label.ui-range__label Длина, м
-						.col-4
-							input(type="text", value="100").ui-input.ui-to
-					input(type="range", data-min="0", data-max="100").ui-range__input
+				.row
+					.col-md-4
+						label.ui-label ФИО
+						input(type="text", placeholder="").ui-input
+
+					.col-md-4
+						label.ui-label Email
+						input(type="email", placeholder="").ui-input
+
+					.col-md-4
+						label.ui-label Телефон
+						input(type="phone", placeholder="Ошибка").ui-input.is-error
+						p.ui-error Текст ошибки
+							
 
 
-			textarea(name="", cols="30", rows="10").ui-textarea
+				.row
+					.col-md-6
+						
+						label.ui-label Select Multiple
+
+						.ui-multiple(data-placeholder="Подсказка")
+
+							button.ui-multiple-trigger
+								span.ui-multiple-trigger-icon
+								span.ui-multiple-trigger-text
+								span.ui-multiple-trigger-arrow
+									+icon('ico-arrow-down')
+
+							.ui-multiple-dropdown
+								//- input(type="search", placeholder="Поиск").ui-multiple-search
+								ul.ui-multiple-list
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-people')
+											.ui-multiple-text Максимально пассажиров
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-team')
+											.ui-multiple-text Экипаж
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-material')
+											.ui-multiple-text Углепластик
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-design')
+											.ui-multiple-text Модерн
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-water')
+											.ui-multiple-text Водоизмещение
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-bathrooms')
+											.ui-multiple-text Колчество санузлов
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-rooms')
+											.ui-multiple-text Колчество кают
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-beds')
+											.ui-multiple-text Кол-во спальных мест
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-class-c')
+											.ui-multiple-text Класс мореходности
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-new')
+											.ui-multiple-text Новая модель
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-info-fbv')
+											.ui-multiple-text ФБВ
+
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-engine-1')
+											.ui-multiple-text Привод 1
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-engine-2')
+											.ui-multiple-text Привод 2
+									li
+										label.ui-multiple-check
+											input(type="checkbox").ui-multiple-input
+											.ui-multiple-checkbox
+												+icon('ico-check')
+											.ui-multiple-icon
+												+icon('ico-engine-3')
+											.ui-multiple-text Привод 3
+
+					.col-md-6
+						label.ui-label Select
+						select(name="",  data-placeholder="Все страны").ui-select
+							option
+							option.ui-select__bold Все страны
+							option.ui-select__bold Россия
+							option Австралия
+							option Австрия
+							option Азербайджан
+							option Аландские о-ва
+							option Албания
+							option 8-й пункт списка
+							option 9-й пункт списка
+							option 10-й пункт списка
+							
+					.col-md-6
+						
+						label.ui-label Range
+
+						.ui-range
+							.row.align-items-center
+								.col-4
+									input(type="text", value="0").ui-input.ui-from
+								.col-4
+									label.ui-range__label Длина, м
+								.col-4
+									input(type="text", value="100").ui-input.ui-to
+							input(type="range", data-min="0", data-max="100").ui-range__input
 
 
-		br
-		br
+					textarea(name="", cols="30", rows="10").ui-textarea
+
+
+				br
+				br
 
 
 	// Ui :: End

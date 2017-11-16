@@ -11,6 +11,52 @@
 		padding: 10px
 	+rmin($desktop)
 		padding: 30px 80px
+	&--dark
+		background: #222222
+		color: #fff
+		position: relative
+		margin: 10px 0
+		padding: 50px 20px
+		&:after, &:before
+			content: ''
+			position: absolute
+			left: 15px
+			right: 15px
+			height: 10px
+		&:after
+			background: url(../img/bg-dots-top.png) center 0 repeat-x
+			background-size: 100% 10px
+			top: 0
+		&:before
+			background: url(../img/bg-dots-bottom.png) center 0 repeat-x
+			bottom: 0
+			background-size: 100% 10px
+		.request-heading
+			font: 20px/26px $fontHeading
+			text-transform: uppercase
+			letter-spacing: 2px
+			margin: 0 0 25px
+		.request-caption
+			a:hover
+				color: #fff
+		+rmin($mobile)
+			&:after, &:before
+				width: 11px
+				top: 15px
+				bottom: 15px
+				height: auto
+			&:after
+				left: 0
+				background: url(../img/bg-dots-left.png) center 0 repeat-y
+				background-size: 11px 100%
+			&:before
+				right: 0
+				left: auto
+				background: url(../img/bg-dots-right.png) center 0 repeat-y
+				background-size: 11px 100%
+		+rmin($desktop)
+			padding: 40px 80px 20px
+			margin: 0 90px
 
 
 .request-heading

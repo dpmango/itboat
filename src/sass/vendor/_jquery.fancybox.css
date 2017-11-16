@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body.fancybox-active {
-  overflow: hidden; }
+  // overflow: hidden;
+}
 
 body.fancybox-iosfix {
   position: fixed;
@@ -42,15 +43,18 @@ body.fancybox-iosfix {
   -webkit-overflow-scrolling: touch; }
 
 .fancybox-bg {
-  background: #1e1e1e;
+  background: #000;
   opacity: 0;
   transition-duration: inherit;
   transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.47, 0, 0.74, 0.71); }
+  // transition-timing-function: cubic-bezier(0.47, 0, 0.74, 0.71);
+  // transition: none
+}
 
 .fancybox-is-open .fancybox-bg {
-  opacity: 0.87;
-  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); }
+  opacity: 1;
+  // transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 
 .fancybox-infobar,
 .fancybox-toolbar,
@@ -78,7 +82,7 @@ body.fancybox-iosfix {
   height: 44px;
   min-width: 44px;
   line-height: 44px;
-  color: #ccc;
+  color: #fff;
   text-align: center;
   pointer-events: none;
   -webkit-user-select: none;
@@ -277,10 +281,12 @@ body.fancybox-iosfix {
   padding: 10px;
   border: 0;
   border-radius: 0;
-  background: rgba(30, 30, 30, 0.6);
-  color: #ccc;
+  // background: rgba(30, 30, 30, 0.6);
+  background: none;
+  color: #fff;
   transition: color .3s ease;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .fancybox-button[disabled] {
   cursor: default;
@@ -325,7 +331,9 @@ body.fancybox-iosfix {
   background: transparent;
   width: 60px;
   height: 100px;
-  padding: 17px; }
+  padding: 17px;
+  background: none;
+}
 
 .fancybox-navigation button:before {
   content: "";
@@ -334,7 +342,9 @@ body.fancybox-iosfix {
   right: 10px;
   width: 40px;
   height: 40px;
-  background: rgba(30, 30, 30, 0.6); }
+  display: none;
+  // background: rgba(30, 30, 30, 0.6);
+}
 
 .fancybox-navigation .fancybox-button--arrow_left {
   left: 0; }
@@ -701,3 +711,37 @@ li.fancybox-thumbs-loading {
     right: 110px; }
   .fancybox-thumbs > ul > li {
     max-width: calc(100% - 10px); } }
+
+
+.fancybox-button {
+  font-size: 30px;
+  width: 50px !important;
+  height: 50px !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .25s;
+  opacity: 0;
+}
+
+.fancybox-button--arrow_right {
+  border-radius: 4px 0 0 4px;
+}
+
+.fancybox-button--arrow_left {
+  border-radius: 0 4px 4px 0;
+}
+
+.fancybox-button:hover {
+  color: #1EA0E4 !important;
+}
+
+.fancybox-button--close {
+  font-size: 15px;
+  border-radius: 0 0 0 4px
+}
+
+.fancybox-is-open .fancybox-button {
+  opacity: 1
+}
