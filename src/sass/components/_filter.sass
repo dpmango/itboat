@@ -118,8 +118,26 @@
 	line-height: 20px
 	color: #212121
 	margin: 12px 0 0
+	border: none
+	padding: 0
+	width: 100%
+	background: none
+	cursor: pointer
 	.ico
 		font-size: 4px
 		margin: 0 0 0 5px
 	&:hover
 		color: #999999
+
+
+.is-advanced .filter__hidden
+	display: block
+	position: relative
+	opacity: 1
+	visibility: visible
+
+.filter__hidden
+	transition: .4s
+	position: fixed
+	opacity: 0
+	visibility: hidden

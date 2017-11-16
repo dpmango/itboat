@@ -147,6 +147,8 @@
     padding: 0
     list-style: none
     counter-reset: point
+    font-size: 18px
+    line-height: 26px
     & > li
         position: relative;
         padding: 0 0 0 28px
@@ -305,11 +307,13 @@
         align-items: center
         justify-content: center
         height: 100%
+        transition: inherit
         
     .ico
         font-size: 32px
     &:hover span
-        border-color: #1EA0E4
+        border-color: #999999
+        color: #212121
 
 .ui-upload-input
     position: absolute
@@ -445,7 +449,7 @@
         list-style: none
     li
         user-select: none
-        white-space: nowrap
+        // white-space: nowrap
 
     &.opened
         .jq-selectbox__trigger
@@ -511,6 +515,7 @@
         // overflow: hidden
         font-size: 14px
         line-height: 20px
+        white-space: normal
 
         ul
             position: relative

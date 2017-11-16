@@ -47,7 +47,11 @@ block content
 						.filter.js-toggle
 							form(action="#")
 								
-								button.filter-toggle-btn.js-toggle-btn.is-active Подобрать
+								h3.filter__heading
+									+icon('ico-filter-motor')
+									| Подобрать моторную яхту
+
+								button.filter-toggle-btn.js-toggle-btn.is-active МОТОРНЫЕ ЯХТЫ
 									span.icon-toggle
 										+icon('ico-arrow-down')
 
@@ -64,6 +68,29 @@ block content
 											.col-4
 												input(type="text", value="100").ui-input.ui-to
 										input(type="range", data-min="0", data-max="100").ui-range__input
+
+									.filter__hidden
+										
+										.ui-range
+											.row
+												.col-4
+													input(type="text", value="0").ui-input.ui-from
+												.col-4
+													label.ui-range__label Ширина, м
+												.col-4
+													input(type="text", value="100").ui-input.ui-to
+											input(type="range", data-min="0", data-max="100").ui-range__input
+
+										.ui-range
+											.row
+												.col-4
+													input(type="text", value="0").ui-input.ui-from
+												.col-4
+													label.ui-range__label Осадка, м
+												.col-4
+													input(type="text", value="100").ui-input.ui-to
+											input(type="range", data-min="0", data-max="100").ui-range__input
+
 	
 									.row.row-offset-10.justify-content-start
 										.col-auto
@@ -80,11 +107,65 @@ block content
 												span.ui-check__text Б/у не старше
 
 
-									select.ui-select
-										option Материал корпуса
+									select.ui-select(data-placeholder="Материал корпуса")
+										option
+										option Стеклопластик
+										option Алюминий
+										option Сталь
+										option Дерево
+										option Карбон
+										option Иное
 
-									select.ui-select
-										option Тип корпуса
+									.filter__hidden
+
+										select.ui-select(data-placeholder="Привод")
+											option
+											option Валы
+											option IPS
+											option Колонки
+											option Arneson
+											option Водомет
+											option Иное
+
+
+									select.ui-select(data-placeholder="Тип корпуса")
+										option
+										option Водоизмещающий
+										option Полу-водоизмещающий
+										option Глиссирующий
+										option Катамаран
+
+									.filter__hidden
+
+										select.ui-select(data-placeholder="Концепция")
+											option
+											option Глиссирующие яхты с флайбриджем
+											option Закрытые круизные яхты с хардтопом
+											option Открытые круизные яхты
+											option Водоизмещающие яхты
+											option Моторные круизные катамараны
+											option Полу-водоизмещающие яхты
+											option Яхты с хардтопом полузакрытым салоном
+											option Экспедиционные яхты и траулеры
+											option Экспедиционные яхты и траулеры
+											option Закрытые круизные яхты с хардтопом
+
+										.ui-range
+											.row
+												.col-4
+													input(type="text", value="0").ui-input.ui-from
+												.col-4
+													label.ui-range__label Скорость
+												.col-4
+													input(type="text", value="100").ui-input.ui-to
+											input(type="range", data-min="0", data-max="100").ui-range__input
+
+										select.ui-select(data-placeholder="Стиль / дизайн")
+											option
+											option Любой
+											option Современный 
+											option Классический 
+											option Хайтек
 
 									.row
 										.col-auto.col-lg-5
@@ -92,11 +173,50 @@ block content
 										.col-auto.col-lg-7
 											input.ui-number(type="number", value="0", min="0", max="100")
 
+
+									.filter__hidden
+
+										.row
+											.col-auto.col-lg-5
+												label.ui-label Кол-во спальных мест
+											.col-auto.col-lg-7
+												input.ui-number(type="number", value="0", min="0", max="100")
+
+										.row
+											.col-auto.col-lg-5
+												label.ui-label Кол-во мест для экипажа
+											.col-auto.col-lg-7
+												input.ui-number(type="number", value="0", min="0", max="100")
+
+										select(data-placeholder="Страна производства").ui-select
+											option
+											option.ui-select__bold Все страны
+											option.ui-select__bold Россия
+											option Австралия
+											option Австрия
+											option Азербайджан
+											option Аландские о-ва
+											option Албания
+											option 8-й пункт списка
+											option 9-й пункт списка
+											option 10-й пункт списка
+
+										.ui-range
+											.row
+												.col-4
+													input(type="text", value="0").ui-input.ui-from
+												.col-4
+													label.ui-range__label Цена
+												.col-4
+													input(type="text", value="100").ui-input.ui-to
+											input(type="range", data-min="0", data-max="100").ui-range__input
+									
+
 									
 									.filter__ctrl
 										button.btn.btn-block.btn-dark ПОКАЗАТЬ 1 376 лодок
-										a(href="#").filter-advanced
-											| Расширенный поиск
+										button.filter-advanced
+											span Расширенный поиск
 											+icon('ico-arrow-down')
 
 						// Filter :: End
