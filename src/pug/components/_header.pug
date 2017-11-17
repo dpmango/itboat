@@ -17,7 +17,11 @@
            
     
 
-header.header
+header.header(itemscope itemtype="https://schema.org/WPHeader")
+
+    meta(itemprop="headline" content="https://itboat.com/")
+    meta(itemprop="description" content="https://itboat.com/")
+
     .container-fluid
         .logo
             a(href="/homepage.pug")
@@ -29,39 +33,39 @@ header.header
 
             .nav__dropdown
 
-                ul.nav__menu
+                ul.nav__menu(itemscope itemtype="https://schema.org/SiteNavigationElement")
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             | ЖУРНАЛ
                             .nav__tooltip
                                 +icon('ico-nav-journal')
                                 | Новости и статьи из <br>мира яхт. Ежедневное<br>обновление
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             | КАТАЛОГ
                             .nav__tooltip
                                 +icon('ico-nav-catalog')
                                 | Справочник: более 3000 серийно <br>выпускаемых моделей яхт с <br>описаниями, "фишками" и ценами
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             | Маркет
                             .nav__tooltip
                                 +icon('ico-nav-market')
                                 | Объявления о продаже новых и <br>подержанных яхт и катеров от <br>частных лиц и компаний
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             +icon('ico-xl')
                             .nav__tooltip
                                 +icon('ico-nav-xl')
                                 | Отдельный сайт о <br>мегаяхтах
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             +icon('ico-charterly')
                             .nav__tooltip
                                 +icon('ico-nav-charterly')
                                 | Попробуйте наш <br>новый онлайн-сервис <br>по аренде яхт
                     li
-                        a(href="#").nav__link
+                        a(href="#" itemprop="url").nav__link
                             +icon('ico-compare')
                             | СРАВНЕНИЕ (9)
 

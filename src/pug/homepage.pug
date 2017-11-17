@@ -8,31 +8,44 @@ block content
 	// Promo :: Start
 
 	.promo
+
 		.promo-carousel-progress.js-carousel-progress
 		.promo-carousel.owl-carousel.js-carousel
-			.promo-item
+			.promo-item(itemscope itemtype="https://schema.org/BlogPosting")
+				
 				.container-fluid
 					figure.promo-item__image
-						img(src="img/img-promo-1.jpg", alt="")
-					mark.promo-item__rubric Парусный спорт
-					h2.promo-item__title Неделя до Extreme Sailing Series 2016: что нового?
-					p.promo-item__text Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг.
-					a(href="#").btn.btn-blue-empty Узнать больше
-			.promo-item
+						img(src="img/img-promo-1.jpg", alt="", itemprop="image")
+					mark.promo-item__rubric(itemprop="articleSection") Парусный спорт
+					h2.promo-item__title(itemprop="headline") Неделя до Extreme Sailing Series 2016: что нового?
+					p.promo-item__text(itemprop="description") Крылатые катамараны, длинные маршруты и новая команда на стартовой прямой. В этом году регата Extreme Sailing Series полна интриг.
+					a(href="#", itemprop="url").btn.btn-blue-empty Узнать больше
+					
+					+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
+			
+				
+
+			.promo-item(itemscope itemtype="https://schema.org/BlogPosting")
 				.container-fluid
 					figure.promo-item__image
-						img(src="img/img-promo-2.jpg", alt="")
-					mark.promo-item__rubric Путешествия
-					h2.promo-item__title Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
-					p.promo-item__text Solar Voyager, возможно, станет первым беcпилотным судном, пересекшим Атлантику, и первым судном, пересекшим океан на солнечной энергии.
-					a(href="#").btn.btn-blue-empty Узнать больше
-			.promo-item
+						img(src="img/img-promo-2.jpg", alt="", itemprop="image")
+					mark.promo-item__rubric(itemprop="articleSection") Путешествия
+					h2.promo-item__title(itemprop="headline") Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+					p.promo-item__text(itemprop="description") Solar Voyager, возможно, станет первым беcпилотным судном, пересекшим Атлантику, и первым судном, пересекшим океан на солнечной энергии.
+					a(href="#", itemprop="url").btn.btn-blue-empty Узнать больше
+
+					+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
+
+			.promo-item(itemscope itemtype="https://schema.org/BlogPosting")
 				.container-fluid
 					figure.promo-item__image
-						img(src="img/img-promo-3.jpg", alt="")
-					mark.promo-item__rubric Путешествия
-					h2.promo-item__title «Solar Voyager отправляется в долгий путь к намеченной цели — Лиссабону»
-					a(href="#").btn.btn-blue-empty Узнать больше
+						img(src="img/img-promo-3.jpg", alt="", itemprop="image")
+					mark.promo-item__rubric(itemprop="articleSection") Путешествия
+					h2.promo-item__title(itemprop="headline") «Solar Voyager отправляется в долгий путь к намеченной цели — Лиссабону»
+					.promo-item__text(itemprop="description") Какое-то описание
+					a(href="#", itemprop="url").btn.btn-blue-empty Узнать больше
+
+					+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
 
 	// Promo :: End
 
@@ -126,69 +139,75 @@ block content
 								a(href="#").btn.btn-dark предложить
 
 						li.col-sm-6.col-lg-4
-							a(href="#").media-article
+							a(href="#" itemscope itemtype="https://schema.org/BlogPosting").media-article
 								figure.media-article__image
-									img(src="img/img-media-1.jpg", alt="")
+									img(src="img/img-media-1.jpg", alt="", itemprop="image")
 								.media-article__desc
-									mark.media-article__rubric Индустрия
-									h3.media-article__title Блеск и нищета Moscow Boat Show 2016
-									p.media-article__text Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+									mark.media-article__rubric(itemprop="articleSection") Индустрия
+									h3.media-article__title(itemprop="headline") Блеск и нищета Moscow Boat Show 2016
+									p.media-article__text(itemprop="description") Редактор itBoat побывала на крупнейшей российской выставке и поделилась впечатлениями от увиденного.
+									+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
 
 						li.col-sm-6.col-lg-4
-							a(href="#").media-photo
+							a(href="#" itemscope itemtype="https://schema.org/ImageObject").media-photo
 								figure.media-photo__image
-									img(src="img/img-media-2.jpg", alt="")
-								.media-photo__desc
+									img(src="img/img-media-2.jpg", alt="", itemprop="contentUrl")
+								.media-photo__desc(itemprop="caption")
 									mark.media-photo__rubric Фото дня
 									h3.media-photo__title Прогулялся по небу
 
 						
 
 						li.col-sm-6.col-lg-4
-							a(href="#").media-article
+							a(href="#" itemscope itemtype="https://schema.org/BlogPosting").media-article
 								figure.media-article__image
-									img(src="img/img-media-3.jpg", alt="")
+									img(src="img/img-media-3.jpg", alt="", itemprop="image")
 									span.media-article__xl
 										+icon('ico-xl')
 								.media-article__desc
-									mark.media-article__rubric парусный спорт
-									h3.media-article__title Как прошли первые гонки нового сезона RC44 Championship
-									p.media-article__text На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+									mark.media-article__rubric(itemprop="articleSection") парусный спорт
+									h3.media-article__title(itemprop="headline") Как прошли первые гонки нового сезона RC44 Championship
+									p.media-article__text(itemprop="description") На Бермудах, где состоялся первый этап нового сезона RC44 Championship Tour, погода и соперники преподнесли множество сюрпризов — не всегда...
+									+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
 
 						li.col-sm-6.col-lg-4
-							a(href="#").media-article
+							a(href="#" itemscope itemtype="https://schema.org/BlogPosting").media-article
 								figure.media-article__image
-									img(src="img/img-media-4.jpg", alt="")
+									img(src="img/img-media-4.jpg", alt="", itemprop="image")
 								.media-article__desc
-									mark.media-article__rubric Люди
-									h3.media-article__title Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
-									p.media-article__text Интервью с владельцем яхты, которая никогда не проигрывает.
+									mark.media-article__rubric(itemprop="articleSection") Люди
+									h3.media-article__title(itemprop="headline") Игорь Симчич, Esimit Europa: «Наша цель — выиграть, а не изображать романтиков»
+									p.media-article__text(itemprop="description") Интервью с владельцем яхты, которая никогда не проигрывает.
+									+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
 							
 						li.col-sm-6.col-lg-4
-							a(href="#").media-photo
+							a(href="#" itemscope itemtype="https://schema.org/ImageObject").media-photo
 								figure.media-photo__image
-									img(src="img/img-media-5.jpg", alt="")
-								.media-photo__desc
+									img(src="img/img-media-5.jpg", alt="", itemprop="contentUrl")
+								.media-photo__desc(itemprop="caption")
 									mark.media-photo__rubric Фотогалерея
 									h3.media-photo__title Восточная роскошь
 
-						li.col-sm-6.col-lg-4
-							a(href="#").media-article
-								figure.media-article__image
-									img(src="img/img-media-6.jpg", alt="")
-								.media-article__desc
-									mark.media-article__rubric Люди
-									h3.media-article__title Пересечь Атлантику внутри кита
-									p.media-article__text 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
 
 						li.col-sm-6.col-lg-4
-							a(href="#").media-article
+							a(href="#" itemscope itemtype="https://schema.org/BlogPosting").media-article
 								figure.media-article__image
-									img(src="img/img-media-7.jpg", alt="")
+									img(src="img/img-media-6.jpg", alt="", itemprop="image")
 								.media-article__desc
-									mark.media-article__rubric Юмор
-									h3.media-article__title Будни яхтсмена: 10 глупейших вопросов от туристов
-									p.media-article__text «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+									mark.media-article__rubric(itemprop="articleSection") Люди
+									h3.media-article__title(itemprop="headline") Пересечь Атлантику внутри кита
+									p.media-article__text(itemprop="description") 73-летний Том МакКлин намерен пересечь Атлантику в 65-тонном ките, построенном своими руками.
+									+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
+
+						li.col-sm-6.col-lg-4
+							a(href="#" itemscope itemtype="https://schema.org/BlogPosting").media-article
+								figure.media-article__image
+									img(src="img/img-media-7.jpg", alt="", itemprop="image")
+								.media-article__desc
+									mark.media-article__rubric(itemprop="articleSection") Юмор
+									h3.media-article__title(itemprop="headline") Будни яхтсмена: 10 глупейших вопросов от туристов
+									p.media-article__text(itemprop="description") «Вы можете подплыть поближе к закату? А наполнить бутылки морской водой разного цвета?» Ребята, полегче, мы яхтсмены, а не супермены!
+									+blogPostingInfo('Ссылка на статью','Имя автора', '2017-11-17', '2017-11-17')
 
 
 			.media-ctrl
@@ -240,36 +259,60 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								a(href="#").models-item
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
-								a(href="#").models-item
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
 
 
 							.models-ctrl
@@ -280,36 +323,60 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								a(href="#").models-item
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
-								a(href="#").models-item
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
 
 
 							.models-ctrl
@@ -320,36 +387,60 @@ block content
 						.models
 							h3.models__heading Новые модели
 							.models-carousel.owl-carousel.js-carousel-models
-								a(href="#").models-item
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
-								a(href="#").models-item
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-1.jpg", alt="")
-									h4.models-item__title <small>Beneteau</small> <span>Antares 32</span>
-									i.models-item__price от €146 500,–
-								a(href="#").models-item
+										img(src="img/img-models-1.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Beneteau</small> <span>Antares 32</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €146 500,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-2.jpg", alt="")
-									h4.models-item__title <small>Dominator</small> <span>Dominator 680</span>
-									i.models-item__price от €2 530 000,–
-								a(href="#").models-item
+										img(src="img/img-models-2.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Dominator</small> <span>Dominator 680</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €2 530 000,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
+								a(href="#" itemscope itemtype="http://schema.org/Product").models-item
 									figure.models-item__image
-										img(src="img/img-models-3.jpg", alt="")
-									h4.models-item__title <small>Marquis</small> <span>500 Sport Yacht</span>
-									i.models-item__price от €942 240,–
+										img(src="img/img-models-3.jpg", alt="", itemprop="image")
+									h4.models-item__title(itemprop="name") <small>Marquis</small> <span>500 Sport Yacht</span>
+									i.models-item__price(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+										| от €942 240,–
+										+productPrice('146500','EUR')
+									meta(itemprop="description" content="-")
+										
 
 
 							.models-ctrl
@@ -628,126 +719,161 @@ block content
 
 					ul.market__list
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-1.jpg", alt="")
-								h3.market-item__title
+									img(src="img/img-market-1.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Bavaria 42 Cruiser
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price €146 500,–
-								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-2.jpg", alt="")
-								h3.market-item__title 
-									| Sunseeker 47 Portofino
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price €395 500,–
-								p.market-item__text 2008 г., 200 моточасов. Италия
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-3.jpg", alt="")
-								h3.market-item__title 
-									| Finnmaster 60 CC
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price 98 000 руб.
-								p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-4.jpg", alt="")
-								h3.market-item__title 
-									| Bayliner 185 Bowrider
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price 680 000 руб.
-								p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-5.jpg", alt="")
-								h3.market-item__title 
-									| Sea Ray 325 Sundancer
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price €15 000,–
-								p.market-item__text 1991 г., 200 моточасов. Испания, Palma
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-6.jpg", alt="")
-								h3.market-item__title 
-									| Stingray 195 CS/CX
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price 1 100 000 руб.
-								p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €146 500,–
+									p.market-item__text(itemprop="description") 2006 г., 100 моточасов. Черногория, Бар
+									+productPrice('146500','EUR')
 
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-7.jpg", alt="")
-								h3.market-item__title 
-									| Bavaria 42 Cruiser
-									span.market-item__compare
-										+icon('ico-compare')
-								i.market-item__price €146 500,–
-								p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-						li.col-sm-6.col-md-4
-							a(href="#").market-item
-								figure.market-item__image
-									img(src="img/img-market-8.jpg", alt="")
-								h3.market-item__title 
+									img(src="img/img-market-2.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Sunseeker 47 Portofino
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price €395 500,–
-								p.market-item__text 2008 г., 200 моточасов. Италия
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €395 500,–
+									p.market-item__text(itemprop="description") 2008 г., 200 моточасов. Италия
+									+productPrice('146500','EUR')
+
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-9.jpg", alt="")
-								h3.market-item__title 
+									img(src="img/img-market-3.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Finnmaster 60 CC
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price 98 000 руб.
-								p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 98 000 руб.
+									p.market-item__text(itemprop="description") 2015 г., новая (0 м/ч). Россия, кингисепп
+									+productPrice('146500','EUR')
+
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-10.jpg", alt="")
-								h3.market-item__title 
+									img(src="img/img-market-4.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Bayliner 185 Bowrider
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price 680 000 руб.
-								p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 680 000 руб.
+									p.market-item__text(itemprop="description") 2006 г., 200 моточасов. Россия, Серпухов
+									+productPrice('146500','EUR')
+
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-11.jpg", alt="")
-								h3.market-item__title 
+									img(src="img/img-market-5.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Sea Ray 325 Sundancer
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price €15 000,–
-								p.market-item__text 1991 г., 200 моточасов. Испания, Palma
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €15 000,–
+									p.market-item__text(itemprop="description") 1991 г., 200 моточасов. Испания, Palma
+									+productPrice('146500','EUR')
+									
 						li.col-sm-6.col-md-4
-							a(href="#").market-item
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
 								figure.market-item__image
-									img(src="img/img-market-12.jpg", alt="")
-								h3.market-item__title 
+									img(src="img/img-market-6.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
 									| Stingray 195 CS/CX
 									span.market-item__compare
 										+icon('ico-compare')
-								i.market-item__price 1 100 000 руб.
-								p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 1 100 000 руб.
+									p.market-item__text(itemprop="description") 2008 г., 244 моточасов. Россия, Саратов
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-7.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Bavaria 42 Cruiser
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €146 500,–
+									p.market-item__text(itemprop="description") 2006 г., 100 моточасов. Черногория, Бар
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-8.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Sunseeker 47 Portofino
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €395 500,–
+									p.market-item__text(itemprop="description") 2008 г., 200 моточасов. Италия
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-9.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Finnmaster 60 CC
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 98 000 руб.
+									p.market-item__text(itemprop="description") 2015 г., новая (0 м/ч). Россия, кингисепп
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-10.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Bayliner 185 Bowrider
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 680 000 руб.
+									p.market-item__text(itemprop="description") 2006 г., 200 моточасов. Россия, Серпухов
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-11.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Sea Ray 325 Sundancer
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price €15 000,–
+									p.market-item__text(itemprop="description") 1991 г., 200 моточасов. Испания, Palma
+									+productPrice('146500','EUR')
+									
+						li.col-sm-6.col-md-4
+							a(href="#" itemscope itemtype="http://schema.org/Product").market-item
+								figure.market-item__image
+									img(src="img/img-market-12.jpg", alt="", itemprop="image")
+								h3.market-item__title(itemprop="name") 
+									| Stingray 195 CS/CX
+									span.market-item__compare
+										+icon('ico-compare')
+								span(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+									i.market-item__price 1 100 000 руб.
+									p.market-item__text(itemprop="description") 2008 г., 244 моточасов. Россия, Саратов
+									+productPrice('146500','EUR')
+									
 
 
 			.sell
@@ -787,38 +913,30 @@ block content
 
 					.col-lg-6
 
-						.charterly-carousel.owl-carousel.js-carousel-charterly
-							a(href="#").charterly-item
+						.charterly-carousel.owl-carousel.js-carousel-charterly(itemscope itemtype="http://schema.org/ImageGallery")
+							a(href="#").charterly-item(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								figure.charterly-item__image
-									img(src="img/img-models-1.jpg", alt="")
-								b.charterly-item__city Москва
-								h3.charterly-item__title Моторная яхта «Новая Звезда»
-								i.charterly-item__price от €12 000/день
-							a(href="#").charterly-item
+									img(src="img/img-models-1.jpg", alt="", itemprop="contentUrl")
+								span(itemprop="description")
+									b.charterly-item__city Москва
+									h3.charterly-item__title Моторная яхта «Новая Звезда»
+									i.charterly-item__price от €12 000/день
+							a(href="#").charterly-item(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								figure.charterly-item__image
-									img(src="img/img-models-2.jpg", alt="")
-								b.charterly-item__city Москва
-								h3.charterly-item__title Моторная яхта «Новая Звезда»
-								i.charterly-item__price от €12 000/день
-							a(href="#").charterly-item
+									img(src="img/img-models-2.jpg", alt="", itemprop="contentUrl")
+								span(itemprop="description")
+									b.charterly-item__city Москва
+									h3.charterly-item__title Моторная яхта «Новая Звезда»
+									i.charterly-item__price от €12 000/день
+							a(href="#").charterly-item(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								figure.charterly-item__image
-									img(src="img/img-models-3.jpg", alt="")
-								b.charterly-item__city Москва
-								h3.charterly-item__title Моторная яхта «Новая Звезда»
-								i.charterly-item__price от €12 000/день
+									img(src="img/img-models-3.jpg", alt="", itemprop="contentUrl")
+								span(itemprop="description")
+									b.charterly-item__city Москва
+									h3.charterly-item__title Моторная яхта «Новая Звезда»
+									i.charterly-item__price от €12 000/день
 
 			.charterly-ctrl
 				a.btn.btn-yellow-empty Перейти на Charterly
 	// Charterly :: End
 
-
-
-
-
-	
-
-//- .socials
-//-   - var socials = ['email']
-//-     each social in socials
-//-       a(class="social-share" href="#" role="button")
-//-         +icon('ico-'+social)

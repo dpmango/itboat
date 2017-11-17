@@ -7,3 +7,32 @@ mixin icon(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico " + name + modClass)
     use(xlink:href= svgSprite + '#' + name)
+
+
+
+
+mixin blogPostingInfo(link, author, datePublished, dateModified)
+  // Ссылка на статью
+  link(itemprop="mainEntityOfPage" itemscope href="" + link)
+  
+  // Дата публикации статьи
+  meta(itemprop="datePublished", content="" + datePublished)
+
+  // Дата последнего изменения статьи 
+  meta(itemprop="dateModified", content="" + dateModified)
+  
+  // Автор статьи
+  meta(itemprop="author", content="" + author)
+  
+  // Данные о сайте: лого, телефон, адрес, название
+  div(itemprop="publisher" itemscope itemtype="https://schema.org/Organization")
+    div(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+      img(itemprop="image url" src="http://itboat.com/favicons/favicon-160x160.png" alt="Itboat" )
+    meta(itemprop="telephone" content="-")
+    meta(itemprop="address" content="Россия")
+    meta(itemprop="name" content="www.itboat.com")
+
+
+mixin productPrice(price, priceCurrency)
+  meta(itemprop="price" content="" + price)
+  meta(itemprop="priceCurrency" content="" + priceCurrency)
