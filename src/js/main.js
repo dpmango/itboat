@@ -362,7 +362,7 @@ $(document).ready(function(){
             lazyLoad: true,
             margin: 0,
             navText: [iconPrev,iconNext],
-            autoWidth: true
+            autoWidth: false
         });
 
 

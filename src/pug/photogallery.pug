@@ -186,32 +186,58 @@ block content
 
 
 
-		
 	// Popup :: End
 
 
 	// Article :: Start
 
-	article.article.is-small
+	article.article.is-small(itemscope itemtype="http://schema.org/Article")
+
+		// Ссылка на статью
+		link(itemprop="mainEntityOfPage" itemscope href="Ссылка на статью")
+		
+
+		// Дата публикации статьи
+		meta(itemprop="datePublished", content="2017-11-17")
+
+		// Дата последнего изменения статьи 
+		meta(itemprop="dateModified", content="2017-11-17")
+
+		// Автор статьи
+		meta(itemprop="author", content="Автор статьи")
+
+		// Данные о сайте: лого, телефон, адрес, название
+		span(itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden)
+			span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+				img(alt="itboat.com" itemprop="image url" src="https://itboat.com/favicons/favicon-160x160.png")
+			meta(itemprop="telephone" content="-")
+			meta(itemprop="address" content="Россия")
+			meta(itemprop="name" content="itboat.com")
+
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Фотогалерея  
-					li
-						a(href="#").breadcrumbs__link.is-active MYS московского разлива
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
 
-			.row.js-fixed-container
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Фотогалерея
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active MYS московского разлива
+						meta(itemprop="position" content="3")
+
+			.row
 				.col-lg-9
 
 					.article-panel
 						.article-panel-align
-							mark.article-panel__rubric ФОТОГАЛЕРЕЯ
-							h1.article-panel__heading MYS московского разлива
-							p.article-panel__text Как прошла первая выставка Moscow Yacht Show
+							mark.article-panel__rubric(itemprop="articleSection") ФОТОГАЛЕРЕЯ
+							h1.article-panel__heading(itemprop="headline") MYS московского разлива
+							p.article-panel__text(itemprop="description") Как прошла первая выставка Moscow Yacht Show
 							time.article-panel__date 23 марта в 15:39
 
 					.share
@@ -230,28 +256,28 @@ block content
 									+icon('ico-social-tw')
 									span.share__btn-text Поделиться в twitter
 
-					.article-content
+					.article-content(itemprop="articleBody")
 
 						.article-text
 							p 22-24  июня в Royal Yacht Club прошла первая выставка яхт на воде Moscow Yacht Show, организованная журналом Motor Boat & Yachting Russia. Всего у причалов и на берегу было представлено 30 яхт и катеров брендов Princess, Azimut, Galeon, XO, Axopar, Finnmaster, Merry Fisher и Linssen, а также мототехника от Yamaha, BRP, BMW и автомобили Lamborghini и BMW M-серии. Казанская верфь Velvette Marine привезла флагман своего флота, модель Velvette 41 Evolution. Несмотря на дождливую и ветреную погоду, выставку посетило 1100 чел.
 
 						
-						.gallery.js-gallery(data-animation="animated fadeInUp")
+						.gallery.js-gallery(data-animation="animated fadeInUp" itemscope itemtype="http://schema.org/ImageGallery")
 							.gallery-thumbs.owl-carousel.js-gallery-thumbs
-								.gallery-thumbs__item(data-gallery-index="1")
-									img(src="img/img-gallery-1.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="2")
-									img(src="img/img-gallery-2.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="3")
-									img(src="img/img-gallery-3.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="4")
-									img(src="img/img-gallery-4.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="5")
-									img(src="img/img-gallery-5.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="6")
-									img(src="img/img-gallery-6.jpg", alt="")
-								.gallery-thumbs__item(data-gallery-index="7")
-									img(src="img/img-gallery-7.jpg", alt="")
+								.gallery-thumbs__item(data-gallery-index="1" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-1.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-2.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-3.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="4" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-4.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="5" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-5.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-6.jpg", alt="" itemprop="image")
+								.gallery-thumbs__item(data-gallery-index="7" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+									img(src="img/img-gallery-7.jpg", alt="" itemprop="image")
 
 							.gallery-slides.owl-carousel.js-gallery-slides
 								.gallery-slides__item

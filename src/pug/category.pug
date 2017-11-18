@@ -9,28 +9,57 @@ block content
 	// Category :: Start
 
 
-	section.category
+	section.category(itemscope itemtype="http://schema.org/Article")
+
+		// Ссылка на статью
+		link(itemprop="mainEntityOfPage" itemscope href="Ссылка на статью")
+		
+
+		// Дата публикации статьи
+		meta(itemprop="datePublished", content="2017-11-17")
+
+		// Дата последнего изменения статьи 
+		meta(itemprop="dateModified", content="2017-11-17")
+
+		// Автор статьи
+		meta(itemprop="author", content="Автор статьи")
+
+		// Данные о сайте: лого, телефон, адрес, название
+		span(itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden)
+			span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+				img(alt="itboat.com" itemprop="image url" src="https://itboat.com/favicons/favicon-160x160.png")
+			meta(itemprop="telephone" content="-")
+			meta(itemprop="address" content="Россия")
+			meta(itemprop="name" content="itboat.com")
+				
 		.container-fluid
 
+
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Каталог  
-					li
-						a(href="#").breadcrumbs__link.is-active Закрытые круизные яхты с хардтопом
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
 
-			mark.category-rubric КАТАЛОГ
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Каталог
+						meta(itemprop="position" content="2")
 
-			h2.category-heading Закрытые круизные яхты с хардтопом
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active Закрытые круизные яхты с хардтопом
+						meta(itemprop="position" content="3")
 
-			em.category-text Спортивный корпус с салоном, защищенным от непогоды
+
+			mark.category-rubric(itemprop="articleSection") КАТАЛОГ
+
+			h2.category-heading(itemprop="headline") Закрытые круизные яхты с хардтопом
+
+			em.category-text(itemprop="description") Спортивный корпус с салоном, защищенным от непогоды
 
 			figure.category-image
-				img(src="img/img-category-1.jpg", alt="")
+				img(src="img/img-category-1.jpg", alt="", itemprop="image")
 
-			.category-content
+			.category-content(itemprop="articleBody")
 				.row.row-offset-100
 					.col-lg-8
 

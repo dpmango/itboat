@@ -8,25 +8,52 @@ block content
 
 	// Article :: Start
 
-	article.article.is-small.is-firstletter
+	article.article.is-small.is-firstletter(itemscope itemtype="http://schema.org/Article")
+
+		// Ссылка на статью
+		link(itemprop="mainEntityOfPage" itemscope href="Ссылка на статью")
+		
+
+		// Дата публикации статьи
+		meta(itemprop="datePublished", content="2017-11-17")
+
+		// Дата последнего изменения статьи 
+		meta(itemprop="dateModified", content="2017-11-17")
+
+		// Автор статьи
+		meta(itemprop="author", content="Автор статьи")
+
+		// Данные о сайте: лого, телефон, адрес, название
+		span(itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden)
+			span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+				img(alt="itboat.com" itemprop="image url" src="https://itboat.com/favicons/favicon-160x160.png")
+			meta(itemprop="telephone" content="-")
+			meta(itemprop="address" content="Россия")
+			meta(itemprop="name" content="itboat.com")
+
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Новости
-					li
-						a(href="#").breadcrumbs__link.is-active Определены победители первой регаты в Чечне
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
 
-			.row.js-fixed-container
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Новости
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active Определены победители первой регаты в Чечне
+						meta(itemprop="position" content="3")
+
+			.row
 				.col-lg-9
 
 					.article-panel
 						.article-panel-align
-							mark.article-panel__rubric НОВОСТИ
-							h1.article-panel__heading Определены победители первой регаты в Чечне
+							mark.article-panel__rubric(itemprop="articleSection") НОВОСТИ
+							h1.article-panel__heading(itemprop="headline") Определены победители первой регаты в Чечне
 							time.article-panel__date 23 марта в 15:39
 
 					.share
@@ -45,7 +72,7 @@ block content
 									+icon('ico-social-tw')
 									span.share__btn-text Поделиться в twitter
 
-					.article-content
+					.article-content(itemprop="articleBody")
 
 						p В Чечне завершилась первая в истории республики парусная регата, Кубок Кезеной-Ам, проходившая на яхтах SB 20.
 

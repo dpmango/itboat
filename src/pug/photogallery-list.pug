@@ -8,26 +8,53 @@ block content
 
 	// Article :: Start
 
-	article.article.is-small
+	article.article.is-small(itemscope itemtype="http://schema.org/Article")
+
+		// Ссылка на статью
+		link(itemprop="mainEntityOfPage" itemscope href="Ссылка на статью")
+		
+
+		// Дата публикации статьи
+		meta(itemprop="datePublished", content="2017-11-17")
+
+		// Дата последнего изменения статьи 
+		meta(itemprop="dateModified", content="2017-11-17")
+
+		// Автор статьи
+		meta(itemprop="author", content="Автор статьи")
+
+		// Данные о сайте: лого, телефон, адрес, название
+		span(itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden)
+			span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+				img(alt="itboat.com" itemprop="image url" src="https://itboat.com/favicons/favicon-160x160.png")
+			meta(itemprop="telephone" content="-")
+			meta(itemprop="address" content="Россия")
+			meta(itemprop="name" content="itboat.com")
+
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Фотогалерея  
-					li
-						a(href="#").breadcrumbs__link.is-active MYS московского разлива
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
 
-			.row.js-fixed-container
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Фотогалерея
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active MYS московского разлива
+						meta(itemprop="position" content="3")
+
+			.row
 				.col-lg-9
 
 					.article-panel
 						.article-panel-align
-							mark.article-panel__rubric ФОТОГАЛЕРЕЯ
-							h1.article-panel__heading MYS московского разлива
-							p.article-panel__text Как прошла первая выставка Moscow Yacht Show
+							mark.article-panel__rubric(itemprop="articleSection") ФОТОГАЛЕРЕЯ
+							h1.article-panel__heading(itemprop="headline") MYS московского разлива
+							p.article-panel__text(itemprop="description") Как прошла первая выставка Moscow Yacht Show
 							time.article-panel__date 23 марта в 15:39
 
 					.share
@@ -46,15 +73,15 @@ block content
 									+icon('ico-social-tw')
 									span.share__btn-text Поделиться в twitter
 
-					.article-content
+					.article-content(itemprop="articleBody")
 
 						p.article-text 22-24  июня в Royal Yacht Club прошла первая выставка яхт на воде Moscow Yacht Show, организованная журналом Motor Boat & Yachting Russia. Всего у причалов и на берегу было представлено 30 яхт и катеров брендов Princess, Azimut, Galeon, XO, Axopar, Finnmaster, Merry Fisher и Linssen, а также мототехника от Yamaha, BRP, BMW и автомобили Lamborghini и BMW M-серии. Казанская верфь Velvette Marine привезла флагман своего флота, модель Velvette 41 Evolution. Несмотря на дождливую и ветреную погоду, выставку посетило 1100 чел.
 
-						.article-list
-							.article-list__item(data-animation="animated fadeInUp")
+						.article-list(itemscope itemtype="http://schema.org/ImageGallery")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>1</b>   Премиальный финский катер AXOPAR 37 АС
 								figure.article-list__image
-									img(src="img/img-gallery-1.jpg", alt="")
+									img(src="img/img-gallery-1.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')
@@ -72,10 +99,10 @@ block content
 
 								p.article-list__text Российский дизайнер Макс Живов представил концепт HydroHouse, являющийся одновременно плавучим домом, пристанью для лодок, гаражом и парковкой для гидроплана. Судно состоит из сборных модулей и в разобранном состоянии перевозится в двух небольших грузовиках. Внутри имеется гостиная с камбузом, мастер-каюта, две гостевые каюты, ванная комната и гараж. Длина хаусбота — 15 м, общая площадь — 76 м2. Хаусбот оснащен солнечными батареями площадью 65 м2 и двумя электродвигателями.
 
-							.article-list__item(data-animation="animated fadeInUp")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>2</b> AXOPAR 37 АС
 								figure.article-list__image
-									img(src="img/img-gallery-2.jpg", alt="")
+									img(src="img/img-gallery-2.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')
@@ -94,10 +121,10 @@ block content
 								p.article-list__text В этом году в Transpac Honolulu Race участвовала команда под российским флагом во главе с красноярцем Афанасием Исаевым. У ребят качественно порвался грот, но к счастью на борту оказался Владимир Кулиниченко — тот самый, который отвечал за паруса на легендарной советской яхте «Фазиси» во время кругосветки Whitbread Round the World Race. Читайте ниже перевод статьи о команде с официального сайта регаты.
 
 
-							.article-list__item(data-animation="animated fadeInUp")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>3</b> Princess 40M
 								figure.article-list__image
-									img(src="img/img-gallery-3.jpg", alt="")
+									img(src="img/img-gallery-3.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')
@@ -116,10 +143,10 @@ block content
 								p.article-list__text 2225-мильная гонка Transpac из Лос-Анджелеса в Гонолулу, впервые проведенная в 1906 году, известна по всему миру и является одним из пунктов во множестве вишлистов, включая список Афанасия Исаева из Красноярска. Этот город-миллионник является третьим по величине в Сибири, но находится далеко от большой воды. Как же его экипаж из 15 человек на Grand Mistral 80 Weddell 1996 года попал на эту гонку и завершил ее маршрут за почти 11 дней? Это длинная история, полная неожиданных поворотов, но большую роль в том, что российской команде удалось добраться до Гонолулу, сыграл второй шкипер Владимир Кулиниченко.
 
 
-							.article-list__item(data-animation="animated fadeInUp")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>4</b> XO 270
 								figure.article-list__image
-									img(src="img/img-gallery-4.jpg", alt="")
+									img(src="img/img-gallery-4.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')
@@ -138,10 +165,10 @@ block content
 								p.article-list__text Просторная рубка-салон оснащена большими раздвижными дверьми с обоих бортов. Полноразмерная тентовая крыша позволит наслаждаться солнцем и небом в ветреную погоду, и позволит превращать обеденную зону на шестерых человек в зону под открытым небом. На борту расположены две каюты: носовая и кормовая с двуспальными кроватями. Планировка катера предусматривает просторный лежак для загара поверх кормовой каюты и просторный диван в носовой части палубы. Данный катер выполнен в эксклюзивной спортивной комплектации «R» c серым корпусом.
 
 
-							.article-list__item(data-animation="animated fadeInUp")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>5</b> Linssen Grand Sturdy 43.9 AC
 								figure.article-list__image
-									img(src="img/img-gallery-5.jpg", alt="")
+									img(src="img/img-gallery-5.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')
@@ -160,10 +187,10 @@ block content
 								p.article-list__text Полностью построенная и спроектированная в СССР эта красная алюминиевая лодка наделала много шума в кругосветке 1989–90 гг., остальные участники которой были гораздо больше, тяжелей и быстрей. В этом необычно узком, легковесном дизайне высота надводного борта была в два раза меньше, чем у конкурентов, и он выглядел именно таким, каким и был — очень и очень мокрым.
 
 
-							.article-list__item(data-animation="animated fadeInUp")
+							.article-list__item(data-animation="animated fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
 								h2.article-list__title <b>6</b> XO 270, Baja 35 Outlaw и Axopar 37
 								figure.article-list__image
-									img(src="img/img-gallery-6.jpg", alt="")
+									img(src="img/img-gallery-6.jpg", alt="", itemprop="image")
 									.share-toggle
 										button.share-toggle__btn
 											+icon('ico-social-share')

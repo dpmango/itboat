@@ -12,17 +12,26 @@ block content
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Каталог  
-					li
-						a(href="#").breadcrumbs__link Верфи  
-					li
-						a(href="#").breadcrumbs__link Обычные
-					li
-						a(href="#").breadcrumbs__link.is-active Arcadia
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Каталог
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Верфи
+						meta(itemprop="position" content="3")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Обычные
+						meta(itemprop="position" content="4")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-activeArcadia
+						meta(itemprop="position" content="5")
 
 			.shipyard-head
 				figure.shipyard-head__image
@@ -506,36 +515,40 @@ block content
 					h2.official-heading Официальный представитель
 					ul.official-list
 						li
-							.official-group
+							.official-group(itemscope itemtype="http://schema.org/Organization")
 								.row.align-items-center
 									.col-md-7
 										.official-company
 											figure.official-company__image
 												img(src="img/img-official-1.jpg", alt="")
-											h3.official-company__title Azimut Yachts Russia <br>Россия, Москва
+											h3.official-company__title
+												<span itemprop="name">Azimut Yachts Russia</span><br>
+												<span itemprop="address">Россия, Москва</span>
 									.col-md-5
 										.official-info
 											.row
 												.col-6
-													| +7 (495) 980-77-00<br><a href="#">Заказать звонок</a>
+													<span itemprop="telephone">+7 (495) 980-77-00</span><br><a href="#">Заказать звонок</a>
 												.col-6
-													| info@azimutyachts.ru<br>azimutyachts.ru
+													<span itemprop="email">info@azimutyachts.ru<br>azimutyachts.ru<span>
 
 						li
-							.official-group
+							.official-group(itemscope itemtype="http://schema.org/Organization")
 								.row.align-items-center
 									.col-md-7
 										.official-company
 											figure.official-company__image
 												img(src="img/img-official-2.jpg", alt="")
-											h3.official-company__title itBoat Boutique<br>Россия, Москва
+											h3.official-company__title
+												<span itemprop="name">itBoat Boutique</span><br>
+												<span itemprop="address">Россия, Москва</span>
 									.col-md-5
 										.official-info
 											.row
 												.col-6
-													| +7 (495) 77-11-700<br><a href="#">Заказать звонок</a>
+													<span itemprop="telephone"> +7 (495) 77-11-700</span><br><a href="#">Заказать звонок</a>
 												.col-6
-													| sales@itboat.com<br>itboat.com
+													<span itemprop="email">sales@itboat.com<span><br>itboat.com
 
 				
 				.brands.brands--similar

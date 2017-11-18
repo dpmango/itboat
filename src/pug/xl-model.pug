@@ -8,21 +8,37 @@ block content
 
 	// Snipyard :: Start
 
-	.shipyard
+	.shipyard(itemscope itemtype="http://schema.org/Offer")
+
+		meta(itemprop="name" content="Dannebrog")
+		meta(itemprop="description" content="Длина судна: 78.43м, Верфь: Danish Royal Dockyard, Год постройки: 1931г.")
+		meta(itemprop="price" content="135000")
+		meta(itemprop="priceCurrency" content="EUR")
+		mete(itemprop="seller" content="Царский брокер в Австрии")
+
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Каталог  
-					li
-						a(href="#").breadcrumbs__link Верфи  
-					li
-						a(href="#").breadcrumbs__link Обычные
-					li
-						a(href="#").breadcrumbs__link.is-active Arcadia
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Каталог
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Верфи
+						meta(itemprop="position" content="3")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Обычные
+						meta(itemprop="position" content="4")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active Arcadia
+						meta(itemprop="position" content="5")
 
 			.shipyard-xl
 				.shipyard-xl__desc

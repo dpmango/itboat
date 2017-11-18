@@ -8,33 +8,65 @@ block content
 
 	// Article :: Start
 
-	article.article.is-small.is-firstletter
+	article.article.is-small.is-firstletter(itemscope itemtype="http://schema.org/Article")
+
+		// Ссылка на статью
+		link(itemprop="mainEntityOfPage" itemscope href="Ссылка на статью")
+		
+
+		// Дата публикации статьи
+		meta(itemprop="datePublished", content="2017-11-17")
+
+		// Дата последнего изменения статьи 
+		meta(itemprop="dateModified", content="2017-11-17")
+
+		// Автор статьи
+		meta(itemprop="author", content="Автор статьи")
+
+		// Данные о сайте: лого, телефон, адрес, название
+		span(itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden)
+			span(itemprop="logo" itemscope itemtype="https://schema.org/ImageObject")
+				img(alt="itboat.com" itemprop="image url" src="https://itboat.com/favicons/favicon-160x160.png")
+			meta(itemprop="telephone" content="-")
+			meta(itemprop="address" content="Россия")
+			meta(itemprop="name" content="itboat.com")
+
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Журнал 
-					li
-						a(href="#").breadcrumbs__link Статьи
-					li
-						a(href="#").breadcrumbs__link Путешестви
-					li
-						a(href="#").breadcrumbs__link.is-active VIII Архипелагская экспедиция
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
 
-			.row.js-fixed-container
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Журнал
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Статьи
+						meta(itemprop="position" content="3")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Путешестви
+						meta(itemprop="position" content="4")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active VIII Архипелагская экспедиция
+						meta(itemprop="position" content="5")
+
+
+			.row
 				.col-lg-9
 
 					.article-panel
 						.article-panel-align
 							figure.article-panel__image
-								img(src="img/img-min-1.jpg", alt="")
+								img(src="img/img-min-1.jpg", alt="", itemprop="image")
 							.article-panel__desc
-								mark.article-panel__rubric Путешествия
-								h1.article-panel__heading VIII Архипелагская экспедиция
-								p.article-panel__text Русский крейсерский клуб вновь отправился в путь
+								mark.article-panel__rubric(itemprop="articleSection") Путешествия
+								h1.article-panel__heading(itemprop="headline") VIII Архипелагская экспедиция
+								p.article-panel__text(itemprop="description") Русский крейсерский клуб вновь отправился в путь
 								time.article-panel__date 23 марта в 15:39
 
 					.share
@@ -53,7 +85,7 @@ block content
 									+icon('ico-social-tw')
 									span.share__btn-text Поделиться в twitter
 
-					.article-content
+					.article-content(itemprop="articleBody")
 
 						p Участники экспедиции поставили перед собой задачу посетить ряд исторических мест, среди них, прежде всего, крепость в итальянском городе Анкона. Также в плане заходы в Равенну, Венецию, Лагуну ди Марано, Порторож, архипелаг Бриони и Пулу.
 

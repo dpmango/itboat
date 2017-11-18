@@ -12,17 +12,27 @@ block content
 		.container-fluid
 
 			.breadcrumbs
-				ul.breadcrumbs__menu
-					li
-						a(href="#").breadcrumbs__link Главная
-					li
-						a(href="#").breadcrumbs__link Журнал
-					li
-						a(href="#").breadcrumbs__link Статьи
-					li
-						a(href="#").breadcrumbs__link Путешествия
-					li
-						a(href="#").breadcrumbs__link.is-active Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Журнал
+						meta(itemprop="position" content="2")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Статьи
+						meta(itemprop="position" content="3")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Путешестви
+						meta(itemprop="position" content="4")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link.is-active Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+						meta(itemprop="position" content="5")
+
 
 			h2.catalog__heading Каталог
 			p.catalog__caption 3654 актуальных моделей яхт и катеров от 471 мировых производителей. Здесь есть все!
