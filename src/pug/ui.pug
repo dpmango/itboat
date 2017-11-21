@@ -21,29 +21,6 @@ block content
 			.popup-ctrl
 				button.btn.btn-block.btn-dark Исправить
 
-
-	.popup.popup-auth.mfp-hide#popup-auth
-		button.popup-close(data-mfp-close)
-			+icon('ico-close')
-		form(action="#")
-			.popup-logo
-				+icon('ico-logo')
-			input(type="email", placeholder="Электронная почта").ui-input
-			input(type="password", placeholder="Пароль").ui-input
-			.row
-				.col
-					label.ui-check
-						input(type="checkbox").ui-check__input
-						span.ui-check__checkbox
-							+icon('ico-check')
-						span.ui-check__text Запомнить меня
-				.col-auto
-					a(href="#") Забыли пароль?
-
-			.popup-ctrl
-				button.btn.btn-block.btn-dark Войти на сайт
-
-			p.popup-caption Ещё нет аккаунта? <a href="#">Зарегистрируйтесь</a>
 	
 	.popup.popup-offer.mfp-hide#popup-offer
 		button.popup-close(data-mfp-close)
@@ -60,7 +37,7 @@ block content
 						sup.ui-field__sup *
 						input(type="email", placeholder="Электронная почта").ui-input
 
-			textarea(name="", cols="30", rows="10", placeholder="itBoat пропустил важную новость?").ui-textarea
+			textarea(name="", cols="30", rows="10", placeholder="itBoat пропустил важную новость? Не заметил что-то интересное? Напишите нам!").ui-textarea
 
 			label.ui-file
 				input(type="file").ui-file__input

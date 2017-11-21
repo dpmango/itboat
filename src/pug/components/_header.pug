@@ -1,4 +1,30 @@
 // HEADER :: START
+
+.popup.popup-auth.mfp-hide#popup-auth
+    button.popup-close(data-mfp-close)
+        +icon('ico-close')
+    form(action="#")
+        .popup-logo
+            +icon('ico-logo')
+        input(type="email", placeholder="Электронная почта").ui-input
+        input(type="password", placeholder="Пароль").ui-input
+        .row
+            .col
+                label.ui-check
+                    input(type="checkbox").ui-check__input
+                    span.ui-check__checkbox
+                        +icon('ico-check')
+                    span.ui-check__text Запомнить меня
+            .col-auto
+                a(href="#") Забыли пароль?
+
+        .popup-ctrl
+            button.btn.btn-block.btn-dark Войти на сайт
+
+        p.popup-caption Ещё нет аккаунта? <a href="#">Зарегистрируйтесь</a>
+
+
+// HEADER :: START
 .banner
     script(type="text/javascript").
       
@@ -15,7 +41,7 @@
         var addate = new Date();
         document.write('<script type="text/javascript" src="//ads.adfox.ru/160296/prepareCode?pp=g&amp;ps=kjw&amp;p2=fmos&amp;pr=' + pr + '&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;jsrandom=' + Math.random() + '"><\/script>');
            
-    
+
 
 header.header(itemscope itemtype="https://schema.org/WPHeader")
 
@@ -67,7 +93,7 @@ header.header(itemscope itemtype="https://schema.org/WPHeader")
                     li
                         a(href="#" itemprop="url").nav__link
                             +icon('ico-compare')
-                            | СРАВНЕНИЕ (9)
+                            | СРАВНЕНИЕ <mark>9</mark>
 
                 .auth
 
@@ -88,7 +114,7 @@ header.header(itemscope itemtype="https://schema.org/WPHeader")
 
                 ul.auth
                     li
-                        a(href="#").auth__link Вход
+                        a(href="#popup-auth", data-mfp).auth__link Вход
                 
                     li
                         a(href="#").auth__link Регистрация

@@ -4,6 +4,38 @@ bodyClass: homepage
 ---
 extends shared/_layout
 block content
+	
+
+	// Popups :: Start
+
+	.popup.popup-offer.mfp-hide#popup-offer
+		button.popup-close(data-mfp-close)
+			+icon('ico-close')
+		form(action="#")
+			strong.popup-heading Предложите свой материал
+			.row
+				.col-sm-6
+					.ui-field
+						sup.ui-field__sup *
+						input(type="text", placeholder="Представьтесь, пожалуйста").ui-input
+				.col-sm-6
+					.ui-field
+						sup.ui-field__sup *
+						input(type="email", placeholder="Электронная почта").ui-input
+
+			textarea(name="", cols="30", rows="10", placeholder="itBoat пропустил важную новость? Не заметил что-то интересное? Напишите нам!").ui-textarea
+
+			label.ui-file
+				input(type="file").ui-file__input
+				span.ui-file__btn Тут можно прикрепить файл
+				+icon('ico-arrow-right')
+			
+			.popup-ctrl
+				button.btn.btn-block.btn-dark Отправить
+
+			p.popup-caption Нажимая «Отправить», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия <a href="#">политики конфиденциальности</a>, а также даете согласие на обработку персональных данных.
+	
+	// Popups :: End
 
 	// Promo :: Start
 
@@ -133,7 +165,7 @@ block content
 
 							.media-offer
 								p.media-offer__text У Вас есть интересный материал на тему яхтинга?
-								a(href="#").btn.btn-dark предложить
+								a(href="#popup-offer", data-mfp).btn.btn-dark предложить
 
 						li.col-sm-6.col-lg-4
 							a(href="#").media-article

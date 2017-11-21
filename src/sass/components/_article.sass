@@ -63,7 +63,8 @@
 				line-height: 78px
 				display: block
 				float: left
-				margin: -15px 10px 0 -4px
+				// margin: -15px 10px 0 -4px
+				margin: -1px 10px 0 -4px
 
 .article
 	.container-fluid
@@ -187,10 +188,14 @@
 			margin-right: -80px
 
 .article-text
-	font-size: 22px
-	line-height: 30px
+	font-size: 18px
+	line-height: 26px
 	color: #4c4c4c
 	padding: 0 0 15px
+	+rmin($desktop)
+		font-size: 22px
+		line-height: 30px
+	
 
 // -----
 
@@ -324,11 +329,12 @@
 	text-align: center
 	font-size: 16px
 	line-height: 26px
-	margin: 0 0 25px
+	margin: 0 0 10px
 	+rmin($desktop)
 		position: absolute
 		top: 0
 		right: 0
+		margin: 0 0 25px
 
 .article-list__image
 	margin: 0 0 10px

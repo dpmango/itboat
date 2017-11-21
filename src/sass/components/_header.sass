@@ -157,6 +157,20 @@
 	&__link
 		display: block
 		color: #fff
+		mark
+			display: inline-block
+			vertical-align: baseline
+			position: relative
+			top: -1px
+			font-size: 14px
+			line-height: 20px
+			background: #209FE4
+			color: #fff
+			padding: 0 4px
+			min-width: 20px
+			text-align: center
+			border-radius: 10px
+			margin: 0 0 0 5px
 		&:hover
 			color: #999
 		.ico-xl
@@ -169,6 +183,8 @@
 			font-size: 14px
 			margin: 0 10px 0 0
 			top: -2px
+			+r($desktop)
+				display: none
 	&__tooltip
 		position: absolute
 		top: 100%
@@ -328,7 +344,7 @@
 
 	+r($desktop)
 		display: block
-		padding: 10px 0 0
+		padding: 10px 0
 		&__link
 			margin: 0
 		

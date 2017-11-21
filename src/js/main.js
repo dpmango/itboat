@@ -69,7 +69,7 @@ $(document).ready(function(){
     // Owl Carousel
     // --------------------------------------------------------------------------
 
-    // $(window).on('load', function(event) {
+    function initCarousels () {
        
     
 
@@ -153,7 +153,6 @@ $(document).ready(function(){
                 $(this).addClass('is-oneObj')
             }
 
-            console.log(carouselLength)
             
             $(this).find('.images-item').each(function(i){
 
@@ -216,13 +215,26 @@ $(document).ready(function(){
             lazyLoad: true,
             smartSpeed: galleryDuration,
             fluidSpeed: galleryDuration,
-            navText: [iconPrev,iconNext]
+            navText: [iconPrev,iconNext],
+            autoHeight: true,
+            responsive:{
+                0: {
+                     autoHeight: true
+                },
+                992: {
+                    autoHeight: false
+                }
+            }
             }).on('changed.owl.carousel', function (e) {
                 //On change of main item to trigger thumbnail item
                 galleryThumbs.trigger('to.owl.carousel', [e.page.index, galleryDuration, true]);
 
                 // console.log(e.page.count)
             });
+
+        $(window).on('resize', function(event) {
+           gallerySlides.trigger('refresh.owl.carousel');
+        });
 
         // carousel function for thumbnail slider
         galleryThumbs.owlCarousel({
@@ -297,9 +309,10 @@ $(document).ready(function(){
 
         $('.js-carousel-catalog').owlCarousel({
             items: 1,
-            loop: false,
+            loop: true,
             nav: true,
             dots: true,
+            dotsEach: true,
             margin: 20,
             autoHeight: true,
             lazyLoad: true,
@@ -603,13 +616,12 @@ $(document).ready(function(){
         });
 
 
-    // });
 
 
+    }
 
 
-
-
+    setTimeout(initCarousels, 500);
 
 
 
@@ -1270,9 +1282,12 @@ $(document).ready(function(){
   // $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
 
 
+    function preload() {
+        $('.page').addClass('is-ready');
+    }
 
 
-   $('.page').addClass('is-ready');
+    setTimeout(preload, 700);
 
 
 });
