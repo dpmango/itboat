@@ -24,8 +24,18 @@
 	text-transform: uppercase
 	margin: 0 0 40px
 	letter-spacing: 4px
+	b
+		display: block
+		font-family: $fontBase
+		letter-spacing: 0
+		color: #212121
+		text-transform: none
+		margin: 0 0 -10px
+
 	+rmin($tablet)
 		font-size: 40px
+		b
+			font-size: 36px
 
 .market__caption
 	font: italic 18px/26px $fontCaption
@@ -100,3 +110,4 @@
 	&__text
 		font-size: 14px
 		margin: 0
+		color: #4c4c4c

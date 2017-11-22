@@ -11,7 +11,7 @@
 
 .tabs__container
 	position: relative
-	overflow: hidden
+	// overflow: hidden
 	&:after
 		content: ''
 		display: block
@@ -24,11 +24,11 @@
 
 
 .tabs__panel
-	transition: .5s
+	// transition: .5s
 	opacity: 0
 	visibility: hidden
 	position: absolute
-	top: 0
+	top: 100%
 	left: 0
 	width: 100%
 	padding: 20px 0
@@ -43,13 +43,12 @@
 	padding: 0
 	list-style: none
 	display: flex
+	// flex-wrap: wrap
 	justify-content: center
 	position: relative
 	// overflow: hidden
-	+rmin($desktop)
-		overflow: hidden
 	& > li
-		width: 100%
+		width: 50%
 		max-width: 240px
 		position: relative
 		&:after, &:before
@@ -82,6 +81,11 @@
 					visibility: visible
 			.tabs-item__icon, .tabs-item__title
 				color: #1EA0E4
+
+	+rmin($desktop)
+		overflow: hidden
+		& > li 
+			width: 100%
 				
 .tabs-item
 	transition: .25s
@@ -96,6 +100,9 @@
 	line-height: 20px
 	font-weight: 700
 	height: 100%
+	display: flex
+	align-items: center
+	white-space: nowrap
 	mark
 		display: inline-block
 		vertical-align: middle
@@ -112,9 +119,9 @@
 	+r($mobile-s)
 		font-size: 14px
 		mark
-			position: absolute
-			top: 0
-			right: -8px
+			// position: absolute
+			// top: 0
+			// right: -8px
 	&:after, &:before
 		content: ''
 		display: block
@@ -162,6 +169,7 @@
 
 .tabs-item-in
 	padding: 22px 10px
+	width: 100%
 	+r($mobile-s)
 		padding: 15px 10px
 	&:after, &:before

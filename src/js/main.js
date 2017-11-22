@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+    // --------------------------------------------------------------------------
+    // Sorting
+    // --------------------------------------------------------------------------
+
+    $('.sorting-check__input').on('click change', function(event) {
+        if($(this).is('.is-reverse')) {
+            $(this).removeClass('is-reverse');
+            console.log('Un Reverse!')
+        }
+        else {
+            $(this).addClass('is-reverse');
+            console.log('Reverse!')
+        }
+    });
 
     // --------------------------------------------------------------------------
     // Shipyard-model MORE
@@ -318,7 +332,7 @@ $(document).ready(function(){
             lazyLoad: true,
             navText: [iconPrev,iconNext],
             responsive: {
-                568: {
+                420: {
                     items: 2
                 },
                 768: {
@@ -333,11 +347,15 @@ $(document).ready(function(){
             loop: true,
             nav: true,
             dots: true,
-            margin: 20,
+            margin: 0,
             autoHeight: true,
             lazyLoad: true,
+            // stagePadding: 20,
             navText: [iconPrev,iconNext],
             responsive: {
+                480: {
+                    items: 2
+                },
                 768: {
                     items: 3
                 },
@@ -350,7 +368,7 @@ $(document).ready(function(){
 
         $('.js-carousel-brands').owlCarousel({
             items: 1,
-            loop: false,
+            loop: true,
             nav: true,
             dots: true,
             margin: 20,
@@ -368,14 +386,30 @@ $(document).ready(function(){
         });
 
 
+        // -----
+
+
+        $('.js-carousel-gallery').find('img').each(function(){
+
+            var child = $(this),
+                childWidth = child.width();
+
+
+                child.parent().css({
+                    width: childWidth
+                });
+
+        });
+
+
         $('.js-carousel-gallery').owlCarousel({
             items: 3,
             loop: true,
             nav: true,
-            lazyLoad: true,
+            lazyLoad: false,
             margin: 0,
             navText: [iconPrev,iconNext],
-            autoWidth: false
+            autoWidth: true
         });
 
 
@@ -441,7 +475,7 @@ $(document).ready(function(){
 
         // Gallery Full In Popup - Thumbs & Dots
 
-         galleryFullSlides.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+        galleryFullSlides.on('initialized.owl.carousel changed.owl.carousel', function (event) {
 
             galleryFullDots.children().removeClass('active').eq(event.page.index).addClass('active')
             galleryFullThumbs.children().removeClass('active').eq(event.page.index).addClass('active');
@@ -503,6 +537,16 @@ $(document).ready(function(){
               callbacks: {
                 open: function() {
 
+
+                    $('html').addClass('is-lock');
+
+
+                    var currentIndex = $.magnificPopup.instance.st.el.data('mfp-gallery');
+
+
+                    galleryFullSlides.trigger('to.owl.carousel', [currentIndex -1 , 0, true]);
+
+
                     $('.js-readmore').readmore({
                         maxHeight: 44,
                         moreLink: '<a href="#">Читать далее</a>',
@@ -516,7 +560,6 @@ $(document).ready(function(){
                                 $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
                             }
 
-
                         },
                         afterToggle: function(trigger, element, more) {
                           
@@ -526,6 +569,9 @@ $(document).ready(function(){
 
                 },
                 close: function() {
+
+                    $('html').removeClass('is-lock');
+
                     
                 }
               }

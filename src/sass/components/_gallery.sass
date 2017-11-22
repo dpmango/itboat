@@ -398,8 +398,6 @@
 		// z-index: 100
 	.owl-item.active
 	
-
-	
 	.owl-dots
 		display: flex
 		align-items: center
@@ -415,7 +413,7 @@
 		display: block
 		width: 8px
 		height: 8px
-		border-radius: 50%;
+		border-radius: 50%
 		margin: 0 10px
 		background: #707070
 		&.active
@@ -423,7 +421,7 @@
 	.owl-prev, .owl-next
 		transition: .25s
 		position: absolute
-		top: 32%
+		top: 50%
 		width: 50px
 		height: 50px
 		background: #000000
@@ -431,19 +429,24 @@
 		align-items: center
 		justify-content: center
 		color: #fff
-		margin: 25px 0 0 0
+		margin: -95px 0 0
 		border-radius: 4px
+		background: none
+
 		.ico
 			font-size: 30px
 		&:hover
-			color: #fff
-			background: #4D4D4D
+			color: #999
+			// color: #fff
+			// background: #4D4D4D
 	.owl-prev
 		left: 0
-		border-radius: 0px 4px 4px 0px
+		// border-radius: 0px 4px 4px 0px
+		border-radius: 4px
 	.owl-next
 		right: 0
-		border-radius: 4px 0 0 4px
+		// border-radius: 4px 0 0 4px
+		border-radius: 4px
 	+r($tablet)
 		.owl-nav
 			opacity: 0
@@ -469,10 +472,15 @@
 	display: block
 	text-align: center
 	// background: #999
-	max-height: 80vh
-
+	// max-height: 80vh
+	display: flex
+	align-items: center
+	justify-content: center
 	img
-		width: 100%
+		// width: 100%
+		width: auto !important
+		// max-height: 80vh
+		max-height: 60vh
 		
 	+r($desktop)
 		margin: 0 0 20px
@@ -481,7 +489,7 @@
 	position: relative
 	top: 0
 	left: 0
-	width: 100%
+	// width: 100%
 	// height: 100%
 	display: block
 	// cursor: zoom

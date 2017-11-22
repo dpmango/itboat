@@ -74,13 +74,20 @@
 .catalog-carousel
 	position: relative
 	display: block
-	padding: 0 0 40px
-	margin: 0 0 60px
+	overflow: hidden
+	padding: 0 20px 40px
+	margin: 0 -20px 60px
+	width: auto
+	min-width: 100%
 
 	.owl-item
-		padding: 0 1px
+		padding: 0
 	.owl-stage, .owl-item
 		display: flex
+
+	.owl-stage-outer
+		overflow: visible
+		padding: 0 0 30px
 	.owl-dots
 		display: flex
 		flex-wrap: wrap
@@ -130,11 +137,11 @@
 			color: #222222
 			background: #none
 	.owl-prev
-		left: 0
-		border-radius: 0px 4px 4px 0px;
+		left: 20px
+		border-radius: 0px 4px 4px 0px
 	.owl-next
-		right: 0
-		border-radius: 4px 0 0 4px;
+		right: 20px
+		border-radius: 4px 0 0 4px
 
 	
 
@@ -157,7 +164,7 @@
 		color: #1ea0e4
 		// border-color: #999
 		border-color: rgb(30, 160, 228)
-		box-shadow: 0 5px 30px rgba(1, 23, 47, 0.3)
+		box-shadow: 0 5px 20px rgba(1, 23, 47, 0.3)
 		.catalog-item__title
 			// text-decoration: underline
 

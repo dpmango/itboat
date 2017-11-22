@@ -3,6 +3,18 @@
 .sorting
 	margin: 0 0 40px
 
+
+.sorting-mobile
+	.ui-select
+		margin: 0 0 -20px
+	+rmin($desktop)
+		display: none
+
+.sorting-desktop
+
+	+r($desktop)
+		display: none
+
 .sorting-group
 	display: flex
 	justify-content: center
@@ -32,6 +44,9 @@
 			.ico
 				opacity: 1
 				display: inline-block
+		&.is-reverse ~ .sorting-check__text
+			.ico
+				transform: rotate(180deg)
 	.ico
 		display: inline-block
 		transition: .25s
@@ -39,7 +54,7 @@
 		color: #999999
 		opacity: 0;
 		backface-visibility: hidden
-		display: none
+		// display: none
 		margin: 0 0 0 5px
 		
 	

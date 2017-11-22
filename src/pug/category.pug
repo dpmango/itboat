@@ -250,34 +250,49 @@ block content
 
 						// Filter :: End
 				
-				hr.category-line
+				
 
 			.row.row-offset-100
 				.col-lg-60
 
 					// Other :: Start
+
+					hr.category-line
 							
 					.other
 						h2.other__heading Популярные модели
 
 						.sorting
 							form(action="#")
-								.sorting-group
-									label.sorting-check
-										input(type="radio", name="sorting_models", checked).sorting-check__input
-										.sorting-check__text
-											| По алфавиту
-											+icon('ico-sorting')
-									label.sorting-check
-										input(type="radio", name="sorting_models").sorting-check__input
-										.sorting-check__text
-											| По длинне
-											+icon('ico-sorting')
-									label.sorting-check
-										input(type="radio", name="sorting_models").sorting-check__input
-										.sorting-check__text
-											| По цене
-											+icon('ico-sorting')
+
+								.sorting-mobile
+
+									select.ui-select
+										option Алфавит по возрастанию
+										option Алфавит по убывания
+										option Длинна по возрастанию
+										option Длинна по убывания
+										option Цена по возрастанию
+										option Цена по убывания
+
+								.sorting-desktop
+
+									.sorting-group
+										label.sorting-check
+											input(type="radio", name="sorting_models", checked).sorting-check__input
+											.sorting-check__text
+												| По алфавиту
+												+icon('ico-sorting')
+										label.sorting-check
+											input(type="radio", name="sorting_models").sorting-check__input
+											.sorting-check__text
+												| По длинне
+												+icon('ico-sorting')
+										label.sorting-check
+											input(type="radio", name="sorting_models").sorting-check__input
+											.sorting-check__text
+												| По цене
+												+icon('ico-sorting')
 										
 						ul.other__list
 							li.col-6.col-md-3.col-lg-4
@@ -357,28 +372,43 @@ block content
 
 
 					// Other :: Start
+
+					hr.category-line
 							
 					.other
 						h2.other__heading Новинки
 
 						.sorting
 							form(action="#")
-								.sorting-group
-									label.sorting-check
-										input(type="radio", name="sorting_models", checked).sorting-check__input
-										.sorting-check__text
-											| По алфавиту
-											+icon('ico-sorting')
-									label.sorting-check
-										input(type="radio", name="sorting_models").sorting-check__input
-										.sorting-check__text
-											| По длинне
-											+icon('ico-sorting')
-									label.sorting-check
-										input(type="radio", name="sorting_models").sorting-check__input
-										.sorting-check__text
-											| По цене
-											+icon('ico-sorting')
+
+								.sorting-mobile
+
+									select.ui-select
+										option Алфавит по возрастанию
+										option Алфавит по убывания
+										option Длинна по возрастанию
+										option Длинна по убывания
+										option Цена по возрастанию
+										option Цена по убывания
+
+								.sorting-desktop
+
+									.sorting-group
+										label.sorting-check
+											input(type="radio", name="sorting_models", checked).sorting-check__input
+											.sorting-check__text
+												| По алфавиту
+												+icon('ico-sorting')
+										label.sorting-check
+											input(type="radio", name="sorting_models").sorting-check__input
+											.sorting-check__text
+												| По длинне
+												+icon('ico-sorting')
+										label.sorting-check
+											input(type="radio", name="sorting_models").sorting-check__input
+											.sorting-check__text
+												| По цене
+												+icon('ico-sorting')
 
 						ul.other__list
 							li.col-6.col-md-3.col-lg-6

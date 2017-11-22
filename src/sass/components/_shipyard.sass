@@ -4,17 +4,29 @@
 	position: relative
 	.container-fluid
 		background: #fff
-		padding: 62px 20px
+		padding: 110px 20px 60px
+	+rmin($desktop)
+		.container-fluid
+			padding-top: 60px
 	.offer
 		+rmin($wide)
 			// margin: 0 -80px -40px
+
+	.tabs__menu
+		+r($desktop)
+			flex-wrap: wrap
+			white-space: nowrap
+			& > li
+				width: 50%
+				&:last-child
+					width: 100%
 		
 
 // -----
 
 .shipyard-body
-	font-size: 18px
-	line-height: 26px
+	font-size: 16px
+	line-height: 22px
 	color: #4c4c4c
 	letter-spacing: 0.1px
 	padding: 0
@@ -25,6 +37,9 @@
 	
 	& > ul
 		@extend .ui-ul
+	+rmin($desktop)
+		font-size: 18px
+		line-height: 26px
 
 	+rmin($wide)
 		.container-fluid
@@ -36,10 +51,11 @@
 	margin: 0 0 -30px
 	overflow: hidden
 	text-align: center
+	padding: 15px 0 0
 	+rmin($desktop)
 		display: flex
 		align-items: center
-		margin: -5px 80px -30px
+		margin: -5px 80px -25px
 		text-align: left
 	&__image
 		min-width: 165px
@@ -79,14 +95,14 @@
 			font-size: 50px
 	&__country
 		position: relative
-		display: block
+		display: inline-block
 		margin: 0
 		padding: 0 0 0 30px
 		font-size: 12px
 		line-height: 18px
 		color: #4c4c4c
 		img
-			border: 1px solid #d9d9d9;
+			border: 1px solid #d9d9d9
 			display: block
 			width: 24px
 			height: 18px
@@ -425,28 +441,41 @@
 			// display: flex
 
 
-.shipyard-gallery-item
+.shipyard-gallery__item
 	margin: 0 auto
 	min-height: 180px
 	max-width: 1300px
 	max-height: 470px
-	width: 100%
+	display: block
+	// width: 100%
 	// height: 470px
 	img
-		width: 100%
+		// width: auto !important
+		// width: 100%
+		width: auto
 		height: 100%
+		// object-fit: cover
+
+.shipyard-image
+	margin: 0 auto
+	max-width: 1300px
+	img
+		width: 100%
+		height: auto
+		display: block
 
 // ------
 
 .shipyard__heading
 	display: block
 	text-align: center
-	font: 400 30px/1 $fontHeading
+	font: 400 30px/36px $fontHeading
 	text-transform: uppercase
 	letter-spacing: 4px
 	margin: 0 0 36px
 	+rmin($desktop)
 		font-size: 40px
+		line-height: 1
 
 .shipyard-group
 	padding: 0 0 17px

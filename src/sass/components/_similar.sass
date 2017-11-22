@@ -22,11 +22,15 @@
 
 .similar-carousel
 	position: relative
-	padding: 0 40px
+	padding: 0 30px
+	margin: 0
+	width: auto
 	.owl-item
-		padding: 0 1px
+		padding: 0 10px
 	.owl-stage, .owl-item
 		display: flex
+	.owl-stage-outer
+		padding: 0 0 30px
 	.owl-dots
 		display: flex
 		flex-wrap: wrap
@@ -35,7 +39,7 @@
 		padding: 0 40px
 		height: 20px
 		position: absolute
-		bottom: 0
+		bottom: 10px
 		left: 0
 		display: none
 		right: 0
@@ -44,7 +48,7 @@
 		display: block
 		width: 8px
 		height: 8px
-		border-radius: 50%;
+		border-radius: 50%
 		margin: 2.5px 10px
 		background: #E0E0E0
 		&.active
@@ -74,3 +78,14 @@
 	.owl-next
 		right: 0
 		border-radius: 4px 0 0 4px
+
+	+r($desktop)
+		padding: 0 0 40px
+		.owl-dots
+			display: flex
+		.owl-prev, .owl-next
+			top: auto
+			bottom: 0
+			margin: 0
+			.ico
+				font-size: 20px
