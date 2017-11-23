@@ -392,8 +392,7 @@ $(document).ready(function(){
         $('.js-carousel-gallery').find('img').each(function(){
 
             var child = $(this),
-                childWidth = child.width();
-
+                childWidth = child.prop('naturalWidth');
 
                 child.parent().css({
                     width: childWidth
@@ -411,9 +410,6 @@ $(document).ready(function(){
             navText: [iconPrev,iconNext],
             autoWidth: true
         });
-
-
-
 
 
 
@@ -467,17 +463,24 @@ $(document).ready(function(){
 
             $(this).find('.gallery-full__item').each(function(i){
                 var galleryIndex = i++;
-                $(this).find('.js-gallery-full-count').html((galleryIndex + 1) + ' / ' + galleryLength)
+                $(this).find('.js-gallery-full-count').html((galleryIndex + 1) + ' / ' + galleryLength);
+                galleryFullDots.append('<span class="gallery-full-dots__item"></span>');
             });
+
 
         });
 
 
         // Gallery Full In Popup - Thumbs & Dots
 
-        galleryFullSlides.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+        galleryFullSlides.on('initialized.owl.carousel', function (event) {
 
-            galleryFullDots.children().removeClass('active').eq(event.page.index).addClass('active')
+            galleryFullDots.children().removeClass('active').eq(event.page.index + 1).addClass('active');
+            galleryFullThumbs.children().removeClass('active').eq(event.page.index + 1).addClass('active');
+
+        }).on('changed.owl.carousel', function (event) {
+
+            galleryFullDots.children().removeClass('active').eq(event.page.index).addClass('active');
             galleryFullThumbs.children().removeClass('active').eq(event.page.index).addClass('active');
 
         });
@@ -505,7 +508,16 @@ $(document).ready(function(){
             smartSpeed: galleryFullDuration,
             fluidSpeed: galleryFullDuration,
             navText: [iconPrev,iconNext],
-            // dotsContainer: galleryFullThumbs
+            onTranslate: function(event) {
+
+                $(event.target).addClass('owl-hideArrows');
+
+            },
+            onTranslated: function(event) {
+
+                $(event.target).removeClass('owl-hideArrows');
+
+            }
         });
 
 
@@ -519,11 +531,21 @@ $(document).ready(function(){
             }
         });
 
+        $(window).on('resize', function(event) {
+            galleryFullSlides.trigger('refresh.owl.carousel');
+        });
+
 
         // Galllery Full In Popup - POPUP
 
+        var startWindowScroll = 0;
+
         $('[data-mfp-gallery]').magnificPopup({
             type:'inline',
+
+            fixedContentPos: true,
+            fixedBgPos: true,
+
             mainClass: 'mfp-with-zoom mfp-gallery',
             showCloseBtn: false,
             removalDelay: 300,
@@ -532,9 +554,12 @@ $(document).ready(function(){
                 duration: 300,
                 easing: 'ease-in-out'
               },
-              overflowY: 'auto',
+              overflowY: 'scroll',
 
               callbacks: {
+                beforeOpen: function() {
+                    startWindowScroll = $(window).scrollTop();
+                },
                 open: function() {
 
 
@@ -544,7 +569,7 @@ $(document).ready(function(){
                     var currentIndex = $.magnificPopup.instance.st.el.data('mfp-gallery');
 
 
-                    galleryFullSlides.trigger('to.owl.carousel', [currentIndex -1 , 0, true]);
+                    galleryFullSlides.trigger('to.owl.carousel', [currentIndex - 1 , 0, true]);
 
 
                     $('.js-readmore').readmore({
@@ -555,16 +580,26 @@ $(document).ready(function(){
                         beforeToggle: function(trigger, element, more) {
                             if(! more) {
                                 $(trigger).closest('.gallery-full__desc').removeClass('is-collapsed');
+
                             }
                             else {
                                 $(trigger).closest('.gallery-full__desc').addClass('is-collapsed');
+                                
                             }
 
                         },
                         afterToggle: function(trigger, element, more) {
-                          
+                            galleryFullSlides.trigger('refresh.owl.carousel');
                         }
                     });
+
+                    // -----
+
+                    if ( $('.mfp-content').height() < $(window).height() ){
+                      $('body').on('touchmove', function (e) {
+                          e.preventDefault();
+                      });
+                    }
 
 
                 },
@@ -572,6 +607,8 @@ $(document).ready(function(){
 
                     $('html').removeClass('is-lock');
 
+                    $(window).scrollTop(startWindowScroll);
+                    $('body').off('touchmove');
                     
                 }
               }

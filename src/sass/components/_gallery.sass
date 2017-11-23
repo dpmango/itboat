@@ -372,6 +372,9 @@
 
 .gallery-full-slides
 	position: relative
+	&.owl-grab, &.owl-hideArrows
+		.owl-prev, .owl-next
+			opacity: 0
 	.owl-stage-outer
 		// position: static
 		padding: 0 50px
@@ -555,6 +558,8 @@
 	line-height: 22px
 	transition: opacity 0.4s 0.4s
 	opacity: 0
+	[class^="col"]
+		position: static
 	&.is-collapsed 
 		.gallery-full__desc-in
 			background: rgba(0,0,0,0.8)

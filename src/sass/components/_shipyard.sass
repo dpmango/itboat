@@ -24,6 +24,17 @@
 
 // -----
 
+
+.shipyard-desktop
+	+r($desktop)
+		display: none
+
+.shipyard-mobile
+	+rmin($desktop)
+		display: none
+
+// -----
+
 .shipyard-body
 	font-size: 16px
 	line-height: 22px
@@ -442,19 +453,14 @@
 
 
 .shipyard-gallery__item
-	margin: 0 auto
-	min-height: 180px
-	max-width: 1300px
-	max-height: 470px
+	// max-height: 470px
 	display: block
-	// width: 100%
-	// height: 470px
+	max-width: 75vw
 	img
-		// width: auto !important
-		// width: 100%
+		display: block
 		width: auto
 		height: 100%
-		// object-fit: cover
+		object-fit: cover
 
 .shipyard-image
 	margin: 0 auto

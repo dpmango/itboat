@@ -56,6 +56,8 @@
 	cursor: pointer
 	z-index: 100
 	padding: 0
+	display: block
+	line-height: 1
 	.ico
 		font-size: 14px
 	&:hover
@@ -108,6 +110,15 @@
 
 .mfp-gallery.mfp-with-zoom.mfp-ready.mfp-bg
 	opacity: 1
+	min-height: 120vh
+
+.mfp-gallery
+	// display: flex
+	// align-items: center
+	// height: 100%
+	&::-webkit-scrollbar
+		width: 0
+		opacity: 0
 
 .mfp-gallery .mfp-content
 	display: flex

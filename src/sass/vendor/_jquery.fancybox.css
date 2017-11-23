@@ -739,7 +739,12 @@ li.fancybox-thumbs-loading {
 
 .fancybox-button--close {
   font-size: 15px;
-  border-radius: 0 0 0 4px
+  border-radius: 0 0 0 4px;
+  top: 20px;
+  right: 20px;
+  width: auto !important;
+  height: auto !important;
+  position: absolute;
 }
 
 .fancybox-is-open .fancybox-button {
