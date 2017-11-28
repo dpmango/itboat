@@ -121,7 +121,7 @@ block content
 							.tabs__panel.js-tabs__panel.is-active
 
 								ul.market__list
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-1.jpg", alt="")
@@ -131,7 +131,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price €146 500,–
 											p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-2.jpg", alt="")
@@ -141,7 +141,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price €395 500,–
 											p.market-item__text 2008 г., 200 моточасов. Италия
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-3.jpg", alt="")
@@ -151,7 +151,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price 98 000 руб.
 											p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-4.jpg", alt="")
@@ -161,7 +161,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price 680 000 руб.
 											p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-5.jpg", alt="")
@@ -171,7 +171,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price €15 000,–
 											p.market-item__text 1991 г., 200 моточасов. Испания, Palma
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-6.jpg", alt="")
@@ -182,7 +182,7 @@ block content
 											i.market-item__price 1 100 000 руб.
 											p.market-item__text 2008 г., 244 моточасов. Россия, Саратов
 
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-7.jpg", alt="")
@@ -192,7 +192,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price €146 500,–
 											p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-8.jpg", alt="")
@@ -202,7 +202,7 @@ block content
 													+icon('ico-compare')
 											i.market-item__price €395 500,–
 											p.market-item__text 2008 г., 200 моточасов. Италия
-									li.col-sm-6.col-md-4
+									li.col-6.col-md-4
 										a(href="#").market-item
 											figure.market-item__image
 												img(src="img/img-market-9.jpg", alt="")
@@ -228,13 +228,13 @@ block content
 
 		
 					// Popular :: Start
-					.popular.js-toggle
+					.popular.js-toggle.is-open-mobile
 
 						h3.popular__heading
 							+icon('ico-popular')
 							| Популярное
 
-						button.popular-toggle-btn.js-toggle-btn Популярное
+						button.popular-toggle-btn.js-toggle-btn.is-active Популярное
 								span.icon-toggle
 									+icon('ico-arrow-down')
 
@@ -495,14 +495,142 @@ block content
 										h3.catalog-item__title Экспедиционные яхты и траулеры
 										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
 
-				
+						// Catalog Carousel Mobile :: Start
+						.catalog-mobile
+							.catalog-carousel.owl-carousel.js-carousel-catalog
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-1.jpg", alt="")
+										b.catalog-item__count 24
+									.catalog-item__desc
+										h3.catalog-item__title Глиссирующие яхты с флайбриджем
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-2.jpg", alt="")
+										b.catalog-item__count 284
+									.catalog-item__desc
+										h3.catalog-item__title Закрытые круизные яхты с хардтопом
+										p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-3.jpg", alt="")
+										b.catalog-item__count 701
+									.catalog-item__desc
+										h3.catalog-item__title Открытые круизные яхты
+										p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-4.jpg", alt="")
+										b.catalog-item__count 1 5029
+									.catalog-item__desc
+										h3.catalog-item__title Водоизмещающие яхты
+										p.catalog-item__text Тихоходные и экономичные суда с максимальным жилым объемом
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-5.jpg", alt="")
+										b.catalog-item__count 24
+									.catalog-item__desc
+										h3.catalog-item__title Моторные круизные катамараны
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-6.jpg", alt="")
+										b.catalog-item__count 124
+									.catalog-item__desc
+										h3.catalog-item__title Полу-водоизмещающие яхты
+										p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-7.jpg", alt="")
+										b.catalog-item__count 181
+									.catalog-item__desc
+										h3.catalog-item__title Яхты с хардтопом полузакрытым салоном
+										p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-8.jpg", alt="")
+										b.catalog-item__count 18
+									.catalog-item__desc
+										h3.catalog-item__title Экспедиционные яхты и траулеры
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-9.jpg", alt="")
+										b.catalog-item__count 12
+									.catalog-item__desc
+										h3.catalog-item__title Экспедиционные яхты и траулеры
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-10.jpg", alt="")
+										b.catalog-item__count 201
+									.catalog-item__desc
+										h3.catalog-item__title Закрытые круизные яхты с хардтопом
+										p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-11.jpg", alt="")
+										b.catalog-item__count 644
+									.catalog-item__desc
+										h3.catalog-item__title Открытые круизные яхты
+										p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-12.jpg", alt="")
+										b.catalog-item__count 1 009
+									.catalog-item__desc
+										h3.catalog-item__title Водоизмещающие яхты
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-1.jpg", alt="")
+										b.catalog-item__count 24
+									.catalog-item__desc
+										h3.catalog-item__title Глиссирующие яхты с флайбриджем
+										p.catalog-item__text Классический силуэт и максимальная площадь открытых палуб
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-2.jpg", alt="")
+										b.catalog-item__count 284
+									.catalog-item__desc
+										h3.catalog-item__title Закрытые круизные яхты с хардтопом
+										p.catalog-item__text Спортивный корпус с салоном, защищенным от непогоды
+
+								a(href="#").catalog-item
+									figure.catalog-item__image
+										img(src="img/img-boat-3.jpg", alt="")
+										b.catalog-item__count 701
+									.catalog-item__desc
+										h3.catalog-item__title Открытые круизные яхты
+										p.catalog-item__text Стремительные, спортивные лодки для теплых морей
+
+							.catalog-mobile__ctrl
+								a(href="#").btn.btn-grey Все категории
+						
+						// Catalog Carousel Mobile :: End
 					.tabs__panel.js-tabs__panel Парусные яхты
 			
 
-			hr
+			
 
 			.row.row-brands
 				.col-lg-8
+					
+					hr
 
 					.brands
 						h3.brands__heading Популярные бренды
@@ -512,111 +640,113 @@ block content
 									figure.brands-item__image
 										img(src="img/img-brands-1.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-2.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-3.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-4.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-5.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-6.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-7.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-8.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-9.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-10.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-11.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-12.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-9.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-10.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-11.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-12.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-5.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-2
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-6.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 					
 				.col-lg-4
+
+					hr
 
 					.brands
 						h3.brands__heading ЛУЧШИЕ продавцы
@@ -626,61 +756,61 @@ block content
 									figure.brands-item__image
 										img(src="img/img-brands-1.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-2.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-3.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-4.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-5.jpg", alt="")
 									h4.brands-item__title Jetten
-									span.brands-item__count 19 моделей
+									span.brands-item__count 19 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-6.jpg", alt="")
 									h4.brands-item__title Finnmaster
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-7.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-8.jpg", alt="")
 									h4.brands-item__title Benetti
-									span.brands-item__count 16 моделей
+									span.brands-item__count 16 объявлений
 							li.col-4.col-lg-4
 								a(href="#").brands-item
 									figure.brands-item__image
 										img(src="img/img-brands-9.jpg", alt="")
 									h4.brands-item__title Anytec
-									span.brands-item__count 5 моделей
+									span.brands-item__count 5 объявлений
 					
 		.details
 			.container-fluid
 				h2.details__heading В продаже 1 877 лодок общей длиной 31 250 м <br>на сумму €2 339 343 802
 				em.details__caption Уже продано 1 247 лодок общей длиной 15 713 м на сумму €817 270 526
-				p Какая она будет – Ваша новая яхта? Парусная или моторная? Большое крейсерское судно или маленький катерок для рыбалки? Изящная дизайнерская лодка или скоростной болид? В нашем ассортименте – сотни яхт и катеров на любой вкус, самых разнообразных размеров и моделей, предложения со всего света. Используя наш каталог объявлений, Вы можете не только купить, но и продать свою яхту – в России и других странах мира. Мы поможем Вам выбрать катера и яхты, купить б у или новое судно, приобрести его напрямую от владельца или через брокера. Наш богатый ассортимент предложений будет интересен как профессионалам яхтенного спорта, так и новичкам – огромный выбор приятно сочетается с большим разнообразием цен. У нас быстро найдется яхта, купить которую захочется прямо сейчас.
+				p.details__text Какая она будет – Ваша новая яхта? Парусная или моторная? Большое крейсерское судно или маленький катерок для рыбалки? Изящная дизайнерская лодка или скоростной болид? В нашем ассортименте – сотни яхт и катеров на любой вкус, самых разнообразных размеров и моделей, предложения со всего света. Используя наш каталог объявлений, Вы можете не только купить, но и продать свою яхту – в России и других странах мира. Мы поможем Вам выбрать катера и яхты, купить б у или новое судно, приобрести его напрямую от владельца или через брокера. Наш богатый ассортимент предложений будет интересен как профессионалам яхтенного спорта, так и новичкам – огромный выбор приятно сочетается с большим разнообразием цен. У нас быстро найдется яхта, купить которую захочется прямо сейчас.
 				.row
 					.col-md-4
 						h4 Информативные объявления

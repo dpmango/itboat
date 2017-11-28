@@ -6,9 +6,11 @@
 
 .media
 	.container-fluid
-		padding-top: 62px
-		padding-bottom: 40px
+		padding: 90px 20px 40px
 		background: #fff
+		+rmin($desktop)
+			padding-top: 62px
+
 
 .media__rubric
 	display: block
@@ -241,7 +243,7 @@
 			text-decoration: underline
 
 	&__image
-		margin: 0 0 12px
+		margin: 0 0 10px
 		overflow: hidden
 		position: relative
 		max-height: 200px

@@ -31,6 +31,8 @@ PageList:
   ready: 100
 - file: xl.html
   ready: 100
+- file: xl-model.html
+  ready: 100
 - file: registration.html
   ready: 100
 - file: shipyard-model-1.html
@@ -44,8 +46,6 @@ PageList:
 - file: add-1.html
   ready: 100
 - file: add-2.html
-  ready: 100
-- file: xl-model.html
   ready: 100
 - file: compare.html
   ready: 100

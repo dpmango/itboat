@@ -261,6 +261,8 @@
             text-align: center
             padding: 0 0 10px
 
+.ui-group-company
+    padding: 0 0 10px
 // -----
 
 .ui-group-caption
@@ -376,9 +378,12 @@
     padding: 0
     list-style: none
     display: flex
-    flex-wrap: wrap
+    // flex-wrap: wrap
+    white-space: nowrap
     & > li
-        margin: 0 20px 0 0
+        margin: 0 15px 0 0
+        &:last-child
+            margin: 0
     .ui-check
         margin: 0
 
@@ -888,6 +893,16 @@
     &:hover
         .ui-check__checkbox, .ui-check__radio
             border-color: rgba(#212121,0.5)
+
+
+.ui-check-desktop
+    white-space: nowrap
+    +r($desktop)
+        display: none
+.ui-check-mobile
+    white-space: nowrap
+    +rmin($desktop)
+        display: none
 
 // -----
 

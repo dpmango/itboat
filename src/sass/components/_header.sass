@@ -137,9 +137,10 @@
 		list-style: none
 		font-size: 14px
 		line-height: 40px
-		font-weight: 700
+		font-weight: 400
 		text-transform: uppercase
 		white-space: nowrap
+		-webkit-font-smoothing: auto
 		& > li
 			
 		+rmin($desktop)
@@ -162,7 +163,7 @@
 			vertical-align: baseline
 			position: relative
 			top: -1px
-			font-size: 14px
+			font-size: 12px
 			line-height: 20px
 			background: #209FE4
 			color: #fff
@@ -344,7 +345,7 @@
 
 	+r($desktop)
 		display: block
-		padding: 10px 0
+		padding: 10px 0 7px
 		&__link
 			margin: 0
 		
@@ -369,7 +370,7 @@
 			padding: 0 0 10px
 			margin: 0
 			& > li
-				margin: 0 0 10px
+				margin: 0 0 7px
 			
 			&:after, &:before
 				display: none
@@ -417,11 +418,11 @@
 	+r($desktop)
 		flex-wrap: wrap
 		line-height: 1
-		padding: 0 0 15px
+		padding: 3px 0 15px
 		& > li
 			width: 100%
 			padding: 0
-			margin: 10px 0
+			margin: 7px 0
 			&:after
 				display: none
 

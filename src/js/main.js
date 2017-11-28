@@ -4,6 +4,20 @@ $(document).ready(function(){
     // Sorting
     // --------------------------------------------------------------------------
 
+    $('.js-smoothscroll').on('click', function(event) {
+       
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top - 20
+        }, 500);
+
+        event.preventDefault();
+
+    });
+
+    // --------------------------------------------------------------------------
+    // Sorting
+    // --------------------------------------------------------------------------
+
     $('.sorting-check__input').on('click change', function(event) {
         if($(this).is('.is-reverse')) {
             $(this).removeClass('is-reverse');
@@ -1034,41 +1048,7 @@ $(document).ready(function(){
 
     detectTouch();
 
-    // --------------------------------------------------------------------------
-    // Scroll Animated
-    // --------------------------------------------------------------------------
-
-
-    scrollAnimation( $('.no-touch-device [data-animation]') );
-
-
-    function scrollAnimation(items) {
-
-        items.each( function() {
-            var el = $(this),
-                animationClass = el.data('animation'),
-                animationDelay = el.data('delay');
-
-                el.css({
-                    '-webkit-animation-delay':   animationDelay,
-                    'animation-delay':           animationDelay
-                });
-
-                el.waypoint(function(direction) {
-
-                    if( direction === 'down' ) {
-
-                        el.addClass(animationClass);
-
-                    }
-
-                },{
-                    triggerOnce: true,
-                    offset: '70%'
-                });
-        });
-
-    }
+    
 
 
 
@@ -1365,10 +1345,74 @@ $(document).ready(function(){
   // $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
 
 
-    function preload() {
-        $('.page').addClass('is-ready');
+
+    // --------------------------------------------------------------------------
+    // Preload & Scroll Animated
+    // --------------------------------------------------------------------------
+
+
+    function scrollAnimation(items) {
+
+        items.each( function() {
+            var el = $(this),
+                animationClass = el.data('animation'),
+                animationDelay = el.data('delay');
+
+                el.css({
+                    '-webkit-animation-delay':   animationDelay,
+                    'animation-delay':           animationDelay
+                });
+
+                el.waypoint(function(direction) {
+
+                    if( direction === 'down' ) {
+
+                        el.addClass(animationClass);
+
+                    }
+
+                },{
+                    triggerOnce: true,
+                    offset: '70%'
+                });
+        });
+
+    }
+    function scrollProgress(wrapper) {
+
+        wrapper.find('[data-progress-bar]').css({
+                            'width': 0
+                        });
+
+        wrapper.waypoint(function(direction) {
+
+            
+
+
+                wrapper.find('[data-progress-bar]').each( function() {
+                    var el = $(this),
+                        elProgress = el.data('progress-bar');
+
+                        el.animate({ width: elProgress }, 1000 );
+
+                });
+
+          
+
+        },{
+            triggerOnce: true,
+            offset: '70%'
+        });
+
+        
+
     }
 
+    function preload() {
+        $('.page').addClass('is-ready');
+        scrollAnimation( $('.no-touch-device [data-animation]') );
+        scrollProgress( $('.no-touch-device [data-progress]') );
+    }
 
     setTimeout(preload, 700);
 

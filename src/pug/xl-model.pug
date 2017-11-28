@@ -49,32 +49,31 @@ block content
 						li Верфь: <b>Danish Royal Dockyard</b>
 						li Год постройки: <b>1931г.</b>
 		
-		.shipyard-gallery.owl-carousel.js-carousel-gallery
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-4.jpg", width="354", alt="")
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-5.jpg", width="628", alt="")
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-6.jpg", width="471", alt="")
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-1.jpg", width="664", alt="")
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-2.jpg", width="450", alt="")
-			.shipyard-gallery-item
-				img(src="img/img-snipyard-3.jpg", width="487", alt="")
-			
-		.shipyard-panel
-			.container-fluid
+			.shipyard-gallery.owl-carousel.js-carousel-gallery#toGallery
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-4.jpg", width="354", alt="")
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-5.jpg", width="628", alt="")
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-6.jpg", width="471", alt="")
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-1.jpg", width="664", alt="")
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-2.jpg", width="450", alt="")
+				.shipyard-gallery__item
+					img(src="img/img-snipyard-3.jpg", width="487", alt="")
+				
+			.shipyard-panel
 		
-				ul.shipyard-panel__menu 
+				ul.shipyard-panel__menu
 					li
-						a(href="#").shipyard-panel__link Галерея
+						a(href="#toGallery").shipyard-panel__link.js-smoothscroll Галерея
 					li
-						a(href="#").shipyard-panel__link Характеристики
+						a(href="#toCharacteristics").shipyard-panel__link.js-smoothscroll Характеристики
 					li
-						a(href="#").shipyard-panel__link Описание
+						a(href="#toDescription").shipyard-panel__link.js-smoothscroll Описание
 					li
-						a(href="#").shipyard-panel__link Местоположение
+						a(href="#toMap").shipyard-panel__link.js-smoothscroll Местоположение
 	
 				.shipyard-panel__ctrl
 					ul.shipyard-panel__menu
@@ -93,39 +92,38 @@ block content
 						| ДОБАВИТЬ В СРАВНЕНИЕ
 
 		
-		.shipyard-body
-			.container-fluid
-
+			.shipyard-body
+			
 				.shipyard-1100
 			
-					.shipyard-model
+					.shipyard-model#toCharacteristics
 
 						.shipyard-model__content
 							
 							h2.shipyard-model__heading Характеристики
 
-							ul.shipyard-model__progress
+							ul.shipyard-model__progress(data-progress)
 								li.col-sm-6
 
 									.ui-progress
 										.ui-progress__label Длина
 										.ui-progress__count 47 метров
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 20%")
+											.ui-progress__bar-line(style="width: 20%" data-progress-bar="20%")
 								li.col-sm-6
 
 									.ui-progress
 										.ui-progress__label Вес
 										.ui-progress__count 10 тонн
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 20%")
+											.ui-progress__bar-line(style="width: 20%" data-progress-bar="20%")
 								li.col-sm-6
 									
 									.ui-progress
 										.ui-progress__label Ширина
 										.ui-progress__count 5 метров
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 40%")
+											.ui-progress__bar-line(style="width: 40%" data-progress-bar="40%")
 								
 								li.col-sm-6
 
@@ -133,7 +131,7 @@ block content
 										.ui-progress__label Водоизмещение
 										.ui-progress__count 40 тонн
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 40%")
+											.ui-progress__bar-line(style="width: 40%" data-progress-bar="40%")
 
 								li.col-sm-6
 
@@ -141,7 +139,7 @@ block content
 										.ui-progress__label Осадка
 										.ui-progress__count 2 метра
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 50%")
+											.ui-progress__bar-line(style="width: 50%" data-progress-bar="50%")
 								
 								li.col-sm-6
 
@@ -149,7 +147,7 @@ block content
 										.ui-progress__label Топлива
 										.ui-progress__count 300 литров
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 50%")
+											.ui-progress__bar-line(style="width: 50%" data-progress-bar="50%")
 								
 								li.col-sm-6
 
@@ -157,7 +155,7 @@ block content
 										.ui-progress__label Пресная вода
 										.ui-progress__count 500 литров
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 20%")
+											.ui-progress__bar-line(style="width: 20%" data-progress-bar="20%")
 								
 								li.col-sm-6
 
@@ -165,14 +163,14 @@ block content
 										.ui-progress__label Максимальная
 										.ui-progress__count 27 узлов
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 20%")
+											.ui-progress__bar-line(style="width: 20%" data-progress-bar="20%")
 								li.col-sm-6
 
 									.ui-progress
 										.ui-progress__label Крейсерская
 										.ui-progress__count 15 узлов
 										.ui-progress__bar
-											.ui-progress__bar-line(style="width: 70%")
+											.ui-progress__bar-line(style="width: 70%" data-progress-bar="70%")
 
 							ul.shipyard-model__info
 								li.col-4.col-sm-3.col-md-2
@@ -272,16 +270,7 @@ block content
 									| Все характеристики
 									+icon('ico-more')
 
-
-
-						.shipyard-model__sidebar
-							.banner-300
-								img(src="img/img-banner-1.jpg", alt="")
-					
-					.shipyard-content
-						.shipyard-content-in
-
-							h2 Описание
+							h2#toDescription Описание
 
 							p Идеальная модель в качестве первой собственной парусной яхты. Очень ухоженная лодка, много дополнительного оборудования и опций. Никогда не сдавалась в чартер, использовалась только для семейного отдыха владельца. Лодка должна быть продана, открыта к любым предложениям. <br>Растаможена на РФ. 
 
@@ -300,12 +289,23 @@ block content
 								li — Радар Raymarine 
 								li — Чартплоттер Raymarine Raymarine С70 с GPS 
 
-							h2 Местоположение по AIS
+							h2#toMap Местоположение по AIS
 
 							p <b>Италия, Reggio Calabria</b><br>Обновлено 19 сентября в 19:47
 
 							figure
 								img(src="img/img-map-2.jpg", alt="")
+
+
+
+						.shipyard-model__sidebar
+							.banner-300.js-fixed
+								img(src="img/img-banner-1.jpg", alt="")
+					
+					//- .shipyard-content#toDescription
+					//- 	.shipyard-content-in
+
+							
 
 
 				.offer
@@ -317,82 +317,58 @@ block content
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-1.jpg", alt="")
-							h3.market-item__title
-								| Bavaria 42 Cruiser
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price €146 500,–
-							p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+							p.market-item__shipyard Westport
+							h3.market-item__title Bayliner 185 Bowrider
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-2.jpg", alt="")
-							h3.market-item__title 
-								| Sunseeker 47 Portofino
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price €395 500,–
-							p.market-item__text 2008 г., 200 моточасов. Италия
+							p.market-item__shipyard Озерная верфь
+							h3.market-item__title Sea Ray 325 Sundancer
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-3.jpg", alt="")
-							h3.market-item__title 
-								| Finnmaster 60 CC
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price 98 000 руб.
-							p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+							p.market-item__shipyard Westport
+							h3.market-item__title Stingray 195 CS/CX
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-4.jpg", alt="")
-							h3.market-item__title 
-								| Bayliner 185 Bowrider
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price 680 000 руб.
-							p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+							p.market-item__shipyard Онежский судостроительный завод
+							h3.market-item__title Finnmaster 60 CC
+							p.market-item__text 38,5м (2010 г.)
 
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-1.jpg", alt="")
-							h3.market-item__title
-								| Bavaria 42 Cruiser
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price €146 500,–
-							p.market-item__text 2006 г., 100 моточасов. Черногория, Бар
+							p.market-item__shipyard Westport
+							h3.market-item__title Bayliner 185 Bowrider
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-2.jpg", alt="")
-							h3.market-item__title 
-								| Sunseeker 47 Portofino
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price €395 500,–
-							p.market-item__text 2008 г., 200 моточасов. Италия
+							p.market-item__shipyard Озерная верфь
+							h3.market-item__title Sea Ray 325 Sundancer
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-3.jpg", alt="")
-							h3.market-item__title 
-								| Finnmaster 60 CC
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price 98 000 руб.
-							p.market-item__text 2015 г., новая (0 м/ч). Россия, кингисепп
+							p.market-item__shipyard Westport
+							h3.market-item__title Stingray 195 CS/CX
+							p.market-item__text 38,5м (2010 г.)
 					
 						a(href="#").market-item
 							figure.market-item__image
 								img(src="img/img-market-4.jpg", alt="")
-							h3.market-item__title 
-								| Bayliner 185 Bowrider
-								span.market-item__compare
-									+icon('ico-compare')
-							i.market-item__price 680 000 руб.
-							p.market-item__text 2006 г., 200 моточасов. Россия, Серпухов
+							p.market-item__shipyard Онежский судостроительный завод
+							h3.market-item__title Finnmaster 60 CC
+							p.market-item__text 38,5м (2010 г.)
 				
 				
 	// Snipyard :: End

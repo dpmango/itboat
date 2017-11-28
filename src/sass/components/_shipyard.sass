@@ -4,10 +4,18 @@
 	position: relative
 	.container-fluid
 		background: #fff
-		padding: 110px 20px 60px
+		padding: 90px 20px 60px
 	+rmin($desktop)
 		.container-fluid
-			padding-top: 60px
+			padding-top: 62px
+
+	.request--dark
+		margin-left: -20px
+		margin-right: -20px
+		+rmin($tablet)
+			margin-left: auto
+			margin-right: auto
+
 	.offer
 		+rmin($wide)
 			// margin: 0 -80px -40px
@@ -18,9 +26,9 @@
 			white-space: nowrap
 			& > li
 				width: 50%
-				&:last-child
+				&:first-child
 					width: 100%
-		
+
 
 // -----
 
@@ -42,9 +50,10 @@
 	letter-spacing: 0.1px
 	padding: 0
 	.container-fluid
-		padding: 40px 20px
+		padding: 0 40px 20px
 	.banner-300
-		margin-top: 10px
+		position: relative
+		top: -3px
 	
 	& > ul
 		@extend .ui-ul
@@ -59,14 +68,14 @@
 
 
 .shipyard-head
-	margin: 0 0 -30px
+	margin: 0 0 35px
 	overflow: hidden
 	text-align: center
 	padding: 15px 0 0
 	+rmin($desktop)
 		display: flex
-		align-items: center
-		margin: -5px 80px -25px
+		align-items: flex-start
+		margin: 0 80px 35px
 		text-align: left
 	&__image
 		min-width: 165px
@@ -83,7 +92,7 @@
 		+rmin($desktop)
 			margin: 0 40px 0 0
 	&__desc
-		padding: 0 0 5px
+		padding: 5px 0
 	&__rubric
 		display: block
 		font-size: 12px
@@ -159,6 +168,7 @@
 		+rmin($desktop)
 			text-align: right
 			padding-left: 10px
+			line-height: 25px
 
 	&__tags
 		margin: 0 -10px
@@ -177,9 +187,13 @@
 		& > li
 			padding: 5px 10px
 		&-link
+			transition: 0.25s
 			color: #4c4c4c
 			&:hover
-				color: #999
+				color: #209FE4
+				mark
+					color: #fff
+					background: #209FE4
 			mark
 				background: #E0E0E0
 				color: #999
@@ -193,19 +207,20 @@
 				min-width: 22px
 				// margin: 0 5px
 				letter-spacing: 0px
+				transition: inherit
 
 
 // -----
 
 
 .shipyard-xl
-	margin: 0 0 -30px
+	margin: 0 0 30px
 	overflow: hidden
 	text-align: center
 	+rmin($desktop)
 		display: flex
 		align-items: center
-		margin: -5px 80px -30px
+		margin: -5px 80px 25px
 	&__image
 		min-width: 165px
 		width: 165px
@@ -375,10 +390,10 @@
 
 .shipyard-gallery
 	position: relative
-	overflow: hidden
-	margin: 0
-	background: #3D4961 url(../img/bg-shipyard-gallery.png) 0 0
-		
+	margin: 0 -20px 60px
+	width: auto
+	.owl-stage-outer
+		overflow: visible
 	.owl-stage, .owl-item
 		display: flex
 	.owl-dots
@@ -402,7 +417,7 @@
 		&.active
 			background: #000
 	.owl-prev, .owl-next
-		transition: .25s
+		transition: color 0.25s, background 0.25s
 		position: absolute
 		// top: 100px
 		top: 50%
@@ -421,10 +436,19 @@
 			background: #4D4D4D
 	.owl-prev
 		left: 0
-		border-radius: 0px 4px 4px 0px;
+		border-radius: 0px 4px 4px 0px
+		+rmin(1300)
+			left: calc(50% - 50vw + 8px)
+
 	.owl-next
 		right: 0
-		border-radius: 4px 0 0 4px;
+		border-radius: 4px 0 0 4px
+		+rmin(1300)
+			right: calc(50% - 50vw + 8px)
+			
+
+		
+
 	+r($tablet)
 		// padding: 40px 0 0
 		background: #fff
@@ -456,15 +480,19 @@
 	// max-height: 470px
 	display: block
 	max-width: 75vw
+	max-height: 470px
 	img
 		display: block
 		width: auto
 		height: 100%
 		object-fit: cover
+	+r($tablet)
+		max-width: 100vw
+		width: 100vw !important
+
 
 .shipyard-image
-	margin: 0 auto
-	max-width: 1300px
+	margin: 0 -20px 60px
 	img
 		width: 100%
 		height: auto
@@ -590,22 +618,26 @@
 // -----
 
 .shipyard-panel
-	display: flex
 	position: relative
+	z-index: 10
 	background: #EDEDED
-	margin: 0
-
-	.container-fluid
-		width: 100%
-		max-width: 1140px
-		padding: 10px 20px
-		background: inherit
-		+rmin($desktop)
-			display: flex
-			align-items: center
-
-		+rmin($wide)
-			// padding: 10px 100px
+	margin: -60px auto 40px
+	padding: 10px 0
+	max-width: 1100px
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 100vw
+		left: 50%
+		margin: 0 0 0 -50vw
+		background: #EDEDED
+		z-index: -1
+	+rmin($desktop)
+		display: flex
+		align-items: center
 	&__menu
 		margin: 0
 		padding: 10px 0
@@ -628,8 +660,9 @@
 	&__social
 		color: #222
 		padding: 10px 0
+		transition: none
 		.ico
-			transition: .25s
+			transition: color 0.25s, opacity 0.25s
 		.ico-social-fb
 			font-size: 18px
 		.ico-social-vk
@@ -637,6 +670,7 @@
 		.ico-social-tw
 			font-size: 14px
 		&:hover
+			// opacity: 0.7
 			.ico-social-fb
 				color: $facebook
 			.ico-social-vk
@@ -647,6 +681,13 @@
 
 	&__ctrl
 		margin: 0 0 0 auto
+		.shipyard-panel__menu:hover
+			.ico-social-fb
+				color: $facebook
+			.ico-social-vk
+				color: $vk
+			.ico-social-tw
+				color: $twitter
 		.btn
 			margin: 10px 0
 			padding: 10px
@@ -663,6 +704,8 @@
 .shipyard-model
 	overflow: hidden
 	width: 100%
+	display: flex
+	flex-wrap: wrap
 
 	+r($mobile)
 		.shipyard-model__progress > li:nth-child(n+3),
@@ -747,7 +790,13 @@
 		&-text
 			margin: 0 0 16px
 		&-item
+			display: block
 			margin: 0 0 40px
+			color: #fff
+			&:hover
+				color: #fff
+				.shipyard-model__sidebar-item-title
+					text-decoration: underline
 			&-image
 				height: 160px
 				padding: 10px
@@ -766,11 +815,12 @@
 				font-size: 18px
 				line-height: 20px
 				font-weight: 700
-				display: block
 				margin: 0 0 5px
 			&-text
 				margin: 0 0 2px
 				color: #999
+			&-link
+				color: #1ea0e4
 		
 		&-phone
 			padding: 0 0 28px
@@ -903,10 +953,11 @@
 			padding: 0 0 0 90px
 			display: flex
 			flex-wrap: wrap
-			// align-items: center
+			align-items: center
+			min-height: 90px
 		&-icon
 			position: absolute
-			top: 50%
+			top: 0
 			left: 0
 			width: 90px
 			height: 90px
@@ -915,7 +966,6 @@
 			justify-content: center
 			color: #BDBDBD
 			text-align: center
-			transform: translate(0,-50%)
 			.ico-engine-1
 				font-size: 50px
 			.ico-engine-2
@@ -930,7 +980,7 @@
 			margin: 0
 
 .shipyard-content
-	padding: 0 0 35px
+	padding: 0 0 50px
 
 	h1, h2, h3, h4, h5
 		line-height: 1

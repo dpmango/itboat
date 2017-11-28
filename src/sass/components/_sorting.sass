@@ -11,13 +11,13 @@
 		display: none
 
 .sorting-desktop
-
 	+r($desktop)
 		display: none
 
 .sorting-group
 	display: flex
 	justify-content: center
+	padding: 0 0 0 20px
 
 .sorting-check
 	display: block
@@ -27,7 +27,8 @@
 	font-weight: 700
 	color: #1ea0e4
 	white-space: nowrap
-	margin: 0 30px 0 10px
+	margin: 0
+	padding: 0 20px
 	cursor: pointer
 	transition: .25s
 	backface-visibility: hidden
@@ -55,6 +56,9 @@
 		opacity: 0;
 		backface-visibility: hidden
 		// display: none
-		margin: 0 0 0 5px
+		position: absolute
+		top: 50%
+		right: 0
+		margin: -5px 0 0
 		
 	

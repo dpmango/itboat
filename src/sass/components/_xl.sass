@@ -4,35 +4,47 @@
 
 
 .page-xl
-	background: url(../img/bg-xl.jpg) center center no-repeat fixed
-	background-size: cover
+	background: url(../img/bg-xl.jpg) center 0 fixed
+	// background-size: cover
 	.footer
 		background: none
 		color: #fff
 	.logo a,
 	.nav-info__link
 		color: #fff
+	.nav-group__link
+		color: #fff
+		&:hover
+			color: rgba(#fff,0.5)
 	hr
 		opacity: 0.2
 
 
+
 .xl
-	padding: 60px 0
-	// .container-fluid
-		// padding: 60px 20px
-		// background: #fff
+	padding: 60px 0 0
+	.container-fluid
+		// max-width: 1340px
 	.media
 		padding: 0 0 60px
 	.market
 		background: #F5F5F5
 		margin: 0 -20px
 		padding: 60px 20px
+	.market-item__title
+		// font-weight: 400
 	.brands
 		+rmin($desktop)
 			padding-left: 80px
 			padding-right: 80px
 	.brands__heading
 		margin: 0 0 40px
+	.brands__list
+		padding: 0 0 6px
+		& > li
+			margin: 0 0 4px
+	.news__heading
+		color: #01172f
 	&--model
 		padding: 0
 
@@ -56,3 +68,4 @@
 .xl__content
 	background: #fff
 	padding: 20px
+	margin: 0 -20px

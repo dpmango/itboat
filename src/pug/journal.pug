@@ -10,6 +10,28 @@ block content
 	.media
 		.container-fluid
 
+
+			.breadcrumbs
+				ul.breadcrumbs__menu(itemscope itemtype="http://schema.org/BreadcrumbList")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#" itemprop="item name").breadcrumbs__link Главная
+						meta(itemprop="position" content="1")
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#").breadcrumbs__link Журнал
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#").breadcrumbs__link Статьи
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#").breadcrumbs__link Путешествия
+						meta(itemprop="position" content="1")
+
+					li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+						a(href="#").breadcrumbs__link.is-active Solar Voyager, лодка-беспилотник, отправившаяся покорять Атлантику
+						meta(itemprop="position" content="1")
+
 			h2.media__heading Журнал
 			em.media__caption Новости и статьи из мира яхт. Ежедневное обновление.
 			

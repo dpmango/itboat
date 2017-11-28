@@ -2,9 +2,11 @@
 
 .market
 	.container-fluid
-		padding-top: 65px
+		padding-top: 90px
 		padding-bottom: 60px
 		background: #fff
+		+rmin($desktop)
+			padding-top: 62px
 	.brands
 		float: none
 		// max-width: none
@@ -18,11 +20,12 @@
 			padding: 0 12px
 
 
+
 .market__heading
 	text-align: center
 	font: 400 30px/1 $fontHeading
 	text-transform: uppercase
-	margin: 0 0 40px
+	margin: 0 0 10px
 	letter-spacing: 4px
 	b
 		display: block
@@ -85,6 +88,12 @@
 			height: 100%
 			object-fit: cover
 			border-radius: 4px
+	&__shipyard
+		display: block
+		padding: 2px 0 0
+		margin: 0
+		font-size: 14px
+		color: #222
 	&__title
 		font-size: 18px
 		line-height: 26px
@@ -92,6 +101,11 @@
 		display: block
 		position: relative
 		padding: 0 20px 0 0
+		small
+			display: block
+			font-size: 14px
+			line-height: 18px
+			font-weight: 400
 	&__compare
 		position: absolute
 		top: 0

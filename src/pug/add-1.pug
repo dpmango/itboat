@@ -63,7 +63,8 @@ block content
 										input(type="checkbox", checked).ui-check__input
 										span.ui-check__checkbox
 											+icon('ico-check')
-										| Не эксплуатировалась
+										span.ui-check-desktop Не эксплуатировалась
+										span.ui-check-mobile Не эксплуатир.
 
 					.ui-group
 						label.ui-label Страна местонахождения
@@ -140,24 +141,25 @@ block content
 
 					.ui-group
 						label.ui-label Фотографии лодки
-						.ui-upload
+						.ui-group-in
+							.ui-upload
 
-							label.ui-upload-file
-								input(type="file").ui-upload-input
-								span
-									+icon('ico-upload')
+								label.ui-upload-file
+									input(type="file").ui-upload-input
+									span
+										+icon('ico-upload')
 
-							.ui-upload-image
-								.ui-upload-image-in
-									button.ui-upload-delete
-										+icon('ico-delete')
-									img(src="img/img-boat-4.jpg", alt="")
+								.ui-upload-image
+									.ui-upload-image-in
+										button.ui-upload-delete
+											+icon('ico-delete')
+										img(src="img/img-boat-4.jpg", alt="")
 
-							.ui-upload-image
-								.ui-upload-image-in
-									button.ui-upload-delete
-										+icon('ico-delete')
-									img(src="img/img-boat-4.jpg", alt="")
+								.ui-upload-image
+									.ui-upload-image-in
+										button.ui-upload-delete
+											+icon('ico-delete')
+										img(src="img/img-boat-4.jpg", alt="")
 
 						p.ui-caption.ui-caption__auto Не допускаются: рекламные изображения, с водяными знаками или откровенно низкого качества. Меняйте порядок — перетаскивая мышкой.
 
@@ -340,7 +342,7 @@ block content
 							option Владельцем лодки 2
 							option Владельцем лодки 3
 
-					hr
+					//- hr
 
 					.ui-ctrl
 					

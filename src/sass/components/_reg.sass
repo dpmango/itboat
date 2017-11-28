@@ -2,8 +2,10 @@
 
 .reg
 	.container-fluid
-		padding: 62px 20px
+		padding: 90px 20px 62px
 		background: #fff
+		+rmin($desktop)
+			padding-top: 62px
 	
 .reg__heading
 	text-align: center
@@ -51,6 +53,8 @@
 			padding: 0
 			text-align: left
 			height: auto
+		.ui-caption
+			text-align: center
 		.ui-input, .ui-select
 			flex: 0 0 100%
 	

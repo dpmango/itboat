@@ -63,7 +63,8 @@ block content
 										input(type="checkbox", checked).ui-check__input
 										span.ui-check__checkbox
 											+icon('ico-check')
-										| Не эксплуатировалась
+										span.ui-check-desktop Не эксплуатировалась
+										span.ui-check-mobile Не эксплуатир.
 
 					.ui-group
 						label.ui-label Страна местонахождения
@@ -140,24 +141,25 @@ block content
 
 					.ui-group
 						label.ui-label Фотографии лодки
-						.ui-upload
+						.ui-group-in
+							.ui-upload
 
-							label.ui-upload-file
-								input(type="file").ui-upload-input
-								span
-									+icon('ico-upload')
+								label.ui-upload-file
+									input(type="file").ui-upload-input
+									span
+										+icon('ico-upload')
 
-							.ui-upload-image
-								.ui-upload-image-in
-									button.ui-upload-delete
-										+icon('ico-delete')
-									img(src="img/img-boat-4.jpg", alt="")
+								.ui-upload-image
+									.ui-upload-image-in
+										button.ui-upload-delete
+											+icon('ico-delete')
+										img(src="img/img-boat-4.jpg", alt="")
 
-							.ui-upload-image
-								.ui-upload-image-in
-									button.ui-upload-delete
-										+icon('ico-delete')
-									img(src="img/img-boat-4.jpg", alt="")
+								.ui-upload-image
+									.ui-upload-image-in
+										button.ui-upload-delete
+											+icon('ico-delete')
+										img(src="img/img-boat-4.jpg", alt="")
 
 						p.ui-caption.ui-caption__auto Не допускаются: рекламные изображения, с водяными знаками или откровенно низкого качества. Меняйте порядок — перетаскивая мышкой.
 
@@ -303,12 +305,12 @@ block content
 
 					hr
 
-					.ui-group
+					.ui-group.ui-group-company
 						label.ui-label Компания
 						input(type="text", name="", value="itBoat Boutique", disabled).ui-input
 
 					.ui-group
-						label.ui-label Контактное лицо
+						label.ui-label.align-self-start Контактное лицо
 						ul.ui-list-vertical
 							li
 								label.ui-check
@@ -341,7 +343,7 @@ block content
 									| Admin (+4 67890 786-76-32)
 
 					.ui-group
-						label.ui-label Опции администратора
+						label.ui-label.align-self-start Опции администратора
 						ul.ui-list-vertical
 							li
 								label.ui-check
@@ -368,7 +370,7 @@ block content
 									| Промо
 
 
-					hr
+					//- hr
 
 					.ui-ctrl
 					
