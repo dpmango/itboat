@@ -100,7 +100,6 @@ $(document).ready(function(){
     function initCarousels () {
        
     
-
         var iconPrev = '<svg class="ico ico-prev"><use xlink:href="img/sprite.svg#ico-prev"></use></svg>',
             iconNext = '<svg class="ico ico-next"><use xlink:href="img/sprite.svg#ico-next"></use></svg>';
 
@@ -149,7 +148,7 @@ $(document).ready(function(){
             nav: true,
             dots: true,
             margin: 30,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             responsive: {
                 768: {
@@ -165,7 +164,7 @@ $(document).ready(function(){
             nav: true,
             dots: true,
             margin: 30,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext]
         });
 
@@ -206,7 +205,7 @@ $(document).ready(function(){
             dots: true,
             margin: 20,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext]
         });
 
@@ -240,7 +239,7 @@ $(document).ready(function(){
             items: 1,
             margin: 20,
             center: true,
-            lazyLoad: true,
+            lazyLoad: false,
             smartSpeed: galleryDuration,
             fluidSpeed: galleryDuration,
             navText: [iconPrev,iconNext],
@@ -271,7 +270,7 @@ $(document).ready(function(){
             nav: false,
             margin: 20,
             stagePadding: 60,
-            lazyLoad: true,
+            lazyLoad: false,
             smartSpeed: galleryDuration,
             fluidSpeed: galleryDuration,
 
@@ -302,7 +301,7 @@ $(document).ready(function(){
             dots: true,
             margin: 20,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             onChanged: callback,
             onInitialized: callback
@@ -343,7 +342,7 @@ $(document).ready(function(){
             dotsEach: true,
             margin: 20,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             responsive: {
                 420: {
@@ -363,7 +362,7 @@ $(document).ready(function(){
             dots: true,
             margin: 0,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             // stagePadding: 20,
             navText: [iconPrev,iconNext],
             responsive: {
@@ -387,7 +386,7 @@ $(document).ready(function(){
             dots: true,
             margin: 20,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             responsive: {
                 768: {
@@ -516,8 +515,8 @@ $(document).ready(function(){
             loop: true,
             nav: true,
             items: 1,
-            margin: 102,
-            lazyLoad: true,
+            margin: 50,
+            lazyLoad: false,
             autoHeight: true,
             smartSpeed: galleryFullDuration,
             fluidSpeed: galleryFullDuration,
@@ -584,6 +583,7 @@ $(document).ready(function(){
 
 
                     galleryFullSlides.trigger('to.owl.carousel', [currentIndex - 1 , 0, true]);
+                    galleryFullSlides.trigger('refresh.owl.carousel');
 
 
                     $('.js-readmore').readmore({
@@ -638,7 +638,7 @@ $(document).ready(function(){
             dots: true,
             margin: 20,
             autoHeight: true,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             responsive: {
                 480: {
@@ -676,7 +676,7 @@ $(document).ready(function(){
             nav: true,
             dots: false,
             margin: 20,
-            lazyLoad: true,
+            lazyLoad: false,
             navText: [iconPrev,iconNext],
             responsive: {
                 768: {

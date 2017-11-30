@@ -28,6 +28,7 @@
 				width: 50%
 				&:first-child
 					width: 100%
+					max-width: none
 
 
 // -----
@@ -53,7 +54,7 @@
 		padding: 0 40px 20px
 	.banner-300
 		position: relative
-		top: -3px
+		margin-top: 6px
 	
 	& > ul
 		@extend .ui-ul
@@ -438,13 +439,19 @@
 		left: 0
 		border-radius: 0px 4px 4px 0px
 		+rmin(1300)
-			left: calc(50% - 50vw + 8px)
+			// left: calc(50% - 50vw + 8px)
+			left: calc(50% - 50vw)
+			width: 68px
+			padding-left: 8px
 
 	.owl-next
 		right: 0
 		border-radius: 4px 0 0 4px
 		+rmin(1300)
-			right: calc(50% - 50vw + 8px)
+			// right: calc(50% - 50vw + 8px)
+			right: calc(50% - 50vw)
+			width: 68px
+			padding-right: 8px
 			
 
 		
@@ -630,9 +637,9 @@
 		position: absolute
 		top: 0
 		bottom: 0
-		width: 100vw
+		width: 1300px
 		left: 50%
-		margin: 0 0 0 -50vw
+		margin: 0 0 0 -650px
 		background: #EDEDED
 		z-index: -1
 	+rmin($desktop)
@@ -752,6 +759,7 @@
 			color: #fff
 			text-align: center
 			padding: 54px 40px 30px
+			position: relative
 			&:after, &:before
 				content: ''
 				position: absolute
@@ -793,10 +801,12 @@
 			display: block
 			margin: 0 0 40px
 			color: #fff
-			&:hover
+			&-seller
 				color: #fff
-				.shipyard-model__sidebar-item-title
-					text-decoration: underline
+				&:hover
+					color: #fff
+					.shipyard-model__sidebar-item-title
+						text-decoration: underline
 			&-image
 				height: 160px
 				padding: 10px
@@ -871,6 +881,9 @@
 		flex-wrap: wrap
 		& > li
 			padding: 0 10px
+			order: 1
+			&:nth-child(even)
+				order: 2
 		+rmin($desktop)
 			margin: 0 -50px 20px
 			& > li

@@ -194,7 +194,6 @@
 		+rmin($hd)
 			padding-left: 80px
 			padding-right: 80px
-	&__container
 		
 	&__content
 		position: relative
@@ -202,14 +201,14 @@
 	+rmin($desktop)
 		&__container
 			position: relative
-			padding: 0 400px 0 0
+			padding: 0 350px 0 0
 		
 			
 		&__sidebar
 			position: absolute
 			top: 0
 			right: 0
-			height: 200px
+			// height: 200px
 
 .gallery-full__heading
 	display: block
@@ -459,7 +458,7 @@
 .gallery-full__item
 	position: relative
 	background: #000
-	padding: 0 0 140px
+	padding: 0 30px 140px 0
 	width: 100%
 	img
 		display: block
@@ -486,6 +485,7 @@
 		width: auto !important
 		height: 100%
 		height: calc(100vh - 275px)
+		object-fit: cover
 		// max-height: 80vh
 		// max-height: calc(100vh - 275px)
 
@@ -508,15 +508,24 @@
 	display: block
 	position: absolute
 	top: 0
-	right: -50px
+	right: 0
 	width: 30px
 	z-index: 99999
+	&:hover
+		.gallery-full-social__btn--fb
+			background: $facebook
+		.gallery-full-social__btn--vk
+			background: $vk
+		.gallery-full-social__btn--tw
+			background: $twitter
 	+r($desktop)
 		position: relative
 		right: 0
 		width: auto
 		display: flex
 		margin: 0 0 -30px
+
+
 
 .gallery-full-social__btn
 	display: flex
@@ -535,12 +544,13 @@
 		font-size: 8px
 	.ico-social-tw
 		font-size: 10px
+
 	&--fb:hover
-		background: #47649D
+		background: $facebook
 	&--vk:hover
-		background: #54769C
+		background: $vk
 	&--tw:hover
-		background: #23B8E9
+		background: $twitter
 	&:hover
 		color: #fff
 	+r($desktop)
