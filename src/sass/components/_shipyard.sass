@@ -715,9 +715,14 @@
 	flex-wrap: wrap
 
 	+r($mobile)
-		.shipyard-model__progress > li:nth-child(n+3),
+		// .shipyard-model__progress > li:nth-child(n+3),
+		.shipyard-model__progress > li,
 		.shipyard-model__info, .shipyard-model__engine
 			display: none
+
+		.shipyard-model__progress > li:nth-child(1),
+		.shipyard-model__progress > li:nth-child(3)
+			display: block
 
 		&.is-open
 			.shipyard-model__more
@@ -880,10 +885,13 @@
 		display: flex
 		flex-wrap: wrap
 		& > li
+			display: block
 			padding: 0 10px
 			// order: 1
-			&:nth-child(2)
-				order: 2
+			&:nth-child(1)
+				order: -2
+			&:nth-child(3)
+				order: -1
 		+rmin($desktop)
 			margin: 0 -50px 20px
 			& > li
