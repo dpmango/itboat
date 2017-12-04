@@ -29,6 +29,9 @@
 				&:first-child
 					width: 100%
 					max-width: none
+					.tabs-item
+						
+						// font-size: 16px
 
 
 // -----
@@ -391,8 +394,10 @@
 
 .shipyard-gallery
 	position: relative
-	margin: 0 -20px 60px
+	margin: 0 -20px 30px
 	width: auto
+	+rmin($desktop)
+		margin-bottom: 60px
 	.owl-stage-outer
 		overflow: visible
 	.owl-stage, .owl-item
@@ -647,15 +652,16 @@
 		align-items: center
 	&__menu
 		margin: 0
-		padding: 10px 0
+		padding: 10px 0 0
 		list-style: none
 		display: flex
 		align-items: center
+		flex-wrap: wrap
 		font-size: 16px
 		line-height: 20px
 		justify-content: center
 		& > li
-			margin: 0 20px 0 0
+			margin: 0 10px 10px
 
 	&__link
 		transition: .25s
